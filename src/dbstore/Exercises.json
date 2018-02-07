@@ -22,7 +22,7 @@
   },
   {
   	"eId": "e000004",
-  	"eName": "spiderman push-ups",
+  	"eName": "Spiderman push-ups",
   	"vId": "v000004",
   	"eTypes": ["et0004", "et0003", "et0001", "et0002"],
   	"description": "N/A",
@@ -36,14 +36,14 @@
   },
   {
   	"eId": "e000006",
-  	"eName": "jump chin-ups",
+  	"eName": "jumping chin-ups",
   	"vId": "v000006",
   	"eTypes": ["et0005", "et0004", "et0003", "et0002"],
   	"description": "N/A",
   },
   {
   	"eId": "e000007",
-  	"eName": "up-down scissors",
+  	"eName": "up down scissors",
   	"vId": "v000007",
   	"eTypes": ["et0001"],
   	"description": "N/A",
@@ -120,7 +120,7 @@
   },
   {
   	"eId": "e000018",
-  	"eName": "jump pull-ups",
+  	"eName": "jumping pull-ups",
   	"vId": "v000018",
   	"eTypes": ["et0005", "et0004", "et0003", "et0002"],
   	"description": "N/A",
@@ -134,7 +134,7 @@
   }, 
   {
   	"eId": "e000020",
-  	"eName": "single-arm push-ups",
+  	"eName": "single arm push-ups",
   	"vId": "v000020",
   	"eTypes": ["et0003"],
   	"description": "N/A",
@@ -190,7 +190,7 @@
   },
   {
   	"eId": "e000028",
-  	"eName": "leg lifts",
+  	"eName": "leg raises",
   	"vId": "v000028",
   	"eTypes": ["et0001"],
   	"description": "N/A",
@@ -386,14 +386,14 @@
   },
   {
     "eId": "e000056",
-    "eName": "in-out scissors",
+    "eName": "in out scissors",
     "vId": "v000056",
     "eTypes": ["et0001"],
     "description": "N/A",
   },
   {
     "eId": "e000057",
-    "eName": "open-close scissors",
+    "eName": "open close scissors",
     "vId": "v000057",
     "eTypes": ["et0001"],
     "description": "N/A",
@@ -414,14 +414,14 @@
   },
   {
     "eId": "e000060",
-    "eName": "hanging in-out scissors",
+    "eName": "hanging in out scissors",
     "vId": "v000060",
     "eTypes": ["et0005", "et0001", "et0003"],
     "description": "N/A",
   },
   {
     "eId": "e000061",
-    "eName": "hanging open-close scissors",
+    "eName": "hanging open close scissors",
     "vId": "v000061",
     "eTypes": ["et0005", "et0001", "et0003"],
     "description": "N/A",
