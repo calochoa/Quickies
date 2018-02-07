@@ -82,10 +82,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   videoContainer: {
-    flex: 1,
+    flex: 2,
   },
   infoContainer: {
-    flex: 2,
+    flex: 1,
     backgroundColor: '#0276c9',
     margin: 20,
   },
