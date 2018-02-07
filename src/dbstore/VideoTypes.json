@@ -1,0 +1,22 @@
+[
+  {
+    "vtId": "vt0000",
+    "vtName": "All",
+    "order": 1,
+  },
+  {
+  	"vtId": "vt0001",
+  	"vtName": "Quickies",
+    "order": 2,
+  },
+  {
+  	"vtId": "vt0002",
+  	"vtName": "Exercises",
+    "order": 3,
+  },
+  {
+    "vtId": "vt0003",
+    "vtName": "Running Drills",
+    "order": 4,
+  },
+]

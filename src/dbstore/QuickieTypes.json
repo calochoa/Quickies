@@ -1,0 +1,37 @@
+[
+  {
+    "qtId": "qt0000",
+    "qtName": "All",
+    "order": 1,
+  },
+  {
+  	"qtId": "qt0001",
+  	"qtName": "Basic",
+    "order": 3,
+  },
+  {
+  	"qtId": "qt0002",
+  	"qtName": "Cardio",
+    "order": 4,
+  },
+  {
+  	"qtId": "qt0003",
+  	"qtName": "Junior",
+    "order": 2,
+  },
+  {
+  	"qtId": "qt0004",
+  	"qtName": "Power",
+    "order": 6,
+  },
+  {
+    "qtId": "qt0005",
+    "qtName": "Bar",
+    "order": 5,
+  },
+  {
+    "qtId": "qt0006",
+    "qtName": "Ultimate",
+    "order": 7,
+  },
+]

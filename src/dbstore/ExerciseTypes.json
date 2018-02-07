@@ -1,0 +1,32 @@
+[
+  {
+    "etId": "et0000",
+    "etName": "All",
+    "order": 1,
+  },
+  {
+  	"etId": "et0001",
+  	"etName": "Core",
+    "order": 2,
+  },
+  {
+  	"etId": "et0002",
+  	"etName": "Lower Body",
+    "order": 3,
+  },
+  {
+  	"etId": "et0003",
+  	"etName": "Upper Body",
+    "order": 4,
+  },
+  {
+  	"etId": "et0004",
+  	"etName": "Total Body",
+    "order": 5,
+  },
+  {
+  	"etId": "et0005",
+  	"etName": "Bar",
+    "order": 6,
+  },
+]
