@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Navigator,
 } from 'react-native';
+import NavigationExperimental from 'react-native-deprecated-custom-components';
 import Home from './Home';
 import QuickiesView from './QuickiesView';
 import QuickiesTemplate from './QuickiesTemplate';
@@ -15,7 +16,6 @@ import ExerciseTemplate from './ExerciseTemplate';
 import VideosView from './VideosView';
 import VideosTemplate from './VideosTemplate';
 import Video from './Video'
-import Stopwatch from './Stopwatch'
 
 class HomeNavigation extends Component {
 
@@ -54,10 +54,10 @@ class HomeNavigation extends Component {
 
   render() {
     return (
-      <Navigator
+      <NavigationExperimental.Navigator
         ref="navigator"
         style={styles.container}
-        configureScene={(route) => Navigator.SceneConfigs.FloatFromBottom}
+        configureScene={(route) => NavigationExperimental.Navigator.SceneConfigs.FloatFromBottom}
         initialRoute={{id: 'Home'}}
         renderScene={this.renderScene} />
     );

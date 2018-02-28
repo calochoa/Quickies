@@ -14,7 +14,7 @@ class Home extends Component {
     section1: {title: 'Quickies'},
     section2: {title: 'Workouts'},
     section3: {title: 'Exercises'},
-    section4: {title: 'Quickie Variations'},
+    section4: {title: 'Quickie of the Day'},
     section5: {title: 'Videos'},
     section6: {title: 'FAQ'},
   }

@@ -18,9 +18,9 @@ class Footer extends Component {
     });
   };
 
-  _goProfile() {
+  _goExercises() {
     this.props.navigator.push({
-      id: 'Stopwatch',
+      id: 'Exercises',
     });
   };
 
@@ -30,7 +30,7 @@ class Footer extends Component {
         <Text style={styles.footer}>
           <Text onPress={this._goHome.bind(this)}>Home </Text>|
           <Text onPress={this._goQuickies.bind(this)}> Quickies </Text>|
-          <Text onPress={this._goProfile.bind(this)}> Stopwatch</Text>
+          <Text onPress={this._goExercises.bind(this)}> Exercises</Text>
         </Text>
       </View>
     );
