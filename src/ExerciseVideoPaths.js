@@ -50,7 +50,7 @@ vPathMap.set('Side-to-SidePull-Ups.mp4', require('../src/videos/Side-to-SidePull
 vPathMap.set('KneeStrikes.mp4', require('../src/videos/KneeStrikes.mp4'));
 vPathMap.set('Chin-Ups.mp4', require('../src/videos/Chin-Ups.mp4'));
 vPathMap.set('RollingSit-Ups.mp4', require('../src/videos/RollingSit-Ups.mp4'));
-vPathMap.set('HalfWipers', require('../src/videos/HalfWipers.mp4'));
+vPathMap.set('HalfWipers.mp4', require('../src/videos/HalfWipers.mp4'));
 vPathMap.set('CrunchKicks.mp4', require('../src/videos/CrunchKicks.mp4'));
 vPathMap.set('InOutScissors.mp4', require('../src/videos/InOutScissors.mp4'));
 vPathMap.set('OpenCloseScissors.mp4', require('../src/videos/OpenCloseScissors.mp4'));
