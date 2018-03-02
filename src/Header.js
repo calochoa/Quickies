@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 24,
+    fontFamily: 'Cochin',
   },
 });
 

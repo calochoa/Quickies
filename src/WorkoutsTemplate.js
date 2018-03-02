@@ -124,13 +124,15 @@ const styles = StyleSheet.create({
   },
   name: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'Cochin',
   },
   info: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 17,
+    fontFamily: 'Cochin',
   },
 });
 

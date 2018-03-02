@@ -116,10 +116,11 @@ const styles = StyleSheet.create({
   }, 
   title: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     paddingBottom: 10,
+    fontFamily: 'Cochin',
   },
   infoContainer: {
     flex: 1,
@@ -130,7 +131,8 @@ const styles = StyleSheet.create({
   },
   quickies: {
     color: '#fff',
-    fontSize: 12,
+    fontSize: 18,
+    fontFamily: 'Cochin',
   },
 });
 

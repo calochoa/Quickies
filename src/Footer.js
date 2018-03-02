@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
   footer: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 24,
+    fontFamily: 'Cochin',
   },
 });
 

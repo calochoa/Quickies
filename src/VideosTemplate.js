@@ -119,12 +119,14 @@ const styles = StyleSheet.create({
   },
   name: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Cochin',
   },
   info: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 20,
+    fontFamily: 'Cochin',
   },
 });
 

@@ -119,14 +119,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#0276c9',
   },
   header: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#fff',
     fontWeight: 'bold',
+    fontFamily: 'Cochin',
   },
   info: {
-    fontSize: 14,    
+    fontSize: 20,    
     color: '#fff',
     marginLeft: 10,
+    fontFamily: 'Cochin',
   },
 });
 
