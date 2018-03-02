@@ -94,13 +94,6 @@ class ExerciseTemplate extends Component {
 }
 
 const styles = StyleSheet.create({
-  backgroundVideo: {
-    flex: 3,
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
@@ -108,8 +101,12 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 3,
   },
-  videoContainer: {
-    flex: 2,
+  backgroundVideo: {
+    flex: 3,
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
   infoContainer: {
     flex: 1,
