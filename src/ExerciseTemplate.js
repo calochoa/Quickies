@@ -59,7 +59,7 @@ class ExerciseTemplate extends Component {
              ref={(ref) => { this.player = ref }}    // Store reference 
              rate={1.0}                              // 0 is paused, 1 is normal. 
              volume={0}                              // 0 is muted, 1 is normal. 
-             muted={false}                           // Mutes the audio entirely. 
+             muted={true}                            // Mutes the audio entirely. 
              paused={false}                          // Pauses playback entirely. 
              repeat={true}                           // Repeat forever. 
              playInBackground={false}                // Audio continues to play when app entering background. 

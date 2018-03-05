@@ -16,6 +16,7 @@ import ExerciseTemplate from './ExerciseTemplate';
 import VideosView from './VideosView';
 import VideosTemplate from './VideosTemplate';
 import Video from './Video'
+import QuickieOfTheDay from './QuickieOfTheDay';
 
 class HomeNavigation extends Component {
 
@@ -45,8 +46,8 @@ class HomeNavigation extends Component {
         return (<VideosTemplate navigator={navigator} headerTitle={route.name} />);
       case 'Video':
         return (<Video navigator={navigator} ytId={route.ytId} />);
-      case 'Stopwatch':
-        return (<Stopwatch />);
+      case 'Quickie of the Day':
+        return (<QuickieOfTheDay navigator={navigator} headerTitle={route.id} />);
       default:
         return (<Home navigator={navigator} />);
     }
