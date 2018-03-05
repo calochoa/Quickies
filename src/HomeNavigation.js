@@ -58,12 +58,28 @@ class HomeNavigation extends Component {
       <NavigationExperimental.Navigator
         ref="navigator"
         style={styles.container}
-        configureScene={(route) => NavigationExperimental.Navigator.SceneConfigs.FloatFromBottom}
+        configureScene={(route) => FloatFromRight}
         initialRoute={{id: 'Home'}}
         renderScene={this.renderScene} />
     );
   }
 }
+
+const SCREEN_WIDTH = require('Dimensions').get('window').width;
+
+/**
+ * Overwrite the default navigator scene config.
+ * to use a wider area for back swiping.
+ */
+const FloatFromRight = {
+  ...NavigationExperimental.Navigator.SceneConfigs.FloatFromRight,
+  gestures: {
+    pop: {
+      ...NavigationExperimental.Navigator.SceneConfigs.FloatFromRight.gestures.pop,
+      edgeHitWidth: SCREEN_WIDTH / 4,
+    },
+  },
+};
 
 const styles = StyleSheet.create({
   container: {
