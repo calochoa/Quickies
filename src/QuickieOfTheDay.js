@@ -77,17 +77,17 @@ class QuickieOfTheDay extends Component {
       <TouchableHighlight style={styles.button} onPress={jumpTo}>
         <View style={styles.quickieRow}>
           <Text style={styles.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
-        <View style={styles.row}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>{quickie.qName}</Text>
+          <View style={styles.row}>
+            <View style={styles.nameContainer}>
+              <Text style={styles.name}>{quickie.qName}</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
+              <Text style={styles.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
+              <Text style={styles.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
+              <Text style={styles.info}>{quickie.reps4} {ExerciseMap.get(quickie.eId4)}</Text>
+            </View>
           </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
-            <Text style={styles.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
-            <Text style={styles.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
-            <Text style={styles.info}>{quickie.reps4} {ExerciseMap.get(quickie.eId4)}</Text>
-          </View>
-        </View>
         </View>
       </TouchableHighlight>
     );
@@ -95,8 +95,6 @@ class QuickieOfTheDay extends Component {
 
   render() {
     const { headerTitle, dataSource } = this.state;
-
-    var dayOfTheWeek = new Date().getDay();
 
     return (
       <View style={styles.container}>
