@@ -6,8 +6,8 @@ import {
   ListView,
   WebView,
 } from 'react-native';
-//import Video from 'react-native-video';
-import VideoPlayer from 'react-native-video-controls';
+import Video from 'react-native-video';
+//import VideoPlayer from 'react-native-video-controls';
 import Header from './Header';
 import Footer from './Footer';
 import ExerciseTypes from './dbstore/ExerciseTypes.json';
@@ -55,7 +55,7 @@ class ExerciseTemplate extends Component {
       <View style={styles.container}>
         <Header headerTitle={exercise.eName} />
         <View style={styles.innerContainer}>
-          <VideoPlayer source={vLink}                // Can be a URL or a local file. 
+          <Video source={vLink}                      // Can be a URL or a local file. 
              ref={(ref) => { this.player = ref }}    // Store reference 
              rate={1.0}                              // 0 is paused, 1 is normal. 
              volume={0}                              // 0 is muted, 1 is normal. 

@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   ScrollView,
 } from 'react-native';
-import VideoPlayer from 'react-native-video-controls';
+import Video from 'react-native-video';
 import Header from './Header';
 import Footer from './Footer';
 import Quickies from './dbstore/Quickies.json';
@@ -72,7 +72,7 @@ class QuickieTemplate extends Component {
 
   _displayExerVid(vLink) {
     return (
-      <VideoPlayer source={vLink}               // Can be a URL or a local file. 
+      <Video source={vLink}                      // Can be a URL or a local file. 
          ref={(ref) => { this.player = ref }}    // Store reference 
          rate={1.0}                              // 0 is paused, 1 is normal. 
          volume={0}                              // 0 is muted, 1 is normal. 
@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
   videoRow: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center', 
   },
   backgroundVideo: {
     flex: 1,
