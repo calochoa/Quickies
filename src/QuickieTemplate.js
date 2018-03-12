@@ -5,7 +5,7 @@ import {
   Text, 
   ListView,
   Image,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   ScrollView,
 } from 'react-native';
 import Video from 'react-native-video';
@@ -70,8 +70,16 @@ class QuickieTemplate extends Component {
     );
   }
 
-  _displayExerVid(vLink) {
+  _displayExerVid(vLink, eId) {
+    let jumpTo = () => {
+      this.props.navigator.push({
+        id: 'ExerciseTemplate',
+        eId: eId,
+      });
+    };
+
     return (
+      <TouchableWithoutFeedback style={styles.row} onPress={jumpTo}>
       <Video source={vLink}                      // Can be a URL or a local file. 
          ref={(ref) => { this.player = ref }}    // Store reference 
          rate={1.0}                              // 0 is paused, 1 is normal. 
@@ -91,6 +99,7 @@ class QuickieTemplate extends Component {
          onBuffer={this.onBuffer}                // Callback when remote video is buffering 
          onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata 
          style={styles.backgroundVideo} />
+      </TouchableWithoutFeedback>
     )
   }
 
@@ -103,12 +112,12 @@ class QuickieTemplate extends Component {
         <View style={styles.innerContainer}>
           <View style={styles.videoContainer}>
             <View style={styles.videoRow}>
-              {this._displayExerVid(vLink1)}
-              {this._displayExerVid(vLink2)}
+              {this._displayExerVid(vLink1, quickie.eId1)}
+              {this._displayExerVid(vLink2, quickie.eId2)}
             </View>
             <View style={styles.videoRow}>
-              {this._displayExerVid(vLink3)}
-              {this._displayExerVid(vLink4)}
+              {this._displayExerVid(vLink3, quickie.eId3)}
+              {this._displayExerVid(vLink4, quickie.eId4)}
             </View>
           </View>
           <ScrollView style={styles.infoContainer}>
