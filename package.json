@@ -11,7 +11,8 @@
 		"react-native": "0.53.0",
 		"react-native-deprecated-custom-components": "^0.1.1",
 		"react-native-video": "^2.0.0",
-		"react-native-video-controls": "^2.1.0"
+		"react-native-video-controls": "^2.1.0",
+		"react-navigation": "^1.5.1"
 	},
 	"devDependencies": {
 		"babel-jest": "19.0.0",

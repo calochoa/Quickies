@@ -12,9 +12,9 @@ class Home extends Component {
   state = {
     header: {title: 'Home'},
     section1: {title: 'Quickies'},
-    section2: {title: 'Workouts'},
-    section3: {title: 'Exercises'},
-    section4: {title: 'Quickie of the Day'},
+    section2: {title: 'Quickie of the Day'},
+    section3: {title: 'Workouts'},
+    section4: {title: 'Exercises'},
     section5: {title: 'Videos'},
     section6: {title: 'FAQ'},
   }

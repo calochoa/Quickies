@@ -8,6 +8,7 @@ import Home from './Home';
 import QuickiesView from './QuickiesView';
 import QuickiesTemplate from './QuickiesTemplate';
 import QuickieTemplate from './QuickieTemplate';
+import WorkoutTypesView from './WorkoutTypesView';
 import WorkoutsView from './WorkoutsView';
 import WorkoutsTemplate from './WorkoutsTemplate';
 import ExercisesView from './ExercisesView';
@@ -32,7 +33,9 @@ class HomeNavigation extends Component {
       case 'QuickieTemplate':
         return (<QuickieTemplate navigator={navigator} qId={route.qId} />);
       case 'Workouts':
-        return (<WorkoutsView navigator={navigator} headerTitle={route.id} />);
+        return (<WorkoutTypesView navigator={navigator} headerTitle={route.id} />);
+      case 'WorkoutsView':
+        return (<WorkoutsView navigator={navigator} headerTitle={route.name} />);
       case 'WorkoutsTemplate':
         return (<WorkoutsTemplate navigator={navigator} headerTitle={route.name} />);
       case 'Exercises':

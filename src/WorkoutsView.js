@@ -11,14 +11,36 @@ import Header from './Header';
 import Footer from './Footer';
 import Workouts from './dbstore/Workouts.json';
 import Quickies from './dbstore/Quickies.json';
+import WorkoutTypes from './dbstore/WorkoutTypes.json';
 
 const { object } = PropTypes;
 const QuickiesMap = new Map();
 Quickies.map(element => {
   QuickiesMap.set(element.qId, element.qName);
 });
+const WorkoutTypesMap = new Map();
+WorkoutTypes.map(element => {
+  WorkoutTypesMap.set(element.wtName, element.wtId);
+})
 
 class WorkoutsView extends Component {
+  constructor(props) {
+    super(props);
+
+    let filteredData = []
+    let workoutTypeId = WorkoutTypesMap.get(this.props.headerTitle)
+    Workouts.map(element => {
+      if (element.wtId === workoutTypeId) {
+        filteredData.push(element);
+      }
+    });
+
+    this.state = {
+      filteredData : filteredData,
+      headerTitle: this.props.headerTitle + ' Workouts (' + filteredData.length + ')',
+    };
+  }
+
   static propTypes = {
     navigator: object,
   }
@@ -75,14 +97,14 @@ class WorkoutsView extends Component {
   }
 
   render() {
-    const { headerTitle } = this.props;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
           <ScrollView>
-            {Workouts.map((workout) => this._renderRow(workout))}
+            {filteredData.map((workout) => this._renderRow(workout))}
           </ScrollView>
         </View>
         <Footer navigator={this.props.navigator} />

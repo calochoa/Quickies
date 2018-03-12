@@ -1,0 +1,27 @@
+[
+  {
+    "wtId": "wt0001",
+    "wtName": "Beginner",
+    "order": 1,
+  },
+  {
+  	"wtId": "wt0002",
+  	"wtName": "Intermediate",
+    "order": 2,
+  },
+  {
+  	"wtId": "wt0003",
+  	"wtName": "Advanced",
+    "order": 3,
+  },
+  {
+  	"wtId": "wt0004",
+  	"wtName": "Expert",
+    "order": 4,
+  },
+  {
+  	"wtId": "wt0005",
+  	"wtName": "Master",
+    "order": 5,
+  },
+]
