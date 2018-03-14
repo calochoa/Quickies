@@ -3,19 +3,14 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
-  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 import Header from './Header';
-import Footer from './Footer';
 import FaqInfo from './dbstore/Faq.json';
 
 class FAQ extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     let sortedData = []
     sortedData = FaqInfo.sort((a,b) => {
@@ -29,20 +24,18 @@ class FAQ extends Component {
     });
 
     this.state = {
-      dataSource: ds.cloneWithRows(sortedData),
+      dataSource: sortedData,
       headerTitle: this.props.headerTitle,
     };
-
-    this.renderRow = this.renderRow.bind(this);
   }
 
   renderRow(faq) {
     return (
-      <View style={styles.faqRow}>
+      <View style={styles.faqRow} key={faq.order}>
         <Text style={styles.question}>{faq.question}</Text>
         <View style={styles.infoContainer}>
           <Text style={styles.answer}>{faq.answer}</Text>
-      </View>
+        </View>
       </View>
     );
   }
@@ -54,11 +47,10 @@ class FAQ extends Component {
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow.bind(this)} />
+          <ScrollView>
+            {dataSource.map((faq) => this.renderRow(faq))}
+          </ScrollView>
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
@@ -79,7 +71,7 @@ const styles = StyleSheet.create({
     padding: 5,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 10,
+    marginTop: 15,
     borderColor: '#4072b8',
   },
   question: {

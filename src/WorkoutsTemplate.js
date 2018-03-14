@@ -11,11 +11,16 @@ import Footer from './Footer';
 import Workouts from './dbstore/Workouts.json';
 import Quickies from './dbstore/Quickies.json';
 import Exercises from './dbstore/Exercises.json';
+import WorkoutTypes from './dbstore/WorkoutTypes.json';
 
 const ExerciseMap = new Map();
 Exercises.map(element => {
   ExerciseMap.set(element.eId, element.eName);
 });
+const WorkoutTypesMap = new Map();
+WorkoutTypes.map(element => {
+  WorkoutTypesMap.set(element.wtId, element.wtName);
+})
 
 class WorkoutsTemplate extends Component {
   constructor(props) {
@@ -25,9 +30,11 @@ class WorkoutsTemplate extends Component {
     });
 
     let workoutQuickies = [];
+    let wtId = ''
     Workouts.map(element => {
-      if (element.wName === this.props.headerTitle) {
+      if (element.wId === this.props.wId) {
         workoutQuickies = element.qIds;
+        wtId = element.wtId;
       }
     });
 
@@ -41,6 +48,7 @@ class WorkoutsTemplate extends Component {
 
     this.state = {
       dataSource: ds.cloneWithRows(filteredData),
+      headerTitle: WorkoutTypesMap.get(wtId) + ' ' + this.props.headerTitle,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -74,8 +82,7 @@ class WorkoutsTemplate extends Component {
   }
 
   render() {
-    const { headerTitle } = this.props;
-    const { dataSource } = this.state;
+    const { dataSource, headerTitle } = this.state;
 
     return (
       <View style={styles.container}>

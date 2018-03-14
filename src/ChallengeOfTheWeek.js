@@ -20,7 +20,7 @@ QuickieOfTheDayTypes.map(element => {
   QuickieOfTheDayTypesMap.set(element.qotdId, element.qotdName.toUpperCase());
 })
 
-class QuickieOfTheDay extends Component {
+class ChallengeOfTheWeek extends Component {
   constructor(props) {
     super(props);
     var ds = new ListView.DataSource({
@@ -156,4 +156,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default QuickieOfTheDay;
+export default ChallengeOfTheWeek;

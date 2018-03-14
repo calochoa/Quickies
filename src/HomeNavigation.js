@@ -18,6 +18,8 @@ import VideosView from './VideosView';
 import VideosTemplate from './VideosTemplate';
 import Video from './Video'
 import QuickieOfTheDay from './QuickieOfTheDay';
+import WorkoutOfTheDay from './WorkoutOfTheDay';
+import ChallengeOfTheWeek from './ChallengeOfTheWeek';
 import FAQ from './Faq';
 
 class HomeNavigation extends Component {
@@ -37,7 +39,7 @@ class HomeNavigation extends Component {
       case 'WorkoutsView':
         return (<WorkoutsView navigator={navigator} headerTitle={route.name} />);
       case 'WorkoutsTemplate':
-        return (<WorkoutsTemplate navigator={navigator} headerTitle={route.name} />);
+        return (<WorkoutsTemplate navigator={navigator} headerTitle={route.name} wId={route.wId} />);
       case 'Exercises':
         return (<ExercisesView navigator={navigator} headerTitle={route.id} />);
       case 'ExercisesTemplate':
@@ -52,6 +54,10 @@ class HomeNavigation extends Component {
         return (<Video navigator={navigator} ytId={route.ytId} />);
       case 'Quickie of the Day':
         return (<QuickieOfTheDay navigator={navigator} headerTitle={route.id} />);
+      case 'Workout of the Day':
+        return (<WorkoutOfTheDay navigator={navigator} headerTitle={route.id} />);
+      case 'Challenge of the Week':
+        return (<ChallengeOfTheWeek navigator={navigator} headerTitle={route.id} />);
       case 'FAQ':
         return (<FAQ navigator={navigator} headerTitle={route.id} />);
       default:

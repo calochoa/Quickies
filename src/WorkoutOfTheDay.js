@@ -1,48 +1,52 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   StyleSheet, 
   View, 
   Text, 
-  TouchableHighlight, 
-  ScrollView, 
+  ScrollView,
+  TouchableHighlight,
 } from 'react-native';
 import Header from './Header';
-import Footer from './Footer';
-import Workouts from './dbstore/Workouts.json';
 import Quickies from './dbstore/Quickies.json';
-import WorkoutTypes from './dbstore/WorkoutTypes.json';
+import Workouts from './dbstore/Workouts.json';
+import WorkoutOfTheDayTypes from './dbstore/WorkoutOfTheDayTypes.json';
 
-const { object } = PropTypes;
 const QuickiesMap = new Map();
 Quickies.map(element => {
   QuickiesMap.set(element.qId, element.qName);
 });
-const WorkoutTypesMap = new Map();
-WorkoutTypes.map(element => {
-  WorkoutTypesMap.set(element.wtName, element.wtId);
+const WorkoutOfTheDayTypesMap = new Map();
+WorkoutOfTheDayTypes.map(element => {
+  WorkoutOfTheDayTypesMap.set(element.wotdId, element.wotdName.toUpperCase());
 })
 
-class WorkoutsView extends Component {
+class WorkoutOfTheDay extends Component {
   constructor(props) {
     super(props);
 
+    var date = new Date();
+    var dayOfTheWeek = date.getDay();
+
     let filteredData = []
-    let workoutTypeId = WorkoutTypesMap.get(this.props.headerTitle)
     Workouts.map(element => {
-      if (element.wtId === workoutTypeId) {
+      if (('wotdId' in element) && (dayOfTheWeek == element.wotdOrder)) {
         filteredData.push(element);
       }
     });
+    filteredData = filteredData.sort((a,b) => {
+        if (a.wotdId < b.wotdId) {
+          return -1;
+        }
+        if (a.wotdId > b.wotdId) {
+          return 1;
+        }
+        return 0;
+      });
 
     this.state = {
-      filteredData : filteredData,
-      headerTitle: this.props.headerTitle + ' Workouts (' + filteredData.length + ')',
+      filteredData: filteredData,
+      headerTitle: this.props.headerTitle,
     };
-  }
-
-  static propTypes = {
-    navigator: object,
   }
 
   _getLeftQuickies(quickies) {
@@ -89,9 +93,11 @@ class WorkoutsView extends Component {
         style={styles.button} 
         key={workout.wId}
       >
-        <View style={styles.row}>
-          <Text style={styles.title}>{workout.wName}</Text>
-          {this._getInfo(workout.qIds)}
+        <View style={styles.workoutRow}>
+          <Text style={styles.wotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
+          <View style={styles.row}>
+            {this._getInfo(workout.qIds)}
+          </View>
         </View>
       </TouchableHighlight>
     );
@@ -108,7 +114,6 @@ class WorkoutsView extends Component {
             {filteredData.map((workout) => this._renderRow(workout))}
           </ScrollView>
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
@@ -117,37 +122,43 @@ class WorkoutsView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#F5FCFF',
   },
   innerContainer: {
     flex: 1,
-    justifyContent: 'space-around',
   },
   button: {
     flex: 1,
     alignItems: 'center', 
-    justifyContent: 'center', 
     backgroundColor: '#0276c9',
-    padding: 10,
-    margin: 10,
+    padding: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
     borderRadius: 15, 
     borderColor: '#4072b8',
   },
-  row: {
+  workoutRow: {
     flex: 1,
     alignItems: 'center', 
-  }, 
-  title: {
+  },
+  wotdType: {
+    fontSize: 24,    
     color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingBottom: 10,
+    marginBottom: 5,
     fontFamily: 'Cochin',
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+  },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center', 
   },
   infoContainer: {
     flex: 1,
     flexDirection: 'row',
+    marginLeft: 10,
   },
   quickiesContainer: {
     flex: 2,
@@ -159,4 +170,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WorkoutsView;
+export default WorkoutOfTheDay;

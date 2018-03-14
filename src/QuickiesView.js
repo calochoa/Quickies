@@ -7,7 +7,6 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import Header from './Header';
-import Footer from './Footer';
 import QuickieTypes from './dbstore/QuickieTypes.json';
 
 const { object } = PropTypes;
@@ -69,7 +68,6 @@ class QuickiesView extends Component {
         <View style={styles.innerContainer}>
           {sectionTitles.map((sectionTitle) => this.renderRow(sectionTitle))}
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }

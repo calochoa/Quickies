@@ -13,10 +13,12 @@ class Home extends Component {
     header: {title: 'Home'},
     section1: {title: 'Quickies'},
     section2: {title: 'Quickie of the Day'},
-    section3: {title: 'Workouts'},
-    section4: {title: 'Exercises'},
-    section5: {title: 'Videos'},
-    section6: {title: 'FAQ'},
+    section3: {title: 'Workout of the Day'},
+    section4: {title: 'Challenge of the Week'},
+    section5: {title: 'Workouts'},
+    section6: {title: 'Exercises'},
+    section7: {title: 'FAQ'},
+    //section10: {title: 'Videos'},
   }
 
   _onSelectSection(section) {
@@ -38,7 +40,7 @@ class Home extends Component {
 
   render() {
     const {
-      header, section1, section2, section3, section4, section5, section6
+      header, section1, section2, section3, section4, section5, section6, section7
     } = this.state;
 
     return (
@@ -51,8 +53,8 @@ class Home extends Component {
           {this.renderRow(section4, 4)}
           {this.renderRow(section5, 5)}
           {this.renderRow(section6, 6)}
+          {this.renderRow(section7, 7)}
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
