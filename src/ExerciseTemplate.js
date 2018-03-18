@@ -5,6 +5,7 @@ import {
   Text, 
   ListView,
   WebView,
+  Dimensions,
 } from 'react-native';
 import Video from 'react-native-video';
 //import VideoPlayer from 'react-native-video-controls';
@@ -73,25 +74,26 @@ class ExerciseTemplate extends Component {
              onError={this.videoError}               // Callback when video cannot be loaded 
              onBuffer={this.onBuffer}                // Callback when remote video is buffering 
              onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata 
-             style={styles.backgroundVideo} />
+             style={styles.backgroundVideo} 
+          />
           <View style={styles.infoContainer}>
             <View style={styles.subInfoContainer}>
               <Text style={styles.header}>Exercise Type: </Text>
               {exercise.eTypes.map((exerciseType) => this._displayExerciseType(exerciseType))}
             </View>
-            {/* TODO: add description
             <View style={styles.subInfoContainer}>
               <Text style={styles.header}>Description: </Text>
               <Text style={styles.info}>{exercise.description}</Text>
             </View>
-            */}
           </View>
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
 }
+
+const win = Dimensions.get('window');
+const ratio = win.width/360; //360 is actual width of video
 
 const styles = StyleSheet.create({
   container: {
@@ -99,14 +101,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   innerContainer: {
-    flex: 3,
+    flex: 1,
   },
   backgroundVideo: {
-    flex: 3,
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+    width: win.width,
+    height: 360 * ratio, //360 is actual height of video
   },
   infoContainer: {
     flex: 1,
