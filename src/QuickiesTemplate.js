@@ -4,8 +4,10 @@ import {
   View, 
   Text, 
   ListView,
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
+import CheckBox from 'react-native-checkbox';
 import Header from './Header';
 import Footer from './Footer';
 import Quickies from './dbstore/Quickies.json';
@@ -70,19 +72,34 @@ class QuickiesTemplate extends Component {
     };
 
     return (
-      <TouchableHighlight style={styles.button} onPress={jumpTo}>
+      <View style={styles.button}>
         <View style={styles.row}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>{quickie.qName}</Text>
+          <View style={styles.doneContainer}>
+            {/*
+            <Text style={styles.done}>Done?</Text>
+            <CheckBox
+              label=''
+              onClick={()=>this.onClick(quickie)}
+              isChecked={quickie.checked}
+              checkBoxColor={{color:'#fff'}}
+            />
+            */}
           </View>
           <View style={styles.infoContainer}>
+            <Text style={styles.name}>{quickie.qName}</Text>
             <Text style={styles.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
             <Text style={styles.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
             <Text style={styles.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
             <Text style={styles.info}>{quickie.reps4} {ExerciseMap.get(quickie.eId4)}</Text>
           </View>
+          <TouchableOpacity 
+            style={styles.nextLevelContainer} 
+            onPress={jumpTo}
+          >
+            <Image source={require('./images/icons8-forward-25-white.png')} />
+          </TouchableOpacity>
         </View>
-      </TouchableHighlight>
+      </View>
     );
   }
 
@@ -97,7 +114,6 @@ class QuickiesTemplate extends Component {
             dataSource={dataSource}
             renderRow={this.renderRow.bind(this)} />
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
@@ -127,12 +143,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center', 
   },
-  nameContainer: {
-    flex: 1,
+  doneContainer: {
+    flex: 2,
   },
   infoContainer: {
-    flex: 2,
+    flex: 8,
     marginLeft: 10,
+  },
+  nextLevelContainer: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  done: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontFamily: 'Cochin',
   },
   name: {
     color: '#fff',
@@ -145,6 +172,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 17,
     fontFamily: 'Cochin',
+  },
+  checkBoxColor: {
+    color: '#fff',
   },
 });
 

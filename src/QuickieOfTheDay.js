@@ -4,7 +4,8 @@ import {
   View, 
   Text, 
   ListView,
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import Quickies from './dbstore/Quickies.json';
@@ -63,7 +64,7 @@ class QuickieOfTheDay extends Component {
     };
 
     return (
-      <TouchableHighlight style={styles.button} onPress={jumpTo}>
+      <View style={styles.button}>
         <View style={styles.quickieRow}>
           <Text style={styles.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
           <View style={styles.row}>
@@ -76,9 +77,15 @@ class QuickieOfTheDay extends Component {
               <Text style={styles.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
               <Text style={styles.info}>{quickie.reps4} {ExerciseMap.get(quickie.eId4)}</Text>
             </View>
+            <TouchableOpacity 
+              style={styles.nextLevelContainer} 
+              onPress={jumpTo}
+            >
+              <Image source={require('./images/icons8-forward-25-white.png')} />
+            </TouchableOpacity>
           </View>
         </View>
-      </TouchableHighlight>
+      </View>
     );
   }
 
@@ -136,10 +143,14 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
   },
   nameContainer: {
-    flex: 1,
+    flex: 3,
   },
   infoContainer: {
-    flex: 2,
+    flex: 6,
+    marginLeft: 10,
+  },
+  nextLevelContainer: {
+    flex: 1,
     marginLeft: 10,
   },
   name: {

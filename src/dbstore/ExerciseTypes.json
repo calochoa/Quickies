@@ -7,26 +7,31 @@
   {
   	"etId": "et0001",
   	"etName": "Core",
-    "order": 2,
+    "order": 3,
   },
   {
   	"etId": "et0002",
   	"etName": "Lower Body",
-    "order": 3,
+    "order": 4,
   },
   {
   	"etId": "et0003",
   	"etName": "Upper Body",
-    "order": 4,
+    "order": 5,
   },
   {
   	"etId": "et0004",
   	"etName": "Total Body",
-    "order": 5,
+    "order": 6,
   },
   {
   	"etId": "et0005",
   	"etName": "Bar",
-    "order": 6,
+    "order": 7,
+  },
+  {
+    "etId": "et0006",
+    "etName": "Stretching",
+    "order": 2,
   },
 ]

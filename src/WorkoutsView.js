@@ -4,8 +4,9 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  TouchableHighlight, 
   ScrollView, 
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import Footer from './Footer';
@@ -84,16 +85,24 @@ class WorkoutsView extends Component {
 
   _renderRow(workout) {
     return (
-      <TouchableHighlight
-        onPress={() => this._onSelectSection(workout)}
-        style={styles.button} 
-        key={workout.wId}
-      >
+      <View style={styles.button} key={workout.wId}>
+        <Text style={styles.title}>{workout.wName}</Text>
         <View style={styles.row}>
-          <Text style={styles.title}>{workout.wName}</Text>
+          <TouchableOpacity 
+            style={styles.nextLevelContainer}
+            onPress={() => this._onSelectSection(workout)}
+          >
+            <Image source={require('./images/icons8-info-26.png')} />
+          </TouchableOpacity>
           {this._getInfo(workout.qIds)}
+          <TouchableOpacity 
+            style={styles.nextLevelContainer}
+            onPress={() => this._onSelectSection(workout)}
+          >
+            <Image source={require('./images/icons8-forward-25-white.png')} />
+          </TouchableOpacity>
         </View>
-      </TouchableHighlight>
+      </View>
     );
   }
 
@@ -108,7 +117,6 @@ class WorkoutsView extends Component {
             {filteredData.map((workout) => this._renderRow(workout))}
           </ScrollView>
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
@@ -135,6 +143,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center', 
   }, 
   title: {
@@ -146,9 +155,14 @@ const styles = StyleSheet.create({
     fontFamily: 'Cochin',
   },
   infoContainer: {
-    flex: 1,
+    flex: 8,
     flexDirection: 'row',
+    marginLeft: 10,
   },
+  nextLevelContainer: {
+    flex: 1,
+    marginLeft: 10,
+  },  
   quickiesContainer: {
     flex: 2,
   },

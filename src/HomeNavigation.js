@@ -56,7 +56,7 @@ class HomeNavigation extends Component {
         return (<QuickieOfTheDay navigator={navigator} headerTitle={route.id} />);
       case 'Workout of the Day':
         return (<WorkoutOfTheDay navigator={navigator} headerTitle={route.id} />);
-      case 'Challenge of the Week':
+      case 'Weekly Challenge':
         return (<ChallengeOfTheWeek navigator={navigator} headerTitle={route.id} />);
       case 'FAQ':
         return (<FAQ navigator={navigator} headerTitle={route.id} />);

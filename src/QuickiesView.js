@@ -4,7 +4,8 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import QuickieTypes from './dbstore/QuickieTypes.json';
@@ -48,13 +49,23 @@ class QuickiesView extends Component {
 
   renderRow(sectionTitle) {
     return (
-      <TouchableHighlight
-        onPress={() => this._onSelectSection(sectionTitle)}
-        style={styles.row}
-        key={sectionTitle}
-      >
-        <Text style={styles.title}>{sectionTitle}</Text>
-      </TouchableHighlight>
+      <View style={styles.row} key={sectionTitle}>
+        <TouchableOpacity 
+          style={styles.nextLevelContainer} 
+          onPress={() => this._onSelectSection(sectionTitle)}
+        >
+          <Image source={require('./images/icons8-info-26.png')} />
+        </TouchableOpacity>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{sectionTitle}</Text>
+        </View>
+        <TouchableOpacity 
+          style={styles.nextLevelContainer} 
+          onPress={() => this._onSelectSection(sectionTitle)}
+        >
+          <Image source={require('./images/icons8-forward-25-white.png')} />
+        </TouchableOpacity>
+      </View>
     );
   }
 
@@ -82,7 +93,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
   },
+  titleContainer: {
+    flex: 8,
+  },
+  nextLevelContainer: {
+    flex: 1,
+  },
   row: {
+    flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center', 
     backgroundColor: '#0276c9',

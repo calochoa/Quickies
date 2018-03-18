@@ -3,7 +3,8 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import Footer from './Footer';
@@ -14,7 +15,7 @@ class Home extends Component {
     section1: {title: 'Quickies'},
     section2: {title: 'Quickie of the Day'},
     section3: {title: 'Workout of the Day'},
-    section4: {title: 'Challenge of the Week'},
+    section4: {title: 'Weekly Challenge'},
     section5: {title: 'Workouts'},
     section6: {title: 'Exercises'},
     section7: {title: 'FAQ'},
@@ -29,12 +30,16 @@ class Home extends Component {
 
   renderRow(section, index) {
     return (
-      <TouchableHighlight
-        onPress={() => this._onSelectSection(section)}
-        style={styles.row} key={index}
-      >
-        <Text style={styles.title}>{section.title}</Text>
-      </TouchableHighlight>
+      <View style={styles.row} key={index}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{section.title}</Text>
+        </View>
+        <View style={styles.nextLevelContainer}>
+          <TouchableOpacity onPress={() => this._onSelectSection(section)} >
+            <Image source={require('./images/icons8-forward-25-white.png')} />
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 
@@ -69,18 +74,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
   },
+  titleContainer: {
+    flex: 8,
+  },
+  nextLevelContainer: {
+    flex: 1,
+  },
   row: {
+    flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center', 
     backgroundColor: '#0276c9',
     padding: 10,
     marginLeft: 30,
     marginRight: 30,
-    borderRadius: 15,
+    borderRadius: 15, 
     borderColor: '#4072b8',
   },
   title: {
-    color: '#f1f1f1',
+    color: '#fff',
     fontSize: 30,
     textAlign: 'center',
     fontFamily: 'Cochin',

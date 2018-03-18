@@ -4,7 +4,8 @@ import {
   View, 
   Text, 
   ScrollView,
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import Quickies from './dbstore/Quickies.json';
@@ -88,18 +89,20 @@ class WorkoutOfTheDay extends Component {
 
   _renderRow(workout) {
     return (
-      <TouchableHighlight
-        onPress={() => this._onSelectSection(workout)}
-        style={styles.button} 
-        key={workout.wId}
-      >
-        <View style={styles.workoutRow}>
-          <Text style={styles.wotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
-          <View style={styles.row}>
+      <View style={styles.button} key={workout.wId}>
+        <Text style={styles.wotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
+        <View style={styles.row}>
+          <View style={styles.workoutRow}>
             {this._getInfo(workout.qIds)}
           </View>
+          <TouchableOpacity 
+            style={styles.nextLevelContainer}
+            onPress={() => this._onSelectSection(workout)} 
+          >
+            <Image source={require('./images/icons8-forward-25-white.png')} />
+          </TouchableOpacity>
         </View>
-      </TouchableHighlight>
+      </View>
     );
   }
 
@@ -139,7 +142,7 @@ const styles = StyleSheet.create({
     borderColor: '#4072b8',
   },
   workoutRow: {
-    flex: 1,
+    flex: 8,
     alignItems: 'center', 
   },
   wotdType: {
@@ -160,6 +163,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginLeft: 10,
   },
+  nextLevelContainer: {
+    flex: 1,
+    marginLeft: 10,
+  },  
   quickiesContainer: {
     flex: 2,
   },

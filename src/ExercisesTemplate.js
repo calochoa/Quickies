@@ -4,7 +4,8 @@ import {
   View, 
   Text, 
   ListView,
-  TouchableHighlight,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Header from './Header';
 import Footer from './Footer';
@@ -61,13 +62,17 @@ class ExercisesTemplate extends Component {
     };
 
     return (
-      <TouchableHighlight style={styles.row} onPress={jumpTo}>
+      <View style={styles.row} >
         <View style={styles.nameContainer}>
-          <Text style={styles.name}>
-            {exercise.eName}
-          </Text>
+          <Text style={styles.name}>{exercise.eName}</Text>
         </View>
-      </TouchableHighlight>
+        <TouchableOpacity 
+          style={styles.nextLevelContainer}
+          onPress={jumpTo}
+        >
+          <Image source={require('./images/icons8-forward-25-white.png')} />
+        </TouchableOpacity>
+      </View>
     );
   }
 
@@ -82,7 +87,6 @@ class ExercisesTemplate extends Component {
             dataSource={dataSource}
             renderRow={this.renderRow.bind(this)} />
         </View>
-        <Footer navigator={this.props.navigator} />
       </View>
     );
   }
@@ -109,6 +113,9 @@ const styles = StyleSheet.create({
     borderColor: '#4072b8',
   },
   nameContainer: {
+    flex: 10,
+  },
+  nextLevelContainer: {
     flex: 1,
   },
   name: {
