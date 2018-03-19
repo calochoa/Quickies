@@ -3,7 +3,6 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
   Image,
   TouchableWithoutFeedback,
   ScrollView,

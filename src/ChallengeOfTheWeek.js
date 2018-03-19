@@ -3,7 +3,7 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
+  ScrollView,
   TouchableHighlight,
 } from 'react-native';
 import Header from './Header';
@@ -23,9 +23,6 @@ QuickieOfTheDayTypes.map(element => {
 class ChallengeOfTheWeek extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     var date = new Date();
     var dayOfTheWeek = date.getDay();
@@ -47,8 +44,8 @@ class ChallengeOfTheWeek extends Component {
       });
 
     this.state = {
-      dataSource: ds.cloneWithRows(filteredData),
       headerTitle: this.props.headerTitle,
+      filteredData: filteredData,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -63,7 +60,7 @@ class ChallengeOfTheWeek extends Component {
     };
 
     return (
-      <TouchableHighlight style={styles.button} onPress={jumpTo}>
+      <TouchableHighlight style={styles.button} onPress={jumpTo} key={quickie.qId}>
         <View style={styles.quickieRow}>
           <Text style={styles.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
           <View style={styles.row}>
@@ -83,16 +80,15 @@ class ChallengeOfTheWeek extends Component {
   }
 
   render() {
-    const { headerTitle, dataSource } = this.state;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow.bind(this)} 
-          />
+          <ScrollView>
+            {filteredData.map((quickie) => this.renderRow(quickie))}
+          </ScrollView>
         </View>
       </View>
     );

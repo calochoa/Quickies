@@ -3,7 +3,7 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
+  ScrollView,
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -24,9 +24,6 @@ QuickieOfTheDayTypes.map(element => {
 class QuickieOfTheDay extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     var date = new Date();
     var dayOfTheWeek = date.getDay();
@@ -48,8 +45,8 @@ class QuickieOfTheDay extends Component {
       });
 
     this.state = {
-      dataSource: ds.cloneWithRows(filteredData),
       headerTitle: this.props.headerTitle,
+      filteredData: filteredData,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -79,7 +76,7 @@ class QuickieOfTheDay extends Component {
     };
 
     return (
-      <View style={styles.button}>
+      <View style={styles.button} key={quickie.qId}>
         <View style={styles.quickieRow}>
           <Text style={styles.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
           <Text style={styles.name}>{quickie.qName}</Text>
@@ -106,16 +103,15 @@ class QuickieOfTheDay extends Component {
   }
 
   render() {
-    const { headerTitle, dataSource } = this.state;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow.bind(this)} 
-          />
+          <ScrollView>
+            {filteredData.map((quickie) => this.renderRow(quickie))}
+          </ScrollView>
         </View>
       </View>
     );

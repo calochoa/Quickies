@@ -3,7 +3,7 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
+  ScrollView, 
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -26,9 +26,6 @@ WorkoutTypes.map(element => {
 class WorkoutsTemplate extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     let workoutQuickies = [];
     let wtId = ''
@@ -48,8 +45,8 @@ class WorkoutsTemplate extends Component {
     });
 
     this.state = {
-      dataSource: ds.cloneWithRows(filteredData),
       headerTitle: WorkoutTypesMap.get(wtId) + ' ' + this.props.headerTitle,
+      filteredData: filteredData,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -79,7 +76,7 @@ class WorkoutsTemplate extends Component {
     };
 
     return (
-      <View style={styles.button}>
+      <View style={styles.button} key={quickie.qId}>
         <Text style={styles.name}>{quickie.qName}</Text>
         <View style={styles.row}>
           <View style={styles.difficultyContainer}>
@@ -103,15 +100,15 @@ class WorkoutsTemplate extends Component {
   }
 
   render() {
-    const { dataSource, headerTitle } = this.state;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow} />
+          <ScrollView>
+            {filteredData.map((quickie) => this.renderRow(quickie))}
+          </ScrollView>
         </View>
       </View>
     );

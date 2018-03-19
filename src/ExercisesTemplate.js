@@ -3,7 +3,7 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
+  ScrollView,
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -20,9 +20,6 @@ ExerciseTypes.map(element => {
 class ExercisesTemplate extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     let filteredData = []
     let exerciseTypeId = ExerciseTypesMap.get(this.props.headerTitle)
@@ -48,8 +45,8 @@ class ExercisesTemplate extends Component {
     });
 
     this.state = {
-      dataSource: ds.cloneWithRows(filteredData),
       headerTitle: this.props.headerTitle + ' Exercises (' + filteredData.length + ')',
+      filteredData: filteredData, 
     };
   }
 
@@ -62,7 +59,7 @@ class ExercisesTemplate extends Component {
     };
 
     return (
-      <View style={styles.row} >
+      <View style={styles.row} key={exercise.eId}>
         <View style={styles.nameContainer}>
           <Text style={styles.name}>{exercise.eName}</Text>
         </View>
@@ -77,15 +74,15 @@ class ExercisesTemplate extends Component {
   }
 
   render() {
-    const { headerTitle, dataSource } = this.state;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow.bind(this)} />
+          <ScrollView>
+            {filteredData.map((exercise) => this.renderRow(exercise))}
+          </ScrollView>
         </View>
       </View>
     );

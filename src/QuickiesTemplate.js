@@ -3,7 +3,7 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
+  ScrollView,
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -30,9 +30,6 @@ Videos.map(element => {
 class QuickiesTemplate extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
 
     let filteredData = []
     if (this.props.headerTitle === 'All') {
@@ -70,8 +67,8 @@ class QuickiesTemplate extends Component {
     }
 
     this.state = {
-      dataSource: ds.cloneWithRows(filteredData),
       headerTitle: this.props.headerTitle + ' Quickies (' + filteredData.length + ')',
+      filteredData: filteredData,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -101,7 +98,7 @@ class QuickiesTemplate extends Component {
     };
 
     return (
-      <View style={styles.button}>
+      <View style={styles.button} key={quickie.qId}>
         <Text style={styles.name}>{quickie.qName}</Text>
         <View style={styles.row}>
           <View style={styles.difficultyContainer}>
@@ -125,15 +122,15 @@ class QuickiesTemplate extends Component {
   }
 
   render() {
-    const { headerTitle, dataSource } = this.state;
+    const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
         <Header headerTitle={headerTitle} />
         <View style={styles.innerContainer}>
-          <ListView 
-            dataSource={dataSource}
-            renderRow={this.renderRow.bind(this)} />
+          <ScrollView>
+            {filteredData.map((quickie) => this.renderRow(quickie))}
+          </ScrollView>
         </View>
       </View>
     );

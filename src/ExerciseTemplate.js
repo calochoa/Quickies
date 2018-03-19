@@ -3,12 +3,10 @@ import {
   StyleSheet, 
   View, 
   Text, 
-  ListView,
   WebView,
   Dimensions,
 } from 'react-native';
 import Video from 'react-native-video';
-//import VideoPlayer from 'react-native-video-controls';
 import Header from './Header';
 import Footer from './Footer';
 import ExerciseTypes from './dbstore/ExerciseTypes.json';
