@@ -55,6 +55,21 @@ class QuickieOfTheDay extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
 
+  getDifficultyImg = (quickie) => {
+    let totalImages = quickie.qDifficulty
+    let difficultyImg = []
+    let numImages = []
+    for (let i = 0; i < totalImages; i++) {
+      numImages.push(<Image style={styles.imgContainer} source={require('./images/icons8-speed-24.png')} key={i} />)
+      if ((i == 1 && totalImages < 6) || (i == 2 && totalImages == 6)) {
+        difficultyImg.push(<View style={styles.imgRowContainer} key='1'>{numImages}</View>)
+        numImages = []
+      }
+    }
+    difficultyImg.push(<View style={styles.imgRowContainer} key='2'>{numImages}</View>)
+    return difficultyImg
+  }
+
   renderRow(quickie) {
     let jumpTo = () => {
       this.props.navigator.push({
@@ -67,9 +82,10 @@ class QuickieOfTheDay extends Component {
       <View style={styles.button}>
         <View style={styles.quickieRow}>
           <Text style={styles.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
+          <Text style={styles.name}>{quickie.qName}</Text>
           <View style={styles.row}>
-            <View style={styles.nameContainer}>
-              <Text style={styles.name}>{quickie.qName}</Text>
+            <View style={styles.difficultyContainer}>
+              {this.getDifficultyImg(quickie)}
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
@@ -145,13 +161,23 @@ const styles = StyleSheet.create({
   nameContainer: {
     flex: 3,
   },
+  difficultyContainer: {
+    flex: 4,
+  },
+  imgRowContainer: {
+    flexDirection: 'row',
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
+  imgContainer: {
+    margin: 3,
+  },
   infoContainer: {
-    flex: 6,
-    marginLeft: 10,
+    width: 220,
   },
   nextLevelContainer: {
     flex: 1,
-    marginLeft: 10,
+    marginRight: 5,
   },
   name: {
     color: '#fff',
@@ -159,6 +185,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'Cochin',
+    marginBottom: 5,
   },
   info: {
     color: '#fff',

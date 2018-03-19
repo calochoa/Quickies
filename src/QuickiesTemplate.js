@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import CheckBox from 'react-native-checkbox';
 import Header from './Header';
 import Footer from './Footer';
 import Quickies from './dbstore/Quickies.json';
@@ -52,7 +51,22 @@ class QuickiesTemplate extends Component {
         if (element.qtId === quickieTypeId) {
           filteredData.push(element);
         }
-      });      
+      });
+      filteredData = filteredData.sort((a,b) => {
+        if (a.qDifficulty < b.qDifficulty) {
+          return -1;
+        }
+        if (a.qDifficulty > b.qDifficulty) {
+          return 1;
+        }
+        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
+          return -1;
+        }
+        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      });
     }
 
     this.state = {
@@ -61,6 +75,21 @@ class QuickiesTemplate extends Component {
     };
 
     this.renderRow = this.renderRow.bind(this);
+  }
+
+  getDifficultyImg = (quickie) => {
+    let totalImages = quickie.qDifficulty
+    let difficultyImg = []
+    let numImages = []
+    for (let i = 0; i < totalImages; i++) {
+      numImages.push(<Image style={styles.imgContainer} source={require('./images/icons8-speed-24.png')} key={i} />)
+      if ((i == 1 && totalImages < 6) || (i == 2 && totalImages == 6)) {
+        difficultyImg.push(<View style={styles.imgRowContainer} key='1'>{numImages}</View>)
+        numImages = []
+      }
+    }
+    difficultyImg.push(<View style={styles.imgRowContainer} key='2'>{numImages}</View>)
+    return difficultyImg
   }
 
   renderRow(quickie) {
@@ -73,20 +102,12 @@ class QuickiesTemplate extends Component {
 
     return (
       <View style={styles.button}>
+        <Text style={styles.name}>{quickie.qName}</Text>
         <View style={styles.row}>
-          <View style={styles.doneContainer}>
-            {/*
-            <Text style={styles.done}>Done?</Text>
-            <CheckBox
-              label=''
-              onClick={()=>this.onClick(quickie)}
-              isChecked={quickie.checked}
-              checkBoxColor={{color:'#fff'}}
-            />
-            */}
+          <View style={styles.difficultyContainer}>
+            {this.getDifficultyImg(quickie)}
           </View>
           <View style={styles.infoContainer}>
-            <Text style={styles.name}>{quickie.qName}</Text>
             <Text style={styles.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
             <Text style={styles.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
             <Text style={styles.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
@@ -143,23 +164,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center', 
   },
-  doneContainer: {
-    flex: 2,
+  difficultyContainer: {
+    flex: 4,
+  },
+  imgRowContainer: {
+    flexDirection: 'row',
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
+  imgContainer: {
+    margin: 3,
   },
   infoContainer: {
-    flex: 8,
-    marginLeft: 10,
+    width: 220,
   },
   nextLevelContainer: {
     flex: 1,
-    marginLeft: 10,
-  },
-  done: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontFamily: 'Cochin',
+    marginRight: 5,
   },
   name: {
     color: '#fff',
@@ -167,14 +188,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'Cochin',
+    marginBottom: 5,
   },
   info: {
     color: '#fff',
     fontSize: 17,
     fontFamily: 'Cochin',
-  },
-  checkBoxColor: {
-    color: '#fff',
   },
 });
 
