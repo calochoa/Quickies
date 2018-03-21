@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import Header from './Header';
+import Header from './HeaderMain';
 import Footer from './Footer';
 
 class Home extends Component {

@@ -70,12 +70,12 @@ class QuickiesView extends Component {
   }
 
   render() {
-    const { headerTitle } = this.props;
+    const { headerTitle, navigator } = this.props;
     const { sectionTitles } = this.state;
 
     return (
       <View style={styles.container}>
-        <Header headerTitle={headerTitle} />
+        <Header headerTitle={headerTitle} navigator={navigator} />
         <View style={styles.innerContainer}>
           {sectionTitles.map((sectionTitle) => this.renderRow(sectionTitle))}
         </View>

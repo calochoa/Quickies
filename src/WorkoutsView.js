@@ -107,11 +107,12 @@ class WorkoutsView extends Component {
   }
 
   render() {
+    const { navigator } = this.props;
     const { headerTitle, filteredData } = this.state;
 
     return (
       <View style={styles.container}>
-        <Header headerTitle={headerTitle} />
+        <Header headerTitle={headerTitle} navigator={navigator} />
         <View style={styles.innerContainer}>
           <ScrollView>
             {filteredData.map((workout) => this._renderRow(workout))}

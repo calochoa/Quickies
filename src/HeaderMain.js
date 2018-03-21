@@ -14,12 +14,8 @@ class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity 
-          style={styles.nextLevelContainer} 
-          onPress={() => this.props.navigator.pop()}
-        >
-          <Image source={require('./images/icons8-backward-25-white.png')} />
-        </TouchableOpacity>
+        <View style={styles.nextLevelContainer}>
+        </View>
         <View style={styles.titleContainer}>
           <Text style={styles.headerTitle}>{this.props.headerTitle}</Text>
         </View>

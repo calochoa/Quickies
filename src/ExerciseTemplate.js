@@ -48,11 +48,12 @@ class ExerciseTemplate extends Component {
   }
 
   render() {
+    const { navigator } = this.props;
     const { exercise, vLink } = this.state;
 
     return (
       <View style={styles.container}>
-        <Header headerTitle={exercise.eName} />
+        <Header headerTitle={exercise.eName} navigator={navigator} />
         <View style={styles.innerContainer}>
           <Video source={vLink}                      // Can be a URL or a local file. 
              ref={(ref) => { this.player = ref }}    // Store reference 

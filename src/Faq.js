@@ -41,11 +41,12 @@ class FAQ extends Component {
   }
 
   render() {
+    const { navigator } = this.props;
     const { headerTitle, dataSource } = this.state;
 
     return (
       <View style={styles.container}>
-        <Header headerTitle={headerTitle} />
+        <Header headerTitle={headerTitle} navigator={navigator} />
         <View style={styles.innerContainer}>
           <ScrollView>
             {dataSource.map((faq) => this.renderRow(faq))}

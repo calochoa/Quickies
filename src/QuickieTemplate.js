@@ -105,11 +105,12 @@ class QuickieTemplate extends Component {
   }
 
   render() {
+    const { navigator } = this.props;
     const { quickie, vLink1, vLink2, vLink3, vLink4 } = this.state;
 
     return (
       <View style={styles.container}>
-        <Header headerTitle={quickie.qName} />
+        <Header headerTitle={quickie.qName} navigator={navigator} />
         <View style={styles.innerContainer}>
           <View style={styles.videoRow}>
             {this._displayExerVid(vLink1, quickie.eId1)}
