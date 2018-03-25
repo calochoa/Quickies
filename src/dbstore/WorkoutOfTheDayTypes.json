@@ -2,26 +2,26 @@
   {
     "wotdId": "wotd0001",
     "wotdName": "Beginner",
-    "order": 1,
+    "order": 1
   },
   {
   	"wotdId": "wotd0002",
   	"wotdName": "Intermediate",
-    "order": 2,
+    "order": 2
   },
   {
   	"wotdId": "wotd0003",
   	"wotdName": "Advanced",
-    "order": 3,
+    "order": 3
   },
   {
   	"wotdId": "wotd0004",
   	"wotdName": "Expert",
-    "order": 4,
+    "order": 4
   },
   {
   	"wotdId": "wotd0005",
   	"wotdName": "Master",
-    "order": 5,
-  },
+    "order": 5
+  }
 ]

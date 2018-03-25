@@ -21,14 +21,12 @@ class Header extends Component {
         </View>
         <View style={styles.nextLevelContainer}>
         </View>
-        {/*
         <TouchableOpacity 
           style={styles.nextLevelContainer} 
-          onPress={() => this.props.navigator.pop()}
+          onPress={() => this.props.navigator.openDrawer()}
         >
           <Image source={require('./images/icons8-menu-26.png')} />
         </TouchableOpacity>
-        */}
       </View>
     );
   }

@@ -2,26 +2,26 @@
   {
     "qotdId": "qotd0001",
     "qotdName": "Beginner",
-    "order": 1,
+    "order": 1
   },
   {
   	"qotdId": "qotd0002",
   	"qotdName": "Intermediate",
-    "order": 2,
+    "order": 2
   },
   {
   	"qotdId": "qotd0003",
   	"qotdName": "Advanced",
-    "order": 3,
+    "order": 3
   },
   {
   	"qotdId": "qotd0004",
   	"qotdName": "Expert",
-    "order": 4,
+    "order": 4
   },
   {
   	"qotdId": "qotd0005",
   	"qotdName": "Master",
-    "order": 5,
-  },
+    "order": 5
+  }
 ]
