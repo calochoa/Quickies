@@ -386,7 +386,7 @@
   },
   {
     "eId": "e000056",
-    "eName": "in out scissors",
+    "eName": "criss cross scissors",
     "vId": "v000056",
     "eTypes": ["et0001"],
     "description": "N/A"
@@ -414,7 +414,7 @@
   },
   {
     "eId": "e000060",
-    "eName": "hanging in out scissors",
+    "eName": "hanging criss cross scissors",
     "vId": "v000060",
     "eTypes": ["et0005", "et0001", "et0003"],
     "description": "N/A"
