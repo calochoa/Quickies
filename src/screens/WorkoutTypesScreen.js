@@ -12,7 +12,7 @@ import MainContainerStyle from '../style/MainContainerStyle';
 import MainRowStyle from '../style/MainRowStyle';
 
 
-class WorkoutTypesView extends Component {
+class WorkoutTypesScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
@@ -27,7 +27,7 @@ class WorkoutTypesView extends Component {
       drawerLabel: 'Workouts',
     };
   };
-  
+
   constructor(props) {
     super(props);
 
@@ -93,4 +93,4 @@ class WorkoutTypesView extends Component {
 }
 
 
-export default WorkoutTypesView;
+export default WorkoutTypesScreen;

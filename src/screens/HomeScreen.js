@@ -37,8 +37,8 @@ class HomeScreen extends React.Component {
   state = {
     section1: {title: 'Quickies', screen: 'QuickieTypes'},
     section2: {title: 'Quickie of the Day', screen: 'QuickieOfTheDay'},
-    section3: {title: 'Workout of the Day', screen: 'QuickieTypes'},
-    section4: {title: 'Weekly Challenge', screen: 'QuickieTypes'},
+    section3: {title: 'Workout of the Day', screen: 'WorkoutOfTheDay'},
+    section4: {title: 'Weekly Challenge', screen: 'WorkoutOfTheDay'},
     section5: {title: 'Workouts', screen: 'WorkoutTypes'},
     section6: {title: 'Exercises', screen: 'ExerciseTypes'},
     section7: {title: 'FAQ', screen: 'FAQ'},

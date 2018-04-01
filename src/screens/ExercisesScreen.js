@@ -19,6 +19,7 @@ ExerciseTypes.map(element => {
   ExerciseTypesMap.set(element.etName, element.etId);
 })
 
+
 class ExercisesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const QuickieOfTheDayRowStyle = StyleSheet.create({
+const OfTheDayRowStyle = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center', 
@@ -22,15 +22,7 @@ const QuickieOfTheDayRowStyle = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
-  difficultyRowContainer: {
-    flexDirection: 'row',
-    alignItems: 'center', 
-    justifyContent: 'center',
-  },
-  difficultyContainer: {
-    margin: 3,
-  },
 });
 
 
-export default QuickieOfTheDayRowStyle;
+export default OfTheDayRowStyle;

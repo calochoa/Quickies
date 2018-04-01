@@ -2,28 +2,42 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   View, 
-  ScrollView,
+  ScrollView, 
 } from 'react-native';
+import Workouts from '../dbstore/Workouts.json';
 import Quickies from '../dbstore/Quickies.json';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
+import WorkoutTypes from '../dbstore/WorkoutTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
 
 
-const QuickieTypesMap = new Map();
-QuickieTypes.map(element => {
-  QuickieTypesMap.set(element.qtName, element.qtId);
+const WorkoutTypesMap = new Map();
+WorkoutTypes.map(element => {
+  WorkoutTypesMap.set(element.wtId, element.wtName);
 })
 
 
-class QuickiesScreen extends Component {
+class WorkoutScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
+    let workoutName = 'Workout'
+    if (params) {
+      let wtId = ''
+      Workouts.map(element => {
+        if (element.wId === params.workoutId) {
+          workoutName = WorkoutTypesMap.get(element.wtId) + ' ' + params.workoutName
+          if (workoutName.length > 20) {
+            workoutName = workoutName.replace('Workout', 'WO')
+          }
+        }
+      });
+    }
+
     return {
-      title: params ? params.quickieType + ' Quickies' : 'Quickies',
+      title: workoutName,
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
@@ -37,40 +51,20 @@ class QuickiesScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let filteredData = []
-    if (params.quickieType === 'All') {
-      filteredData = Quickies.sort((a,b) => {
-        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-          return -1;
-        }
-        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      });
-    } else {
-      let quickieTypeId = QuickieTypesMap.get(params.quickieType)
-      Quickies.map(element => {
-        if (element.qtId === quickieTypeId) {
-          filteredData.push(element);
-        }
-      });
-      filteredData = filteredData.sort((a,b) => {
-        if (a.qDifficulty < b.qDifficulty) {
-          return -1;
-        }
-        if (a.qDifficulty > b.qDifficulty) {
-          return 1;
-        }
-        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-          return -1;
-        }
-        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      });
-    }
+    let workoutQuickies = [];
+    Workouts.map(element => {
+      if (element.wId === params.workoutId) {
+        workoutQuickies = element.qIds;
+      }
+    });
+
+    let filteredData = new Array(workoutQuickies.length);
+    Quickies.map(element => {
+      let index = workoutQuickies.indexOf(element.qId);
+      if (index != -1) {
+        filteredData[index] = element;
+      }
+    });
 
     this.state = {
       filteredData: filteredData,
@@ -101,4 +95,4 @@ class QuickiesScreen extends Component {
 }
 
 
-export default QuickiesScreen;
+export default WorkoutScreen;

@@ -9,6 +9,9 @@ import ExerciseTypesScreen from '../screens/ExerciseTypesScreen';
 import ExercisesScreen from '../screens/ExercisesScreen';
 import ExerciseScreen from '../screens/ExerciseScreen';
 import WorkoutTypesScreen from '../screens/WorkoutTypesScreen';
+import WorkoutsScreen from '../screens/WorkoutsScreen';
+import WorkoutScreen from '../screens/WorkoutScreen';
+import WorkoutOfTheDayScreen from '../screens/WorkoutOfTheDayScreen';
 import FaqScreen from '../screens/FaqScreen';
 
 import DetailsScreen from '../screens/DetailsScreen';
@@ -43,6 +46,15 @@ const MainStack = StackNavigator(
     },
     WorkoutTypes: {
       screen: WorkoutTypesScreen,
+    },
+    Workouts: {
+      screen: WorkoutsScreen,
+    },
+    Workout: {
+      screen: WorkoutScreen,
+    },
+    WorkoutOfTheDay: {
+      screen: WorkoutOfTheDayScreen,
     },
 
     FAQ: {
@@ -82,6 +94,9 @@ const RootStack = DrawerNavigator(
     },
     WorkoutTypes: {
       screen: WorkoutTypesScreen,
+    },
+    WorkoutOfTheDay: {
+      screen: WorkoutOfTheDayScreen,
     },
     ExerciseTypes: {
       screen: ExerciseTypesScreen,

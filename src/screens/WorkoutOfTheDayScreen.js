@@ -5,26 +5,26 @@ import {
   Text, 
   ScrollView,
 } from 'react-native';
-import Quickies from '../dbstore/Quickies.json';
-import QuickieOfTheDayTypes from '../dbstore/QuickieOfTheDayTypes.json';
+import Workouts from '../dbstore/Workouts.json';
+import WorkoutOfTheDayTypes from '../dbstore/WorkoutOfTheDayTypes.json';
 import MenuIcon from '../components/MenuIcon';
-import QuickieRow from '../components/QuickieRow';
+import WorkoutRow from '../components/WorkoutRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 
 
-const QuickieOfTheDayTypesMap = new Map();
-QuickieOfTheDayTypes.map(element => {
-  QuickieOfTheDayTypesMap.set(element.qotdId, element.qotdName.toUpperCase());
+const WorkoutOfTheDayTypesMap = new Map();
+WorkoutOfTheDayTypes.map(element => {
+  WorkoutOfTheDayTypesMap.set(element.wotdId, element.wotdName.toUpperCase());
 })
 
 
-class QuickieOfTheDayScreen extends Component {
+class WorkoutOfTheDayScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
     return {
-      title: 'Quickie of the Day',
+      title: 'Workout of the Day',
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
@@ -41,16 +41,16 @@ class QuickieOfTheDayScreen extends Component {
     var dayOfTheWeek = date.getDay();
 
     let filteredData = []
-    Quickies.map(element => {
-      if (('qotdId' in element) && (dayOfTheWeek == element.qotdOrder)) {
+    Workouts.map(element => {
+      if (('wotdId' in element) && (dayOfTheWeek == element.wotdOrder)) {
         filteredData.push(element);
       }
     });
     filteredData = filteredData.sort((a,b) => {
-        if (a.qotdId < b.qotdId) {
+        if (a.wotdId < b.wotdId) {
           return -1;
         }
-        if (a.qotdId > b.qotdId) {
+        if (a.wotdId > b.wotdId) {
           return 1;
         }
         return 0;
@@ -58,16 +58,15 @@ class QuickieOfTheDayScreen extends Component {
 
     this.state = {
       filteredData: filteredData,
+      headerTitle: this.props.headerTitle,
     };
-
-    this.renderRow = this.renderRow.bind(this);
   }
 
-  renderRow(quickie) {
+  _renderRow(workout) {
     return (
-      <View style={OfTheDayRowStyle.container} key={quickie.qId}>
-        <Text style={OfTheDayRowStyle.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
-        <QuickieRow quickie={quickie} navigation={this.props.navigation} />
+      <View style={OfTheDayRowStyle.container} key={workout.wId}>
+        <Text style={OfTheDayRowStyle.qotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
+        <WorkoutRow workout={workout} navigation={this.props.navigation} />
       </View>
     );
   }
@@ -78,7 +77,7 @@ class QuickieOfTheDayScreen extends Component {
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
-          {filteredData.map((quickie) => this.renderRow(quickie))}
+          {filteredData.map((workout) => this._renderRow(workout))}
         </ScrollView>
       </View>
     );
@@ -86,4 +85,4 @@ class QuickieOfTheDayScreen extends Component {
 }
 
 
-export default QuickieOfTheDayScreen;
+export default WorkoutOfTheDayScreen;

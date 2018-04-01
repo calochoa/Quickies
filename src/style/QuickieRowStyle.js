@@ -2,10 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const QuickiesRowStyle = StyleSheet.create({
+const QuickieRowStyle = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center', 
     backgroundColor: '#0276c9',
     padding: 5,
     marginLeft: 10,
@@ -14,24 +12,25 @@ const QuickiesRowStyle = StyleSheet.create({
     borderRadius: 15, 
     borderColor: '#4072b8',
   },
+  subContainer: {
+    flex: 1,
+    alignItems: 'center', 
+  },
   detailsContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center', 
   },
   difficultyContainer: {
-    flex: 4,
+    flex: 5,
   },
   imgRowContainer: {
     flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center',
   },
-  imgContainer: {
-    margin: 3,
-  },
   infoContainer: {
-    width: 220,
+    flex: 10,
   },
   nextLevelContainer: {
     flex: 1,
@@ -53,4 +52,4 @@ const QuickiesRowStyle = StyleSheet.create({
 });
 
 
-export default QuickiesRowStyle;
+export default QuickieRowStyle;
