@@ -74,7 +74,7 @@ const MainStack = StackNavigator(
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontWeight: 'bold',
-        fontFamily: 'Cochin',
+        //fontFamily: 'Cochin',
         fontSize: 20,
       },
     },
@@ -101,13 +101,8 @@ const RootStack = DrawerNavigator(
     ExerciseTypes: {
       screen: ExerciseTypesScreen,
     },
-
     FAQ: {
       screen: FaqScreen,
-    },
-
-    MyModal: {
-      screen: ModalScreen,
     },
   },
   {

@@ -25,13 +25,13 @@ const ExerciseStyle = StyleSheet.create({
     fontSize: 20,
     color: '#fff',
     fontWeight: 'bold',
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
   info: {
     fontSize: 18,    
     color: '#fff',
     marginLeft: 10,
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
 });
 

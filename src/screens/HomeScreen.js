@@ -18,13 +18,6 @@ class HomeScreen extends React.Component {
     return {
       headerTitle: 'Home',
       headerBackTitle: null,
-      headerLeft: (
-        <Button
-          onPress={() => navigation.navigate('MyModal')}
-          title="Info"
-          color="#fff"
-        />
-      ),
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
           <MenuIcon />
@@ -42,6 +35,7 @@ class HomeScreen extends React.Component {
     section5: {title: 'Workouts', screen: 'WorkoutTypes'},
     section6: {title: 'Exercises', screen: 'ExerciseTypes'},
     section7: {title: 'FAQ', screen: 'FAQ'},
+    section8: {title: 'My Profile', screen: 'FAQ'},
   }
 
   renderRow(section) {
@@ -61,7 +55,7 @@ class HomeScreen extends React.Component {
 
   render() {
     const {
-      section1, section2, section3, section4, section5, section6, section7
+      section1, section2, section3, section4, section5, section6, section7, section8
     } = this.state;
 
     return (
@@ -73,6 +67,7 @@ class HomeScreen extends React.Component {
         {this.renderRow(section5)}
         {this.renderRow(section6)}
         {this.renderRow(section7)}
+        {this.renderRow(section8)}
       </View>
     );
   }

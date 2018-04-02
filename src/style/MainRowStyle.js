@@ -30,7 +30,7 @@ const MainRowStyle = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     textAlign: 'center',
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
 });
 

@@ -41,13 +41,13 @@ const QuickieRowStyle = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
     marginBottom: 5,
   },
   info: {
     color: '#fff',
     fontSize: 17,
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
 });
 

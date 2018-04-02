@@ -18,7 +18,7 @@ const OfTheDayRowStyle = StyleSheet.create({
     fontSize: 24,    
     color: '#fff',
     marginBottom: 5,
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },

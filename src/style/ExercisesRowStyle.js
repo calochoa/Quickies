@@ -22,7 +22,7 @@ const ExercisesRowStyle = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     textAlign: 'center',
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
 });
 

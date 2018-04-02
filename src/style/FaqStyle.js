@@ -17,7 +17,7 @@ const FaqStyle = StyleSheet.create({
     fontSize: 24,    
     color: '#fff',
     marginBottom: 5,
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
@@ -28,7 +28,7 @@ const FaqStyle = StyleSheet.create({
   answer: {
     color: '#fff',
     fontSize: 20,
-    fontFamily: 'Cochin',
+    //fontFamily: 'Cochin',
   },
 });
 
