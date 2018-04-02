@@ -66,6 +66,7 @@ class WorkoutOfTheDayScreen extends Component {
     return (
       <View style={OfTheDayRowStyle.container} key={workout.wId}>
         <Text style={OfTheDayRowStyle.qotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
+        <View style={OfTheDayRowStyle.divider}/>
         <WorkoutRow workout={workout} navigation={this.props.navigation} />
       </View>
     );

@@ -67,6 +67,7 @@ class QuickieOfTheDayScreen extends Component {
     return (
       <View style={OfTheDayRowStyle.container} key={quickie.qId}>
         <Text style={OfTheDayRowStyle.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
+        <View style={OfTheDayRowStyle.divider}/>
         <QuickieRow quickie={quickie} navigation={this.props.navigation} />
       </View>
     );

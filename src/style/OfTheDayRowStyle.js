@@ -17,10 +17,14 @@ const OfTheDayRowStyle = StyleSheet.create({
   qotdType: {
     fontSize: 24,    
     color: '#fff',
-    marginBottom: 5,
     //fontFamily: 'Cochin',
-    textDecorationLine: 'underline',
     fontWeight: 'bold',
+  },
+  divider: {
+    borderBottomColor: '#fff', 
+    borderBottomWidth: 1, 
+    alignSelf: 'stretch', 
+    margin: 10,
   },
 });
 
