@@ -7,31 +7,36 @@
   {
   	"qtId": "qt0001",
   	"qtName": "Basic",
-    "order": 3
+    "order": 4
   },
   {
   	"qtId": "qt0002",
   	"qtName": "Cardio",
-    "order": 4
+    "order": 5
   },
   {
   	"qtId": "qt0003",
   	"qtName": "Junior",
-    "order": 2
+    "order": 3
   },
   {
   	"qtId": "qt0004",
   	"qtName": "Power",
-    "order": 6
+    "order": 7
   },
   {
     "qtId": "qt0005",
     "qtName": "Bar",
-    "order": 5
+    "order": 6
   },
   {
     "qtId": "qt0006",
     "qtName": "Ultimate",
-    "order": 7
+    "order": 8
+  },
+  {
+    "qtId": "qt0007",
+    "qtName": "Stretching",
+    "order": 2
   }
 ]

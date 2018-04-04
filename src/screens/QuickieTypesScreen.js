@@ -52,20 +52,38 @@ class QuickieTypesScreen extends Component {
 
     this.state = {
       sectionTitles: sectionTitles,
-    modalVisible: false,
     };
   }
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
+  setModalVisible(sectionTitle, visible) {
+    const update = {}
+    update[sectionTitle] = visible
+    this.setState(update);
+  }
+
+  renderOverlay(sectionTitle) {
+    return (
+      <Overlay 
+        visible={this.state[sectionTitle]}
+        closeOnTouchOutside={true}
+        containerStyle={OverlayStyle.container}
+        childrenWrapperStyle={OverlayStyle.wrapper}
+        onClose={() => {this.setModalVisible(sectionTitle, false);}}
+      >
+        <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
+        <View style={OverlayStyle.divider}/>
+        <Text>Try these beginner level quickies if you are just starting to work out.</Text>
+      </Overlay>
+    )
   }
 
   renderMainRow(sectionTitle) {
     return (
       <View style={MainRowStyle.container} key={sectionTitle}>
+        {this.renderOverlay(sectionTitle)}
         <TouchableOpacity 
           style={MainRowStyle.infoLevelContainer} 
-          onPress={() => {this.setModalVisible(true);}}
+          onPress={() => {this.setModalVisible(sectionTitle, true);}}
         >
           <InfoIcon />
         </TouchableOpacity>
@@ -91,17 +109,8 @@ class QuickieTypesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        <Overlay 
-          visible={this.state.modalVisible}
-          closeOnTouchOutside={true}
-          containerStyle={OverlayStyle.container}
-          childrenWrapperStyle={OverlayStyle.wrapper}
-          onClose={() => {this.setModalVisible(false);}}
-        >
-          <Text style={OverlayStyle.header}>Junior Quickies</Text>
-          <View style={OverlayStyle.divider}/>
-          <Text>Try these beginner level quickies if you are just starting to work out.</Text>
-        </Overlay>
+
+
         {sectionTitles.map((sectionTitle) => this.renderMainRow(sectionTitle))}
       </View>
     );
