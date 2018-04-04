@@ -10,6 +10,14 @@ import InfoIcon from '../components/InfoIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
 import MainRowStyle from '../style/MainRowStyle';
+import OverlayStyle from '../style/OverlayStyle';
+import Overlay from 'react-native-modal-overlay';
+
+
+const wtDescriptionMap = new Map();
+WorkoutTypes.map(element => {
+  wtDescriptionMap.set(element.wtName, element.wtDescription);
+})
 
 
 class WorkoutTypesScreen extends Component {
@@ -51,16 +59,35 @@ class WorkoutTypesScreen extends Component {
     };
   }
 
+  setModalVisible(sectionTitle, visible) {
+    const update = {}
+    update[sectionTitle] = visible
+    this.setState(update);
+  }
+
+  renderOverlay(sectionTitle) {
+    return (
+      <Overlay 
+        visible={this.state[sectionTitle]}
+        closeOnTouchOutside={true}
+        containerStyle={OverlayStyle.container}
+        childrenWrapperStyle={OverlayStyle.wrapper}
+        onClose={() => {this.setModalVisible(sectionTitle, false);}}
+      >
+        <Text style={OverlayStyle.header}>{sectionTitle} Workouts</Text>
+        <View style={OverlayStyle.divider}/>
+        <Text>{wtDescriptionMap.get(sectionTitle)}</Text>
+      </Overlay>
+    )
+  }
+
   renderRow(sectionTitle) {
     return (
       <View style={[MainRowStyle.container, MainRowStyle.extra15Margin]} key={sectionTitle}>
+        {this.renderOverlay(sectionTitle)}
         <TouchableOpacity 
           style={MainRowStyle.infoLevelContainer}
-          onPress={() => {
-            this.props.navigation.navigate('Workouts', {
-              workoutType: sectionTitle,
-            });
-          }}
+          onPress={() => {this.setModalVisible(sectionTitle, true);}}
         >
           <InfoIcon />
         </TouchableOpacity>

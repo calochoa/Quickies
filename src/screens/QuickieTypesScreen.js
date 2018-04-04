@@ -115,8 +115,6 @@ class QuickieTypesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-
-
         {sectionTitles.map((sectionTitle) => this.renderMainRow(sectionTitle))}
       </View>
     );

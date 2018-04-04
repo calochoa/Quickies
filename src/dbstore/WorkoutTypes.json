@@ -2,26 +2,31 @@
   {
     "wtId": "wt0001",
     "wtName": "Beginner",
+    "wtDescription": "These workouts are perfect if you're new to exercising or out of shape.",
     "order": 1
   },
   {
   	"wtId": "wt0002",
   	"wtName": "Intermediate",
+    "wtDescription": "Perform these workouts if you're still getting into the swing of things.",
     "order": 2
   },
   {
   	"wtId": "wt0003",
   	"wtName": "Advanced",
+    "wtDescription": "Try these workouts if you have solid form and need a challenge.",
     "order": 3
   },
   {
   	"wtId": "wt0004",
   	"wtName": "Expert",
+    "wtDescription": "These workouts are not for the faint-hearted.",
     "order": 4
   },
   {
   	"wtId": "wt0005",
   	"wtName": "Master",
+    "wtDescription": "Attempt these workouts at your own risk.",
     "order": 5
   }
 ]
