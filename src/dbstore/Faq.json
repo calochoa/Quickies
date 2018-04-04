@@ -21,36 +21,6 @@
   },
   {
     "order": 50,
-    "question": "What are Junior Quickies?",
-    "answer": "Try these beginner level quickies if you are just starting to work out."
-  },
-  {
-    "order": 60,
-    "question": "What are Basic Quickies?",
-    "answer": "Get in great shape by doing a combination of some or all of these quickies."
-  },
-  {
-    "order": 70,
-    "question": "What are Cardio Quickies?",
-    "answer": "These quickies are the best way to get your feet moving and heart pumping."
-  },
-  {
-    "order": 80,
-    "question": "What are Bar Quickies?",
-    "answer": "Bar Quickies are great if you want to challenge yourself with full body weight exercises."
-  },
-  {
-    "order": 90,
-    "question": "What are Power Quickies?",
-    "answer": "Attempt these quickies if you enjoy an extremely difficult challenge."
-  },
-  {
-    "order": 100,
-    "question": "What are Ultimate Quickies?",
-    "answer": "Give these quickies a whirl, if you're a master of calisthenics."
-  },
-  {
-    "order": 110,
     "question": "What is 'Quickie of the Day?'",
     "answer": "This is a daily quickie that will keep your body in great shape."
   }
