@@ -16,6 +16,12 @@ import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 
 
+const qtDescriptionMap = new Map();
+QuickieTypes.map(element => {
+  qtDescriptionMap.set(element.qtName, element.qtDescription);
+})
+
+
 class QuickieTypesScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
@@ -72,7 +78,7 @@ class QuickieTypesScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
-        <Text>Try these beginner level quickies if you are just starting to work out.</Text>
+        <Text>{qtDescriptionMap.get(sectionTitle)}</Text>
       </Overlay>
     )
   }

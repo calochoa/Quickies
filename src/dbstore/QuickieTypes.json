@@ -2,41 +2,49 @@
   {
     "qtId": "qt0000",
     "qtName": "All",
+    "qtDescription": "One stop shop to see all the quickies.",
     "order": 1
   },
   {
   	"qtId": "qt0001",
   	"qtName": "Basic",
+    "qtDescription": "Get in great shape by doing a combination of some or all of these quickies.",
     "order": 4
   },
   {
   	"qtId": "qt0002",
   	"qtName": "Cardio",
+    "qtDescription": "These quickies are the best way to get your feet moving and heart pumping.",
     "order": 5
   },
   {
   	"qtId": "qt0003",
   	"qtName": "Junior",
+    "qtDescription": "Try these beginner level quickies if you are just starting to work out.",
     "order": 3
   },
   {
   	"qtId": "qt0004",
   	"qtName": "Power",
+    "qtDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
     "order": 7
   },
   {
     "qtId": "qt0005",
     "qtName": "Bar",
+    "qtDescription": "Bar Quickies are great if you want to challenge yourself with full body weight exercises.",
     "order": 6
   },
   {
     "qtId": "qt0006",
     "qtName": "Ultimate",
+    "qtDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
     "order": 8
   },
   {
     "qtId": "qt0007",
     "qtName": "Stretching",
+    "qtDescription": "Perform these quickies if you need to loosen up before exercising.",
     "order": 2
   }
 ]
