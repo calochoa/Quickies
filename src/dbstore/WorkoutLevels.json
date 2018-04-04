@@ -1,0 +1,32 @@
+[
+  {
+  	"wlId": "wl1",
+  	"wlName": "Level 1 Workout",
+    "wlDescription": "Try these beginner level workouts if you are new to exercising."
+  },
+  {
+  	"wlId": "wl2",
+  	"wlName": "Level 2 Workout",
+    "wlDescription": "Perform these workouts with solid form before moving on to higher levels."
+  },
+  {
+  	"wlId": "wl3",
+  	"wlName": "Level 3 Workout",
+    "wlDescription": "Some of these workouts may be harder than they appear."
+  },
+  {
+  	"wlId": "wl4",
+  	"wlName": "Level 4 Workout",
+    "wlDescription": "These workouts are definitely challenging."
+  },
+  {
+    "wlId": "wl5",
+    "wlName": "Level 5 Workout",
+    "wlDescription": "Attempt these workouts if you enjoy an extremely difficult challenge."
+  },
+  {
+    "wlId": "wl6",
+    "wlName": "Level 6 Workout",
+    "wlDescription": "Give these workouts a whirl, if you're a master of calisthenics."
+  }
+]

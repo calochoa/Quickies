@@ -4,11 +4,19 @@ import {
   Text, 
   TouchableOpacity,
 } from 'react-native';
+import WorkoutLevels from '../dbstore/WorkoutLevels.json';
 import Quickies from '../dbstore/Quickies.json';
 import DifficultyIcon from '../components/DifficultyIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import QuickieRowStyle from '../style/QuickieRowStyle';
+import OverlayStyle from '../style/OverlayStyle';
+import Overlay from 'react-native-modal-overlay';
 
+
+const workoutLevelMap = new Map();
+WorkoutLevels.map(element => {
+  workoutLevelMap.set(element.wlId, element);
+})
 
 const QuickiesMap = new Map();
 Quickies.map(element => {
@@ -37,6 +45,29 @@ class WorkoutRow extends Component {
     return difficultyImg
   }
 
+  setModalVisible(wName, visible) {
+    const update = {}
+    update[wName] = visible
+    this.setState(update);
+  }
+
+  renderOverlay(wName, wDifficulty) {
+    workoutLevel = workoutLevelMap.get('wl'+wDifficulty)
+    return (
+      <Overlay 
+        visible={this.state[wName]}
+        closeOnTouchOutside={true}
+        containerStyle={OverlayStyle.container}
+        childrenWrapperStyle={OverlayStyle.wrapper}
+        onClose={() => {this.setModalVisible(wName, false);}}
+      >
+        <Text style={OverlayStyle.header}>{workoutLevel.wlName}</Text>
+        <View style={OverlayStyle.divider}/>
+        <Text>{workoutLevel.wlDescription}</Text>
+      </Overlay>
+    )
+  }
+
   _getQuickiesDisplay(quickies) {
     let quickiesDisplay = [];
     for (let i=0; i < quickies.length; i++) {
@@ -54,11 +85,15 @@ class WorkoutRow extends Component {
 
     return (
       <View style={QuickieRowStyle.subContainer} >
+        {this.renderOverlay(workout.wName, workout.wDifficulty)}
         <Text style={QuickieRowStyle.name}>{workout.wName}</Text>
         <View style={QuickieRowStyle.detailsContainer}>
-          <View style={QuickieRowStyle.difficultyContainer}>
+          <TouchableOpacity 
+            style={QuickieRowStyle.difficultyContainer}
+            onPress={() => {this.setModalVisible(workout.wName, true);}}
+          >
             {this._getDifficultyImg(workout.wDifficulty)}
-          </View>
+          </TouchableOpacity>
           <View style={QuickieRowStyle.infoContainer}>
             {this._getQuickiesDisplay(workout.qIds)}
           </View>

@@ -1,0 +1,32 @@
+[
+  {
+  	"qlId": "ql1",
+  	"qlName": "Level 1 Quickie",
+    "qlDescription": "Try these beginner level quickies if you are just starting to work out."
+  },
+  {
+  	"qlId": "ql2",
+  	"qlName": "Level 2 Quickie",
+    "qlDescription": "Perform these quickies with solid form before moving on to higher levels."
+  },
+  {
+  	"qlId": "ql3",
+  	"qlName": "Level 3 Quickie",
+    "qlDescription": "Some of these quickies may be harder than they appear."
+  },
+  {
+  	"qlId": "ql4",
+  	"qlName": "Level 4 Quickie",
+    "qlDescription": "These quickies are definitely challenging especially when performed in a workout."
+  },
+  {
+    "qlId": "ql5",
+    "qlName": "Level 5 Quickie",
+    "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge."
+  },
+  {
+    "qlId": "ql6",
+    "qlName": "Level 6 Quickie",
+    "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics."
+  }
+]

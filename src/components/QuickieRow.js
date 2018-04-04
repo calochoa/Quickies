@@ -4,11 +4,19 @@ import {
   View, 
   Text, 
 } from 'react-native';
+import QuickieLevels from '../dbstore/QuickieLevels.json';
 import Exercises from '../dbstore/Exercises.json';
 import DifficultyIcon from '../components/DifficultyIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import QuickieRowStyle from '../style/QuickieRowStyle';
+import OverlayStyle from '../style/OverlayStyle';
+import Overlay from 'react-native-modal-overlay';
 
+
+const quickieLevelMap = new Map();
+QuickieLevels.map(element => {
+  quickieLevelMap.set(element.qlId, element);
+})
 
 const ExerciseMap = new Map();
 Exercises.map(element => {
@@ -23,6 +31,29 @@ class QuickieRow extends Component {
     this.state = {
       quickie: this.props.quickie,
     };
+  }
+
+  setModalVisible(qName, visible) {
+    const update = {}
+    update[qName] = visible
+    this.setState(update);
+  }
+
+  renderOverlay(qName, qDifficulty) {
+    quickieLevel = quickieLevelMap.get('ql'+qDifficulty)
+    return (
+      <Overlay 
+        visible={this.state[qName]}
+        closeOnTouchOutside={true}
+        containerStyle={OverlayStyle.container}
+        childrenWrapperStyle={OverlayStyle.wrapper}
+        onClose={() => {this.setModalVisible(qName, false);}}
+      >
+        <Text style={OverlayStyle.header}>{quickieLevel.qlName}</Text>
+        <View style={OverlayStyle.divider}/>
+        <Text>{quickieLevel.qlDescription}</Text>
+      </Overlay>
+    )
   }
 
   _getDifficultyImg(totalImages) {
@@ -44,11 +75,15 @@ class QuickieRow extends Component {
 
     return (
       <View style={QuickieRowStyle.subContainer}>
+        {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
         <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
         <View style={QuickieRowStyle.detailsContainer}>
-          <View style={QuickieRowStyle.difficultyContainer}>
+          <TouchableOpacity 
+            style={QuickieRowStyle.difficultyContainer}
+            onPress={() => {this.setModalVisible(quickie.qName, true);}}
+          >
             {this._getDifficultyImg(quickie.qDifficulty)}
-          </View>
+          </TouchableOpacity>
           <View style={QuickieRowStyle.infoContainer}>
             <Text style={QuickieRowStyle.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
             <Text style={QuickieRowStyle.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
