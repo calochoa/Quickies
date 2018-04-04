@@ -4,6 +4,7 @@ import {
   View, 
   ScrollView, 
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Workouts from '../dbstore/Workouts.json';
 import WorkoutTypes from '../dbstore/WorkoutTypes.json';
 import MenuIcon from '../components/MenuIcon';
@@ -57,9 +58,13 @@ class WorkoutsScreen extends Component {
 
   _renderRow(workout) {
     return (
-      <View style={QuickieRowStyle.container} key={workout.wId}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={QuickieRowStyle.container} 
+        key={workout.wId}
+      >
         <WorkoutRow workout={workout} navigation={this.props.navigation} />
-      </View>
+      </LinearGradient>
     );
   }
 

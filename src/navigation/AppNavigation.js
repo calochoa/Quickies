@@ -1,5 +1,14 @@
 import React from 'react';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { 
+  View, 
+  StyleSheet
+} from 'react-native';
+import { 
+  StackNavigator, 
+  DrawerNavigator,
+  Header,
+} from 'react-navigation';
+import LinearGradient from 'react-native-linear-gradient';
 import HomeScreen from '../screens/HomeScreen';
 import QuickieTypesScreen from '../screens/QuickieTypesScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
@@ -68,18 +77,36 @@ const MainStack = StackNavigator(
   {
     initialRouteName: 'Home',
     navigationOptions: {
+      header: props => <GradientHeader {...props} />,
       headerStyle: {
-        backgroundColor: '#0276c9',
+        backgroundColor: 'transparent',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold',
-        //fontFamily: 'Cochin',
-        fontSize: 20,
+        fontWeight: '600',
+        fontFamily: 'Gill Sans',
+        fontSize: 18,
       },
     },
   }
 );
+
+const GradientHeader = props => (
+<View style={{ backgroundColor: '#eee' }}>
+    <LinearGradient
+      //colors={['#4c669f', '#3b5998', '#192f6a']} 
+      colors={['#4c669f', '#0276c9', '#192f6a']} 
+      style={[StyleSheet.absoluteFill, { height: Header.HEIGHT }]}
+    >
+      <Header {...props} />
+    </LinearGradient>
+  </View>
+)
 
 const RootStack = DrawerNavigator(
   {

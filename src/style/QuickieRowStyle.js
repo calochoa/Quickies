@@ -4,17 +4,19 @@ import { StyleSheet } from 'react-native';
 
 const QuickieRowStyle = StyleSheet.create({
   container: {
-    backgroundColor: '#0276c9',
     padding: 5,
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
     borderRadius: 15, 
-    borderColor: '#4072b8',
   },
   subContainer: {
     flex: 1,
     alignItems: 'center', 
+  },
+  titleContainer: {
+    flex: 1,
+    flexDirection: 'row',
   },
   detailsContainer: {
     flex: 1,
@@ -38,16 +40,16 @@ const QuickieRowStyle = StyleSheet.create({
   },
   name: {
     color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 24,
     textAlign: 'center',
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
     marginBottom: 5,
+    flex: 10,
   },
   info: {
     color: '#fff',
     fontSize: 17,
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
 });
 

@@ -1,0 +1,43 @@
+PODS:
+  - BVLinearGradient (2.4.0):
+    - React
+  - React (0.54.4):
+    - React/Core (= 0.54.4)
+  - React/Core (0.54.4):
+    - yoga (= 0.54.4.React)
+  - React/DevSupport (0.54.4):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.54.4)
+  - React/RCTBlob (0.54.4):
+    - React/Core
+  - React/RCTNetwork (0.54.4):
+    - React/Core
+  - React/RCTWebSocket (0.54.4):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
+  - yoga (0.54.4.React)
+
+DEPENDENCIES:
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+
+EXTERNAL SOURCES:
+  BVLinearGradient:
+    :path: ../node_modules/react-native-linear-gradient
+  React:
+    :path: ../node_modules/react-native
+  yoga:
+    :path: ../node_modules/react-native/ReactCommon/yoga
+
+SPEC CHECKSUMS:
+  BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
+  React: c237e42de9c70e5cac6eeb52b4cfd3a0910c1f00
+  yoga: 55da126afc384965b96bff46652464373b330add
+
+PODFILE CHECKSUM: fc26f382168d25cf4531cfb791a421d547b0236d
+
+COCOAPODS: 1.4.0

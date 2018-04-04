@@ -5,6 +5,7 @@ import {
   Text, 
   ScrollView,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Exercises from '../dbstore/Exercises.json';
 import MenuIcon from '../components/MenuIcon';
@@ -69,7 +70,11 @@ class ExercisesScreen extends Component {
 
   renderRow(exercise) {
     return (
-      <View style={ExercisesRowStyle.container} key={exercise.eId}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={ExercisesRowStyle.container} 
+        key={exercise.eId}
+      >
         <View style={ExercisesRowStyle.nameContainer}>
           <Text style={ExercisesRowStyle.name}>{exercise.eName}</Text>
         </View>
@@ -84,7 +89,7 @@ class ExercisesScreen extends Component {
         >
           <ForwardIcon />
         </TouchableOpacity>
-      </View>
+      </LinearGradient>
     );
   }
 

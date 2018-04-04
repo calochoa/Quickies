@@ -4,6 +4,7 @@ import {
   View, 
   Text, 
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Video from 'react-native-video';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Exercises from '../dbstore/Exercises.json';
@@ -89,7 +90,10 @@ class ExerciseScreen extends Component {
            onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata 
            style={ExerciseStyle.video} 
         />
-        <View style={ExerciseStyle.detailsContainer}>
+        <LinearGradient 
+          colors={['#4c669f', '#0276c9', '#192f6a']}
+          style={ExerciseStyle.detailsContainer}
+        >
           <View style={ExerciseStyle.infoContainer}>
             <Text style={ExerciseStyle.infoTitle}>Exercise Type: </Text>
             {exercise.eTypes.map((exerciseType) => this._displayExerciseType(exerciseType))}
@@ -98,7 +102,7 @@ class ExerciseScreen extends Component {
             <Text style={ExerciseStyle.infoTitle}>Description: </Text>
             <Text style={ExerciseStyle.info}>{exercise.description}</Text>
           </View>
-        </View>
+        </LinearGradient>
       </View>
     );
   }

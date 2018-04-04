@@ -6,19 +6,16 @@ const OfTheDayRowStyle = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center', 
-    backgroundColor: '#0276c9',
     padding: 5,
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
     borderRadius: 15, 
-    borderColor: '#4072b8',
   },
   qotdType: {
-    fontSize: 24,    
+    fontSize: 28,    
     color: '#fff',
-    //fontFamily: 'Cochin',
-    fontWeight: 'bold',
+    fontFamily: 'Gill Sans',
   },
   divider: {
     borderBottomColor: '#fff', 

@@ -6,6 +6,7 @@ import {
   Modal,
   TouchableHighlight,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
@@ -78,14 +79,18 @@ class QuickieTypesScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
-        <Text>{qtDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{qtDescriptionMap.get(sectionTitle)}</Text>
       </Overlay>
     )
   }
 
   renderMainRow(sectionTitle) {
     return (
-      <View style={MainRowStyle.container} key={sectionTitle}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={MainRowStyle.container} 
+        key={sectionTitle}
+      >
         {this.renderOverlay(sectionTitle)}
         <TouchableOpacity 
           style={MainRowStyle.infoLevelContainer} 
@@ -106,7 +111,7 @@ class QuickieTypesScreen extends Component {
         >
           <ForwardIcon />
         </TouchableOpacity>
-      </View>
+      </LinearGradient>
     );
   }
 

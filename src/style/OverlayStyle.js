@@ -12,8 +12,8 @@ const OverlayStyle = StyleSheet.create({
   },
   header: {
     textAlign: 'center', 
-    fontSize: 20, 
-    fontWeight: 'bold',
+    fontSize: 22, 
+    fontFamily: 'Gill Sans',
   },
   divider: {
     borderBottomColor: 'black', 
@@ -22,7 +22,8 @@ const OverlayStyle = StyleSheet.create({
     margin: 10,
   },
   text: {
-    backgroundColor: 'rgba(119, 146, 173, 0.78)'
+    fontSize: 16, 
+    fontFamily: 'Gill Sans',
   },
 });
 

@@ -63,7 +63,7 @@ class WorkoutRow extends Component {
       >
         <Text style={OverlayStyle.header}>{workoutLevel.wlName}</Text>
         <View style={OverlayStyle.divider}/>
-        <Text>{workoutLevel.wlDescription}</Text>
+        <Text style={OverlayStyle.text}>{workoutLevel.wlDescription}</Text>
       </Overlay>
     )
   }

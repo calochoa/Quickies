@@ -4,7 +4,9 @@ import {
   View, 
   Text,
   TouchableOpacity, 
+  StyleSheet
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import MenuIcon from '../components/MenuIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -40,7 +42,11 @@ class HomeScreen extends React.Component {
 
   renderRow(section) {
     return (
-      <View style={MainRowStyle.container} key={section.title}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={MainRowStyle.container} 
+        key={section.title}
+      >
         <View style={MainRowStyle.titleContainer}>
           <Text style={MainRowStyle.title}>{section.title}</Text>
         </View>
@@ -49,7 +55,7 @@ class HomeScreen extends React.Component {
             <ForwardIcon />
           </TouchableOpacity>
         </View>
-      </View>
+      </LinearGradient>
     );
   }
 

@@ -4,6 +4,7 @@ import {
   View, 
   Text, 
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
@@ -76,14 +77,18 @@ class ExerciseTypesScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{sectionTitle} Exercises</Text>
         <View style={OverlayStyle.divider}/>
-        <Text>{etDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{etDescriptionMap.get(sectionTitle)}</Text>
       </Overlay>
     )
   }
 
   renderRow(sectionTitle) {
     return (
-      <View style={MainRowStyle.container} key={sectionTitle}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={MainRowStyle.container} 
+        key={sectionTitle}
+      >
         {this.renderOverlay(sectionTitle)}
         <TouchableOpacity 
           style={MainRowStyle.infoLevelContainer} 
@@ -104,7 +109,7 @@ class ExerciseTypesScreen extends Component {
         >
           <ForwardIcon />
         </TouchableOpacity>
-      </View>
+      </LinearGradient>
     );
   }
 

@@ -3,6 +3,7 @@ import {
   TouchableOpacity,
   View, 
   Text, 
+  Image,
 } from 'react-native';
 import QuickieLevels from '../dbstore/QuickieLevels.json';
 import Exercises from '../dbstore/Exercises.json';
@@ -51,7 +52,7 @@ class QuickieRow extends Component {
       >
         <Text style={OverlayStyle.header}>{quickieLevel.qlName}</Text>
         <View style={OverlayStyle.divider}/>
-        <Text>{quickieLevel.qlDescription}</Text>
+        <Text style={OverlayStyle.text}>{quickieLevel.qlDescription}</Text>
       </Overlay>
     )
   }
@@ -76,7 +77,13 @@ class QuickieRow extends Component {
     return (
       <View style={QuickieRowStyle.subContainer}>
         {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
-        <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
+        <View style={QuickieRowStyle.titleContainer}>
+          <View style={{flex: 1,}}></View>
+          <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
+          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
+            <Image source={require('../images/icons8-star-26-white.png')} />
+          </View>
+        </View>
         <View style={QuickieRowStyle.detailsContainer}>
           <TouchableOpacity 
             style={QuickieRowStyle.difficultyContainer}

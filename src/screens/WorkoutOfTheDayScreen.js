@@ -5,6 +5,7 @@ import {
   Text, 
   ScrollView,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Workouts from '../dbstore/Workouts.json';
 import WorkoutOfTheDayTypes from '../dbstore/WorkoutOfTheDayTypes.json';
 import MenuIcon from '../components/MenuIcon';
@@ -64,11 +65,15 @@ class WorkoutOfTheDayScreen extends Component {
 
   _renderRow(workout) {
     return (
-      <View style={OfTheDayRowStyle.container} key={workout.wId}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={OfTheDayRowStyle.container} 
+        key={workout.wId}
+      >
         <Text style={OfTheDayRowStyle.qotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
         <View style={OfTheDayRowStyle.divider}/>
         <WorkoutRow workout={workout} navigation={this.props.navigation} />
-      </View>
+      </LinearGradient>
     );
   }
 

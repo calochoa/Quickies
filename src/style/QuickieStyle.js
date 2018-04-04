@@ -21,26 +21,27 @@ const QuickieStyle = StyleSheet.create({
   },
   detailsContainer: {
     flex: 1,
-    backgroundColor: '#0276c9',
     margin: 20,
   },
   infoContainer: {
-    paddingTop: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    backgroundColor: '#0276c9',
+    padding: 10,
   },
   infoTitle: {
     fontSize: 20,
     color: '#fff',
-    fontWeight: 'bold',
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
+  },
+  infoTitle2: {
+    marginTop: 10,
+    fontSize: 20,
+    color: '#fff',
+    fontFamily: 'Gill Sans',
   },
   info: {
     fontSize: 18,    
     color: '#fff',
     marginLeft: 10,
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
 });
 

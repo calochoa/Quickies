@@ -7,13 +7,11 @@ const ExercisesRowStyle = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center', 
-    backgroundColor: '#0276c9',
     padding: 5,
     marginLeft: 20,
     marginRight: 20,
     margin: 10,
     borderRadius: 15, 
-    borderColor: '#4072b8',
   },
   nameContainer: {
     flex: 10,
@@ -22,7 +20,7 @@ const ExercisesRowStyle = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     textAlign: 'center',
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
 });
 

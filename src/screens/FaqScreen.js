@@ -5,6 +5,7 @@ import {
   Text, 
   ScrollView,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import FaqInfo from '../dbstore/Faq.json';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -48,12 +49,16 @@ class FaqScreen extends Component {
 
   renderRow(faq) {
     return (
-      <View style={FaqStyle.container} key={faq.order}>
+      <LinearGradient 
+        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        style={FaqStyle.container} 
+        key={faq.order}
+      >
         <Text style={FaqStyle.question}>{faq.question}</Text>
         <View style={FaqStyle.answerContainer}>
           <Text style={FaqStyle.answer}>{faq.answer}</Text>
         </View>
-      </View>
+      </LinearGradient>
     );
   }
 

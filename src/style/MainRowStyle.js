@@ -7,12 +7,10 @@ const MainRowStyle = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center', 
-    backgroundColor: '#0276c9',
     padding: 10,
     marginLeft: 30,
     marginRight: 30,
     borderRadius: 15, 
-    borderColor: '#4072b8',
   },
   extra15Margin: {
     margin: 15,
@@ -30,7 +28,7 @@ const MainRowStyle = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     textAlign: 'center',
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
 });
 

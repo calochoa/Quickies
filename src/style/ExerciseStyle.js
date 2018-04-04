@@ -15,7 +15,6 @@ const ExerciseStyle = StyleSheet.create({
   },
   detailsContainer: {
     flex: 1,
-    backgroundColor: '#0276c9',
     margin: 20,
   },
   infoContainer: {
@@ -24,14 +23,13 @@ const ExerciseStyle = StyleSheet.create({
   infoTitle: {
     fontSize: 20,
     color: '#fff',
-    fontWeight: 'bold',
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
   info: {
     fontSize: 18,    
     color: '#fff',
     marginLeft: 10,
-    //fontFamily: 'Cochin',
+    fontFamily: 'Gill Sans',
   },
 });
 
