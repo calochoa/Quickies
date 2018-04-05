@@ -50,7 +50,7 @@ class QuickieRow extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(qName, false);}}
       >
-        <Text style={OverlayStyle.header}>{quickieLevel.qlName}</Text>
+        <Text style={OverlayStyle.header}>{quickieLevel.qlName} Quickie</Text>
         <View style={OverlayStyle.divider}/>
         <Text style={OverlayStyle.text}>{quickieLevel.qlDescription}</Text>
       </Overlay>

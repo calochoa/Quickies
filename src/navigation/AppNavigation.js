@@ -11,6 +11,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import HomeScreen from '../screens/HomeScreen';
 import QuickieTypesScreen from '../screens/QuickieTypesScreen';
+import QuickieLevelsScreen from '../screens/QuickieLevelsScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
 import QuickieScreen from '../screens/QuickieScreen';
 import QuickieOfTheDayScreen from '../screens/QuickieOfTheDayScreen';
@@ -23,9 +24,6 @@ import WorkoutScreen from '../screens/WorkoutScreen';
 import WorkoutOfTheDayScreen from '../screens/WorkoutOfTheDayScreen';
 import FaqScreen from '../screens/FaqScreen';
 
-import DetailsScreen from '../screens/DetailsScreen';
-import ModalScreen from '../screens/ModalScreen';
-
 
 const MainStack = StackNavigator(
   {
@@ -34,6 +32,9 @@ const MainStack = StackNavigator(
     },
     QuickieTypes: {
       screen: QuickieTypesScreen,
+    },
+    QuickieLevels: {
+      screen: QuickieLevelsScreen,
     },
     Quickies: {
       screen: QuickiesScreen,
@@ -65,13 +66,8 @@ const MainStack = StackNavigator(
     WorkoutOfTheDay: {
       screen: WorkoutOfTheDayScreen,
     },
-
     FAQ: {
       screen: FaqScreen,
-    },
-
-    Details: {
-      screen: DetailsScreen,
     },
   },
   {
@@ -115,6 +111,9 @@ const RootStack = DrawerNavigator(
     },
     QuickieTypes: {
       screen: QuickieTypesScreen,
+    },
+    QuickieLevels: {
+      screen: QuickieLevelsScreen,
     },
     QuickieOfTheDay: {
       screen: QuickieOfTheDayScreen,

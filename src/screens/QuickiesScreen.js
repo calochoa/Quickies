@@ -49,6 +49,22 @@ class QuickiesScreen extends Component {
         }
         return 0;
       });
+    } else if (params.quickieType.startsWith('Level')) {
+      level = Number(params.quickieType.split(' ')[1])
+      Quickies.map(element => {
+        if (element.qDifficulty == level) {
+          filteredData.push(element);
+        }
+      });
+      filteredData = filteredData.sort((a,b) => {
+        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
+          return -1;
+        }
+        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      });
     } else {
       let quickieTypeId = QuickieTypesMap.get(params.quickieType)
       Quickies.map(element => {

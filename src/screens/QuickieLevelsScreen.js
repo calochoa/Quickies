@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
+import QuickieLevels from '../dbstore/QuickieLevels.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
 import ForwardIcon from '../components/ForwardIcon';
@@ -17,32 +17,32 @@ import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 
 
-const qtDescriptionMap = new Map();
-QuickieTypes.map(element => {
-  qtDescriptionMap.set(element.qtName, element.qtDescription);
+const qlDescriptionMap = new Map();
+QuickieLevels.map(element => {
+  qlDescriptionMap.set(element.qlName, element.qlDescription);
 })
 
 
-class QuickieTypesScreen extends Component {
+class QuickieLevelsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
     return {
-      headerTitle: 'Quickie Types',
+      headerTitle: 'Quickie Levels',
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
           <MenuIcon />
         </TouchableOpacity>
       ),
-      drawerLabel: 'Quickies by Type',
+      drawerLabel: 'Quickies by Level',
     };
   };
 
   constructor(props) {
     super(props);
 
-    let quickieTypes = QuickieTypes.sort((a,b) => {
+    let quickieLevels = QuickieLevels.sort((a,b) => {
       if (a.order < b.order) {
         return -1;
       }
@@ -53,8 +53,8 @@ class QuickieTypesScreen extends Component {
     });
 
     let sectionTitles = []
-    quickieTypes.map(element => {
-      sectionTitles.push(element.qtName);
+    quickieLevels.map(element => {
+      sectionTitles.push(element.qlName);
     });
 
     this.state = {
@@ -79,7 +79,7 @@ class QuickieTypesScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{qtDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{qlDescriptionMap.get(sectionTitle)}</Text>
       </Overlay>
     )
   }
@@ -127,4 +127,4 @@ class QuickieTypesScreen extends Component {
 }
 
 
-export default QuickieTypesScreen;
+export default QuickieLevelsScreen;
