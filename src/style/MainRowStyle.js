@@ -17,6 +17,7 @@ const MainRowStyle = StyleSheet.create({
   },
   titleContainer: {
     flex: 8,
+    alignItems: 'center', 
   },
   infoLevelContainer: {
     flex: 1,

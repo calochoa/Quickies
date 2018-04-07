@@ -10,6 +10,7 @@ import {
 } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import HomeScreen from '../screens/HomeScreen';
+import QuickieOptionsScreen from '../screens/QuickieOptionsScreen';
 import QuickieTypesScreen from '../screens/QuickieTypesScreen';
 import QuickieLevelsScreen from '../screens/QuickieLevelsScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
@@ -29,6 +30,9 @@ const MainStack = StackNavigator(
   {
     Home: {
       screen: HomeScreen,
+    },
+    QuickieOptions: {
+      screen: QuickieOptionsScreen,
     },
     QuickieTypes: {
       screen: QuickieTypesScreen,

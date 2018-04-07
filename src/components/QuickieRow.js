@@ -78,10 +78,12 @@ class QuickieRow extends Component {
       <View style={QuickieRowStyle.subContainer}>
         {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
         <View style={QuickieRowStyle.titleContainer}>
-          <View style={{flex: 1,}}></View>
+          <View style={{flex: 1, marginLeft: 5,}}>
+            <Image source={require('../images/icons8-star-26-white.png')} />
+          </View>
           <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
-            <Image source={require('../images/icons8-star-26-white.png')} />
+            <Image source={require('../images/icons8-completed-26-white.png')} />
           </View>
         </View>
         <View style={QuickieRowStyle.detailsContainer}>

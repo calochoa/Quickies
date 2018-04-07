@@ -1,10 +1,8 @@
 import React from 'react';
 import { 
-  Button, 
   View, 
   Text,
   TouchableOpacity, 
-  StyleSheet
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MenuIcon from '../components/MenuIcon';
@@ -30,7 +28,7 @@ class HomeScreen extends React.Component {
   };
 
   state = {
-    section1: {title: 'Quickies', screen: 'QuickieTypes'},
+    section1: {title: 'Quickies', screen: 'QuickieOptions'},
     section2: {title: 'Quickie of the Day', screen: 'QuickieOfTheDay'},
     section3: {title: 'Workout of the Day', screen: 'WorkoutOfTheDay'},
     section4: {title: 'Weekly Challenge', screen: 'WorkoutOfTheDay'},

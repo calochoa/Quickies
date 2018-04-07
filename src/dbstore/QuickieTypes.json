@@ -1,27 +1,21 @@
 [
   {
-    "qtId": "qt0000",
-    "qtName": "All",
-    "qtDescription": "One stop shop to see all the quickies.",
-    "order": 1
-  },
-  {
   	"qtId": "qt0001",
   	"qtName": "Basic",
     "qtDescription": "Get in great shape by doing a combination of some or all of these quickies.",
-    "order": 4
+    "order": 3
   },
   {
   	"qtId": "qt0002",
   	"qtName": "Cardio",
     "qtDescription": "These quickies are the best way to get your feet moving and heart pumping.",
-    "order": 5
+    "order": 4
   },
   {
   	"qtId": "qt0003",
   	"qtName": "Junior",
     "qtDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 3
+    "order": 2
   },
   {
   	"qtId": "qt0004",
@@ -45,6 +39,12 @@
     "qtId": "qt0007",
     "qtName": "Stretching",
     "qtDescription": "Perform these quickies if you need to loosen up before exercising.",
-    "order": 2
+    "order": 1
+  },
+  {
+    "qtId": "qt0008",
+    "qtName": "Plank",
+    "qtDescription": "Don't forget to build a strong core by doing these quickies on a daily basis.",
+    "order": 5
   }
 ]
