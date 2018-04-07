@@ -1,0 +1,51 @@
+[
+  {
+  	"qoId": "qo0001",
+  	"qoName": "All",
+    "qoHeader": "All Quickies",
+    "qoDescription": "One stop shop to see all the quickies.",
+    "order": 1
+  },
+  {
+  	"qoId": "qo0002",
+  	"qoName": "by Level",
+    "qoHeader": "Quickies by Level",
+    "qoDescription": "View quickies by difficulty level.",
+    "order": 2
+  },
+  {
+  	"qoId": "qo0003",
+  	"qoName": "by Type",
+    "qoHeader": "Quickies by Type",
+    "qoDescription": "Search for quickies organized by their specific type.",
+    "order": 3
+  },
+  {
+  	"qoId": "qo0004",
+  	"qoName": "by Body Split",
+    "qoHeader": "Quickies by Body Split",
+    "qoDescription": "Find quickies that specifically target your core, lower body, upper body, or total body.",
+    "order": 4
+  },
+  {
+    "qoId": "qo0005",
+    "qoName": "Favorite",
+    "qoHeader": "Favorite Quickies",
+    "qoDescription": "Get easy access to your favorite quickies.",
+    "order": 5
+  },
+  {
+    "qoId": "qo0006",
+    "qoName": "Completed",
+    "qoHeader": "Completed Quickies",
+    "qoDescription": "Check out all the quickies that you've completed.",
+    "order": 6
+  },
+  {
+    "qoId": "qo0007",
+    "qoName": "Variations",
+    "qoHeader": "Quickie Variations",
+    "qoDescription": "Learn about the various quickie variations.",
+    "order": 7
+  }
+]

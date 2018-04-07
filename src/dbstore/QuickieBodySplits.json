@@ -1,0 +1,26 @@
+[
+  {
+  	"qbsId": "qbs0001",
+  	"qbsName": "Core",
+    "qbsDescription": "",
+    "order": 1
+  },
+  {
+  	"qbsId": "qbs0002",
+  	"qbsName": "Lower Body",
+    "qbsDescription": "",
+    "order": 2
+  },
+  {
+  	"qbsId": "qbs0003",
+  	"qbsName": "Upper Body",
+    "qbsDescription": "",
+    "order": 3
+  },
+  {
+  	"qbsId": "qbs0004",
+  	"qbsName": "Total Body",
+    "qbsDescription": "",
+    "order": 4
+  }
+]
