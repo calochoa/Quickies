@@ -111,13 +111,13 @@ class QuickieOptionsScreen extends React.Component {
         {this.renderRow({title: 'All', screen: 'Quickies', extra: {quickieType: 'All'}})}
         {this.renderRow({title: 'by Level', screen: 'QuickieLevels'})}
         {this.renderRow({title: 'by Type', screen: 'QuickieTypes'})}
-        {this.renderRow({title: 'by Body Split', screen: 'QuickieTypes'})}
+        {this.renderRow({title: 'by Body Split', screen: 'QuickieBodySplits'})}
         {this.renderRow(
-          {title: 'Favorite', screen: 'QuickieTypes'}, 
+          {title: 'Favorite', screen: 'FavoriteQuickies'}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />
         )}
         {this.renderRow(
-          {title: 'Completed', screen: 'QuickieTypes'}, 
+          {title: 'Completed', screen: 'CompletedQuickies'}, 
           <Image source={require('../images/icons8-completed-26-green.png')} />
         )}
         {this.renderRow({title: 'Variations', screen: 'QuickieTypes'})}

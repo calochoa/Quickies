@@ -11,8 +11,11 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import HomeScreen from '../screens/HomeScreen';
 import QuickieOptionsScreen from '../screens/QuickieOptionsScreen';
-import QuickieTypesScreen from '../screens/QuickieTypesScreen';
 import QuickieLevelsScreen from '../screens/QuickieLevelsScreen';
+import QuickieTypesScreen from '../screens/QuickieTypesScreen';
+import QuickieBodySplitsScreen from '../screens/QuickieBodySplitsScreen';
+import FavoriteQuickiesScreen from '../screens/FavoriteQuickiesScreen';
+import CompletedQuickiesScreen from '../screens/CompletedQuickiesScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
 import QuickieScreen from '../screens/QuickieScreen';
 import QuickieOfTheDayScreen from '../screens/QuickieOfTheDayScreen';
@@ -34,11 +37,20 @@ const MainStack = StackNavigator(
     QuickieOptions: {
       screen: QuickieOptionsScreen,
     },
+    QuickieLevels: {
+      screen: QuickieLevelsScreen,
+    },
     QuickieTypes: {
       screen: QuickieTypesScreen,
     },
-    QuickieLevels: {
-      screen: QuickieLevelsScreen,
+    QuickieBodySplits: {
+      screen: QuickieBodySplitsScreen,
+    },
+    FavoriteQuickies: {
+      screen: FavoriteQuickiesScreen,
+    },
+    CompletedQuickies: {
+      screen: CompletedQuickiesScreen,
     },
     Quickies: {
       screen: QuickiesScreen,
@@ -113,11 +125,8 @@ const RootStack = DrawerNavigator(
     Main: {
       screen: MainStack,
     },
-    QuickieTypes: {
-      screen: QuickieTypesScreen,
-    },
-    QuickieLevels: {
-      screen: QuickieLevelsScreen,
+    QuickieOptions: {
+      screen: QuickieOptionsScreen,
     },
     QuickieOfTheDay: {
       screen: QuickieOfTheDayScreen,
