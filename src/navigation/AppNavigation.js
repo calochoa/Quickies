@@ -27,6 +27,7 @@ import WorkoutScreen from '../screens/WorkoutScreen';
 import WorkoutOfTheDayScreen from '../screens/WorkoutOfTheDayScreen';
 import WeeklyChallengeScreen from '../screens/WeeklyChallengeScreen';
 import FaqScreen from '../screens/FaqScreen';
+import MyProfileScreen from '../screens/MyProfileScreen';
 
 
 const MainStack = StackNavigator(
@@ -84,6 +85,9 @@ const MainStack = StackNavigator(
     },
     FAQ: {
       screen: FaqScreen,
+    },
+    MyProfile: {
+      screen: MyProfileScreen,
     },
   },
   {
@@ -145,6 +149,9 @@ const RootStack = DrawerNavigator(
     },
     FAQ: {
       screen: FaqScreen,
+    },
+    MyProfile: {
+      screen: MyProfileScreen,
     },
   },
   {

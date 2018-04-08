@@ -3,6 +3,7 @@ import {
   View, 
   Text,
   TouchableOpacity, 
+  Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MenuIcon from '../components/MenuIcon';
@@ -35,10 +36,10 @@ class HomeScreen extends React.Component {
     section5: {title: 'Workouts', screen: 'WorkoutTypes'},
     section6: {title: 'Exercises', screen: 'ExerciseTypes'},
     section7: {title: 'FAQ', screen: 'FAQ'},
-    section8: {title: 'My Profile', screen: 'FAQ'},
+    section8: {title: 'My Profile', screen: 'MyProfile'},
   }
 
-  renderRow(section) {
+  renderRow(section, image) {
     return (
       <LinearGradient 
         colors={['#4c669f', '#0276c9', '#192f6a']} 
@@ -46,7 +47,12 @@ class HomeScreen extends React.Component {
         key={section.title}
       >
         <View style={MainRowStyle.titleContainer}>
-          <Text style={MainRowStyle.title}>{section.title}</Text>
+          <Text style={MainRowStyle.title}>
+            <View style={{marginRight: 10}}>
+              {image}
+            </View>
+            {section.title}
+          </Text>
         </View>
         <View style={MainRowStyle.nextLevelContainer}>
           <TouchableOpacity onPress={() => {this.props.navigation.navigate(section.screen);}}>
@@ -64,14 +70,14 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        {this.renderRow(section1)}
+        {this.renderRow(section1, <Image source={require('../images/icons8-speed-24.png')} />)}
         {this.renderRow(section2)}
         {this.renderRow(section3)}
         {this.renderRow(section4)}
-        {this.renderRow(section5)}
-        {this.renderRow(section6)}
-        {this.renderRow(section7)}
-        {this.renderRow(section8)}
+        {this.renderRow(section5, <Image source={require('../images/icons8-muscle-26.png')} />)}
+        {this.renderRow(section6, <Image source={require('../images/icons8-punch-filled-26.png')} />)}
+        {this.renderRow(section7, <Image source={require('../images/icons8-faq-26.png')} />)}
+        {this.renderRow(section8, <Image source={require('../images/icons8-user-26.png')} />)}
       </View>
     );
   }
