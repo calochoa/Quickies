@@ -6,7 +6,6 @@ const MainContainerStyle = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    backgroundColor: '#f1f1f1',
     marginTop: Header.HEIGHT,
   },
   containerNoSpaceAround: {

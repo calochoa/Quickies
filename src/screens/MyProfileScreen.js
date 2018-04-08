@@ -4,6 +4,7 @@ import {
   View, 
   Text, 
   ScrollView,
+  ImageBackground,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MenuIcon from '../components/MenuIcon';
@@ -33,17 +34,15 @@ class MyProfileScreen extends Component {
   render() {
     return (
       <View style={MainContainerStyle.container}>
-        <ScrollView>
-          <LinearGradient 
-            colors={['#4c669f', '#0276c9', '#192f6a']} 
-            style={FaqStyle.container} 
-          >
-            <Text style={FaqStyle.question}>Quickie Stats</Text>
-            <View style={FaqStyle.answerContainer}>
-              <Text style={FaqStyle.answer}>A quickie a day keep the doctor away..</Text>
-            </View>
-          </LinearGradient>
-        </ScrollView>
+        <ImageBackground
+          style={{
+            flex: 1,
+            // remove width and height to override fixed static size
+            width: null,
+            height: null,
+          }}
+          source={require('../images/background.png')}
+        />
       </View>
     );
   }
