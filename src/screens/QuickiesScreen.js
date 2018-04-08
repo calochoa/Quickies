@@ -66,12 +66,20 @@ class QuickiesScreen extends Component {
         return 0;
       });
     } else {
-      let quickieTypeId = QuickieTypesMap.get(params.quickieType)
-      Quickies.map(element => {
-        if (element.qtId === quickieTypeId) {
-          filteredData.push(element);
-        }
-      });
+      if (params.qbs) {
+        Quickies.map(element => {
+          if (element.qbsId == params.qbs) {
+            filteredData.push(element);
+          }
+        });
+      } else {
+        let quickieTypeId = QuickieTypesMap.get(params.quickieType)
+        Quickies.map(element => {
+          if (element.qtId === quickieTypeId) {
+            filteredData.push(element);
+          }
+        });
+      }
       filteredData = filteredData.sort((a,b) => {
         if (a.qDifficulty < b.qDifficulty) {
           return -1;

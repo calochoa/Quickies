@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
+import QuickieBodySplits from '../dbstore/QuickieBodySplits.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
 import ForwardIcon from '../components/ForwardIcon';
@@ -17,9 +17,9 @@ import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 
 
-const qtDescriptionMap = new Map();
-QuickieTypes.map(element => {
-  qtDescriptionMap.set(element.qtName, element.qtDescription);
+const QuickieBodySplitsMap = {};
+QuickieBodySplits.map(element => {
+  QuickieBodySplitsMap[element.qbsName] = element;
 })
 
 
@@ -42,7 +42,7 @@ class QuickieBodySplitsScreen extends Component {
   constructor(props) {
     super(props);
 
-    let quickieTypes = QuickieTypes.sort((a,b) => {
+    let quickieBodySplits = QuickieBodySplits.sort((a,b) => {
       if (a.order < b.order) {
         return -1;
       }
@@ -53,8 +53,8 @@ class QuickieBodySplitsScreen extends Component {
     });
 
     let sectionTitles = []
-    quickieTypes.map(element => {
-      sectionTitles.push(element.qtName);
+    quickieBodySplits.map(element => {
+      sectionTitles.push(element.qbsName);
     });
 
     this.state = {
@@ -79,7 +79,7 @@ class QuickieBodySplitsScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{qtDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{QuickieBodySplitsMap[sectionTitle].qbsDescription}</Text>
       </Overlay>
     )
   }
@@ -88,7 +88,7 @@ class QuickieBodySplitsScreen extends Component {
     return (
       <LinearGradient 
         colors={['#4c669f', '#0276c9', '#192f6a']} 
-        style={MainRowStyle.container} 
+        style={[MainRowStyle.container, MainRowStyle.extra15Margin]} 
         key={sectionTitle}
       >
         {this.renderOverlay(sectionTitle)}
@@ -105,7 +105,7 @@ class QuickieBodySplitsScreen extends Component {
           style={MainRowStyle.nextLevelContainer} 
           onPress={() => {
             this.props.navigation.navigate('Quickies', {
-              quickieType: sectionTitle,
+              quickieType: sectionTitle, qbs: QuickieBodySplitsMap[sectionTitle].qbsId,
             });
           }}
         >
@@ -119,7 +119,7 @@ class QuickieBodySplitsScreen extends Component {
     const { sectionTitles } = this.state;
 
     return (
-      <View style={MainContainerStyle.container}>
+      <View style={MainContainerStyle.containerNoSpaceAround}>
         {sectionTitles.map((sectionTitle) => this.renderMainRow(sectionTitle))}
       </View>
     );
