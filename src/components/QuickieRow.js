@@ -57,7 +57,7 @@ class QuickieRow extends Component {
     )
   }
 
-  _getDifficultyImg(totalImages) {
+  getDifficultyImg(totalImages) {
     let difficultyImg = []
     let numImages = []
     for (let i = 0; i < totalImages; i++) {
@@ -71,6 +71,16 @@ class QuickieRow extends Component {
     return difficultyImg
   }
 
+  getFavoriteImg(quickie) {
+    return (quickie.qFavorite) ? <Image source={require('../images/icons8-star-26-gold.png')} />
+      : <Image source={require('../images/icons8-star-26-white.png')} />
+  }
+
+  getCompletedImg(quickie) {
+    return (quickie.qCompleted) ? <Image source={require('../images/icons8-completed-26-green.png')} />
+      : <Image source={require('../images/icons8-completed-26-white.png')} />
+  }
+
   render() {
     const { quickie } = this.state;
 
@@ -79,11 +89,11 @@ class QuickieRow extends Component {
         {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
         <View style={QuickieRowStyle.titleContainer}>
           <View style={{flex: 1, marginLeft: 5,}}>
-            <Image source={require('../images/icons8-star-26-white.png')} />
+            {this.getFavoriteImg(quickie)}
           </View>
           <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
-            <Image source={require('../images/icons8-completed-26-white.png')} />
+            {this.getCompletedImg(quickie)}
           </View>
         </View>
         <View style={QuickieRowStyle.detailsContainer}>
@@ -91,7 +101,7 @@ class QuickieRow extends Component {
             style={QuickieRowStyle.difficultyContainer}
             onPress={() => {this.setModalVisible(quickie.qName, true);}}
           >
-            {this._getDifficultyImg(quickie.qDifficulty)}
+            {this.getDifficultyImg(quickie.qDifficulty)}
           </TouchableOpacity>
           <View style={QuickieRowStyle.infoContainer}>
             <Text style={QuickieRowStyle.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>

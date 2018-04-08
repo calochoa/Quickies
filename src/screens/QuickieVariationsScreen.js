@@ -3,8 +3,6 @@ import {
   TouchableOpacity,
   View, 
   Text, 
-  Modal,
-  TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
@@ -23,19 +21,19 @@ QuickieTypes.map(element => {
 })
 
 
-class CompletedQuickiesScreen extends Component {
+class QuickieVariationsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
     return {
-      headerTitle: 'Completed Quickies',
+      headerTitle: 'Quickie Variations',
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
           <MenuIcon />
         </TouchableOpacity>
       ),
-      drawerLabel: 'Completed Quickies',
+      drawerLabel: 'Quickie Variations',
     };
   };
 
@@ -127,4 +125,4 @@ class CompletedQuickiesScreen extends Component {
 }
 
 
-export default CompletedQuickiesScreen;
+export default QuickieVariationsScreen;

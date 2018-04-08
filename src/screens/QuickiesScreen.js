@@ -34,21 +34,60 @@ class QuickiesScreen extends Component {
     };
   };
 
+  sortAlpha(filteredData) {
+    return filteredData.sort((a,b) => {
+      if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
+        return -1;
+      }
+      if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  sortDiffAlpha(filteredData) {
+    return filteredData.sort((a,b) => {
+      if (a.qDifficulty < b.qDifficulty) {
+        return -1;
+      }
+      if (a.qDifficulty > b.qDifficulty) {
+        return 1;
+      }
+      if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
+        return -1;
+      }
+      if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  sortReverseDiffAlpha(filteredData) {
+    return filteredData.sort((a,b) => {
+      if (a.qDifficulty > b.qDifficulty) {
+        return -1;
+      }
+      if (a.qDifficulty < b.qDifficulty) {
+        return 1;
+      }
+      if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
+        return -1;
+      }
+      if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+  }
   constructor(props) {
     super(props);
     const { params } = this.props.navigation.state;
 
     let filteredData = []
     if (params.quickieType === 'All') {
-      filteredData = Quickies.sort((a,b) => {
-        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-          return -1;
-        }
-        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      });
+      filteredData = this.sortAlpha(Quickies);
     } else if (params.quickieType.startsWith('Level')) {
       level = Number(params.quickieType.split(' ')[1])
       Quickies.map(element => {
@@ -56,15 +95,21 @@ class QuickiesScreen extends Component {
           filteredData.push(element);
         }
       });
-      filteredData = filteredData.sort((a,b) => {
-        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-          return -1;
+      filteredData = this.sortAlpha(filteredData);
+    } else if (params.quickieType === 'Favorite') {
+      Quickies.map(element => {
+        if (element.qFavorite) {
+          filteredData.push(element);
         }
-        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-          return 1;
-        }
-        return 0;
       });
+      filteredData = this.sortAlpha(filteredData);
+    } else if (params.quickieType === 'Completed') {
+      Quickies.map(element => {
+        if (element.qCompleted) {
+          filteredData.push(element);
+        }
+      });
+      filteredData = this.sortReverseDiffAlpha(filteredData);
     } else {
       if (params.qbs) {
         Quickies.map(element => {
@@ -80,21 +125,7 @@ class QuickiesScreen extends Component {
           }
         });
       }
-      filteredData = filteredData.sort((a,b) => {
-        if (a.qDifficulty < b.qDifficulty) {
-          return -1;
-        }
-        if (a.qDifficulty > b.qDifficulty) {
-          return 1;
-        }
-        if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-          return -1;
-        }
-        if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      });
+      filteredData = this.sortDiffAlpha(filteredData);
     }
 
     this.state = {
