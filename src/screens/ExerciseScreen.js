@@ -5,6 +5,7 @@ import {
   Text, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import Video from 'react-native-video';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Exercises from '../dbstore/Exercises.json';
@@ -91,7 +92,7 @@ class ExerciseScreen extends Component {
            style={ExerciseStyle.video} 
         />
         <LinearGradient 
-          colors={['#4c669f', '#0276c9', '#192f6a']}
+          colors={getGradientColor('default')}
           style={ExerciseStyle.detailsContainer}
         >
           <View style={ExerciseStyle.infoContainer}>

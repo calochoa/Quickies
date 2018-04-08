@@ -5,6 +5,7 @@ import {
   Text, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
@@ -85,7 +86,7 @@ class ExerciseTypesScreen extends Component {
   renderRow(sectionTitle) {
     return (
       <LinearGradient 
-        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        colors={getGradientColor('default')} 
         style={MainRowStyle.container} 
         key={sectionTitle}
       >

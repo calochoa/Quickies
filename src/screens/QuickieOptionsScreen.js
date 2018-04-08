@@ -6,6 +6,7 @@ import {
   Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import QuickieOptions from '../dbstore/QuickieOptions.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
@@ -77,7 +78,7 @@ class QuickieOptionsScreen extends React.Component {
   renderRow(section, image) {
     return (
       <LinearGradient 
-        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        colors={getGradientColor('default')} 
         style={MainRowStyle.container} 
         key={section.title}
       >

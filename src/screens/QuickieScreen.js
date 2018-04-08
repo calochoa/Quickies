@@ -7,6 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import Video from 'react-native-video';
 import Quickies from '../dbstore/Quickies.json';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
@@ -139,7 +140,7 @@ class QuickieScreen extends Component {
           {this._displayExerVid(vLink4, quickie.eId4)}
         </View>
         <ScrollView style={QuickieStyle.detailsContainer}>
-          <LinearGradient colors={['#4c669f', '#0276c9', '#192f6a']}>
+          <LinearGradient colors={getGradientColor('default')}>
             {this._displayRepsExer(quickie)}
           </LinearGradient>
         </ScrollView>

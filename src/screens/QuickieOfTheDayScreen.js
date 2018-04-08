@@ -6,6 +6,7 @@ import {
   ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
 import QuickieOfTheDayTypes from '../dbstore/QuickieOfTheDayTypes.json';
 import MenuIcon from '../components/MenuIcon';
@@ -67,7 +68,7 @@ class QuickieOfTheDayScreen extends Component {
   renderRow(quickie) {
     return (
       <LinearGradient 
-        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        colors={getGradientColor('default')} 
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >

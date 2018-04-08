@@ -9,6 +9,7 @@ import {
   Header,
 } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import HomeScreen from '../screens/HomeScreen';
 import QuickieOptionsScreen from '../screens/QuickieOptionsScreen';
 import QuickieLevelsScreen from '../screens/QuickieLevelsScreen';
@@ -115,8 +116,7 @@ const MainStack = StackNavigator(
 const GradientHeader = props => (
 <View style={{ backgroundColor: '#eee' }}>
     <LinearGradient
-      //colors={['#4c669f', '#3b5998', '#192f6a']} 
-      colors={['#4c669f', '#0276c9', '#192f6a']} 
+      colors={getGradientColor('default')} 
       style={[StyleSheet.absoluteFill, { height: Header.HEIGHT }]}
     >
       <Header {...props} />

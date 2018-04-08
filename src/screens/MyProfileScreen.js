@@ -7,6 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
 import FaqStyle from '../style/FaqStyle';

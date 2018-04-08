@@ -6,6 +6,7 @@ import {
   ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {getGradientColor} from '../utils/GradientColor';
 import FaqInfo from '../dbstore/Faq.json';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -50,7 +51,7 @@ class FaqScreen extends Component {
   renderRow(faq) {
     return (
       <LinearGradient 
-        colors={['#4c669f', '#0276c9', '#192f6a']} 
+        colors={getGradientColor('default')} 
         style={FaqStyle.container} 
         key={faq.order}
       >
