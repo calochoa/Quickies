@@ -3,8 +3,6 @@ import {
   TouchableOpacity,
   View, 
   Text, 
-  Modal,
-  TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
