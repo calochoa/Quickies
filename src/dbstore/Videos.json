@@ -62,8 +62,8 @@
   {
     "vId": "v000011",
     "vName": "pistol squats",
-    "vPath": ".mp4",
-    "description": "N/A"
+    "vPath": "FrontLeverSwings.mp4",
+    "description": "TODO: Still need to film video.."
   },
   {
     "vId": "v000012",
@@ -290,8 +290,8 @@
   {
     "vId": "v000049",
     "vName": "muscle-ups",
-    "vPath": ".mp4",
-    "description": "N/A"
+    "vPath": "FrontLeverSwings.mp4",
+    "description": "TODO: Still need to film video.."
   },
   {
     "vId": "v000050",
@@ -386,13 +386,13 @@
   {
     "vId": "v000065",
     "vName": "hanging shoot-ups",
-    "vPath": ".mp4",
-    "description": "N/A"
+    "vPath": "FrontLeverSwings.mp4",
+    "description": "TODO: Still need to film video.."
   },
   {
     "vId": "v000066",
     "vName": "hanging wipers",
-    "vPath": ".mp4",
-    "description": "N/A"
+    "vPath": "FrontLeverSwings.mp4",
+    "description": "TODO: Still need to film video.."
   }
 ]
