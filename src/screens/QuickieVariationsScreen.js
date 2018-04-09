@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import {
-  TouchableOpacity,
+import React from 'react';
+import { 
   View, 
-  Text, 
+  Text,
+  TouchableOpacity, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
+import QuickieVariations from '../dbstore/QuickieVariations.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
 import ForwardIcon from '../components/ForwardIcon';
@@ -16,13 +16,13 @@ import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 
 
-const qtDescriptionMap = new Map();
-QuickieTypes.map(element => {
-  qtDescriptionMap.set(element.qtName, element.qtDescription);
+const QuickieVariationsMap = {};
+QuickieVariations.map(element => {
+  QuickieVariationsMap[element.qvName] = element;
 })
 
 
-class QuickieVariationsScreen extends Component {
+class QuickieVariationsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
@@ -41,19 +41,9 @@ class QuickieVariationsScreen extends Component {
   constructor(props) {
     super(props);
 
-    let quickieTypes = QuickieTypes.sort((a,b) => {
-      if (a.order < b.order) {
-        return -1;
-      }
-      if (a.order > b.order) {
-        return 1;
-      }
-      return 0;
-    });
-
     let sectionTitles = []
-    quickieTypes.map(element => {
-      sectionTitles.push(element.qtName);
+    QuickieVariations.map(element => {
+      sectionTitles.push(element.qvName);
     });
 
     this.state = {
@@ -76,18 +66,18 @@ class QuickieVariationsScreen extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(sectionTitle, false);}}
       >
-        <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
+        <Text style={OverlayStyle.header}>{QuickieVariationsMap[sectionTitle].qvHeader}</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{qtDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{QuickieVariationsMap[sectionTitle].qvDescription}</Text>
       </Overlay>
     )
   }
 
-  renderMainRow(sectionTitle) {
+  renderRow(sectionTitle) {
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
-        style={MainRowStyle.container} 
+        colors={getGradientColor(sectionTitle)} 
+        style={[MainRowStyle.container, MainRowStyle.extra15Margin]} 
         key={sectionTitle}
       >
         {this.renderOverlay(sectionTitle)}
@@ -100,16 +90,15 @@ class QuickieVariationsScreen extends Component {
         <View style={MainRowStyle.titleContainer}>
           <Text style={MainRowStyle.title}>{sectionTitle}</Text>
         </View>
-        <TouchableOpacity 
-          style={MainRowStyle.nextLevelContainer} 
-          onPress={() => {
-            this.props.navigation.navigate('Quickies', {
-              quickieType: sectionTitle,
-            });
-          }}
-        >
-          <ForwardIcon />
-        </TouchableOpacity>
+        <View style={MainRowStyle.nextLevelContainer}>
+          <TouchableOpacity 
+            onPress={() => {
+              this.props.navigation.navigate('Quickies', {quickieType: 'All', qVariation: sectionTitle});
+            }}
+          >
+            <ForwardIcon />
+          </TouchableOpacity>
+        </View>
       </LinearGradient>
     );
   }
@@ -118,8 +107,8 @@ class QuickieVariationsScreen extends Component {
     const { sectionTitles } = this.state;
 
     return (
-      <View style={MainContainerStyle.container}>
-        {sectionTitles.map((sectionTitle) => this.renderMainRow(sectionTitle))}
+      <View style={MainContainerStyle.containerNoSpaceAround}>
+        {sectionTitles.map((sectionTitle) => this.renderRow(sectionTitle))}
       </View>
     );
   }

@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import QuickieLevels from '../dbstore/QuickieLevels.json';
 import Exercises from '../dbstore/Exercises.json';
+import QuickieVariations from '../dbstore/QuickieVariations.json';
 import DifficultyIcon from '../components/DifficultyIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import QuickieRowStyle from '../style/QuickieRowStyle';
@@ -24,6 +25,11 @@ Exercises.map(element => {
   ExerciseMap.set(element.eId, element.eName);
 });
 
+const qvFactorMap = new Map();
+QuickieVariations.map(element => {
+  qvFactorMap.set(element.qvName, element.qvFactor);
+})
+
 
 class QuickieRow extends Component {
   constructor(props) {
@@ -31,6 +37,7 @@ class QuickieRow extends Component {
 
     this.state = {
       quickie: this.props.quickie,
+      qVariation: this.props.qVariation,
     };
   }
 
@@ -81,8 +88,30 @@ class QuickieRow extends Component {
       : <Image source={require('../images/icons8-completed-26-white.png')} />
   }
 
+  getRepExerciseRow(qvFactor, reps, exerciseId) {
+    return (
+      <Text style={QuickieRowStyle.info}>{Math.ceil(qvFactor * reps)} {ExerciseMap.get(exerciseId)}</Text>
+    )
+  }
+
+  getExerciseInfo(quickie, qVariation) {
+    qvFactor = (typeof qVariation != 'undefined') ? qvFactorMap.get(qVariation) : 1
+    return (
+      <View style={QuickieRowStyle.infoContainer}>
+        {this.getRepExerciseRow(qvFactor, quickie.reps1, quickie.eId1)}
+        {this.getRepExerciseRow(qvFactor, quickie.reps2, quickie.eId2)}
+        {this.getRepExerciseRow(qvFactor, quickie.reps3, quickie.eId3)}
+        {this.getRepExerciseRow(qvFactor, quickie.reps4, quickie.eId4)}
+      </View>
+    )
+  }
+
+  getQuickieVariationText(qVariation) {
+    return (typeof qVariation != 'undefined') ? <Text style={QuickieRowStyle.variation}>{qVariation}</Text> : null
+  }
+
   render() {
-    const { quickie } = this.state;
+    const { quickie, qVariation } = this.state;
 
     return (
       <View style={QuickieRowStyle.subContainer}>
@@ -91,7 +120,10 @@ class QuickieRow extends Component {
           <View style={{flex: 1, marginLeft: 5,}}>
             {this.getFavoriteImg(quickie)}
           </View>
-          <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
+          <View style={QuickieRowStyle.nameContainer}>
+            <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
+            {this.getQuickieVariationText(qVariation)}
+          </View>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
             {this.getCompletedImg(quickie)}
           </View>
@@ -103,12 +135,7 @@ class QuickieRow extends Component {
           >
             {this.getDifficultyImg(quickie.qDifficulty)}
           </TouchableOpacity>
-          <View style={QuickieRowStyle.infoContainer}>
-            <Text style={QuickieRowStyle.info}>{quickie.reps1} {ExerciseMap.get(quickie.eId1)}</Text>
-            <Text style={QuickieRowStyle.info}>{quickie.reps2} {ExerciseMap.get(quickie.eId2)}</Text>
-            <Text style={QuickieRowStyle.info}>{quickie.reps3} {ExerciseMap.get(quickie.eId3)}</Text>
-            <Text style={QuickieRowStyle.info}>{quickie.reps4} {ExerciseMap.get(quickie.eId4)}</Text>
-          </View>
+          {this.getExerciseInfo(quickie, qVariation)}
           <TouchableOpacity 
             style={QuickieRowStyle.nextLevelContainer} 
             onPress={() => {

@@ -38,13 +38,21 @@ const QuickieRowStyle = StyleSheet.create({
     flex: 1,
     marginRight: 5,
   },
+  nameContainer: {
+    marginBottom: 5,
+    flex: 10,
+  },
   name: {
     color: '#fff',
     fontSize: 24,
     textAlign: 'center',
     fontFamily: 'Gill Sans',
-    marginBottom: 5,
-    flex: 10,
+  },
+  variation: {
+    color: '#fff',
+    fontSize: 20,
+    textAlign: 'center',
+    fontFamily: 'Gill Sans',
   },
   info: {
     color: '#fff',

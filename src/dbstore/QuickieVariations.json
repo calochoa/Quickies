@@ -1,0 +1,34 @@
+[
+  {
+  	"qvId": "qv0001",
+  	"qvName": "Blah Mode",
+    "qvFactor": 0.5,
+    "qvHeader": "Blah Mode Quickies",
+    "qvDescription": "These quickies are roughly half the repetitions of their normal counterparts.  They are intended to help ease individuals into new quickie types or levels, but can also be used if you're just not in the mood to go all out.",
+    "order": 1
+  },
+  {
+  	"qvId": "qv0002",
+  	"qvName": "Boss Mode",
+    "qvFactor": 2,
+    "qvHeader": "Boss Mode Quickies",
+    "qvDescription": "Perform quickies in Boss Mode for double the fun!  Twice the repetitions, compared to normal quickies, can help you reach new quickie levels faster.",
+    "order": 2
+  },
+  {
+  	"qvId": "qv0003",
+  	"qvName": "Beast Mode",
+    "qvFactor": 4,
+    "qvHeader": "Beast Mode Quickies",
+    "qvDescription": "If you ever want to reach the master level, you need to step it up somehow.  Beast Mode is four times the typical repetitions and are reserved for beasts.",
+    "order": 3
+  },
+  {
+  	"qvId": "qv0004",
+  	"qvName": "Bananas Mode",
+    "qvFactor": 10,
+    "qvHeader": "Bananas Mode Quickies",
+    "qvDescription": "This mode can prove to be a workout in and of itself.  Ten times the normal repetitions is just BANANAS and should be attempted with extreme caution.",
+    "order": 4
+  }
+]

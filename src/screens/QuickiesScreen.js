@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   View, 
+  Text,
   ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -12,6 +13,7 @@ import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
+import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 
 
 const QuickieTypesMap = new Map();
@@ -131,30 +133,31 @@ class QuickiesScreen extends Component {
 
     this.state = {
       filteredData: filteredData,
+      qVariation: params.qVariation,
     };
 
     this.renderRow = this.renderRow.bind(this);
   }
 
-  renderRow(quickie) {
+  renderRow(quickie, qVariation) {
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
+        colors={getGradientColor(qVariation)} 
         style={QuickieRowStyle.container} 
         key={quickie.qId}
       >
-        <QuickieRow quickie={quickie} navigation={this.props.navigation} key={quickie.qId} />
+        <QuickieRow quickie={quickie} qVariation={qVariation} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
     );
   }
 
   render() {
-    const { filteredData } = this.state;
+    const { filteredData, qVariation } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
-          {filteredData.map((quickie) => this.renderRow(quickie))}
+          {filteredData.map((quickie) => this.renderRow(quickie, qVariation))}
         </ScrollView>
       </View>
     );
