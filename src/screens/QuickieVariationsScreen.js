@@ -3,6 +3,7 @@ import {
   View, 
   Text,
   TouchableOpacity, 
+  Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -14,6 +15,7 @@ import MainContainerStyle from '../style/MainContainerStyle';
 import MainRowStyle from '../style/MainRowStyle';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
+import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 
 
 const QuickieVariationsMap = {};
@@ -88,7 +90,12 @@ class QuickieVariationsScreen extends React.Component {
           <InfoIcon />
         </TouchableOpacity>
         <View style={MainRowStyle.titleContainer}>
-          <Text style={MainRowStyle.title}>{sectionTitle}</Text>
+          <Text style={MainRowStyle.title}>
+            <View style={{marginRight: 10}}>
+              <Image source={difficultyImagePathMap.get(sectionTitle)} />
+            </View>
+            {sectionTitle}
+          </Text>
         </View>
         <View style={MainRowStyle.nextLevelContainer}>
           <TouchableOpacity 
