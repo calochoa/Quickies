@@ -64,11 +64,11 @@ class QuickieRow extends Component {
     )
   }
 
-  getDifficultyImg(totalImages) {
+  getDifficultyImg(totalImages, qVariation) {
     let difficultyImg = []
     let numImages = []
     for (let i = 0; i < totalImages; i++) {
-      numImages.push(<DifficultyIcon key={i}/>)
+      numImages.push(<DifficultyIcon qVariation={qVariation} key={i}/>)
       if ((i == 1 && totalImages < 6) || (i == 2 && totalImages == 6)) {
         difficultyImg.push(<View style={QuickieRowStyle.imgRowContainer} key='1'>{numImages}</View>)
         numImages = []
@@ -133,7 +133,7 @@ class QuickieRow extends Component {
             style={QuickieRowStyle.difficultyContainer}
             onPress={() => {this.setModalVisible(quickie.qName, true);}}
           >
-            {this.getDifficultyImg(quickie.qDifficulty)}
+            {this.getDifficultyImg(quickie.qDifficulty, qVariation)}
           </TouchableOpacity>
           {this.getExerciseInfo(quickie, qVariation)}
           <TouchableOpacity 

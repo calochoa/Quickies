@@ -29,17 +29,6 @@ class HomeScreen extends React.Component {
     };
   };
 
-  state = {
-    section1: {title: 'Quickies', screen: 'QuickieOptions'},
-    section2: {title: 'Quickie of the Day', screen: 'QuickieOfTheDay'},
-    section3: {title: 'Workout of the Day', screen: 'WorkoutOfTheDay'},
-    section4: {title: 'Weekly Challenge', screen: 'WeeklyChallenge'},
-    section5: {title: 'Workouts', screen: 'WorkoutTypes'},
-    section6: {title: 'Exercises', screen: 'ExerciseTypes'},
-    section7: {title: 'FAQ', screen: 'FAQ'},
-    section8: {title: 'My Profile', screen: 'MyProfile'},
-  }
-
   renderRow(section, image) {
     return (
       <LinearGradient 
@@ -56,7 +45,7 @@ class HomeScreen extends React.Component {
           </Text>
         </View>
         <View style={MainRowStyle.nextLevelContainer}>
-          <TouchableOpacity onPress={() => {this.props.navigation.navigate(section.screen);}}>
+          <TouchableOpacity onPress={() => {this.props.navigation.navigate(section.screen, section.extra);}}>
             <ForwardIcon />
           </TouchableOpacity>
         </View>
@@ -65,20 +54,27 @@ class HomeScreen extends React.Component {
   }
 
   render() {
-    const {
-      section1, section2, section3, section4, section5, section6, section7, section8
-    } = this.state;
-
     return (
       <View style={MainContainerStyle.container}>
-        {this.renderRow(section1, <Image source={require('../images/icons8-speed-24.png')} />)}
-        {this.renderRow(section2)}
-        {this.renderRow(section3)}
-        {this.renderRow(section4)}
-        {this.renderRow(section5, <Image source={require('../images/icons8-muscle-26.png')} />)}
-        {this.renderRow(section6, <Image source={require('../images/icons8-punch-filled-26.png')} />)}
-        {this.renderRow(section7, <Image source={require('../images/icons8-faq-26.png')} />)}
-        {this.renderRow(section8, <Image source={require('../images/icons8-user-26.png')} />)}
+        {this.renderRow(
+          {title: 'Quickies', screen: 'QuickieOptions'}, 
+          <Image source={require('../images/icons8-speed-24.png')} />
+        )}
+        {this.renderRow({title: 'Quickie of the Day', screen: 'QuickieOfTheDay'})}
+        {this.renderRow({title: 'Workout of the Day', screen: 'WorkoutOfTheDay'})}
+        {this.renderRow({title: 'Weekly Challenge', screen: 'WeeklyChallenge'})}
+        {this.renderRow(
+          {title: 'Workouts', screen: 'WorkoutTypes'}, 
+          <Image source={require('../images/icons8-muscle-26.png')} />
+        )}
+        {this.renderRow(
+          {title: 'Exercises', screen: 'ExerciseTypes'}, 
+          <Image source={require('../images/icons8-punch-filled-26.png')} />
+        )}
+        {this.renderRow(
+          {title: 'Favorite Quickies', screen: 'Quickies', extra: {quickieType: 'Favorite'}}, 
+          <Image source={require('../images/icons8-star-26-gold.png')} />
+        )}
       </View>
     );
   }
