@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   View, 
-  Text,
   ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -13,7 +12,6 @@ import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
-import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 
 
 const QuickieTypesMap = new Map();
@@ -71,23 +69,6 @@ class QuickiesScreen extends Component {
     });
   }
 
-  sortReverseDiffAlpha(filteredData) {
-    return filteredData.sort((a,b) => {
-      if (a.qDifficulty > b.qDifficulty) {
-        return -1;
-      }
-      if (a.qDifficulty < b.qDifficulty) {
-        return 1;
-      }
-      if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-        return -1;
-      }
-      if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-        return 1;
-      }
-      return 0;
-    });
-  }
   constructor(props) {
     super(props);
     const { params } = this.props.navigation.state;
@@ -103,20 +84,6 @@ class QuickiesScreen extends Component {
         }
       });
       filteredData = this.sortAlpha(filteredData);
-    } else if (params.quickieType === 'Favorite') {
-      Quickies.map(element => {
-        if (element.qFavorite) {
-          filteredData.push(element);
-        }
-      });
-      filteredData = this.sortAlpha(filteredData);
-    } else if (params.quickieType === 'Completed') {
-      Quickies.map(element => {
-        if (element.qCompleted) {
-          filteredData.push(element);
-        }
-      });
-      filteredData = this.sortReverseDiffAlpha(filteredData);
     } else {
       if (params.qbs) {
         Quickies.map(element => {

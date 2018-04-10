@@ -8,7 +8,7 @@ export const getGradientColor = (type)=> {
   } else if (type === 'Boss Mode') {
 		gradientColor = ['#222222', '#434343', '#000000'];
   } else if (type === 'Blah Mode') {
-		gradientColor = ['#3A5C79', '#4B79A1', '#283E51'];
+		gradientColor = ['#75818C', '#bdc3c7', '#2C3E50'];
   } else if (type === 'default') {
 		gradientColor = ['#4C669f', '#0276C9', '#192F6A'];
   } else if  (type === 'default2') {
