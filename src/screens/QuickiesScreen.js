@@ -26,8 +26,12 @@ class QuickiesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
+    let title = params ? params.quickieType + ' ' : ''
+    title += (typeof params.qVariation != 'undefined') ? params.qVariation + ' ' : ''
+    title += 'Quickies'
+
     return {
-      title: params ? params.quickieType + ' Quickies' : 'Quickies',
+      title: title,
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >

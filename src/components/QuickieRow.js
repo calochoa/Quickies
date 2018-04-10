@@ -78,13 +78,37 @@ class QuickieRow extends Component {
     return difficultyImg
   }
 
-  getFavoriteImg(quickie) {
-    return (quickie.qFavorite) ? <Image source={require('../images/icons8-star-26-gold.png')} />
+  getFavoriteImg(quickie, qVariation) {
+    let favorite = quickie.qFavorite
+    if (typeof qVariation != 'undefined') {
+      if (qVariation === 'Blah Mode') {
+        favorite = quickie.qFavorite_BlahMode
+      } else if (qVariation === 'Boss Mode') {
+        favorite = quickie.qFavorite_BossMode
+      } else if (qVariation === 'Beast Mode') {
+        favorite = quickie.qFavorite_BeastMode
+      } else if (qVariation === 'Bananas Mode') {
+        favorite = quickie.qFavorite_BananasMode
+      }
+    }
+    return favorite ? <Image source={require('../images/icons8-star-26-gold.png')} />
       : <Image source={require('../images/icons8-star-26-white.png')} />
   }
 
-  getCompletedImg(quickie) {
-    return (quickie.qCompleted) ? <Image source={require('../images/icons8-completed-26-green.png')} />
+  getCompletedImg(quickie, qVariation) {
+    let completed = quickie.qCompleted
+    if (typeof qVariation != 'undefined') {
+      if (qVariation === 'Blah Mode') {
+        completed = quickie.qCompleted_BlahMode
+      } else if (qVariation === 'Boss Mode') {
+        completed = quickie.qCompleted_BossMode
+      } else if (qVariation === 'Beast Mode') {
+        completed = quickie.qCompleted_BeastMode
+      } else if (qVariation === 'Bananas Mode') {
+        completed = quickie.qCompleted_BananasMode
+      }
+    }
+    return completed ? <Image source={require('../images/icons8-completed-26-green.png')} />
       : <Image source={require('../images/icons8-completed-26-white.png')} />
   }
 
@@ -118,14 +142,14 @@ class QuickieRow extends Component {
         {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
         <View style={QuickieRowStyle.titleContainer}>
           <View style={{flex: 1, marginLeft: 5,}}>
-            {this.getFavoriteImg(quickie)}
+            {this.getFavoriteImg(quickie, qVariation)}
           </View>
           <View style={QuickieRowStyle.nameContainer}>
             <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
             {this.getQuickieVariationText(qVariation)}
           </View>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
-            {this.getCompletedImg(quickie)}
+            {this.getCompletedImg(quickie, qVariation)}
           </View>
         </View>
         <View style={QuickieRowStyle.detailsContainer}>
