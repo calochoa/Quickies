@@ -17,7 +17,7 @@ import QuickieTypesScreen from '../screens/QuickieTypesScreen';
 import QuickieBodySplitsScreen from '../screens/QuickieBodySplitsScreen';
 import QuickieModesScreen from '../screens/QuickieModesScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
-import MVQuickiesScreen from '../screens/MultipleVariationsQuickiesScreen';
+import MultipleModesQuickiesScreen from '../screens/MultipleModesQuickiesScreen';
 import QuickieScreen from '../screens/QuickieScreen';
 import QuickieOfTheDayScreen from '../screens/QuickieOfTheDayScreen';
 import ExerciseTypesScreen from '../screens/ExerciseTypesScreen';
@@ -55,8 +55,8 @@ const MainStack = StackNavigator(
     Quickies: {
       screen: QuickiesScreen,
     },
-    MVQuickies: {
-      screen: MVQuickiesScreen,
+    MultipleModesQuickies: {
+      screen: MultipleModesQuickiesScreen,
     },
     Quickie: {
       screen: QuickieScreen,

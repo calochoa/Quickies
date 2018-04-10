@@ -66,7 +66,7 @@ class HomeScreen extends React.Component {
         {this.renderRow({title: 'Workouts', screen: 'WorkoutTypes'})}
         {this.renderRow({title: 'Exercises', screen: 'ExerciseTypes'})}
         {this.renderRow(
-          {title: 'Favorite Quickies', screen: 'MVQuickies', extra: {quickieType: 'Favorite'}}, 
+          {title: 'Favorite Quickies', screen: 'MultipleModesQuickies', extra: {quickieType: 'Favorite'}}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />
         )}
       </View>

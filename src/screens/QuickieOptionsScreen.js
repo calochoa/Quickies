@@ -114,11 +114,11 @@ class QuickieOptionsScreen extends React.Component {
         {this.renderRow({title: 'by Mode', screen: 'QuickieModes'})}
         {this.renderRow({title: 'by Name', screen: 'Quickies', extra: {quickieType: 'All'}})}
         {this.renderRow(
-          {title: 'Favorite', screen: 'MVQuickies', extra: {quickieType: 'Favorite'}}, 
+          {title: 'Favorite', screen: 'MultipleModesQuickies', extra: {quickieType: 'Favorite'}}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />
         )}
         {this.renderRow(
-          {title: 'Completed', screen: 'MVQuickies', extra: {quickieType: 'Completed'}}, 
+          {title: 'Completed', screen: 'MultipleModesQuickies', extra: {quickieType: 'Completed'}}, 
           <Image source={require('../images/icons8-completed-26-green.png')} />
         )}
       </View>
