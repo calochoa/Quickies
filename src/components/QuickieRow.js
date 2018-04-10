@@ -166,6 +166,7 @@ class QuickieRow extends Component {
               this.props.navigation.navigate('Quickie', {
                 quickieId: quickie.qId,
                 quickieName: quickie.qName,
+                qVariation: qVariation,
               });
             }}
           >

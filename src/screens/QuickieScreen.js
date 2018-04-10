@@ -14,6 +14,7 @@ import QuickieTypes from '../dbstore/QuickieTypes.json';
 import Exercises from '../dbstore/Exercises.json';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Videos from '../dbstore/Videos.json';
+import QuickieVariations from '../dbstore/QuickieVariations.json';
 import { vPathMap } from '../misc/ExerciseVideoPaths';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -39,6 +40,10 @@ ExerciseTypes.map(element => {
 const VideosMap = new Map();
 Videos.map(element => {
   VideosMap.set(element.vId, element.vPath);
+})
+const qvFactorMap = new Map();
+QuickieVariations.map(element => {
+  qvFactorMap.set(element.qvName, element.qvFactor);
 })
 
 
@@ -74,17 +79,24 @@ class QuickieScreen extends Component {
       vLink2: vPathMap.get(vPath2),
       vLink3: vPathMap.get(vPath3),
       vLink4: vPathMap.get(vPath4),
+      qVariation: params.qVariation,
     };
   }
 
-  _displayRepsExer(quickie) {
+  _getRepExerciseRow(qvFactor, reps, exerciseId) {
+    return (
+      <Text style={QuickieStyle.info}>{Math.ceil(qvFactor * reps)} {ExerciseMap[exerciseId].eName}</Text>
+    )
+  }
+
+  _displayRepsExer(quickie, qvFactor) {
     return (
       <View style={QuickieStyle.infoContainer}>
         <Text style={QuickieStyle.infoTitle}>Repetitions & Exercises: </Text>
-        <Text style={QuickieStyle.info}>{quickie.reps1} {ExerciseMap[quickie.eId1].eName}</Text>
-        <Text style={QuickieStyle.info}>{quickie.reps2} {ExerciseMap[quickie.eId2].eName}</Text>
-        <Text style={QuickieStyle.info}>{quickie.reps3} {ExerciseMap[quickie.eId3].eName}</Text>
-        <Text style={QuickieStyle.info}>{quickie.reps4} {ExerciseMap[quickie.eId4].eName}</Text>
+        {this._getRepExerciseRow(qvFactor, quickie.reps1, quickie.eId1)}
+        {this._getRepExerciseRow(qvFactor, quickie.reps2, quickie.eId2)}
+        {this._getRepExerciseRow(qvFactor, quickie.reps3, quickie.eId3)}
+        {this._getRepExerciseRow(qvFactor, quickie.reps4, quickie.eId4)}
         <Text style={QuickieStyle.infoTitle2}>Quickie Type: </Text>
         <Text style={QuickieStyle.info}>{QuickieTypesMap.get(quickie.qtId)}</Text>
       </View>
@@ -127,7 +139,8 @@ class QuickieScreen extends Component {
   }
 
   render() {
-    const { quickie, vLink1, vLink2, vLink3, vLink4 } = this.state;
+    const { quickie, vLink1, vLink2, vLink3, vLink4, qVariation } = this.state;
+    let qvFactor = (typeof qVariation != 'undefined') ? qvFactorMap.get(qVariation) : 1
 
     return (
       <View style={MainContainerStyle.container}>
@@ -140,8 +153,8 @@ class QuickieScreen extends Component {
           {this._displayExerVid(vLink4, quickie.eId4)}
         </View>
         <ScrollView style={QuickieStyle.detailsContainer}>
-          <LinearGradient colors={getGradientColor('default')}>
-            {this._displayRepsExer(quickie)}
+          <LinearGradient colors={getGradientColor(qVariation)}>
+            {this._displayRepsExer(quickie, qvFactor)}
           </LinearGradient>
         </ScrollView>
       </View>
