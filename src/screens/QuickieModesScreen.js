@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import QuickieVariations from '../dbstore/QuickieVariations.json';
+import QuickieModes from '../dbstore/QuickieModes.json';
 import MenuIcon from '../components/MenuIcon';
 import InfoIcon from '../components/InfoIcon';
 import ForwardIcon from '../components/ForwardIcon';
@@ -18,25 +18,25 @@ import Overlay from 'react-native-modal-overlay';
 import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 
 
-const QuickieVariationsMap = {};
-QuickieVariations.map(element => {
-  QuickieVariationsMap[element.qvName] = element;
+const QuickieModesMap = {};
+QuickieModes.map(element => {
+  QuickieModesMap[element.qvName] = element;
 })
 
 
-class QuickieVariationsScreen extends React.Component {
+class QuickieModesScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
     return {
-      headerTitle: 'Quickie Variations',
+      headerTitle: 'Quickie Modes',
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
           <MenuIcon />
         </TouchableOpacity>
       ),
-      drawerLabel: 'Quickie Variations',
+      drawerLabel: 'Quickie Modes',
     };
   };
 
@@ -44,7 +44,7 @@ class QuickieVariationsScreen extends React.Component {
     super(props);
 
     let sectionTitles = []
-    QuickieVariations.map(element => {
+    QuickieModes.map(element => {
       sectionTitles.push(element.qvName);
     });
 
@@ -68,9 +68,9 @@ class QuickieVariationsScreen extends React.Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(sectionTitle, false);}}
       >
-        <Text style={OverlayStyle.header}>{QuickieVariationsMap[sectionTitle].qvHeader}</Text>
+        <Text style={OverlayStyle.header}>{QuickieModesMap[sectionTitle].qvHeader}</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{QuickieVariationsMap[sectionTitle].qvDescription}</Text>
+        <Text style={OverlayStyle.text}>{QuickieModesMap[sectionTitle].qvDescription}</Text>
       </Overlay>
     )
   }
@@ -100,7 +100,7 @@ class QuickieVariationsScreen extends React.Component {
         <View style={MainRowStyle.nextLevelContainer}>
           <TouchableOpacity 
             onPress={() => {
-              this.props.navigation.navigate('Quickies', {quickieType: 'All', qVariation: sectionTitle});
+              this.props.navigation.navigate('Quickies', {quickieType: 'All', qMode: sectionTitle});
             }}
           >
             <ForwardIcon />
@@ -122,4 +122,4 @@ class QuickieVariationsScreen extends React.Component {
 }
 
 
-export default QuickieVariationsScreen;
+export default QuickieModesScreen;

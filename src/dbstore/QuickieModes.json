@@ -1,5 +1,13 @@
 [
   {
+  	"qvId": "qv0000",
+  	"qvName": "Standard",
+    "qvFactor": 1,
+    "qvHeader": "Standard Quickies",
+    "qvDescription": "These are the normal quickies with repetitions as designed.",
+    "order": 0
+  },
+  {
   	"qvId": "qv0001",
   	"qvName": "Blah Mode",
     "qvFactor": 0.5,

@@ -42,7 +42,6 @@ class QuickieOptionsScreen extends React.Component {
   constructor(props) {
     super(props);
 
-
     let sectionTitles = []
     QuickieOptions.map(element => {
       sectionTitles.push(element.qoName);
@@ -109,10 +108,11 @@ class QuickieOptionsScreen extends React.Component {
   render() {
     return (
       <View style={MainContainerStyle.container}>
-        {this.renderRow({title: 'All', screen: 'Quickies', extra: {quickieType: 'All'}})}
         {this.renderRow({title: 'by Level', screen: 'QuickieLevels'})}
         {this.renderRow({title: 'by Type', screen: 'QuickieTypes'})}
         {this.renderRow({title: 'by Body Split', screen: 'QuickieBodySplits'})}
+        {this.renderRow({title: 'by Mode', screen: 'QuickieModes'})}
+        {this.renderRow({title: 'by Name', screen: 'Quickies', extra: {quickieType: 'All'}})}
         {this.renderRow(
           {title: 'Favorite', screen: 'MVQuickies', extra: {quickieType: 'Favorite'}}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />
@@ -121,7 +121,6 @@ class QuickieOptionsScreen extends React.Component {
           {title: 'Completed', screen: 'MVQuickies', extra: {quickieType: 'Completed'}}, 
           <Image source={require('../images/icons8-completed-26-green.png')} />
         )}
-        {this.renderRow({title: 'Variations', screen: 'QuickieVariations'})}
       </View>
     );
   }

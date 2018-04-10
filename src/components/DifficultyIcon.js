@@ -8,10 +8,10 @@ class DifficultyIcon extends React.Component {
   constructor(props) {
     super(props);
 
-    qVariation = (typeof this.props.qVariation != 'undefined') ? this.props.qVariation : 'default'
+    qMode = (typeof this.props.qMode != 'undefined') ? this.props.qMode : 'Standard'
     
     this.state = {
-      difficultyImage: difficultyImagePathMap.get(qVariation),
+      difficultyImage: difficultyImagePathMap.get(qMode),
     };
   }
 
@@ -20,7 +20,7 @@ class DifficultyIcon extends React.Component {
 
     return (
       <Image
-      	style={DifficultyStyle.imgContainer} 
+        style={DifficultyStyle.imgContainer} 
         source={difficultyImage}
       />
     );

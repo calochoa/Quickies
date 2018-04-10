@@ -15,7 +15,7 @@ import QuickieOptionsScreen from '../screens/QuickieOptionsScreen';
 import QuickieLevelsScreen from '../screens/QuickieLevelsScreen';
 import QuickieTypesScreen from '../screens/QuickieTypesScreen';
 import QuickieBodySplitsScreen from '../screens/QuickieBodySplitsScreen';
-import QuickieVariationsScreen from '../screens/QuickieVariationsScreen';
+import QuickieModesScreen from '../screens/QuickieModesScreen';
 import QuickiesScreen from '../screens/QuickiesScreen';
 import MVQuickiesScreen from '../screens/MultipleVariationsQuickiesScreen';
 import QuickieScreen from '../screens/QuickieScreen';
@@ -49,8 +49,8 @@ const MainStack = StackNavigator(
     QuickieBodySplits: {
       screen: QuickieBodySplitsScreen,
     },
-    QuickieVariations: {
-      screen: QuickieVariationsScreen,
+    QuickieModes: {
+      screen: QuickieModesScreen,
     },
     Quickies: {
       screen: QuickiesScreen,

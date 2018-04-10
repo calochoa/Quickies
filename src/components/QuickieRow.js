@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import QuickieLevels from '../dbstore/QuickieLevels.json';
 import Exercises from '../dbstore/Exercises.json';
-import QuickieVariations from '../dbstore/QuickieVariations.json';
+import QuickieModes from '../dbstore/QuickieModes.json';
 import DifficultyIcon from '../components/DifficultyIcon';
 import ForwardIcon from '../components/ForwardIcon';
 import QuickieRowStyle from '../style/QuickieRowStyle';
@@ -26,7 +26,7 @@ Exercises.map(element => {
 });
 
 const qvFactorMap = new Map();
-QuickieVariations.map(element => {
+QuickieModes.map(element => {
   qvFactorMap.set(element.qvName, element.qvFactor);
 })
 
@@ -37,7 +37,7 @@ class QuickieRow extends Component {
 
     this.state = {
       quickie: this.props.quickie,
-      qVariation: this.props.qVariation,
+      qMode: this.props.qMode,
     };
   }
 
@@ -64,11 +64,11 @@ class QuickieRow extends Component {
     )
   }
 
-  getDifficultyImg(totalImages, qVariation) {
+  getDifficultyImg(totalImages, qMode) {
     let difficultyImg = []
     let numImages = []
     for (let i = 0; i < totalImages; i++) {
-      numImages.push(<DifficultyIcon qVariation={qVariation} key={i}/>)
+      numImages.push(<DifficultyIcon qMode={qMode} key={i}/>)
       if ((i == 1 && totalImages < 6) || (i == 2 && totalImages == 6)) {
         difficultyImg.push(<View style={QuickieRowStyle.imgRowContainer} key='1'>{numImages}</View>)
         numImages = []
@@ -78,16 +78,16 @@ class QuickieRow extends Component {
     return difficultyImg
   }
 
-  getFavoriteImg(quickie, qVariation) {
+  getFavoriteImg(quickie, qMode) {
     let favorite = quickie.qFavorite
-    if (typeof qVariation != 'undefined') {
-      if (qVariation === 'Blah Mode') {
+    if (typeof qMode != 'undefined') {
+      if (qMode === 'Blah Mode') {
         favorite = quickie.qFavorite_BlahMode
-      } else if (qVariation === 'Boss Mode') {
+      } else if (qMode === 'Boss Mode') {
         favorite = quickie.qFavorite_BossMode
-      } else if (qVariation === 'Beast Mode') {
+      } else if (qMode === 'Beast Mode') {
         favorite = quickie.qFavorite_BeastMode
-      } else if (qVariation === 'Bananas Mode') {
+      } else if (qMode === 'Bananas Mode') {
         favorite = quickie.qFavorite_BananasMode
       }
     }
@@ -95,16 +95,16 @@ class QuickieRow extends Component {
       : <Image source={require('../images/icons8-star-26-white.png')} />
   }
 
-  getCompletedImg(quickie, qVariation) {
+  getCompletedImg(quickie, qMode) {
     let completed = quickie.qCompleted
-    if (typeof qVariation != 'undefined') {
-      if (qVariation === 'Blah Mode') {
+    if (typeof qMode != 'undefined') {
+      if (qMode === 'Blah Mode') {
         completed = quickie.qCompleted_BlahMode
-      } else if (qVariation === 'Boss Mode') {
+      } else if (qMode === 'Boss Mode') {
         completed = quickie.qCompleted_BossMode
-      } else if (qVariation === 'Beast Mode') {
+      } else if (qMode === 'Beast Mode') {
         completed = quickie.qCompleted_BeastMode
-      } else if (qVariation === 'Bananas Mode') {
+      } else if (qMode === 'Bananas Mode') {
         completed = quickie.qCompleted_BananasMode
       }
     }
@@ -118,8 +118,8 @@ class QuickieRow extends Component {
     )
   }
 
-  getExerciseInfo(quickie, qVariation) {
-    qvFactor = (typeof qVariation != 'undefined') ? qvFactorMap.get(qVariation) : 1
+  getExerciseInfo(quickie, qMode) {
+    qvFactor = (typeof qMode != 'undefined') ? qvFactorMap.get(qMode) : 1
     return (
       <View style={QuickieRowStyle.infoContainer}>
         {this.getRepExerciseRow(qvFactor, quickie.reps1, quickie.eId1)}
@@ -130,26 +130,26 @@ class QuickieRow extends Component {
     )
   }
 
-  getQuickieVariationText(qVariation) {
-    return (typeof qVariation != 'undefined') ? <Text style={QuickieRowStyle.variation}>{qVariation}</Text> : null
+  getQuickieModeText(qMode) {
+    return (typeof qMode != 'undefined' && qMode !== 'Standard') ? <Text style={QuickieRowStyle.variation}>{qMode}</Text> : null
   }
 
   render() {
-    const { quickie, qVariation } = this.state;
+    const { quickie, qMode } = this.state;
 
     return (
       <View style={QuickieRowStyle.subContainer}>
         {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
         <View style={QuickieRowStyle.titleContainer}>
           <View style={{flex: 1, marginLeft: 5,}}>
-            {this.getFavoriteImg(quickie, qVariation)}
+            {this.getFavoriteImg(quickie, qMode)}
           </View>
           <View style={QuickieRowStyle.nameContainer}>
             <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
-            {this.getQuickieVariationText(qVariation)}
+            {this.getQuickieModeText(qMode)}
           </View>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
-            {this.getCompletedImg(quickie, qVariation)}
+            {this.getCompletedImg(quickie, qMode)}
           </View>
         </View>
         <View style={QuickieRowStyle.detailsContainer}>
@@ -157,16 +157,16 @@ class QuickieRow extends Component {
             style={QuickieRowStyle.difficultyContainer}
             onPress={() => {this.setModalVisible(quickie.qName, true);}}
           >
-            {this.getDifficultyImg(quickie.qDifficulty, qVariation)}
+            {this.getDifficultyImg(quickie.qDifficulty, qMode)}
           </TouchableOpacity>
-          {this.getExerciseInfo(quickie, qVariation)}
+          {this.getExerciseInfo(quickie, qMode)}
           <TouchableOpacity 
             style={QuickieRowStyle.nextLevelContainer} 
             onPress={() => {
               this.props.navigation.navigate('Quickie', {
                 quickieId: quickie.qId,
                 quickieName: quickie.qName,
-                qVariation: qVariation,
+                qMode: qMode,
               });
             }}
           >

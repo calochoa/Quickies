@@ -14,7 +14,7 @@ import QuickieTypes from '../dbstore/QuickieTypes.json';
 import Exercises from '../dbstore/Exercises.json';
 import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Videos from '../dbstore/Videos.json';
-import QuickieVariations from '../dbstore/QuickieVariations.json';
+import QuickieModes from '../dbstore/QuickieModes.json';
 import { vPathMap } from '../misc/ExerciseVideoPaths';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -42,7 +42,7 @@ Videos.map(element => {
   VideosMap.set(element.vId, element.vPath);
 })
 const qvFactorMap = new Map();
-QuickieVariations.map(element => {
+QuickieModes.map(element => {
   qvFactorMap.set(element.qvName, element.qvFactor);
 })
 
@@ -79,7 +79,7 @@ class QuickieScreen extends Component {
       vLink2: vPathMap.get(vPath2),
       vLink3: vPathMap.get(vPath3),
       vLink4: vPathMap.get(vPath4),
-      qVariation: params.qVariation,
+      qMode: params.qMode,
     };
   }
 
@@ -139,8 +139,8 @@ class QuickieScreen extends Component {
   }
 
   render() {
-    const { quickie, vLink1, vLink2, vLink3, vLink4, qVariation } = this.state;
-    let qvFactor = (typeof qVariation != 'undefined') ? qvFactorMap.get(qVariation) : 1
+    const { quickie, vLink1, vLink2, vLink3, vLink4, qMode } = this.state;
+    let qvFactor = (typeof qMode != 'undefined') ? qvFactorMap.get(qMode) : 1
 
     return (
       <View style={MainContainerStyle.container}>
@@ -153,7 +153,7 @@ class QuickieScreen extends Component {
           {this._displayExerVid(vLink4, quickie.eId4)}
         </View>
         <ScrollView style={QuickieStyle.detailsContainer}>
-          <LinearGradient colors={getGradientColor(qVariation)}>
+          <LinearGradient colors={getGradientColor(qMode)}>
             {this._displayRepsExer(quickie, qvFactor)}
           </LinearGradient>
         </ScrollView>

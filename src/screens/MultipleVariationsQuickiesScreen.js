@@ -20,7 +20,7 @@ QuickieTypes.map(element => {
 })
 
 
-class MultipleVariationsQuickiesScreen extends Component {
+class MultipleModesQuickiesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -48,30 +48,30 @@ class MultipleVariationsQuickiesScreen extends Component {
     });
   }
 
-  getQVariationDifficulty(qVariation) {
-    let qVariationDifficulty = 1;
-    if (typeof qVariation != 'undefined') {
-      if (qVariation === 'Blah Mode') {
-        qVariationDifficulty = 0.5;
-      } else if (qVariation === 'Boss Mode') {
-        qVariationDifficulty = 2;
-      } else if (qVariation === 'Beast Mode') {
-        qVariationDifficulty = 4;
-      } else if (qVariation === 'Bananas Mode') {
-        qVariationDifficulty = 10;
+  getQModeDifficulty(qMode) {
+    let qModeDifficulty = 1;
+    if (typeof qMode != 'undefined') {
+      if (qMode === 'Blah Mode') {
+        qModeDifficulty = 0.5;
+      } else if (qMode === 'Boss Mode') {
+        qModeDifficulty = 2;
+      } else if (qMode === 'Beast Mode') {
+        qModeDifficulty = 4;
+      } else if (qMode === 'Bananas Mode') {
+        qModeDifficulty = 10;
       }
     }
-    return qVariationDifficulty;
+    return qModeDifficulty;
   }
 
   sortReverseDiffAlpha(filteredData) {
     return filteredData.sort((a,b) => {
-      aQVariationDifficulty = this.getQVariationDifficulty(a.qVariation)
-      bQVariationDifficulty = this.getQVariationDifficulty(b.qVariation)
-      if (aQVariationDifficulty > bQVariationDifficulty) {
+      aQModeDifficulty = this.getQModeDifficulty(a.qMode)
+      bQModeDifficulty = this.getQModeDifficulty(b.qMode)
+      if (aQModeDifficulty > bQModeDifficulty) {
         return -1;
       }
-      if (aQVariationDifficulty < bQVariationDifficulty) {
+      if (aQModeDifficulty < bQModeDifficulty) {
         return 1;
       }
       if (a.quickie.qDifficulty > b.quickie.qDifficulty) {
@@ -98,38 +98,38 @@ class MultipleVariationsQuickiesScreen extends Component {
     if (params.quickieType === 'Favorite') {
       Quickies.map(element => {
         if (element.qFavorite) {
-          filteredData.push({quickie: element, qVariation: undefined});
+          filteredData.push({quickie: element, qMode: undefined});
         }
         if (element.qFavorite_BlahMode) {
-          filteredData.push({quickie: element, qVariation: 'Blah Mode'});
+          filteredData.push({quickie: element, qMode: 'Blah Mode'});
         }
         if (element.qFavorite_BossMode) {
-          filteredData.push({quickie: element, qVariation: 'Boss Mode'});
+          filteredData.push({quickie: element, qMode: 'Boss Mode'});
         }
         if (element.qFavorite_BeastMode) {
-          filteredData.push({quickie: element, qVariation: 'Beast Mode'});
+          filteredData.push({quickie: element, qMode: 'Beast Mode'});
         }
         if (element.qFavorite_BananasMode) {
-          filteredData.push({quickie: element, qVariation: 'Bananas Mode'});
+          filteredData.push({quickie: element, qMode: 'Bananas Mode'});
         }
       });
       filteredData = this.sortAlpha(filteredData);
     } else if (params.quickieType === 'Completed') {
       Quickies.map(element => {
         if (element.qCompleted) {
-          filteredData.push({quickie: element, qVariation: undefined});
+          filteredData.push({quickie: element, qMode: undefined});
         }
         if (element.qCompleted_BlahMode) {
-          filteredData.push({quickie: element, qVariation: 'Blah Mode'});
+          filteredData.push({quickie: element, qMode: 'Blah Mode'});
         }
         if (element.qCompleted_BossMode) {
-          filteredData.push({quickie: element, qVariation: 'Boss Mode'});
+          filteredData.push({quickie: element, qMode: 'Boss Mode'});
         }
         if (element.qCompleted_BeastMode) {
-          filteredData.push({quickie: element, qVariation: 'Beast Mode'});
+          filteredData.push({quickie: element, qMode: 'Beast Mode'});
         }
         if (element.qCompleted_BananasMode) {
-          filteredData.push({quickie: element, qVariation: 'Bananas Mode'});
+          filteredData.push({quickie: element, qMode: 'Bananas Mode'});
         }
       });
       filteredData = this.sortReverseDiffAlpha(filteredData);
@@ -144,14 +144,14 @@ class MultipleVariationsQuickiesScreen extends Component {
 
   renderRow(data) {
     let quickie = data.quickie
-    let qVariation = data.qVariation
+    let qMode = data.qMode
     return (
       <LinearGradient 
-        colors={getGradientColor(qVariation)} 
+        colors={getGradientColor(qMode)} 
         style={QuickieRowStyle.container} 
-        key={quickie.qId + ' ' + qVariation}
+        key={quickie.qId + ' ' + qMode}
       >
-        <QuickieRow quickie={quickie} qVariation={qVariation} navigation={this.props.navigation} key={quickie.qId} />
+        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
     );
   }
@@ -170,4 +170,4 @@ class MultipleVariationsQuickiesScreen extends Component {
 }
 
 
-export default MultipleVariationsQuickiesScreen;
+export default MultipleModesQuickiesScreen;

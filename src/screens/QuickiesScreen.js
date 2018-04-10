@@ -25,7 +25,7 @@ class QuickiesScreen extends Component {
     const { params } = navigation.state;
 
     let title = params ? params.quickieType + ' ' : ''
-    title += (typeof params.qVariation != 'undefined') ? params.qVariation + ' ' : ''
+    title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
     title += 'Quickies'
 
     return {
@@ -104,31 +104,31 @@ class QuickiesScreen extends Component {
 
     this.state = {
       filteredData: filteredData,
-      qVariation: params.qVariation,
+      qMode: params.qMode,
     };
 
     this.renderRow = this.renderRow.bind(this);
   }
 
-  renderRow(quickie, qVariation) {
+  renderRow(quickie, qMode) {
     return (
       <LinearGradient 
-        colors={getGradientColor(qVariation)} 
+        colors={getGradientColor(qMode)} 
         style={QuickieRowStyle.container} 
         key={quickie.qId}
       >
-        <QuickieRow quickie={quickie} qVariation={qVariation} navigation={this.props.navigation} key={quickie.qId} />
+        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
     );
   }
 
   render() {
-    const { filteredData, qVariation } = this.state;
+    const { filteredData, qMode } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
-          {filteredData.map((quickie) => this.renderRow(quickie, qVariation))}
+          {filteredData.map((quickie) => this.renderRow(quickie, qMode))}
         </ScrollView>
       </View>
     );
