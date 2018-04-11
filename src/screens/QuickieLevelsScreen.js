@@ -21,7 +21,7 @@ import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 
 const qlDescriptionMap = new Map();
 QuickieLevels.map(element => {
-  qlDescriptionMap.set(element.qlName, element.qlDescription);
+  qlDescriptionMap.set(element.qlId, element.qlDescription);
 })
 
 
@@ -81,7 +81,7 @@ class QuickieLevelsScreen extends Component {
       >
         <Text style={OverlayStyle.header}>{qMode}{'\n'}{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{qlDescriptionMap.get(sectionTitle)}</Text>
+        <Text style={OverlayStyle.text}>{qlDescriptionMap.get(qlId)}</Text>
       </Overlay>
     )
   }

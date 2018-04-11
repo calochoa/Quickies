@@ -4,7 +4,7 @@
   	"qvName": "Standard",
     "qvFactor": 1,
     "qvHeader": "Standard Quickies",
-    "qvDescription": "These are the normal quickies with repetitions as designed.",
+    "qvDescription": "These are the standard quickies with repetitions as designed.",
     "order": 0
   },
   {
@@ -12,7 +12,7 @@
   	"qvName": "Blah Mode",
     "qvFactor": 0.5,
     "qvHeader": "Blah Mode Quickies",
-    "qvDescription": "These quickies are roughly half the repetitions of their normal counterparts.  They are intended to help ease individuals into new quickie types or levels, but can also be used if you're just not in the mood to go all out.",
+    "qvDescription": "These quickies are roughly half the repetitions of their standard counterparts.  They are intended to help ease individuals into new quickie types or levels, but can also be used if you're just not in the mood to go all out.",
     "order": 1
   },
   {
@@ -20,7 +20,7 @@
   	"qvName": "Boss Mode",
     "qvFactor": 2,
     "qvHeader": "Boss Mode Quickies",
-    "qvDescription": "Perform quickies in Boss Mode for double the fun!  Twice the repetitions, compared to normal quickies, can help you reach new quickie levels faster.",
+    "qvDescription": "Perform quickies in Boss Mode for double the fun!  Twice the repetitions, compared to standard quickies, can help you reach new quickie levels faster.",
     "order": 2
   },
   {
@@ -36,7 +36,7 @@
   	"qvName": "Bananas Mode",
     "qvFactor": 10,
     "qvHeader": "Bananas Mode Quickies",
-    "qvDescription": "This mode can prove to be a workout in and of itself.  Ten times the normal repetitions is just BANANAS and should be attempted with extreme caution.",
+    "qvDescription": "This mode can prove to be a workout in and of itself.  Ten times the standard repetitions is just BANANAS and should be attempted with extreme caution.",
     "order": 4
   }
 ]
