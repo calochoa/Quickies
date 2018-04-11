@@ -30,6 +30,7 @@ import WorkoutOfTheDayScreen from '../screens/WorkoutOfTheDayScreen';
 import WeeklyChallengeScreen from '../screens/WeeklyChallengeScreen';
 import FaqScreen from '../screens/FaqScreen';
 import MyProfileScreen from '../screens/MyProfileScreen';
+import SideMenu from '../components/SideMenu';
 
 
 const MainStack = StackNavigator(
@@ -159,6 +160,7 @@ const RootStack = DrawerNavigator(
     },
   },
   {
+    contentComponent: SideMenu,
     mode: 'modal',
     headerMode: 'none',
     drawerPosition: 'right',
