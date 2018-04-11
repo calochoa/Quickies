@@ -15,9 +15,9 @@ import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 
 
-const QuickieOfTheDayTypesMap = new Map();
-QuickieOfTheDayTypes.map(element => {
-  QuickieOfTheDayTypesMap.set(element.qotdId, element.qotdName.toUpperCase());
+const QuickieMap = {}
+Quickies.map(element => {
+  QuickieMap[element.qId] = element;
 })
 
 
@@ -39,24 +39,23 @@ class QuickieOfTheDayScreen extends Component {
   constructor(props) {
     super(props);
 
+    let qotdTypes = QuickieOfTheDayTypes.sort((a,b) => {
+      if (a.order < b.order) {
+        return -1;
+      }
+      if (a.order > b.order) {
+        return 1;
+      }
+      return 0;
+    });
+
     var date = new Date();
     var dayOfTheWeek = date.getDay();
 
     let filteredData = []
-    Quickies.map(element => {
-      if (('qotdId' in element) && (dayOfTheWeek == element.qotdOrder)) {
-        filteredData.push(element);
-      }
-    });
-    filteredData = filteredData.sort((a,b) => {
-        if (a.qotdId < b.qotdId) {
-          return -1;
-        }
-        if (a.qotdId > b.qotdId) {
-          return 1;
-        }
-        return 0;
-      });
+    qotdTypes.map(element => {
+      filteredData.push({qotdName: element.qotdName, quickieId: element['qotd_'+dayOfTheWeek]})
+    })
 
     this.state = {
       filteredData: filteredData,
@@ -65,15 +64,17 @@ class QuickieOfTheDayScreen extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
 
-  renderRow(quickie) {
+  renderRow(data) {
     let qMode = 'Standard'
+    let quickie = QuickieMap[data.quickieId]
+    
     return (
       <LinearGradient 
         colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >
-        <Text style={OfTheDayRowStyle.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
+        <Text style={OfTheDayRowStyle.qotdType}>{data.qotdName.toUpperCase()}</Text>
         <View style={OfTheDayRowStyle.divider}/>
         <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
@@ -86,7 +87,7 @@ class QuickieOfTheDayScreen extends Component {
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
-          {filteredData.map((quickie) => this.renderRow(quickie))}
+          {filteredData.map((data) => this.renderRow(data))}
         </ScrollView>
       </View>
     );
