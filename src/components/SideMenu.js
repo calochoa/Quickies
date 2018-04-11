@@ -22,51 +22,51 @@ class SideMenu extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Home')}>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('Home')}>
+          <Text style={styles.navItemStyle}>
             Home
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('QuickieOptions')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('QuickieOptions')}>
+          <Text style={styles.navItemStyle}>
             Quickies
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('QuickieOfTheDay')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('QuickieOfTheDay')}>
+          <Text style={styles.navItemStyle}>
             Quickie of the Day
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('WorkoutOfTheDay')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WorkoutOfTheDay')}>
+          <Text style={styles.navItemStyle}>
             Workout of the Day
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('WeeklyChallenge')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WeeklyChallenge')}>
+          <Text style={styles.navItemStyle}>
             Weekly Challenge
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('WorkoutTypes')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WorkoutTypes')}>
+          <Text style={styles.navItemStyle}>
             Workouts
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('ExerciseTypes')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('ExerciseTypes')}>
+          <Text style={styles.navItemStyle}>
             Exercises
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('FAQ')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('FAQ')}>
+          <Text style={styles.navItemStyle}>
             Frequently Asked Questions
           </Text>
-        </View>
-        <View style={styles.navSectionStyle}>
-          <Text style={styles.navItemStyle} onPress={this.navigateToScreen('MyProfile')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('MyProfile')}>
+          <Text style={styles.navItemStyle}>
             My Profile
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Gill Sans',
   },
   navSectionStyle: {
+    paddingVertical: 5,
     backgroundColor: 'white',
-    //backgroundColor: 'lightgrey',
   },
   sectionHeadingStyle: {
     paddingVertical: 10,
