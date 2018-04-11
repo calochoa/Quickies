@@ -17,6 +17,11 @@ const OfTheDayRowStyle = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Gill Sans',
   },
+  wcType: {
+    fontSize: 28,    
+    color: '#fff',
+    fontFamily: 'Gill Sans',
+  },
   divider: {
     borderBottomColor: '#fff', 
     borderBottomWidth: 1, 

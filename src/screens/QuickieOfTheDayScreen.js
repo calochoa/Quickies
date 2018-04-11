@@ -8,7 +8,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
-import QuickieOfTheDayTypes from '../dbstore/QuickieOfTheDayTypes.json';
+import QuickieOfTheDay from '../dbstore/QuickieOfTheDay.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -39,7 +39,7 @@ class QuickieOfTheDayScreen extends Component {
   constructor(props) {
     super(props);
 
-    let qotdTypes = QuickieOfTheDayTypes.sort((a,b) => {
+    let qotdTypes = QuickieOfTheDay.sort((a,b) => {
       if (a.order < b.order) {
         return -1;
       }

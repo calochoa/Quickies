@@ -8,7 +8,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
-import QuickieOfTheDayTypes from '../dbstore/QuickieOfTheDayTypes.json';
+import WeeklyChallenge from '../dbstore/WeeklyChallenge.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
@@ -39,7 +39,7 @@ class WeeklyChallengeScreen extends Component {
   constructor(props) {
     super(props);
 
-    let qotdTypes = QuickieOfTheDayTypes.sort((a,b) => {
+    let wcTypes = WeeklyChallenge.sort((a,b) => {
       if (a.order < b.order) {
         return -1;
       }
@@ -53,8 +53,8 @@ class WeeklyChallengeScreen extends Component {
     var dayOfTheWeek = date.getDay();
 
     let filteredData = []
-    qotdTypes.map(element => {
-      filteredData.push({qotdName: element.qotdName, quickieId: element['qotd_'+dayOfTheWeek]})
+    wcTypes.map(element => {
+      filteredData.push({wcName: element.wcName, quickieId: element['wc_'+dayOfTheWeek]})
     })
 
     this.state = {
@@ -74,7 +74,7 @@ class WeeklyChallengeScreen extends Component {
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >
-        <Text style={OfTheDayRowStyle.qotdType}>{data.qotdName.toUpperCase()}</Text>
+        <Text style={OfTheDayRowStyle.wcType}>{data.wcName.toUpperCase()}</Text>
         <View style={OfTheDayRowStyle.divider}/>
         <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
