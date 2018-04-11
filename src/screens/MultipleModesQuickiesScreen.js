@@ -98,7 +98,7 @@ class MultipleModesQuickiesScreen extends Component {
     if (params.quickieType === 'Favorite') {
       Quickies.map(element => {
         if (element.qFavorite) {
-          filteredData.push({quickie: element, qMode: undefined});
+          filteredData.push({quickie: element, qMode: 'Standard'});
         }
         if (element.qFavorite_BlahMode) {
           filteredData.push({quickie: element, qMode: 'Blah Mode'});
@@ -117,7 +117,7 @@ class MultipleModesQuickiesScreen extends Component {
     } else if (params.quickieType === 'Completed') {
       Quickies.map(element => {
         if (element.qCompleted) {
-          filteredData.push({quickie: element, qMode: undefined});
+          filteredData.push({quickie: element, qMode: 'Standard'});
         }
         if (element.qCompleted_BlahMode) {
           filteredData.push({quickie: element, qMode: 'Blah Mode'});

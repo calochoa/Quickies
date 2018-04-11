@@ -9,7 +9,7 @@ export const getGradientColor = (type)=> {
 		gradientColor = ['#222222', '#434343', '#000000'];
   } else if (type === 'Blah Mode') {
 		gradientColor = ['#75818C', '#bdc3c7', '#2C3E50'];
-  } else if (type === 'default') {
+  } else if (type === 'default' || type === 'Standard') {
 		gradientColor = ['#4C669f', '#0276C9', '#192F6A'];
   } else if  (type === 'default2') {
 		gradientColor = ['#02111D', '#037BB5', '#02111D'];

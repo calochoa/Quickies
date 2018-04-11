@@ -47,8 +47,8 @@ class QuickieRow extends Component {
     this.setState(update);
   }
 
-  renderOverlay(qName, qDifficulty) {
-    quickieLevel = quickieLevelMap.get('ql'+qDifficulty)
+  renderOverlay(qName, qDifficulty, qMode) {
+    quickieLevel = quickieLevelMap.get(qMode + ' ' + qDifficulty)
     return (
       <Overlay 
         visible={this.state[qName]}
@@ -57,7 +57,7 @@ class QuickieRow extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(qName, false);}}
       >
-        <Text style={OverlayStyle.header}>{quickieLevel.qlName} Quickie</Text>
+        <Text style={OverlayStyle.header}>{qMode}{'\n'}{quickieLevel.qlName} Quickie</Text>
         <View style={OverlayStyle.divider}/>
         <Text style={OverlayStyle.text}>{quickieLevel.qlDescription}</Text>
       </Overlay>
@@ -139,7 +139,7 @@ class QuickieRow extends Component {
 
     return (
       <View style={QuickieRowStyle.subContainer}>
-        {this.renderOverlay(quickie.qName, quickie.qDifficulty)}
+        {this.renderOverlay(quickie.qName, quickie.qDifficulty, qMode)}
         <View style={QuickieRowStyle.titleContainer}>
           <View style={{flex: 1, marginLeft: 5,}}>
             {this.getFavoriteImg(quickie, qMode)}

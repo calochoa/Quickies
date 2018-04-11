@@ -3,6 +3,8 @@ import {
   TouchableOpacity,
   View, 
   Text, 
+  ScrollView, 
+  Image, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -14,6 +16,7 @@ import MainContainerStyle from '../style/MainContainerStyle';
 import MainRowStyle from '../style/MainRowStyle';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
+import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 
 
 const qlDescriptionMap = new Map();
@@ -51,61 +54,68 @@ class QuickieLevelsScreen extends Component {
       return 0;
     });
 
-    let sectionTitles = []
+    let qlData = []
     quickieLevels.map(element => {
-      sectionTitles.push(element.qlName);
+      qlData.push({sectionTitle: element.qlName, qlId: element.qlId});
     });
 
     this.state = {
-      sectionTitles: sectionTitles,
+      qlData: qlData,
     };
   }
 
-  setModalVisible(sectionTitle, visible) {
+  setModalVisible(qlId, visible) {
     const update = {}
-    update[sectionTitle] = visible
+    update[qlId] = visible
     this.setState(update);
   }
 
-  renderOverlay(sectionTitle) {
+  renderOverlay(qlId, sectionTitle, qMode) {
     return (
       <Overlay 
-        visible={this.state[sectionTitle]}
+        visible={this.state[qlId]}
         closeOnTouchOutside={true}
         containerStyle={OverlayStyle.container}
         childrenWrapperStyle={OverlayStyle.wrapper}
-        onClose={() => {this.setModalVisible(sectionTitle, false);}}
+        onClose={() => {this.setModalVisible(qlId, false);}}
       >
-        <Text style={OverlayStyle.header}>{sectionTitle} Quickies</Text>
+        <Text style={OverlayStyle.header}>{qMode}{'\n'}{sectionTitle} Quickies</Text>
         <View style={OverlayStyle.divider}/>
         <Text style={OverlayStyle.text}>{qlDescriptionMap.get(sectionTitle)}</Text>
       </Overlay>
     )
   }
 
-  renderMainRow(sectionTitle) {
+  renderMainRow(data) {
+    let sectionTitle = data.sectionTitle
+    let qlId = data.qlId
+    let qMode = qlId.slice(0, -2)
+
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
-        style={MainRowStyle.container} 
-        key={sectionTitle}
+        colors={getGradientColor(qMode)} 
+        style={[MainRowStyle.container, MainRowStyle.extra10Margin]} 
+        key={qlId}
       >
-        {this.renderOverlay(sectionTitle)}
+        {this.renderOverlay(qlId, sectionTitle, qMode)}
         <TouchableOpacity 
           style={MainRowStyle.infoLevelContainer} 
-          onPress={() => {this.setModalVisible(sectionTitle, true);}}
+          onPress={() => {this.setModalVisible(qlId, true);}}
         >
           <InfoIcon />
         </TouchableOpacity>
         <View style={MainRowStyle.titleContainer}>
-          <Text style={MainRowStyle.title}>{sectionTitle}</Text>
+          <Text style={MainRowStyle.title}>
+            <View style={{marginRight: 10}}>
+              <Image source={difficultyImagePathMap.get(qMode)} />
+            </View>
+            {sectionTitle}
+          </Text>
         </View>
         <TouchableOpacity 
           style={MainRowStyle.nextLevelContainer} 
           onPress={() => {
-            this.props.navigation.navigate('Quickies', {
-              quickieType: sectionTitle,
-            });
+            this.props.navigation.navigate('Quickies', {quickieType: sectionTitle, qMode: qMode});
           }}
         >
           <ForwardIcon />
@@ -115,11 +125,13 @@ class QuickieLevelsScreen extends Component {
   }
 
   render() {
-    const { sectionTitles } = this.state;
+    const { qlData } = this.state;
 
     return (
-      <View style={MainContainerStyle.container}>
-        {sectionTitles.map((sectionTitle) => this.renderMainRow(sectionTitle))}
+      <View style={MainContainerStyle.containerNoSpaceAround}>
+        <ScrollView>
+          {qlData.map((data) => this.renderMainRow(data))}
+        </ScrollView>
       </View>
     );
   }

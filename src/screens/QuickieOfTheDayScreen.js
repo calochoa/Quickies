@@ -66,15 +66,16 @@ class QuickieOfTheDayScreen extends Component {
   }
 
   renderRow(quickie) {
+    let qMode = 'Standard'
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
+        colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >
         <Text style={OfTheDayRowStyle.qotdType}>{QuickieOfTheDayTypesMap.get(quickie.qotdId)}</Text>
         <View style={OfTheDayRowStyle.divider}/>
-        <QuickieRow quickie={quickie} navigation={this.props.navigation} />
+        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
     );
   }

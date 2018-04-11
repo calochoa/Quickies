@@ -15,6 +15,9 @@ const MainRowStyle = StyleSheet.create({
   extra15Margin: {
     margin: 15,
   },
+  extra10Margin: {
+    margin: 10,
+  },
   titleContainer: {
     flex: 8,
     alignItems: 'center', 

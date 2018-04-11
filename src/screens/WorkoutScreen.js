@@ -76,13 +76,14 @@ class WorkoutScreen extends Component {
   }
 
   renderRow(quickie) {
+    let qMode = 'Standard'
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
+        colors={getGradientColor(qMode)} 
         style={QuickieRowStyle.container} 
         key={quickie.qId}
       >
-        <QuickieRow quickie={quickie} navigation={this.props.navigation} key={quickie.qId} />
+        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
     );
   }

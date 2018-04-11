@@ -28,6 +28,8 @@ class QuickiesScreen extends Component {
     title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
     title += 'Quickies'
 
+    title = title.startsWith('Level') ? title.replace('Level', 'Lvl') : title;
+
     return {
       title: title,
       headerBackTitle: null,
@@ -102,9 +104,11 @@ class QuickiesScreen extends Component {
       filteredData = this.sortDiffAlpha(filteredData);
     }
 
+    let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
+
     this.state = {
       filteredData: filteredData,
-      qMode: params.qMode,
+      qMode: qMode,
     };
 
     this.renderRow = this.renderRow.bind(this);
