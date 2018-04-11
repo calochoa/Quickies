@@ -7,17 +7,17 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import Workouts from '../dbstore/Workouts.json';
-import WorkoutOfTheDayTypes from '../dbstore/WorkoutOfTheDayTypes.json';
+import Quickies from '../dbstore/Quickies.json';
+import QuickieOfTheDayTypes from '../dbstore/QuickieOfTheDayTypes.json';
 import MenuIcon from '../components/MenuIcon';
-import WorkoutRow from '../components/WorkoutRow';
+import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 
 
-const WorkoutOfTheDayTypesMap = new Map();
-WorkoutOfTheDayTypes.map(element => {
-  WorkoutOfTheDayTypesMap.set(element.wotdId, element.wotdName.toUpperCase());
+const QuickieMap = {}
+Quickies.map(element => {
+  QuickieMap[element.qId] = element;
 })
 
 
@@ -39,41 +39,44 @@ class WeeklyChallengeScreen extends Component {
   constructor(props) {
     super(props);
 
+    let qotdTypes = QuickieOfTheDayTypes.sort((a,b) => {
+      if (a.order < b.order) {
+        return -1;
+      }
+      if (a.order > b.order) {
+        return 1;
+      }
+      return 0;
+    });
+
     var date = new Date();
     var dayOfTheWeek = date.getDay();
 
     let filteredData = []
-    Workouts.map(element => {
-      if (('wotdId' in element) && (dayOfTheWeek == element.wotdOrder)) {
-        filteredData.push(element);
-      }
-    });
-    filteredData = filteredData.sort((a,b) => {
-        if (a.wotdId < b.wotdId) {
-          return -1;
-        }
-        if (a.wotdId > b.wotdId) {
-          return 1;
-        }
-        return 0;
-      });
+    qotdTypes.map(element => {
+      filteredData.push({qotdName: element.qotdName, quickieId: element['qotd_'+dayOfTheWeek]})
+    })
 
     this.state = {
       filteredData: filteredData,
-      headerTitle: this.props.headerTitle,
     };
+
+    this.renderRow = this.renderRow.bind(this);
   }
 
-  _renderRow(workout) {
+  renderRow(data) {
+    let qMode = 'Bananas Mode'
+    let quickie = QuickieMap[data.quickieId]
+    
     return (
       <LinearGradient 
-        colors={getGradientColor('default')} 
+        colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
-        key={workout.wId}
+        key={quickie.qId}
       >
-        <Text style={OfTheDayRowStyle.qotdType}>{WorkoutOfTheDayTypesMap.get(workout.wotdId)}</Text>
+        <Text style={OfTheDayRowStyle.qotdType}>{data.qotdName.toUpperCase()}</Text>
         <View style={OfTheDayRowStyle.divider}/>
-        <WorkoutRow workout={workout} navigation={this.props.navigation} />
+        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
     );
   }
@@ -84,7 +87,7 @@ class WeeklyChallengeScreen extends Component {
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
-          {filteredData.map((workout) => this._renderRow(workout))}
+          {filteredData.map((data) => this.renderRow(data))}
         </ScrollView>
       </View>
     );
