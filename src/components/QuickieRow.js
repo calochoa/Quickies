@@ -91,8 +91,12 @@ class QuickieRow extends Component {
         favorite = quickie.qFavorite_BananasMode
       }
     }
-    return favorite ? <Image source={require('../images/icons8-star-26-gold.png')} />
-      : <Image source={require('../images/icons8-star-26-white.png')} />
+    return favorite ? <Image style={{marginRight: 5,}} source={require('../images/icons8-star-26-gold.png')} />
+      : <Image style={{marginRight: 5,}} source={require('../images/icons8-star-26-white.png')} />
+  }
+
+  getMedalImg() {
+    return <Image source={require('../images/icons8-trophy-26-white.png')} />
   }
 
   getCompletedImg(quickie, qMode) {
@@ -141,14 +145,15 @@ class QuickieRow extends Component {
       <View style={QuickieRowStyle.subContainer}>
         {this.renderOverlay(quickie.qName, quickie.qDifficulty, qMode)}
         <View style={QuickieRowStyle.titleContainer}>
-          <View style={{flex: 1, marginLeft: 5,}}>
-            {this.getFavoriteImg(quickie, qMode)}
+          <View style={{flex: 1, marginLeft: 5, flexDirection: 'row',}}>
+            {this.getMedalImg()}
           </View>
           <View style={QuickieRowStyle.nameContainer}>
             <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
             {this.getQuickieModeText(qMode)}
           </View>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
+            {this.getFavoriteImg(quickie, qMode)}
             {this.getCompletedImg(quickie, qMode)}
           </View>
         </View>

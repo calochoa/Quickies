@@ -2,7 +2,6 @@
   {
     "qId": "q00001", 
     "qtId": "qt0003",
-    "vId": "v100002",
     "qDifficulty": 1,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -28,7 +27,6 @@
   {
     "qId": "q00002", 
     "qtId": "qt0003",
-    "vId": "v100031",
     "qDifficulty": 1,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -54,7 +52,6 @@
   {
     "qId": "q00003", 
     "qtId": "qt0003",
-    "vId": "v100003",
     "qDifficulty": 1,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -80,7 +77,6 @@
   {
     "qId": "q00004", 
     "qtId": "qt0003",
-    "vId": "v100004",
     "qDifficulty": 1,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -106,7 +102,6 @@
   {
     "qId": "q00005", 
     "qtId": "qt0003",
-    "vId": "v100001",
     "qDifficulty": 1,
     "qbsId": "qbs0002",
     "qFavorite": false,
@@ -132,7 +127,6 @@
   {
     "qId": "q00006", 
     "qtId": "qt0003",
-    "vId": "v100032",
     "qDifficulty": 1,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -158,7 +152,6 @@
   {
     "qId": "q00007", 
     "qtId": "qt0003",
-    "vId": "v100005",
     "qDifficulty": 1,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -184,10 +177,9 @@
   {
     "qId": "q00008", 
     "qtId": "qt0003",
-    "vId": "v100006",
     "qDifficulty": 1,
     "qbsId": "qbs0002",
-    "qFavorite": true,
+    "qFavorite": false,
     "qCompleted": true,
     "qFavorite_BlahMode": false,
     "qCompleted_BlahMode": false,
@@ -207,10 +199,110 @@
     "reps4": 10, 
     "eId4": "e000046"
   }, 
+  
+  {
+    "qId": "q00009", 
+    "qtId": "qt0003",
+    "qDifficulty": 1,
+    "qbsId": "qbs0003",
+    "qFavorite": true,
+    "qCompleted": true,
+    "qFavorite_BlahMode": false,
+    "qCompleted_BlahMode": false,
+    "qFavorite_BossMode": false,
+    "qCompleted_BossMode": false,
+    "qFavorite_BeastMode": false,
+    "qCompleted_BeastMode": false,
+    "qFavorite_BananasMode": false,
+    "qCompleted_BananasMode": false,
+    "qName": "Quick Fun",
+    "reps1": 5, 
+    "eId1": "e000006",
+    "reps2": 15, 
+    "eId2": "e000032",
+    "reps3": 5, 
+    "eId3": "e000014",
+    "reps4": 15, 
+    "eId4": "e000047"
+  }, 
+  {
+    "qId": "q00010", 
+    "qtId": "qt0003",
+    "qDifficulty": 1,
+    "qbsId": "qbs0004",
+    "qFavorite": true,
+    "qCompleted": true,
+    "qFavorite_BlahMode": false,
+    "qCompleted_BlahMode": false,
+    "qFavorite_BossMode": false,
+    "qCompleted_BossMode": false,
+    "qFavorite_BeastMode": false,
+    "qCompleted_BeastMode": false,
+    "qFavorite_BananasMode": false,
+    "qCompleted_BananasMode": false,
+    "qName": "Quick One",
+    "reps1": 5, 
+    "eId1": "e000014",
+    "reps2": 10, 
+    "eId2": "e000035",
+    "reps3": 15, 
+    "eId3": "e000056",
+    "reps4": 20, 
+    "eId4": "e000047"
+  }, 
+  {
+    "qId": "q00011", 
+    "qtId": "qt0003",
+    "qDifficulty": 1,
+    "qbsId": "qbs0004",
+    "qFavorite": true,
+    "qCompleted": true,
+    "qFavorite_BlahMode": false,
+    "qCompleted_BlahMode": false,
+    "qFavorite_BossMode": false,
+    "qCompleted_BossMode": false,
+    "qFavorite_BeastMode": false,
+    "qCompleted_BeastMode": false,
+    "qFavorite_BananasMode": false,
+    "qCompleted_BananasMode": false,
+    "qName": "Quick Burst",
+    "reps1": 15, 
+    "eId1": "e000040",
+    "reps2": 15, 
+    "eId2": "e000013",
+    "reps3": 15, 
+    "eId3": "e000047",
+    "reps4": 15, 
+    "eId4": "e000028"
+  }, 
+  {
+    "qId": "q00012", 
+    "qtId": "qt0003",
+    "qDifficulty": 1,
+    "qbsId": "qbs0004",
+    "qFavorite": true,
+    "qCompleted": true,
+    "qFavorite_BlahMode": false,
+    "qCompleted_BlahMode": false,
+    "qFavorite_BossMode": false,
+    "qCompleted_BossMode": false,
+    "qFavorite_BeastMode": false,
+    "qCompleted_BeastMode": false,
+    "qFavorite_BananasMode": false,
+    "qCompleted_BananasMode": false,
+    "qName": "Quick Stuff",
+    "reps1": 10, 
+    "eId1": "e000053",
+    "reps2": 10, 
+    "eId2": "e000029",
+    "reps3": 10, 
+    "eId3": "e000035",
+    "reps4": 10, 
+    "eId4": "e000040"
+  }, 
   {
     "qId": "q01001", 
     "qtId": "qt0001",
-    "vId": "v100007",
     "qDifficulty": 2,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -236,7 +328,6 @@
   {
     "qId": "q01002", 
     "qtId": "qt0001",
-    "vId": "v100033",
     "qDifficulty": 2,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -253,16 +344,15 @@
     "reps1": 10, 
     "eId1": "e000054",
     "reps2": 15, 
-    "eId2": "e000055",
+    "eId2": "e000003",
     "reps3": 20, 
-    "eId3": "e000003",
+    "eId3": "e000055",
     "reps4": 25, 
     "eId4": "e000056"
   }, 
   {
     "qId": "q01003", 
     "qtId": "qt0001",
-    "vId": "v100009",
     "qDifficulty": 2,
     "qbsId": "qbs0002",
     "qFavorite": false,
@@ -288,7 +378,6 @@
   {
     "qId": "q01004", 
     "qtId": "qt0001",
-    "vId": "v100010",
     "qDifficulty": 3,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -314,7 +403,6 @@
   {
     "qId": "q01005", 
     "qtId": "qt0001",
-    "vId": "v100011",
     "qDifficulty": 3,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -340,7 +428,6 @@
   {
     "qId": "q01006", 
     "qtId": "qt0001",
-    "vId": "v100008",
     "qDifficulty": 4,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -366,7 +453,6 @@
   {
     "qId": "q01007", 
     "qtId": "qt0001",
-    "vId": "v100012",
     "qDifficulty": 4,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -392,7 +478,6 @@
   {
     "qId": "q01008", 
     "qtId": "qt0001",
-    "vId": "v100034",
     "qDifficulty": 3,
     "qbsId": "qbs0004",
     "qFavorite": true,
@@ -418,7 +503,6 @@
   {
     "qId": "q02001", 
     "qtId": "qt0002",
-    "vId": "v100013",
     "qDifficulty": 2,
     "qbsId": "qbs0002",
     "qFavorite": false,
@@ -444,7 +528,6 @@
   {
     "qId": "q02002", 
     "qtId": "qt0002",
-    "vId": "v100014",
     "qDifficulty": 2,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -470,7 +553,6 @@
   {
     "qId": "q02003", 
     "qtId": "qt0002",
-    "vId": "v100035",
     "qDifficulty": 4,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -496,7 +578,6 @@
   {
     "qId": "q02004", 
     "qtId": "qt0002",
-    "vId": "v100015",
     "qDifficulty": 3,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -522,7 +603,6 @@
   {
     "qId": "q02005", 
     "qtId": "qt0002",
-    "vId": "v100016",
     "qDifficulty": 3,
     "qbsId": "qbs0002",
     "qFavorite": false,
@@ -548,7 +628,6 @@
   {
     "qId": "q02006", 
     "qtId": "qt0002",
-    "vId": "v100036",
     "qDifficulty": 4,
     "qbsId": "qbs0002",
     "qFavorite": false,
@@ -574,7 +653,6 @@
   {
     "qId": "q02007", 
     "qtId": "qt0002",
-    "vId": "v100017",
     "qDifficulty": 4,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -600,7 +678,6 @@
   {
     "qId": "q02008", 
     "qtId": "qt0002",
-    "vId": "v100018",
     "qDifficulty": 4,
     "qbsId": "qbs0004",
     "qFavorite": true,
@@ -626,7 +703,6 @@
   {
     "qId": "q03001", 
     "qtId": "qt0005",
-    "vId": "v100020",
     "qDifficulty": 1,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -652,7 +728,6 @@
   {
     "qId": "q03002", 
     "qtId": "qt0005",
-    "vId": "v100019",
     "qDifficulty": 1,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -678,7 +753,6 @@
   {
     "qId": "q03003", 
     "qtId": "qt0005",
-    "vId": "v100037",
     "qDifficulty": 2,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -704,7 +778,6 @@
   {
     "qId": "q03004", 
     "qtId": "qt0005",
-    "vId": "v100038",
     "qDifficulty": 3,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -730,7 +803,6 @@
   {
     "qId": "q03005", 
     "qtId": "qt0005",
-    "vId": "v100021",
     "qDifficulty": 3,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -756,7 +828,6 @@
   {
     "qId": "q03006", 
     "qtId": "qt0005",
-    "vId": "v100023",
     "qDifficulty": 4,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -782,7 +853,6 @@
   {
     "qId": "q03007", 
     "qtId": "qt0005",
-    "vId": "v100039",
     "qDifficulty": 4,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -808,7 +878,6 @@
   {
     "qId": "q03008", 
     "qtId": "qt0005",
-    "vId": "v100022",
     "qDifficulty": 4,
     "qbsId": "qbs0004",
     "qFavorite": true,
@@ -834,7 +903,6 @@
   {
     "qId": "q04001", 
     "qtId": "qt0004",
-    "vId": "v100025",
     "qDifficulty": 5,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -860,7 +928,6 @@
   {
     "qId": "q04002", 
     "qtId": "qt0004",
-    "vId": "v100040",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -886,7 +953,6 @@
   {
     "qId": "q04003", 
     "qtId": "qt0004",
-    "vId": "v100026",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -912,7 +978,6 @@
   {
     "qId": "q04004", 
     "qtId": "qt0004",
-    "vId": "v100027",
     "qDifficulty": 5,
     "qbsId": "qbs0003",
     "qFavorite": false,
@@ -938,7 +1003,6 @@
   {
     "qId": "q04005", 
     "qtId": "qt0004",
-    "vId": "v100028",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -964,7 +1028,6 @@
   {
     "qId": "q04006", 
     "qtId": "qt0004",
-    "vId": "v100029",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -990,7 +1053,6 @@
   {
     "qId": "q04007", 
     "qtId": "qt0004",
-    "vId": "v100041",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -1016,7 +1078,6 @@
   {
     "qId": "q04008", 
     "qtId": "qt0004",
-    "vId": "v100042",
     "qDifficulty": 5,
     "qbsId": "qbs0004",
     "qFavorite": true,
@@ -1042,7 +1103,6 @@
   {
     "qId": "q05001", 
     "qtId": "qt0006",
-    "vId": "v100030",
     "qDifficulty": 6,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -1068,7 +1128,6 @@
   {
     "qId": "q05004", 
     "qtId": "qt0006",
-    "vId": "v100024",
     "qDifficulty": 6,
     "qbsId": "qbs0004",
     "qFavorite": false,
@@ -1094,7 +1153,6 @@
   {
     "qId": "q05006", 
     "qtId": "qt0006",
-    "vId": "v100030",
     "qDifficulty": 6,
     "qbsId": "qbs0001",
     "qFavorite": false,
@@ -1120,7 +1178,6 @@
   {
     "qId": "q05008", 
     "qtId": "qt0006",
-    "vId": "v100024",
     "qDifficulty": 6,
     "qbsId": "qbs0004",
     "qFavorite": true,
