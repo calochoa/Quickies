@@ -24,7 +24,7 @@
   	"eId": "e000004",
   	"eName": "Spiderman push-ups",
   	"vId": "v000004",
-  	"eTypes": ["et0004", "et0003", "et0001", "et0002"],
+  	"eTypes": ["et0004", "et0003"],
   	"description": "N/A"
   },
   {
@@ -38,7 +38,7 @@
   	"eId": "e000006",
   	"eName": "jumping chin-ups",
   	"vId": "v000006",
-  	"eTypes": ["et0005", "et0004", "et0003", "et0002"],
+  	"eTypes": ["et0005", "et0003"],
   	"description": "N/A"
   },
   {
@@ -59,7 +59,7 @@
   	"eId": "e000009",
   	"eName": "hanging knee raises",
   	"vId": "v000009",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   }, 
   {
@@ -80,7 +80,7 @@
   	"eId": "e000012",
   	"eName": "hanging oblique raises",
   	"vId": "v000012",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   },
   {
@@ -122,7 +122,7 @@
   	"eId": "e000018",
   	"eName": "jumping pull-ups",
   	"vId": "v000018",
-  	"eTypes": ["et0005", "et0004", "et0003", "et0002"],
+  	"eTypes": ["et0005", "et0003"],
   	"description": "N/A"
   },
   {
@@ -150,7 +150,7 @@
   	"eId": "e000022",
   	"eName": "hanging hurdles",
   	"vId": "v000022",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   },
   {
@@ -178,7 +178,7 @@
   	"eId": "e000026",
   	"eName": "hanging up-down scissors",
   	"vId": "v000026",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   },
   {
@@ -199,14 +199,14 @@
   	"eId": "e000029",
   	"eName": "incline push-ups",
   	"vId": "v000029",
-  	"eTypes": ["et0005", "et0003"],
+  	"eTypes": ["et0003"],
   	"description": "N/A"
   }, 
   {
   	"eId": "e000030",
   	"eName": "burpee pull-ups",
   	"vId": "v000030",
-  	"eTypes": ["et0005", "et0004", "et0003", "et0002"],
+  	"eTypes": ["et0005", "et0004"],
   	"description": "N/A"
   },
   {
@@ -262,21 +262,21 @@
   	"eId": "e000038",
   	"eName": "hanging leg raises",
   	"vId": "v000038",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   },
   {
   	"eId": "e000039",
   	"eName": "burpees",
   	"vId": "v000039",
-  	"eTypes": ["et0004", "et0003", "et0002"],
+  	"eTypes": ["et0004"],
   	"description": "N/A"
   }, 
   {
   	"eId": "e000040",
   	"eName": "jumping jacks",
   	"vId": "v000040",
-  	"eTypes": ["et0004", "et0003", "et0002"],
+  	"eTypes": ["et0004"],
   	"description": "N/A"
   },
   {
@@ -325,14 +325,14 @@
   	"eId": "e000047",
   	"eName": "mountain climbers",
   	"vId": "v000047",
-  	"eTypes": ["et0004", "et0003", "et0002", "et0001"],
+  	"eTypes": ["et0004"],
   	"description": "N/A"
   },
   {
   	"eId": "e000048",
   	"eName": "hanging leg rotations",
   	"vId": "v000048",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eTypes": ["et0005", "et0001"],
   	"description": "N/A"
   },
   {
@@ -416,14 +416,14 @@
     "eId": "e000060",
     "eName": "hanging criss cross scissors",
     "vId": "v000060",
-    "eTypes": ["et0005", "et0001", "et0003"],
+    "eTypes": ["et0005", "et0001"],
     "description": "N/A"
   },
   {
     "eId": "e000061",
     "eName": "hanging open close scissors",
     "vId": "v000061",
-    "eTypes": ["et0005", "et0001", "et0003"],
+    "eTypes": ["et0005", "et0001"],
     "description": "N/A"
   },
   {
@@ -437,28 +437,28 @@
     "eId": "e000063",
     "eName": "burpee tuck jumps",
     "vId": "v000063",
-    "eTypes": ["et0004", "et0003", "et0002"],
+    "eTypes": ["et0004"],
     "description": "N/A"
   }, 
   {
     "eId": "e000064",
     "eName": "burpee muscle-ups",
     "vId": "v000064",
-    "eTypes": ["et0005", "et0004", "et0003", "et0002"],
+    "eTypes": ["et0005", "et0004"],
     "description": "N/A"
   },
   {
     "eId": "e000065",
     "eName": "hanging shoot-ups",
     "vId": "v000065",
-    "eTypes": ["et0005", "et0001", "et0003"],
+    "eTypes": ["et0005", "et0001"],
     "description": "N/A"
   },
   {
     "eId": "e000066",
     "eName": "hanging wipers",
     "vId": "v000066",
-    "eTypes": ["et0005", "et0001", "et0003"],
+    "eTypes": ["et0005", "et0001"],
     "description": "N/A"
   }
 ]
