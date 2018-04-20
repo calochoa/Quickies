@@ -1,182 +1,212 @@
 [
   {
+  	"qlId": "Blah Mode 0",
+  	"qlName": "Level 0",
+    "qlDescription": "Stretch plz!",
+    "order": 1
+  },
+  {
   	"qlId": "Blah Mode 1",
   	"qlName": "Level 1",
     "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 1
+    "order": 2
   },
   {
   	"qlId": "Blah Mode 2",
   	"qlName": "Level 2",
     "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
-    "order": 2
+    "order": 3
   },
   {
   	"qlId": "Blah Mode 3",
   	"qlName": "Level 3",
     "qlDescription": "Some of these quickies may be harder than they appear.",
-    "order": 3
+    "order": 4
   },
   {
   	"qlId": "Blah Mode 4",
   	"qlName": "Level 4",
     "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
-    "order": 4
+    "order": 5
   },
   {
     "qlId": "Blah Mode 5",
     "qlName": "Level 5",
     "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
-    "order": 5
+    "order": 6
   },
   {
     "qlId": "Blah Mode 6",
     "qlName": "Level 6",
     "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
-    "order": 6
+    "order": 7
+  },
+  {
+  	"qlId": "Standard 0",
+  	"qlName": "Level 0",
+    "qlDescription": "Stretch plz!",
+    "order": 8
   },
   {
   	"qlId": "Standard 1",
   	"qlName": "Level 1",
     "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 7
+    "order": 9
   },
   {
   	"qlId": "Standard 2",
   	"qlName": "Level 2",
     "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
-    "order": 8
+    "order": 10
   },
   {
   	"qlId": "Standard 3",
   	"qlName": "Level 3",
     "qlDescription": "Some of these quickies may be harder than they appear.",
-    "order": 9
+    "order": 11
   },
   {
   	"qlId": "Standard 4",
   	"qlName": "Level 4",
     "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
-    "order": 10
+    "order": 12
   },
   {
     "qlId": "Standard 5",
     "qlName": "Level 5",
     "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
-    "order": 11
+    "order": 13
   },
   {
     "qlId": "Standard 6",
     "qlName": "Level 6",
     "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
-    "order": 12
+    "order": 14
+  },
+  {
+  	"qlId": "Boss Mode 0",
+  	"qlName": "Level 0",
+    "qlDescription": "Stretch plz!",
+    "order": 15
   },
   {
   	"qlId": "Boss Mode 1",
   	"qlName": "Level 1",
     "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 13
+    "order": 16
   },
   {
   	"qlId": "Boss Mode 2",
   	"qlName": "Level 2",
     "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
-    "order": 14
+    "order": 17
   },
   {
   	"qlId": "Boss Mode 3",
   	"qlName": "Level 3",
     "qlDescription": "Some of these quickies may be harder than they appear.",
-    "order": 15
+    "order": 18
   },
   {
   	"qlId": "Boss Mode 4",
   	"qlName": "Level 4",
     "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
-    "order": 16
+    "order": 19
   },
   {
     "qlId": "Boss Mode 5",
     "qlName": "Level 5",
     "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
-    "order": 17
+    "order": 20
   },
   {
     "qlId": "Boss Mode 6",
     "qlName": "Level 6",
     "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
-    "order": 18
+    "order": 21
+  },
+  {
+  	"qlId": "Beast Mode 0",
+  	"qlName": "Level 0",
+    "qlDescription": "Stretch plz!",
+    "order": 22
   },
   {
   	"qlId": "Beast Mode 1",
   	"qlName": "Level 1",
     "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 19
+    "order": 23
   },
   {
   	"qlId": "Beast Mode 2",
   	"qlName": "Level 2",
     "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
-    "order": 20
+    "order": 24
   },
   {
   	"qlId": "Beast Mode 3",
   	"qlName": "Level 3",
     "qlDescription": "Some of these quickies may be harder than they appear.",
-    "order": 21
+    "order": 25
   },
   {
   	"qlId": "Beast Mode 4",
   	"qlName": "Level 4",
     "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
-    "order": 22
+    "order": 26
   },
   {
     "qlId": "Beast Mode 5",
     "qlName": "Level 5",
     "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
-    "order": 23
+    "order": 27
   },
   {
     "qlId": "Beast Mode 6",
     "qlName": "Level 6",
     "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
-    "order": 24
+    "order": 28
+  },
+  {
+  	"qlId": "Bananas Mode 0",
+  	"qlName": "Level 0",
+    "qlDescription": "Stretch plz!",
+    "order": 29
   },
   {
   	"qlId": "Bananas Mode 1",
   	"qlName": "Level 1",
     "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
-    "order": 25
+    "order": 30
   },
   {
   	"qlId": "Bananas Mode 2",
   	"qlName": "Level 2",
     "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
-    "order": 26
+    "order": 31
   },
   {
   	"qlId": "Bananas Mode 3",
   	"qlName": "Level 3",
     "qlDescription": "Some of these quickies may be harder than they appear.",
-    "order": 27
+    "order": 32
   },
   {
   	"qlId": "Bananas Mode 4",
   	"qlName": "Level 4",
     "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
-    "order": 28
+    "order": 33
   },
   {
     "qlId": "Bananas Mode 5",
     "qlName": "Level 5",
     "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
-    "order": 29
+    "order": 34
   },
   {
     "qlId": "Bananas Mode 6",
     "qlName": "Level 6",
     "qlDescription": "Give these quickies a whirl, if you're a master of calisthenics.",
-    "order": 30
+    "order": 35
   }
 ]

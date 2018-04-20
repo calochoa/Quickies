@@ -474,5 +474,173 @@
     "vId": "v000068",
     "eTypes": ["et0004"],
     "description": "N/A"
+  },
+  {
+    "eId": "e100001",
+    "eName": "small arm circles",
+    "vId": "v100001",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100002",
+    "eName": "reverse small arm circles",
+    "vId": "v100002",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100003",
+    "eName": "large arm circles",
+    "vId": "v100003",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100004",
+    "eName": "reverse large arm circles",
+    "vId": "v100004",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100005",
+    "eName": "lateral arm raises",
+    "vId": "v100005",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100006",
+    "eName": "front arm raises",
+    "vId": "v100006",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100007",
+    "eName": "lateral rotator cuffs",
+    "vId": "v100007",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100008",
+    "eName": "front rotator cuffs",
+    "vId": "v100008",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100009",
+    "eName": "low arm criss crosses",
+    "vId": "v100009",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100010",
+    "eName": "arm criss crosses",
+    "vId": "v100010",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100011",
+    "eName": "high arm criss crosses",
+    "vId": "v100011",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100012",
+    "eName": "running arm swings",
+    "vId": "v100012",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100013",
+    "eName": "neck up-downs",
+    "vId": "v100013",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100014",
+    "eName": "neck side-to-sides",
+    "vId": "v100014",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100015",
+    "eName": "neck leans",
+    "vId": "v100015",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100016",
+    "eName": "neck rotations",
+    "vId": "v100016",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100017",
+    "eName": "heel-to-glutes",
+    "vId": "v100017",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100018",
+    "eName": "knee hugs",
+    "vId": "v100018",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100019",
+    "eName": "ankle hugs",
+    "vId": "v100019",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100020",
+    "eName": "toe touches",
+    "vId": "v100020",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100021",
+    "eName": "lateral leg swings",
+    "vId": "v100021",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100022",
+    "eName": "front leg swings",
+    "vId": "v100022",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100023",
+    "eName": "high hurdles",
+    "vId": "v100023",
+    "eTypes": ["et0006"],
+    "description": "N/A"
+  },
+  {
+    "eId": "e100024",
+    "eName": "reverse high hurdles",
+    "vId": "v100024",
+    "eTypes": ["et0006"],
+    "description": "N/A"
   }
 ]
