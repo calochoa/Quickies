@@ -467,5 +467,12 @@
     "vId": "v000067",
     "eTypes": ["et0003"],
     "description": "N/A"
+  },
+  {
+    "eId": "e000068",
+    "eName": "plank jacks",
+    "vId": "v000068",
+    "eTypes": ["et0004"],
+    "description": "N/A"
   }
 ]

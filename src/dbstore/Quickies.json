@@ -165,11 +165,11 @@
     "qFavorite_BananasMode": false,
     "qCompleted_BananasMode": false,
     "qName": "Quick Silver",
-    "reps1": 5, 
-    "eId1": "e000037",
-    "reps2": 10, 
-    "eId2": "e000032",
-    "reps3": 15, 
+    "reps1": 10, 
+    "eId1": "e000032",
+    "reps2": 20, 
+    "eId2": "e000068",
+    "reps3": 10, 
     "eId3": "e000029",
     "reps4": 20, 
     "eId4": "e000047"
@@ -216,14 +216,14 @@
     "qFavorite_BananasMode": false,
     "qCompleted_BananasMode": false,
     "qName": "Quick Up",
-    "reps1": 5, 
-    "eId1": "e000067",
-    "reps2": 15, 
-    "eId2": "e000029",
-    "reps3": 5, 
-    "eId3": "e000014",
-    "reps4": 15, 
-    "eId4": "e000047"
+    "reps1": 10, 
+    "eId1": "e000014",
+    "reps2": 10, 
+    "eId2": "e000068",
+    "reps3": 10, 
+    "eId3": "e000047",
+    "reps4": 10, 
+    "eId4": "e000029"
   }, 
   {
     "qId": "q00010", 
@@ -248,7 +248,7 @@
     "reps3": 15, 
     "eId3": "e000056",
     "reps4": 20, 
-    "eId4": "e000047"
+    "eId4": "e000068"
   }, 
   {
     "qId": "q00011", 
@@ -273,7 +273,7 @@
     "reps3": 15, 
     "eId3": "e000047",
     "reps4": 15, 
-    "eId4": "e000028"
+    "eId4": "e000068"
   }, 
   {
     "qId": "q00012", 
@@ -646,7 +646,7 @@
     "reps2": 20, 
     "eId2": "e000032",
     "reps3": 20, 
-    "eId3": "e000047",
+    "eId3": "e000068",
     "reps4": 10, 
     "eId4": "e000067"
   }, 
