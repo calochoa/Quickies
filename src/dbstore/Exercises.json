@@ -460,5 +460,12 @@
     "vId": "v000066",
     "eTypes": ["et0005", "et0001"],
     "description": "N/A"
+  },
+  {
+    "eId": "e000067",
+    "eName": "decline push-ups",
+    "vId": "v000067",
+    "eTypes": ["et0003"],
+    "description": "N/A"
   }
 ]
