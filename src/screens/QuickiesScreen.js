@@ -29,8 +29,6 @@ class QuickiesScreen extends Component {
     //title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
     title += 'Quickies'
 
-    title = title.startsWith('Level') ? title.replace('Level', 'Lvl') : title;
-
     return {
       title: title,
       headerBackTitle: null,
