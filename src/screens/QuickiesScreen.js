@@ -10,6 +10,7 @@ import Quickies from '../dbstore/Quickies.json';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
+import QuickiesFooter from '../components/QuickiesFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
 
@@ -25,7 +26,7 @@ class QuickiesScreen extends Component {
     const { params } = navigation.state;
 
     let title = params ? params.quickieType + ' ' : ''
-    title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
+    //title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
     title += 'Quickies'
 
     title = title.startsWith('Level') ? title.replace('Level', 'Lvl') : title;
@@ -109,6 +110,8 @@ class QuickiesScreen extends Component {
     this.state = {
       filteredData: filteredData,
       qMode: qMode,
+      quickieType: params.quickieType,
+      qbs: params.qbs,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -127,13 +130,14 @@ class QuickiesScreen extends Component {
   }
 
   render() {
-    const { filteredData, qMode } = this.state;
+    const { filteredData, qMode, quickieType, qbs } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
         <ScrollView>
           {filteredData.map((quickie) => this.renderRow(quickie, qMode))}
         </ScrollView>
+        <QuickiesFooter navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>
       </View>
     );
   }

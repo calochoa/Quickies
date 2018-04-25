@@ -56,7 +56,9 @@ class QuickieLevelsScreen extends Component {
 
     let qlData = []
     quickieLevels.map(element => {
-      qlData.push({sectionTitle: element.qlName, qlId: element.qlId});
+      if (element.qlId.startsWith('Standard')) {
+        qlData.push({sectionTitle: element.qlName, qlId: element.qlId});
+      }
     });
 
     this.state = {
@@ -94,7 +96,7 @@ class QuickieLevelsScreen extends Component {
     return (
       <LinearGradient 
         colors={getGradientColor(qMode)} 
-        style={[MainRowStyle.container, MainRowStyle.extra10Margin]} 
+        style={MainRowStyle.container} 
         key={qlId}
       >
         {this.renderOverlay(qlId, sectionTitle, qMode)}
@@ -128,10 +130,8 @@ class QuickieLevelsScreen extends Component {
     const { qlData } = this.state;
 
     return (
-      <View style={MainContainerStyle.containerNoSpaceAround}>
-        <ScrollView>
-          {qlData.map((data) => this.renderMainRow(data))}
-        </ScrollView>
+      <View style={MainContainerStyle.container}>
+        {qlData.map((data) => this.renderMainRow(data))}
       </View>
     );
   }
