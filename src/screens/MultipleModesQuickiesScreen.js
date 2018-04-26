@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   View, 
-  ScrollView,
+  FlatList,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -135,6 +135,10 @@ class MultipleModesQuickiesScreen extends Component {
       filteredData = this.sortReverseDiffAlpha(filteredData);
     }
 
+    filteredData.map(element => {
+      element['key']=element['quickie'].qId + '.' + element['qMode']
+    });
+
     this.state = {
       filteredData: filteredData,
     };
@@ -161,9 +165,10 @@ class MultipleModesQuickiesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        <ScrollView>
-          {filteredData.map((data) => this.renderRow(data))}
-        </ScrollView>
+        <FlatList
+          data={filteredData}
+          renderItem={({item}) => this.renderRow(item)}
+        />
       </View>
     );
   }

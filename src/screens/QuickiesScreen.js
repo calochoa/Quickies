@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   View, 
-  ScrollView,
+  FlatList,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -103,10 +103,15 @@ class QuickiesScreen extends Component {
       filteredData = this.sortDiffAlpha(filteredData);
     }
 
+    let listData = []
+    filteredData.map(element => {
+      listData.push({key: element.qId, quickie: element})
+    });
+
     let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
 
     this.state = {
-      filteredData: filteredData,
+      listData: listData,
       qMode: qMode,
       quickieType: params.quickieType,
       qbs: params.qbs,
@@ -115,7 +120,8 @@ class QuickiesScreen extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
 
-  renderRow(quickie, qMode) {
+  renderRow(quickie) {
+    qMode=this.state.qMode
     return (
       <LinearGradient 
         colors={getGradientColor(qMode)} 
@@ -128,13 +134,14 @@ class QuickiesScreen extends Component {
   }
 
   render() {
-    const { filteredData, qMode, quickieType, qbs } = this.state;
+    const { listData, qMode, quickieType, qbs } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        <ScrollView>
-          {filteredData.map((quickie) => this.renderRow(quickie, qMode))}
-        </ScrollView>
+        <FlatList
+          data={listData}
+          renderItem={({item}) => this.renderRow(item.quickie)}
+        />
         <QuickiesFooter navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>
       </View>
     );
