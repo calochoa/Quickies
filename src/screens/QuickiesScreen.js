@@ -10,6 +10,7 @@ import Quickies from '../dbstore/Quickies.json';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
+import QuickiesHeader from '../components/QuickiesHeader';
 import QuickiesFooter from '../components/QuickiesFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
@@ -138,6 +139,7 @@ class QuickiesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
+        {/*<QuickiesHeader navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>*/}
         <FlatList
           data={listData}
           renderItem={({item}) => this.renderRow(item.quickie)}

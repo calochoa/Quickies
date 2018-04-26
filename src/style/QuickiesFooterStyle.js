@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 
 const QuickiesFooterStyle = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 5,
     flexDirection: 'row',
   },
   qModeContainer: {
@@ -15,7 +15,7 @@ const QuickiesFooterStyle = StyleSheet.create({
   footerText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 13,
     fontFamily: 'Gill Sans',
   },
 });
