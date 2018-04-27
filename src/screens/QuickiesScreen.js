@@ -27,10 +27,11 @@ class QuickiesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
+    let qLookup = params.qBodySplit + '.' + params.qLevel
     let title = navigation.state.params.title;
     if (typeof(navigation.state.params)==='undefined' 
       || typeof(navigation.state.params.title) === 'undefined') {
-      title = quickieLookupHeaderMap.get(params.qLookup)
+      title = quickieLookupHeaderMap.get(qLookup)
     }
 
     return {
@@ -87,10 +88,13 @@ class QuickiesScreen extends Component {
     });
 
     let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
+    let qLookup = params.qBodySplit + '.' + params.qLevel
 
     this.state = {
-      qLookup: params.qLookup,
+      qLookup: qLookup,
       qCompleteMap: qCompleteMap,
+      qBodySplit: params.qBodySplit,
+      qLevel: params.qLevel,
       qMode: qMode,
       quickieType: params.quickieType,
       qbs: params.qbs,
@@ -112,25 +116,48 @@ class QuickiesScreen extends Component {
     );
   }
 
-  setQLookup(qLookupVal) {
+  setQBodySplit(qBodySplit) {
     const update = {}
-    update['qLookup'] = qLookupVal
+    update['qBodySplit'] = qBodySplit
+    this.setState(update);
+    
+    let qLookupVal = qBodySplit + '.' + this.state.qLevel
+    const update2 = {}
+    update2['qLookup'] = qLookupVal
+    this.setState(update2);
+
+    this.setHeaderTitle(qLookupVal)
+  }
+
+  setQLevel(qLevel) {
+    const update = {}
+    update['qLevel'] = qLevel
     this.setState(update);
 
+    let qLookupVal = this.state.qBodySplit + '.' + qLevel
+    const update2 = {}
+    update2['qLookup'] = qLookupVal
+    this.setState(update2);
+
+    this.setHeaderTitle(qLookupVal)
+  }
+
+  setHeaderTitle(qLookupVal) {
     this.props.navigation.setParams({ title: quickieLookupHeaderMap.get(qLookupVal) })
   }
 
   render() {
-    const { qLookup, qCompleteMap, qMode, quickieType, qbs } = this.state;
+    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        {/*<QuickiesHeader navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>*/}
+        {<QuickiesHeader setQLevel={this.setQLevel.bind(this)}/>}
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}
+          keyboardShouldPersistTaps={'always'}
         />
-        <QuickiesFooter setQLookup={this.setQLookup.bind(this)} navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>
+        <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)}/>
       </View>
     );
   }

@@ -7,54 +7,45 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import QuickieModes from '../dbstore/QuickieModes.json';
 import QuickiesFooterStyle from '../style/QuickiesFooterStyle';
 import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
-
-
-const QuickieModesMap = {};
-QuickieModes.map(element => {
-  QuickieModesMap[element.qvName] = element;
-})
 
 
 class QuickiesHeader extends Component {
   constructor(props) {
     super(props);
 
-    let qModes = ['Level']
-    QuickieModes.map(element => {
-      qModes.push(element.qvName);
-    });
-
     this.state = {
-      qModes: qModes,
-      quickieType: this.props.quickieType,
-      qbs: this.props.qbs,
+      setQLevel: this.props.setQLevel,
     };
   }
 
-  renderQuickieMode(qMode, quickieType, qbs) {
+  renderQuickieBodySplit(qLevel) {
     return (
       <TouchableOpacity 
-        style={QuickiesFooterStyle.qModeContainer}
-        key={qMode}
-        onPress={() => {
-          this.props.navigation.navigate('Quickies', {quickieType: quickieType, qbs: qbs, qMode: qMode});
-        }}
+        style={styles.levelContainer}
+        key={qLevel}
+        onPress={() => {this.state.setQLevel(qLevel)}}
       >
-        <Text style={QuickiesFooterStyle.footerText}>{qMode.replace(' Mode','')}</Text>
+        <Text style={styles.levelText}>{qLevel}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
-    const { qModes, quickieType, qbs } = this.state;
-
     return (
       <LinearGradient colors={getGradientColor('Standard')} style={styles.container}>
-        {/*qModes.map((qMode) => this.renderQuickieMode(qMode, quickieType, qbs))*/}
-        <Text style={styles.headerText}>Levels:   All   0   1   2   3   4   5   6</Text>
+        <Text style={styles.headerText}>
+          Levels:
+          {this.renderQuickieBodySplit('All')}
+          {this.renderQuickieBodySplit('0')}
+          {this.renderQuickieBodySplit('1')}
+          {this.renderQuickieBodySplit('2')}
+          {this.renderQuickieBodySplit('3')}
+          {this.renderQuickieBodySplit('4')}
+          {this.renderQuickieBodySplit('5')}
+          {this.renderQuickieBodySplit('6')}
+        </Text>
       </LinearGradient>
     );
   }
@@ -65,9 +56,15 @@ const styles = StyleSheet.create({
     padding: 5,
     alignItems: 'center', 
   },
+  levelText: {
+    color: '#fff',
+    fontSize: 16,
+    fontFamily: 'Gill Sans',
+    paddingLeft: 7,
+    paddingRight: 7,
+  },
   headerText: {
     color: '#fff',
-    textAlign: 'center',
     fontSize: 16,
     fontFamily: 'Gill Sans',
   },
