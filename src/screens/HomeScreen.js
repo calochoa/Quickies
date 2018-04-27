@@ -57,7 +57,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={MainContainerStyle.container}>
         {this.renderRow(
-          {title: 'Quickies', screen: 'QuickieOptions'}, 
+          {title: 'Quickies', screen: 'Quickies', extra: {qBodySplit: 'qbs0000', qLevel: 'All'}}, 
           <Image source={require('../images/icons8-speed-24.png')} />
         )}
         {this.renderRow({title: 'Quickie of the Day', screen: 'QuickieOfTheDay'})}
