@@ -44,19 +44,19 @@
   {
   	"qlId": "Standard 0",
   	"qlName": "Level 0",
-    "qlDescription": "Stretch plz!",
+    "qlDescription": "It's important to perform dynamic stretches before exercising to get the blood flowing and to loosen up those muscles.",
     "order": 8
   },
   {
   	"qlId": "Standard 1",
   	"qlName": "Level 1",
-    "qlDescription": "Try these beginner level quickies if you are just starting to work out.",
+    "qlDescription": "Try these beginner level quickies if you are just starting to work out or need to ease back into it.",
     "order": 9
   },
   {
   	"qlId": "Standard 2",
   	"qlName": "Level 2",
-    "qlDescription": "Perform these quickies with solid form before moving on to higher levels.",
+    "qlDescription": "Perform these quickies with solid technique before moving on to higher levels.",
     "order": 10
   },
   {
@@ -74,7 +74,7 @@
   {
     "qlId": "Standard 5",
     "qlName": "Level 5",
-    "qlDescription": "Attempt these quickies if you enjoy an extremely difficult challenge.",
+    "qlDescription": "Attempt these quickies if you enjoy high reps combined with powerful exercises a.k.a. an extremely difficult challenge.",
     "order": 13
   },
   {

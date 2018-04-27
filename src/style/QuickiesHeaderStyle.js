@@ -9,8 +9,9 @@ const QuickiesHeaderStyle = StyleSheet.create({
     justifyContent: 'center', 
   },
   levelContainer: {
-    paddingLeft: 15,
-    paddingRight: 15,
+    flexDirection: 'row',
+    paddingLeft: 13,
+    paddingRight: 13,
   },
   levelText: {
     color: '#fff',
