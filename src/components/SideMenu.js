@@ -13,10 +13,18 @@ import { NavigationActions } from 'react-navigation';
 
 class SideMenu extends Component {
   navigateToScreen = (route) => () => {
-    const navigateAction = NavigationActions.navigate({
-      routeName: route
-    });
-    this.props.navigation.dispatch(navigateAction);
+    if (route === 'Quickies') {
+      this.props.navigation.navigate('Quickies', {qBodySplit: 'qbs0000', qLevel: 'All'});
+    } else if (route === 'FavoriteQuickies') {
+      this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Favorite'});
+    } else if (route === 'CompletedQuickies') {
+      this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Completed'});
+    } else {
+      const navigateAction = NavigationActions.navigate({
+        routeName: route
+      });
+      this.props.navigation.dispatch(navigateAction);
+    }
   }
 
   render () {
@@ -27,7 +35,7 @@ class SideMenu extends Component {
             Home
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('QuickieOptions')}>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('Quickies')}>
           <Text style={styles.navItemStyle}>
             Quickies
           </Text>
@@ -55,6 +63,16 @@ class SideMenu extends Component {
         <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('ExerciseTypes')}>
           <Text style={styles.navItemStyle}>
             Exercises
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('FavoriteQuickies')}>
+          <Text style={styles.navItemStyle}>
+            Favorite Quickies
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('CompletedQuickies')}>
+          <Text style={styles.navItemStyle}>
+            Completed Quickies
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('FAQ')}>
