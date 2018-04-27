@@ -12,8 +12,14 @@ const QuickiesFooterStyle = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'flex-end',
   },
-  footerText: {
+  bodySplitText: {
     color: '#fff',
+    textAlign: 'center',
+    fontSize: 13,
+    fontFamily: 'Gill Sans',
+  },
+  selectedBodySplitText: {
+    color: '#ffca28',
     textAlign: 'center',
     fontSize: 13,
     fontFamily: 'Gill Sans',

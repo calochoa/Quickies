@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, 
   TouchableOpacity, 
   Text, 
   Image, 
@@ -27,35 +26,42 @@ class QuickiesFooter extends Component {
     });
 
     this.state = {
+      qbs0000: true,
+      qbs0001: false,
+      qbs0002: false,
+      qbs0003: false,
+      qbs0004: false,
       qBodySplits: qBodySplits,
       setQBodySplit: this.props.setQBodySplit,
     };
   }
 
-  renderQuickieMode(qMode, quickieType, qbs) {
-    return (
-      <TouchableOpacity 
-        style={QuickiesFooterStyle.qModeContainer}
-        key={qMode}
-        onPress={() => {
-          this.props.navigation.navigate('Quickies', {quickieType: quickieType, qbs: qbs, qMode: qMode});
-        }}
-      >
-        <Image source={difficultyImagePathMap.get(qMode)} />
-        <Text style={QuickiesFooterStyle.footerText}>{qMode.replace(' Mode','')}</Text>
-      </TouchableOpacity>
-    );
+  setHighlighted(qName) {
+    const update = {}
+    update['qbs0000'] = false
+    update['qbs0001'] = false
+    update['qbs0002'] = false
+    update['qbs0003'] = false
+    update['qbs0004'] = false
+    update[qName] = true
+    this.setState(update);
   }
 
   renderQuickieBodySplit(qBodySplit) {
+    let qbsId = qBodySplit.qbsId
+    let imageSrc = this.state[qbsId] ? bodySplitImagePathMap.get(qBodySplit.qbsName + ' Selected') 
+      : bodySplitImagePathMap.get(qBodySplit.qbsName);
+    let qBodySplitStyle = this.state[qbsId] ? QuickiesFooterStyle.selectedBodySplitText 
+      : QuickiesFooterStyle.bodySplitText;
+
     return (
       <TouchableOpacity 
         style={QuickiesFooterStyle.qModeContainer}
-        key={qBodySplit.qbsId}
-        onPress={() => {this.state.setQBodySplit(qBodySplit.qbsId)}}
+        key={qbsId}
+        onPress={() => { this.state.setQBodySplit(qbsId); this.setHighlighted(qbsId); }}
       >
-        <Image source={bodySplitImagePathMap.get(qBodySplit.qbsName)} />
-        <Text style={QuickiesFooterStyle.footerText}>{qBodySplit.qbsName}</Text>
+        <Image source={imageSrc}/>
+        <Text style={qBodySplitStyle}>{qBodySplit.qbsName}</Text>
       </TouchableOpacity>
     );
   }
@@ -64,7 +70,7 @@ class QuickiesFooter extends Component {
     const { qBodySplits } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('Standard')} style={QuickiesFooterStyle.container}>
+      <LinearGradient colors={getGradientColor('Footer')} style={QuickiesFooterStyle.container}>
         {qBodySplits.map((qBodySplit) => this.renderQuickieBodySplit(qBodySplit))}
       </LinearGradient>
     );

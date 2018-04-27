@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, 
   TouchableOpacity, 
   Text, 
   Image, 
@@ -8,7 +7,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import QuickiesFooterStyle from '../style/QuickiesFooterStyle';
+import QuickiesHeaderStyle from '../style/QuickiesHeaderStyle';
 import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 
 
@@ -17,59 +16,65 @@ class QuickiesHeader extends Component {
     super(props);
 
     this.state = {
+      All: true,
+      '0': false,
+      '1': false,
+      '2': false,
+      '3': false,
+      '4': false,
+      '5': false,
+      '6': false,
       setQLevel: this.props.setQLevel,
     };
   }
 
-  renderQuickieBodySplit(qLevel) {
+  setHighlighted(qLevel) {
+    const update = {}
+    update['All'] = false
+    update['0'] = false
+    update['1'] = false
+    update['2'] = false
+    update['3'] = false
+    update['4'] = false
+    update['5'] = false
+    update['6'] = false
+    update[qLevel] = true
+    this.setState(update);
+  }
+
+  renderQuickieLevel(qLevel) {
+    let qLevelStyle = this.state[qLevel] ? 
+      QuickiesHeaderStyle.selectedLevelText : QuickiesHeaderStyle.levelText;
+      
     return (
       <TouchableOpacity 
-        style={styles.levelContainer}
+        style={QuickiesHeaderStyle.levelContainer}
         key={qLevel}
-        onPress={() => {this.state.setQLevel(qLevel)}}
+        onPress={() => { this.state.setQLevel(qLevel); this.setHighlighted(qLevel); }}
       >
-        <Text style={styles.levelText}>{qLevel}</Text>
+        <Text style={qLevelStyle}>{qLevel}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
     return (
-      <LinearGradient colors={getGradientColor('Standard')} style={styles.container}>
-        <View style={styles.levelContainer}>
-          <Text style={styles.levelText}>Levels:</Text>
+      <LinearGradient colors={getGradientColor('Footer')} style={QuickiesHeaderStyle.container}>
+        <View style={QuickiesHeaderStyle.levelContainer}>
+          <Text style={QuickiesHeaderStyle.levelText}>Levels:</Text>
         </View>
-        {this.renderQuickieBodySplit('All')}
-        {this.renderQuickieBodySplit('0')}
-        {this.renderQuickieBodySplit('1')}
-        {this.renderQuickieBodySplit('2')}
-        {this.renderQuickieBodySplit('3')}
-        {this.renderQuickieBodySplit('4')}
-        {this.renderQuickieBodySplit('5')}
-        {this.renderQuickieBodySplit('6')}
+        {this.renderQuickieLevel('All')}
+        {this.renderQuickieLevel('0')}
+        {this.renderQuickieLevel('1')}
+        {this.renderQuickieLevel('2')}
+        {this.renderQuickieLevel('3')}
+        {this.renderQuickieLevel('4')}
+        {this.renderQuickieLevel('5')}
+        {this.renderQuickieLevel('6')}
       </LinearGradient>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    padding: 5,
-    justifyContent: 'center', 
-  },
-  levelText: {
-    color: '#fff',
-    fontSize: 16,
-    fontFamily: 'Gill Sans',
-    paddingLeft: 7,
-    paddingRight: 7,
-  },
-  headerText: {
-    color: '#fff',
-    fontSize: 16,
-    fontFamily: 'Gill Sans',
-  },
-});
 
 export default QuickiesHeader;

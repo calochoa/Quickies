@@ -121,7 +121,7 @@ const MainStack = StackNavigator(
 const GradientHeader = props => (
   <View style={{ backgroundColor: '#eee' }}>
     <LinearGradient
-      colors={getGradientColor('default')} 
+      colors={getGradientColor('Header')} 
       style={[StyleSheet.absoluteFill, { height: Header.HEIGHT }]}
     >
       <Header {...props} />
