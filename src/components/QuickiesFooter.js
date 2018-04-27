@@ -49,6 +49,7 @@ class QuickiesFooter extends Component {
       qBodySplits: qBodySplits,
       quickieType: this.props.quickieType,
       qbs: this.props.qbs,
+      setQLookup: this.props.setQLookup,
     };
   }
 
@@ -72,9 +73,7 @@ class QuickiesFooter extends Component {
       <TouchableOpacity 
         style={QuickiesFooterStyle.qModeContainer}
         key={qBodySplit.qbsId}
-        onPress={() => {
-          this.props.navigation.navigate('Quickies', {quickieType: qBodySplit.qbsName, qbs: qBodySplit.qbsId, qMode: qMode});
-        }}
+        onPress={() => {this.state.setQLookup(qBodySplit.qbsId + '.All')}}
       >
         <Image source={bodySplitImagePathMap.get(qBodySplit.qbsName)} />
         <Text style={QuickiesFooterStyle.footerText}>{qBodySplit.qbsName}</Text>
@@ -88,7 +87,7 @@ class QuickiesFooter extends Component {
     return (
       <LinearGradient colors={getGradientColor('Standard')} style={QuickiesFooterStyle.container}>
         {/*qModes.map((qMode) => this.renderQuickieMode(qMode, quickieType, qbs))*/}
-        {qBodySplits.map((qBodySplit) => this.renderQuickieBodySplit(qMode, qBodySplit))}
+        {qBodySplits.map((qBodySplit) => this.renderQuickieBodySplit('Standard', qBodySplit))}
       </LinearGradient>
     );
   }

@@ -14,6 +14,7 @@ import QuickiesHeader from '../components/QuickiesHeader';
 import QuickiesFooter from '../components/QuickiesFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
+import { quickieLookupHeaderMap } from '../misc/QuickieLookupHeader';
 
 
 const QuickieTypesMap = new Map();
@@ -26,9 +27,11 @@ class QuickiesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    let title = params ? params.quickieType + ' ' : ''
-    //title += (typeof params.qMode != 'undefined') ? params.qMode + ' ' : ''
-    title += 'Quickies'
+    let title = navigation.state.params.title;
+    if (typeof(navigation.state.params)==='undefined' 
+      || typeof(navigation.state.params.title) === 'undefined') {
+      title = quickieLookupHeaderMap.get(params.qLookup)
+    }
 
     return {
       title: title,
@@ -40,18 +43,6 @@ class QuickiesScreen extends Component {
       ),
     };
   };
-
-  sortAlpha(filteredData) {
-    return filteredData.sort((a,b) => {
-      if (a.qName.toLowerCase() < b.qName.toLowerCase()) {
-        return -1;
-      }
-      if (a.qName.toLowerCase() > b.qName.toLowerCase()) {
-        return 1;
-      }
-      return 0;
-    });
-  }
 
   sortDiffAlpha(filteredData) {
     return filteredData.sort((a,b) => {
@@ -75,44 +66,31 @@ class QuickiesScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let filteredData = []
-    if (params.quickieType === 'All') {
-      filteredData = this.sortAlpha(Quickies);
-    } else if (params.quickieType.startsWith('Level')) {
-      level = Number(params.quickieType.split(' ')[1])
-      Quickies.map(element => {
-        if (element.qDifficulty == level) {
-          filteredData.push(element);
-        }
-      });
-      filteredData = this.sortAlpha(filteredData);
-    } else {
-      if (params.qbs) {
-        Quickies.map(element => {
-          if (element.qbsId == params.qbs) {
-            filteredData.push(element);
-          }
-        });
-      } else {
-        let quickieTypeId = QuickieTypesMap.get(params.quickieType)
-        Quickies.map(element => {
-          if (element.qtId === quickieTypeId) {
-            filteredData.push(element);
-          }
-        });
-      }
-      filteredData = this.sortDiffAlpha(filteredData);
+    let qCompleteMap = {
+      'qbs0000.All':[], 'qbs0001.All':[], 'qbs0002.All':[], 'qbs0003.All':[], 'qbs0004.All':[],
+      'qbs0000.0':[], 'qbs0001.0':[], 'qbs0002.0':[], 'qbs0003.0':[], 'qbs0004.0':[],
+      'qbs0000.1':[], 'qbs0001.1':[], 'qbs0002.1':[], 'qbs0003.1':[], 'qbs0004.1':[],
+      'qbs0000.2':[], 'qbs0001.2':[], 'qbs0002.2':[], 'qbs0003.2':[], 'qbs0004.2':[],
+      'qbs0000.3':[], 'qbs0001.3':[], 'qbs0002.3':[], 'qbs0003.3':[], 'qbs0004.3':[],
+      'qbs0000.4':[], 'qbs0001.4':[], 'qbs0002.4':[], 'qbs0003.4':[], 'qbs0004.4':[],
+      'qbs0000.5':[], 'qbs0001.5':[], 'qbs0002.5':[], 'qbs0003.5':[], 'qbs0004.5':[],
+      'qbs0000.6':[], 'qbs0001.6':[], 'qbs0002.6':[], 'qbs0003.6':[], 'qbs0004.6':[],
     }
 
-    let listData = []
-    filteredData.map(element => {
-      listData.push({key: element.qId, quickie: element})
+    this.sortDiffAlpha(Quickies).map(element => {
+      // compile all body split quickies
+      qCompleteMap['qbs0000.All'].push({key:element.qId, quickie:element});
+      qCompleteMap[element.qbsId+'.All'].push({key:element.qId, quickie:element})
+      // compile all level quickies
+      qCompleteMap['qbs0000.'+element.qDifficulty].push({key:element.qId, quickie:element})
+      qCompleteMap[element.qbsId+'.'+element.qDifficulty].push({key:element.qId, quickie:element})
     });
 
     let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
 
     this.state = {
-      listData: listData,
+      qLookup: params.qLookup,
+      qCompleteMap: qCompleteMap,
       qMode: qMode,
       quickieType: params.quickieType,
       qbs: params.qbs,
@@ -134,17 +112,25 @@ class QuickiesScreen extends Component {
     );
   }
 
+  setQLookup(qLookupVal) {
+    const update = {}
+    update['qLookup'] = qLookupVal
+    this.setState(update);
+
+    this.props.navigation.setParams({ title: quickieLookupHeaderMap.get(qLookupVal) })
+  }
+
   render() {
-    const { listData, qMode, quickieType, qbs } = this.state;
+    const { qLookup, qCompleteMap, qMode, quickieType, qbs } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
         {/*<QuickiesHeader navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>*/}
         <FlatList
-          data={listData}
+          data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}
         />
-        <QuickiesFooter navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>
+        <QuickiesFooter setQLookup={this.setQLookup.bind(this)} navigation={this.props.navigation} quickieType={quickieType} qbs={qbs}/>
       </View>
     );
   }
