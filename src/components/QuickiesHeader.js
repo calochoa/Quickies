@@ -4,6 +4,7 @@ import {
   TouchableOpacity, 
   Text, 
   Image, 
+  View, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -35,17 +36,17 @@ class QuickiesHeader extends Component {
   render() {
     return (
       <LinearGradient colors={getGradientColor('Standard')} style={styles.container}>
-        <Text style={styles.headerText}>
-          Levels:
-          {this.renderQuickieBodySplit('All')}
-          {this.renderQuickieBodySplit('0')}
-          {this.renderQuickieBodySplit('1')}
-          {this.renderQuickieBodySplit('2')}
-          {this.renderQuickieBodySplit('3')}
-          {this.renderQuickieBodySplit('4')}
-          {this.renderQuickieBodySplit('5')}
-          {this.renderQuickieBodySplit('6')}
-        </Text>
+        <View style={styles.levelContainer}>
+          <Text style={styles.levelText}>Levels:</Text>
+        </View>
+        {this.renderQuickieBodySplit('All')}
+        {this.renderQuickieBodySplit('0')}
+        {this.renderQuickieBodySplit('1')}
+        {this.renderQuickieBodySplit('2')}
+        {this.renderQuickieBodySplit('3')}
+        {this.renderQuickieBodySplit('4')}
+        {this.renderQuickieBodySplit('5')}
+        {this.renderQuickieBodySplit('6')}
       </LinearGradient>
     );
   }
@@ -53,8 +54,9 @@ class QuickiesHeader extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     padding: 5,
-    alignItems: 'center', 
+    justifyContent: 'center', 
   },
   levelText: {
     color: '#fff',
