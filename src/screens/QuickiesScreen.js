@@ -11,6 +11,7 @@ import QuickieTypes from '../dbstore/QuickieTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import QuickiesHeader from '../components/QuickiesHeader';
+import QuickiesModeHeader from '../components/QuickiesModeHeader';
 import QuickiesFooter from '../components/QuickiesFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
@@ -68,27 +69,27 @@ class QuickiesScreen extends Component {
     const { params } = this.props.navigation.state;
 
     let qCompleteMap = {
-      'qbs0000.All':[], 'qbs0001.All':[], 'qbs0002.All':[], 'qbs0003.All':[], 'qbs0004.All':[],
-      'qbs0000.0':[], 'qbs0001.0':[], 'qbs0002.0':[], 'qbs0003.0':[], 'qbs0004.0':[],
-      'qbs0000.1':[], 'qbs0001.1':[], 'qbs0002.1':[], 'qbs0003.1':[], 'qbs0004.1':[],
-      'qbs0000.2':[], 'qbs0001.2':[], 'qbs0002.2':[], 'qbs0003.2':[], 'qbs0004.2':[],
-      'qbs0000.3':[], 'qbs0001.3':[], 'qbs0002.3':[], 'qbs0003.3':[], 'qbs0004.3':[],
-      'qbs0000.4':[], 'qbs0001.4':[], 'qbs0002.4':[], 'qbs0003.4':[], 'qbs0004.4':[],
-      'qbs0000.5':[], 'qbs0001.5':[], 'qbs0002.5':[], 'qbs0003.5':[], 'qbs0004.5':[],
-      'qbs0000.6':[], 'qbs0001.6':[], 'qbs0002.6':[], 'qbs0003.6':[], 'qbs0004.6':[],
+      'qbs0000.All.Standard':[], 'qbs0001.All.Standard':[], 'qbs0002.All.Standard':[], 'qbs0003.All.Standard':[], 'qbs0004.All.Standard':[],
+      'qbs0000.0.Standard':[], 'qbs0001.0.Standard':[], 'qbs0002.0.Standard':[], 'qbs0003.0.Standard':[], 'qbs0004.0.Standard':[],
+      'qbs0000.1.Standard':[], 'qbs0001.1.Standard':[], 'qbs0002.1.Standard':[], 'qbs0003.1.Standard':[], 'qbs0004.1.Standard':[],
+      'qbs0000.2.Standard':[], 'qbs0001.2.Standard':[], 'qbs0002.2.Standard':[], 'qbs0003.2.Standard':[], 'qbs0004.2.Standard':[],
+      'qbs0000.3.Standard':[], 'qbs0001.3.Standard':[], 'qbs0002.3.Standard':[], 'qbs0003.3.Standard':[], 'qbs0004.3.Standard':[],
+      'qbs0000.4.Standard':[], 'qbs0001.4.Standard':[], 'qbs0002.4.Standard':[], 'qbs0003.4.Standard':[], 'qbs0004.4.Standard':[],
+      'qbs0000.5.Standard':[], 'qbs0001.5.Standard':[], 'qbs0002.5.Standard':[], 'qbs0003.5.Standard':[], 'qbs0004.5.Standard':[],
+      'qbs0000.6.Standard':[], 'qbs0001.6.Standard':[], 'qbs0002.6.Standard':[], 'qbs0003.6.Standard':[], 'qbs0004.6.Standard':[],
     }
 
     this.sortDiffAlpha(Quickies).map(element => {
       // compile all body split quickies
-      qCompleteMap['qbs0000.All'].push({key:element.qId, quickie:element});
-      qCompleteMap[element.qbsId+'.All'].push({key:element.qId, quickie:element})
+      qCompleteMap['qbs0000.All.Standard'].push({key:element.qId, quickie:element});
+      qCompleteMap[element.qbsId+'.All.Standard'].push({key:element.qId, quickie:element})
       // compile all level quickies
-      qCompleteMap['qbs0000.'+element.qDifficulty].push({key:element.qId, quickie:element})
-      qCompleteMap[element.qbsId+'.'+element.qDifficulty].push({key:element.qId, quickie:element})
+      qCompleteMap['qbs0000.'+element.qDifficulty+'.Standard'].push({key:element.qId, quickie:element})
+      qCompleteMap[element.qbsId+'.'+element.qDifficulty+'.Standard'].push({key:element.qId, quickie:element})
     });
 
     let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
-    let qLookup = params.qBodySplit + '.' + params.qLevel
+    let qLookup = params.qBodySplit + '.' + params.qLevel + '.' +  qMode
 
     this.state = {
       qLookup: qLookup,
@@ -121,7 +122,7 @@ class QuickiesScreen extends Component {
     update['qBodySplit'] = qBodySplit
     this.setState(update);
     
-    let qLookupVal = qBodySplit + '.' + this.state.qLevel
+    let qLookupVal = qBodySplit + '.' + this.state.qLevel + '.' + this.state.qMode
     const update2 = {}
     update2['qLookup'] = qLookupVal
     this.setState(update2);
@@ -134,7 +135,20 @@ class QuickiesScreen extends Component {
     update['qLevel'] = qLevel
     this.setState(update);
 
-    let qLookupVal = this.state.qBodySplit + '.' + qLevel
+    let qLookupVal = this.state.qBodySplit + '.' + qLevel + '.' + this.state.qMode
+    const update2 = {}
+    update2['qLookup'] = qLookupVal
+    this.setState(update2);
+
+    this.setHeaderTitle(qLookupVal)
+  }
+
+  setQMode(qMode) {
+    const update = {}
+    update['qMode'] = qMode
+    this.setState(update);
+
+    let qLookupVal = this.state.qBodySplit + '.' + this.state.qLevel + '.' + qMode
     const update2 = {}
     update2['qLookup'] = qLookupVal
     this.setState(update2);
@@ -152,6 +166,7 @@ class QuickiesScreen extends Component {
     return (
       <View style={MainContainerStyle.container}>
         {<QuickiesHeader setQLevel={this.setQLevel.bind(this)}/>}
+        {/*<QuickiesModeHeader setQMode={this.setQMode.bind(this)}/>*/}
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}

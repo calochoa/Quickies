@@ -2,23 +2,29 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const QuickiesFooterStyle = StyleSheet.create({
+const QuickiesHeaderStyle = StyleSheet.create({
   container: {
-    padding: 5,
     flexDirection: 'row',
+    padding: 5,
+    justifyContent: 'center', 
   },
-  qBodySplitContainer: {
+  qModeContainer: {
     flex: 1,
     alignItems: 'center', 
     justifyContent: 'flex-end',
   },
-  bodySplitText: {
+  modeInfoText: {
+    color: '#fff',
+    fontSize: 16,
+    fontFamily: 'Gill Sans',
+  },
+  modeText: {
     color: '#fff',
     textAlign: 'center',
     fontSize: 13,
     fontFamily: 'Gill Sans',
   },
-  selectedBodySplitText: {
+  selectedModeText: {
     color: '#ffca28',
     textAlign: 'center',
     fontSize: 13,
@@ -27,4 +33,4 @@ const QuickiesFooterStyle = StyleSheet.create({
 });
 
 
-export default QuickiesFooterStyle;
+export default QuickiesHeaderStyle;

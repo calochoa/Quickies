@@ -8,7 +8,6 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import QuickiesHeaderStyle from '../style/QuickiesHeaderStyle';
-import { difficultyImagePathMap } from '../misc/DifficultyImagePaths';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';

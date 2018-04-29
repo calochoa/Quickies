@@ -56,7 +56,7 @@ class QuickiesFooter extends Component {
 
     return (
       <TouchableOpacity 
-        style={QuickiesFooterStyle.qModeContainer}
+        style={QuickiesFooterStyle.qBodySplitContainer}
         key={qbsId}
         onPress={() => { this.state.setQBodySplit(qbsId); this.setHighlighted(qbsId); }}
       >
