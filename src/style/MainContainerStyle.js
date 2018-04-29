@@ -6,11 +6,12 @@ const MainContainerStyle = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
+    backgroundColor: '#C0C0C0',
     marginTop: Header.HEIGHT,
   },
   containerNoSpaceAround: {
     flex: 1,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#C0C0C0',
     marginTop: Header.HEIGHT,
   },
 });
