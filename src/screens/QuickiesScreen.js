@@ -176,7 +176,6 @@ class QuickiesScreen extends Component {
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}
-          keyboardShouldPersistTaps={'always'}
         />
         <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)}/>
       </View>
