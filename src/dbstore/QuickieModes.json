@@ -5,7 +5,7 @@
     "qvFactor": 1,
     "qvHeader": "Standard Quickies",
     "qvDescription": "These are the standard quickies with repetitions as designed.",
-    "order": 0
+    "order": 1
   },
   {
   	"qvId": "qv0001",
@@ -13,7 +13,7 @@
     "qvFactor": 0.5,
     "qvHeader": "Blah Mode Quickies",
     "qvDescription": "These quickies are roughly half the repetitions of their standard counterparts.  They are intended to help ease individuals into new quickie types or levels, but can also be used if you're just not in the mood to go all out.",
-    "order": 1
+    "order": 0
   },
   {
   	"qvId": "qv0002",

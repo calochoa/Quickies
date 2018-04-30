@@ -8,20 +8,28 @@ const QuickiesHeaderStyle = StyleSheet.create({
     padding: 5,
     justifyContent: 'center', 
   },
-  levelContainer: {
+  levelInfoContainer: {
+    flex: 2,
     flexDirection: 'row',
-    paddingLeft: 13,
-    paddingRight: 13,
+  },
+  levelContainer: {
+    flex: 1,
   },
   levelText: {
     color: '#fff',
     fontSize: 16,
     fontFamily: 'Gill Sans',
+    textAlign: 'center',
   },
   selectedLevelText: {
     color: '#ffca28',
     fontSize: 16,
     fontFamily: 'Gill Sans',
+    textAlign: 'center',
+  },
+  modeContainer: {
+    flex: 1,
+    alignItems: 'flex-end', 
   },
 });
 

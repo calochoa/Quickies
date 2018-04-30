@@ -38,12 +38,15 @@ class QuickiesModeHeader extends Component {
       qModeInfo.push(element.qvName + ' - ' + element.qvDescription);
     });
 
+    let qMode = this.props.qMode
+
+
     this.state = {
-      qv0000: true,
-      qv0001: false,
-      qv0002: false,
-      qv0003: false,
-      qv0004: false,
+      qv0000: qMode==='Standard',
+      qv0001: qMode==='Blah Mode',
+      qv0002: qMode==='Boss Mode',
+      qv0003: qMode==='Beast Mode',
+      qv0004: qMode==='Bananas Mode',
       qModes: qModes,
       setQMode: this.props.setQMode,
       qModeInfo: qModeInfo
@@ -83,10 +86,17 @@ class QuickiesModeHeader extends Component {
     this.setState(update);
   }
 
+  setQMode(visible) {
+    const update = {}
+    update['qModeVisible'] = visible
+    this.setState(update);
+    this.state.showQMode(visible);
+  }
+
   renderQuickieMode(qMode) {
     let qvId = qMode.qvId
     let imageSrc = this.state[qvId] ? difficultyImagePathMap.get(qMode.qvName + ' Selected') 
-      : difficultyImagePathMap.get(qMode.qvName);
+      : difficultyImagePathMap.get(qMode.qvName + ' Unselected');
     let qModeStyle = this.state[qvId] ? QuickiesHeaderModeStyle.selectedModeText 
       : QuickiesHeaderModeStyle.modeText;
 
@@ -106,16 +116,16 @@ class QuickiesModeHeader extends Component {
     const { qModes } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('Footer')} style={QuickiesHeaderModeStyle.container}>
+      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderModeStyle.container}>
         {this.renderOverlay('modeInfo')}
+        {qModes.map((qMode) => this.renderQuickieMode(qMode))}
         <TouchableOpacity 
           style={QuickiesHeaderModeStyle.qModeContainer}
           onPress={() => {this.setModalVisible('modeInfo', true);}}
         >
-          <Text style={QuickiesHeaderModeStyle.modeInfoText}> Modes:</Text>
+          <Text style={QuickiesHeaderModeStyle.modeInfoText}>Modes</Text>
           <InfoIconSmall />
         </TouchableOpacity>
-        {qModes.map((qMode) => this.renderQuickieMode(qMode))}
       </LinearGradient>
     );
   }

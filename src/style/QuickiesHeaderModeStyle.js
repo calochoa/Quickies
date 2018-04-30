@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 const QuickiesHeaderStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 5,
+    paddingBottom: 5,
     justifyContent: 'center', 
   },
   qModeContainer: {
@@ -14,6 +14,7 @@ const QuickiesHeaderStyle = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   modeInfoText: {
+    paddingBottom: 5,
     color: '#fff',
     fontSize: 16,
     fontFamily: 'Gill Sans',

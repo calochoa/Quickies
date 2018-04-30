@@ -8,6 +8,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import QuickiesHeaderStyle from '../style/QuickiesHeaderStyle';
+import DropDownArrow from '../components/DropDownArrow';
+import DropDownArrowUD from '../components/DropDownArrowUD';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
@@ -48,7 +50,9 @@ class QuickiesHeader extends Component {
       '5': false,
       '6': false,
       setQLevel: this.props.setQLevel,
-      qLevelInfo: qLevelInfo
+      qLevelInfo: qLevelInfo,
+      showQMode: this.props.showQMode,
+      qModeVisible: this.props.qModeVisible,
     };
   }
 
@@ -103,16 +107,25 @@ class QuickiesHeader extends Component {
     );
   }
 
+  showQMode(visible) {
+    const update = {}
+    update['qModeVisible'] = visible
+    this.setState(update);
+    this.state.showQMode(visible);
+  }
+
   render() {
+    const { qModeVisible } = this.state;
+
     return (
-      <LinearGradient colors={getGradientColor('Footer')} style={QuickiesHeaderStyle.container}>
+      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderStyle.container}>
         {this.renderOverlay('levelInfo', 'Standard')}
         <TouchableOpacity 
-          style={QuickiesHeaderStyle.levelContainer}
+          style={QuickiesHeaderStyle.levelInfoContainer}
           onPress={() => {this.setModalVisible('levelInfo', true);}}
         >
           <InfoIconSmall />
-          <Text style={QuickiesHeaderStyle.levelText}>  Levels:</Text>
+          <Text style={QuickiesHeaderStyle.levelText}> Levels:</Text>
         </TouchableOpacity>
         {this.renderQuickieLevel('All')}
         {this.renderQuickieLevel('0')}
@@ -122,6 +135,12 @@ class QuickiesHeader extends Component {
         {this.renderQuickieLevel('4')}
         {this.renderQuickieLevel('5')}
         {this.renderQuickieLevel('6')}
+        <TouchableOpacity 
+          style={QuickiesHeaderStyle.modeContainer}
+          onPress={() => {this.showQMode(!qModeVisible);}}
+        >
+          {qModeVisible ? <DropDownArrowUD /> : <DropDownArrow />}
+        </TouchableOpacity>
       </LinearGradient>
     );
   }

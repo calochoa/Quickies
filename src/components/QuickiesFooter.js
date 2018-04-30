@@ -70,7 +70,7 @@ class QuickiesFooter extends Component {
     const { qBodySplits } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('Footer')} style={QuickiesFooterStyle.container}>
+      <LinearGradient colors={getGradientColor('QuickiesFooter')} style={QuickiesFooterStyle.container}>
         {qBodySplits.map((qBodySplit) => this.renderQuickieBodySplit(qBodySplit))}
       </LinearGradient>
     );

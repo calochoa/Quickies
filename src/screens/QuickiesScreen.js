@@ -99,20 +99,20 @@ class QuickiesScreen extends Component {
       qMode: qMode,
       quickieType: params.quickieType,
       qbs: params.qbs,
+      qModeVisible: false,
     };
 
     this.renderRow = this.renderRow.bind(this);
   }
 
   renderRow(quickie) {
-    qMode=this.state.qMode
     return (
       <LinearGradient 
-        colors={getGradientColor(qMode)} 
+        colors={getGradientColor('Standard')} 
         style={QuickieRowStyle.container} 
         key={quickie.qId}
       >
-        <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} key={quickie.qId} />
+        <QuickieRow quickie={quickie} qMode={this.state.qMode} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
     );
   }
@@ -160,13 +160,19 @@ class QuickiesScreen extends Component {
     this.props.navigation.setParams({ title: quickieLookupHeaderMap.get(qLookupVal) })
   }
 
+  showQMode(visible) {
+    const update = {}
+    update['qModeVisible'] = visible
+    this.setState(update);
+  }
+
   render() {
-    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs } = this.state;
+    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs, qModeVisible } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        {<QuickiesHeader setQLevel={this.setQLevel.bind(this)}/>}
-        {/*<QuickiesModeHeader setQMode={this.setQMode.bind(this)}/>*/}
+        {<QuickiesHeader setQLevel={this.setQLevel.bind(this)} showQMode={this.showQMode.bind(this)} />}
+        {qModeVisible ? <QuickiesModeHeader setQMode={this.setQMode.bind(this)} qMode={qMode}/> : null}
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}

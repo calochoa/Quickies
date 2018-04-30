@@ -17,8 +17,10 @@ export const getGradientColor = (type)=> {
 		gradientColor = ['#02111D', '#037BB5', '#02111D'];
   } else if  (type === 'Header') {
     gradientColor = ['#2C3E50', '#3C7080', '#4CA1AF'];
-  } else if  (type === 'Footer') {
-    gradientColor = ['#2c3e50', '#2c3e50', '#2c3e50'];
+  } else if  (type === 'QuickiesHeader') {
+    gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
+  } else if  (type === 'QuickiesFooter') {
+    gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   }
 	return gradientColor
 }

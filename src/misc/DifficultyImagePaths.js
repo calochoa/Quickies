@@ -9,5 +9,10 @@ difficultyImagePathMap.set('Beast Mode Selected', require('../images/icons8-beas
 difficultyImagePathMap.set('Boss Mode Selected', require('../images/icons8-boss-26-selected.png'));
 difficultyImagePathMap.set('Blah Mode Selected', require('../images/icons8-blah-30-selected.png'));
 difficultyImagePathMap.set('Standard Selected', require('../images/icons8-speed-24-selected.png'));
+difficultyImagePathMap.set('Bananas Mode Unselected', require('../images/icons8-bananas-26-unselected.png'));
+difficultyImagePathMap.set('Beast Mode Unselected', require('../images/icons8-beast-26-unselected.png'));
+difficultyImagePathMap.set('Boss Mode Unselected', require('../images/icons8-boss-26-unselected.png'));
+difficultyImagePathMap.set('Blah Mode Unselected', require('../images/icons8-blah-30-unselected.png'));
+difficultyImagePathMap.set('Standard Unselected', require('../images/icons8-speed-24-unselected.png'));
 
 export { difficultyImagePathMap };
