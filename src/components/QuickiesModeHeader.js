@@ -85,13 +85,6 @@ class QuickiesModeHeader extends Component {
     this.setState(update);
   }
 
-  setQMode(visible) {
-    const update = {}
-    update['qModeVisible'] = visible
-    this.setState(update);
-    this.state.setQMode(visible);
-  }
-
   renderQuickieMode(qMode) {
     let qvId = qMode.qvId
     let imageSrc = this.state[qvId] ? difficultyImagePathMap.get(qMode.qvName + ' Selected') 
@@ -103,7 +96,7 @@ class QuickiesModeHeader extends Component {
       <TouchableOpacity 
         style={QuickiesHeaderModeStyle.qModeContainer}
         key={qvId}
-        onPress={() => { this.setQMode(qMode.qvName); this.setHighlighted(qvId); }}
+        onPress={() => { this.state.setQMode(qMode.qvName); this.setHighlighted(qvId); }}
       >
         <Image source={imageSrc}/>
         <Text style={qModeStyle}>{qMode.qvName.replace(' Mode','')}</Text>
