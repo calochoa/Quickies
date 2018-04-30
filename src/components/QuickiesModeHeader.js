@@ -40,7 +40,6 @@ class QuickiesModeHeader extends Component {
 
     let qMode = this.props.qMode
 
-
     this.state = {
       qv0000: qMode==='Standard',
       qv0001: qMode==='Blah Mode',
@@ -49,7 +48,7 @@ class QuickiesModeHeader extends Component {
       qv0004: qMode==='Bananas Mode',
       qModes: qModes,
       setQMode: this.props.setQMode,
-      qModeInfo: qModeInfo
+      qModeInfo: qModeInfo,
     };
   }
 
@@ -90,7 +89,7 @@ class QuickiesModeHeader extends Component {
     const update = {}
     update['qModeVisible'] = visible
     this.setState(update);
-    this.state.showQMode(visible);
+    this.state.setQMode(visible);
   }
 
   renderQuickieMode(qMode) {
@@ -104,7 +103,7 @@ class QuickiesModeHeader extends Component {
       <TouchableOpacity 
         style={QuickiesHeaderModeStyle.qModeContainer}
         key={qvId}
-        onPress={() => { this.state.setQMode(qMode.qvName); this.setHighlighted(qvId); }}
+        onPress={() => { this.setQMode(qMode.qvName); this.setHighlighted(qvId); }}
       >
         <Image source={imageSrc}/>
         <Text style={qModeStyle}>{qMode.qvName.replace(' Mode','')}</Text>
