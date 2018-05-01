@@ -35,7 +35,7 @@ class QuickiesModeHeader extends Component {
     let qModeInfo = []
     let qModes = this.sortOrder(QuickieModes)
     qModes.map(element => {
-      qModeInfo.push(element.qvName + ' - ' + element.qvDescription);
+      qModeInfo.push({header: element.qvHeader, desc:element.qvDescription})
     });
 
     let qMode = this.props.qMode
@@ -59,6 +59,12 @@ class QuickiesModeHeader extends Component {
   }
 
   renderOverlay(qmId) {
+    var display = [];
+    for (let i=0; i < this.state.qModeInfo.length; i++) {
+      display.push(<Text style={OverlayStyle.subheader} key={'header.'+i}>{this.state.qModeInfo[i].header}</Text>)
+      display.push(<Text style={OverlayStyle.text} key={'desc.'+i}>{this.state.qModeInfo[i].desc+'\n'}</Text>)
+    }
+
     return (
       <Overlay 
         visible={this.state[qmId]}
@@ -69,7 +75,7 @@ class QuickiesModeHeader extends Component {
       >
         <Text style={OverlayStyle.header}>Quickie Modes</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{this.state.qModeInfo.join('\n\n')}</Text>
+        {display}
       </Overlay>
     )
   }
