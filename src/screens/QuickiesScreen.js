@@ -100,6 +100,7 @@ class QuickiesScreen extends Component {
       quickieType: params.quickieType,
       qbs: params.qbs,
       qModeVisible: false,
+      qRefresh: false,
     };
 
     this.renderRow = this.renderRow.bind(this);
@@ -110,7 +111,7 @@ class QuickiesScreen extends Component {
       <LinearGradient 
         colors={getGradientColor('Standard')} 
         style={QuickieRowStyle.container} 
-        key={quickie.qId}
+        key={quickie.qId+'.'+this.state.qRefresh}
       >
         <QuickieRow quickie={quickie} qMode={this.state.qMode} navigation={this.props.navigation} key={quickie.qId} />
       </LinearGradient>
@@ -148,12 +149,10 @@ class QuickiesScreen extends Component {
     update['qMode'] = qMode
     this.setState(update);
 
-    let qLookupVal = this.state.qBodySplit + '.' + this.state.qLevel
+    let qRefresh = !this.state.qRefresh
     const update2 = {}
-    update2['qLookup'] = qLookupVal
+    update2['qRefresh'] = qRefresh
     this.setState(update2);
-
-    this.setHeaderTitle(qLookupVal)
   }
 
   setHeaderTitle(qLookupVal) {
@@ -167,7 +166,7 @@ class QuickiesScreen extends Component {
   }
 
   render() {
-    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs, qModeVisible } = this.state;
+    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs, qModeVisible, qRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
@@ -176,6 +175,7 @@ class QuickiesScreen extends Component {
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}
+          extraData={qRefresh}
         />
         <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)}/>
       </View>
