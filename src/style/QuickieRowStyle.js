@@ -49,7 +49,7 @@ const QuickieRowStyle = StyleSheet.create({
     fontFamily: 'Gill Sans',
   },
   variation: {
-    color: '#fff',
+    color: '#C0C0C0',
     fontSize: 20,
     textAlign: 'center',
     fontFamily: 'Gill Sans',
