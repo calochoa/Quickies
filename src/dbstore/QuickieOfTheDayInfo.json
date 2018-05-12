@@ -1,0 +1,44 @@
+[
+  {
+  	"qotd": "qotd_1",
+  	"day": "Monday",
+    "description": "Kicking it off with some CARDIO",
+    "order": 1
+  },
+  {
+  	"qotd": "qotd_2",
+  	"day": "Tuesday",
+    "description": "Let's strengthen that UPPER BODY",
+    "order": 2
+  },
+  {
+  	"qotd": "qotd_3",
+  	"day": "Wednesday",
+    "description": "LOWER BODY on that hump day",
+    "order": 3
+  },
+  {
+  	"qotd": "qotd_4",
+  	"day": "Thursday",
+    "description": "Can't forget about our CORE",
+    "order": 4
+  },
+  {
+  	"qotd": "qotd_5",
+  	"day": "Friday",
+    "description": "Time to hit that TOTAL BODY",
+    "order": 5
+  },
+  {
+  	"qotd": "qotd_6",
+  	"day": "Saturday",
+    "description": "Can't get enough of that CARDIO",
+    "order": 6
+  },
+  {
+  	"qotd": "qotd_0",
+  	"day": "Sunday",
+    "description": "Focusing on our BAR strength",
+    "order": 7
+  }
+]

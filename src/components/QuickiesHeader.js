@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity, 
   Text, 
-  Image, 
   View, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
