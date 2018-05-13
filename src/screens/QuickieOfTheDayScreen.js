@@ -116,7 +116,7 @@ class QuickieOfTheDayScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} />}
+        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Quickie' />}
         <FlatList
           data={qotdMap['qotd_'+dayOfTheWeek+'.All']}
           renderItem={({item}) => this.renderRow(item)}

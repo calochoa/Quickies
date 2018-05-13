@@ -47,6 +47,7 @@ class OfTheDayHeader extends Component {
       'Sat': dayOfTheWeek == 6,
       setDayOfTheWeek: this.props.setDayOfTheWeek,
       qotdInfo: qotdInfo,
+      type: this.props.type,
     };
   }
 
@@ -65,7 +66,7 @@ class OfTheDayHeader extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(id, false);}}
       >
-        <Text style={OverlayStyle.header}>Quickie of the Day{'\n'}Breakdown</Text>
+        <Text style={OverlayStyle.header}>{this.state.type} of the Day{'\n'}Breakdown</Text>
         <View style={OverlayStyle.divider}/>
         <Text style={OverlayStyle.text}>{this.state.qotdInfo.join('\n\n')}</Text>
       </Overlay>

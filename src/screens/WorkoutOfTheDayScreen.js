@@ -115,7 +115,7 @@ class WorkoutOfTheDayScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} />}
+        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Workout' />}
         <FlatList
           data={wotdMap['wotd_'+dayOfTheWeek+'.All']}
           renderItem={({item}) => this.renderRow(item)}
