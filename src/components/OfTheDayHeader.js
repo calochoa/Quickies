@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import QuickieOfTheDayHeaderStyle from '../style/QuickieOfTheDayHeaderStyle';
+import OfTheDayHeaderStyle from '../style/OfTheDayHeaderStyle';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 import QuickieOfTheDayInfo from '../dbstore/QuickieOfTheDayInfo.json';
 
 
-class QuickieOfTheDayHeader extends Component {
+class OfTheDayHeader extends Component {
 
   sortOrder(data) {
     return data.sort((a,b) => {
@@ -87,11 +87,11 @@ class QuickieOfTheDayHeader extends Component {
 
   renderDayOfTheWeek(day, dotw) {
     let qDayStyle = this.state[day] ? 
-      QuickieOfTheDayHeaderStyle.selectedDayText : QuickieOfTheDayHeaderStyle.dayText;
+      OfTheDayHeaderStyle.selectedDayText : OfTheDayHeaderStyle.dayText;
 
     return (
       <TouchableOpacity 
-        style={QuickieOfTheDayHeaderStyle.dayContainer}
+        style={OfTheDayHeaderStyle.dayContainer}
         key={day}
         onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
       >
@@ -102,14 +102,14 @@ class QuickieOfTheDayHeader extends Component {
 
   render() {
     return (
-      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickieOfTheDayHeaderStyle.container}>
+      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={OfTheDayHeaderStyle.container}>
         {this.renderOverlay('dayInfo')}
         <TouchableOpacity 
-          style={QuickieOfTheDayHeaderStyle.dayInfoContainer}
+          style={OfTheDayHeaderStyle.dayInfoContainer}
           onPress={() => {this.setModalVisible('dayInfo', true);}}
         >
           <InfoIconSmall />
-          <Text style={QuickieOfTheDayHeaderStyle.dayText}> Days:</Text>
+          <Text style={OfTheDayHeaderStyle.dayText}> Days:</Text>
         </TouchableOpacity>
         {this.renderDayOfTheWeek('Mon', 1)}
         {this.renderDayOfTheWeek('Tue', 2)}
@@ -124,4 +124,4 @@ class QuickieOfTheDayHeader extends Component {
 }
 
 
-export default QuickieOfTheDayHeader;
+export default OfTheDayHeader;

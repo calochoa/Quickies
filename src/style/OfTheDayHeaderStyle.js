@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const QuickieOfTheDayHeaderStyle = StyleSheet.create({
+const OfTheDayHeaderStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 5,
@@ -30,4 +30,4 @@ const QuickieOfTheDayHeaderStyle = StyleSheet.create({
 });
 
 
-export default QuickieOfTheDayHeaderStyle;
+export default OfTheDayHeaderStyle;

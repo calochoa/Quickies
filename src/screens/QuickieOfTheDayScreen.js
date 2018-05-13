@@ -13,7 +13,7 @@ import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
-import QuickieOfTheDayHeader from '../components/QuickieOfTheDayHeader';
+import OfTheDayHeader from '../components/OfTheDayHeader';
 
 
 const QuickieMap = {}
@@ -116,7 +116,7 @@ class QuickieOfTheDayScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        {<QuickieOfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} />}
+        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} />}
         <FlatList
           data={qotdMap['qotd_'+dayOfTheWeek+'.All']}
           renderItem={({item}) => this.renderRow(item)}

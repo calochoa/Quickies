@@ -3,8 +3,6 @@
     "wId": "w1001",
     "wName": "Workout I",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 1,
     "wDifficulty": 1,
     "qIds": ["q00008", "q00001", "q00004", "q00003"]
   },
@@ -12,8 +10,6 @@
     "wId": "w1002",
     "wName": "Workout II",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 2,
     "wDifficulty": 1,
     "qIds": ["q00006", "q03001", "q00007", "q03002"]
   },
@@ -21,8 +17,6 @@
     "wId": "w1003",
     "wName": "Workout III",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 3,
     "wDifficulty": 1,
     "qIds": ["q00004", "q00008", "q00005", "q02001"]
   },
@@ -30,8 +24,6 @@
     "wId": "w1004",
     "wName": "Workout IV",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 4,
     "wDifficulty": 1,
     "qIds": ["q03002", "q00001", "q03001", "q00002"]
   },
@@ -39,8 +31,6 @@
     "wId": "w1005",
     "wName": "Workout V",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 5,
     "wDifficulty": 1,
     "qIds": ["q00005", "q00002", "q00004", "q00003"]
   },
@@ -48,8 +38,6 @@
     "wId": "w1006",
     "wName": "Workout VI",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 6,
     "wDifficulty": 1,
     "qIds": ["q00008", "q00001", "q00004", "q00006"]
   },
@@ -57,8 +45,6 @@
     "wId": "w1007",
     "wName": "Workout VII",
     "wtId": "wt0001",
-    "wotdId": "wotd0001",
-    "wotdOrder": 0,
     "wDifficulty": 1,
     "qIds": ["q00005", "q00002", "q00003", "q00007"]
   },
@@ -66,8 +52,6 @@
     "wId": "w2001",
     "wName": "Workout I",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 1,
     "wDifficulty": 2,
     "qIds": ["q00005", "q00002", "q00004", "q00003",
     "q02001", "q02002", "q01005", "q01008"]
@@ -76,8 +60,6 @@
     "wId": "w2002",
     "wName": "Workout II",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 2,
     "wDifficulty": 2,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q03002", "q03003", "q00006", "q03001"]
@@ -86,8 +68,6 @@
     "wId": "w2003",
     "wName": "Workout III",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 3,
     "wDifficulty": 2,
     "qIds": ["q00008", "q00001", "q00004", "q00003", 
     "q01003", "q02001", "q02005", "q00005"]
@@ -96,8 +76,6 @@
     "wId": "w2004",
     "wName": "Workout IV",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 4,
     "wDifficulty": 2,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q01005", "q03001", "q01002", "q03004"]
@@ -106,8 +84,6 @@
     "wId": "w2005",
     "wName": "Workout V",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 5,
     "wDifficulty": 2,
     "qIds": ["q00008", "q00001", "q00004", "q00003", 
     "q02002", "q01002", "q02001", "q01001"]
@@ -116,8 +92,6 @@
     "wId": "w2006",
     "wName": "Workout VI",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 6,
     "wDifficulty": 2,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q02005", "q01005", "q03002", "q01008"]
@@ -126,8 +100,6 @@
     "wId": "w2007",
     "wName": "Workout VII",
     "wtId": "wt0002",
-    "wotdId": "wotd0002",
-    "wotdOrder": 0,
     "wDifficulty": 2,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q03001", "q01003", "q03004", "q01001"]
@@ -200,8 +172,6 @@
     "wId": "w3001",
     "wName": "Workout I",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 0,
     "wDifficulty": 3,
     "qIds": ["q00008", "q00001", "q00004", "q00003",
     "q02005", "q00006", "q03006", "q01001", "q04001", "q02004", "q01004", "q03003"]
@@ -210,8 +180,6 @@
     "wId": "w3002",
     "wName": "Workout II",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 1,
     "wDifficulty": 3,
     "qIds": ["q00005", "q00002", "q00004", "q00003",
     "q02008", "q00007", "q03004", "q01006", "q04003", "q02003", "q01005", "q03001"]
@@ -220,8 +188,6 @@
     "wId": "w3003",
     "wName": "Workout III",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 2,
     "wDifficulty": 3,
     "qIds": ["q00008", "q00001", "q00004", "q00003",
     "q02007", "q00006", "q03008", "q01003", "q04001", "q02002", "q01007", "q03002"]
@@ -230,8 +196,6 @@
     "wId": "w3004",
     "wName": "Workout IV",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 3,
     "wDifficulty": 3,
     "qIds": ["q00005", "q00002", "q00004", "q00003",
     "q02006", "q00007", "q03007", "q01002", "q04002", "q02001", "q01008", "q03005"]
@@ -240,8 +204,6 @@
     "wId": "w3005",
     "wName": "Workout V",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 4,
     "wDifficulty": 3,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q02008", "q03003", "q02006", "q01007", "q02004", "q03005", "q02001", "q01003"]
@@ -250,8 +212,6 @@
     "wId": "w3006",
     "wName": "Workout VI",
     "wtId": "wt0003",
-    "wotdId": "wotd0003",
-    "wotdOrder": 5,
     "wDifficulty": 3,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q02007", "q03004", "q02005", "q01004", "q02004", "q03007", "q02002", "q01001"]
@@ -260,8 +220,6 @@
     "wId": "w4001",
     "wName": "Workout I",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 0,
     "wDifficulty": 4,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q02008", "q03002", "q02005", "q01005", "q02003", "q03008", "q02002", "q01006"]
@@ -270,8 +228,6 @@
     "wId": "w4002",
     "wName": "Workout II",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 1,
     "wDifficulty": 4,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q02007", "q03001", "q02006", "q01002", "q02003", "q03006", "q02001", "q01008"]
@@ -280,8 +236,6 @@
     "wId": "w4003",
     "wName": "Workout III",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 2,
     "wDifficulty":4,
     "qIds": ["q00008", "q00001", "q00004", "q00003",
     "q04002", "q02001", "q01005", "q02004", "q01003", "q01002", "q01008", "q02007"]
@@ -290,8 +244,6 @@
     "wId": "w4004",
     "wName": "Workout IV",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 3,
     "wDifficulty": 4,
     "qIds": ["q00005", "q00002", "q00004", "q00003",
     "q04001", "q02002", "q01006", "q02005", "q01001", "q01004", "q02003", "q02006"]
@@ -300,8 +252,6 @@
     "wId": "w4005",
     "wName": "Workout V",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 4,
     "wDifficulty": 4,
     "qIds": ["q00005", "q00002", "q00004", "q00003",
     "q02002", "q01006", "q02005", "q02006", "q02001", "q01003", "q01008", "q02007"]
@@ -310,8 +260,6 @@
     "wId": "w4006",
     "wName": "Workout VI",
     "wtId": "wt0004",
-    "wotdId": "wotd0004",
-    "wotdOrder": 5,
     "wDifficulty": 4,
     "qIds": ["q00008", "q00001", "q00004", "q00003",
     "q04001", "q01001", "q02004", "q01002", "q04002", "q01004", "q02003", "q01005"]
@@ -320,8 +268,6 @@
     "wId": "w5001",
     "wName": "Workout I",
     "wtId": "wt0005",
-    "wotdId": "wotd0005",
-    "wotdOrder": 0,
     "wDifficulty": 5,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q04008", "q03001", "q02004", "q01007", "q04001", "q01001", "q03006", "q02005"]
@@ -330,8 +276,6 @@
     "wId": "w5002",
     "wName": "Workout II",
     "wtId": "wt0005",
-    "wotdId": "wotd0005",
-    "wotdOrder": 1,
     "wDifficulty": 5,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q04007", "q03004", "q01003", "q01006", "q04003", "q02002", "q03005", "q02006"]
@@ -340,8 +284,6 @@
     "wId": "w5003",
     "wName": "Workout III",
     "wtId": "wt0005",
-    "wotdId": "wotd0005",
-    "wotdOrder": 2,
     "wDifficulty": 5,
     "qIds": ["q00008", "q00001", "q00004", "q00006",
     "q04006", "q03003", "q01008", "q01005", "q04002", "q02001", "q03008", "q02007"]
@@ -350,8 +292,6 @@
     "wId": "w5004",
     "wName": "Workout IV",
     "wtId": "wt0005",
-    "wotdId": "wotd0005",
-    "wotdOrder": 3,
     "wDifficulty": 5,
     "qIds": ["q00005", "q00002", "q00003", "q00007",
     "q04005", "q03002", "q02003", "q01004", "q04004", "q01002", "q03007", "q02008"]
