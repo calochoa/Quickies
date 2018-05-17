@@ -1,0 +1,38 @@
+[
+  {
+    "otdId": "otd0000",
+    "otdName": "All",
+    "otdAbbr": "All",
+    "order": 0
+  },
+  {
+    "otdId": "otd0001",
+    "otdName": "Beginner",
+    "otdAbbr": "Beg",
+    "order": 1
+  },
+  {
+  	"otdId": "otd0002",
+  	"otdName": "Intermediate",
+    "otdAbbr": "Int",
+    "order": 2
+  },
+  {
+  	"otdId": "otd0003",
+  	"otdName": "Advanced",
+    "otdAbbr": "Adv",
+    "order": 3
+  },
+  {
+  	"otdId": "otd0004",
+  	"otdName": "Expert",
+    "otdAbbr": "Exp",
+    "order": 4
+  },
+  {
+  	"otdId": "otd0005",
+  	"otdName": "Master",
+    "otdAbbr": "Mas",
+    "order": 5
+  }
+]

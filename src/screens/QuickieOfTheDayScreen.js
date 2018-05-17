@@ -9,16 +9,23 @@ import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
 import QuickieOfTheDay from '../dbstore/QuickieOfTheDay.json';
+import OfTheDay from '../dbstore/OfTheDay.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
 import OfTheDayHeader from '../components/OfTheDayHeader';
+import OfTheDayFooter from '../components/OfTheDayFooter';
 
 
 const QuickieMap = {}
 Quickies.map(element => {
   QuickieMap[element.qId] = element;
+})
+
+const OfTheDayMap = {}
+OfTheDay.map(element => {
+  OfTheDayMap[element.otdId] = element;
 })
 
 
@@ -53,35 +60,36 @@ class QuickieOfTheDayScreen extends Component {
     super(props);
 
     let qotdMap = {
-      'qotd_0.All':[], 'qotd_0.qotd0001':[], 'qotd_0.qotd0002':[], 'qotd_0.qotd0003':[], 'qotd_0.qotd0004':[], 'qotd_0.qotd0005':[], 
-      'qotd_1.All':[], 'qotd_1.qotd0001':[], 'qotd_1.qotd0002':[], 'qotd_1.qotd0003':[], 'qotd_1.qotd0004':[], 'qotd_1.qotd0005':[], 
-      'qotd_2.All':[], 'qotd_2.qotd0001':[], 'qotd_2.qotd0002':[], 'qotd_2.qotd0003':[], 'qotd_2.qotd0004':[], 'qotd_2.qotd0005':[], 
-      'qotd_3.All':[], 'qotd_3.qotd0001':[], 'qotd_3.qotd0002':[], 'qotd_3.qotd0003':[], 'qotd_3.qotd0004':[], 'qotd_3.qotd0005':[], 
-      'qotd_4.All':[], 'qotd_4.qotd0001':[], 'qotd_4.qotd0002':[], 'qotd_4.qotd0003':[], 'qotd_4.qotd0004':[], 'qotd_4.qotd0005':[], 
-      'qotd_5.All':[], 'qotd_5.qotd0001':[], 'qotd_5.qotd0002':[], 'qotd_5.qotd0003':[], 'qotd_5.qotd0004':[], 'qotd_5.qotd0005':[], 
-      'qotd_6.All':[], 'qotd_6.qotd0001':[], 'qotd_6.qotd0002':[], 'qotd_6.qotd0003':[], 'qotd_6.qotd0004':[], 'qotd_6.qotd0005':[], 
+      'qotd_0.otd0000':[], 'qotd_0.otd0001':[], 'qotd_0.otd0002':[], 'qotd_0.otd0003':[], 'qotd_0.otd0004':[], 'qotd_0.otd0005':[], 
+      'qotd_1.otd0000':[], 'qotd_1.otd0001':[], 'qotd_1.otd0002':[], 'qotd_1.otd0003':[], 'qotd_1.otd0004':[], 'qotd_1.otd0005':[], 
+      'qotd_2.otd0000':[], 'qotd_2.otd0001':[], 'qotd_2.otd0002':[], 'qotd_2.otd0003':[], 'qotd_2.otd0004':[], 'qotd_2.otd0005':[], 
+      'qotd_3.otd0000':[], 'qotd_3.otd0001':[], 'qotd_3.otd0002':[], 'qotd_3.otd0003':[], 'qotd_3.otd0004':[], 'qotd_3.otd0005':[], 
+      'qotd_4.otd0000':[], 'qotd_4.otd0001':[], 'qotd_4.otd0002':[], 'qotd_4.otd0003':[], 'qotd_4.otd0004':[], 'qotd_4.otd0005':[], 
+      'qotd_5.otd0000':[], 'qotd_5.otd0001':[], 'qotd_5.otd0002':[], 'qotd_5.otd0003':[], 'qotd_5.otd0004':[], 'qotd_5.otd0005':[], 
+      'qotd_6.otd0000':[], 'qotd_6.otd0001':[], 'qotd_6.otd0002':[], 'qotd_6.otd0003':[], 'qotd_6.otd0004':[], 'qotd_6.otd0005':[], 
     }
 
     this.sortOrder(QuickieOfTheDay).map(element => {
-      qotdMap['qotd_0.All'].push({key:element.qotd_0, qotdName:element.qotdName})
-      qotdMap['qotd_1.All'].push({key:element.qotd_1, qotdName:element.qotdName})
-      qotdMap['qotd_2.All'].push({key:element.qotd_2, qotdName:element.qotdName})
-      qotdMap['qotd_3.All'].push({key:element.qotd_3, qotdName:element.qotdName})
-      qotdMap['qotd_4.All'].push({key:element.qotd_4, qotdName:element.qotdName})
-      qotdMap['qotd_5.All'].push({key:element.qotd_5, qotdName:element.qotdName})
-      qotdMap['qotd_6.All'].push({key:element.qotd_6, qotdName:element.qotdName})
-      qotdMap['qotd_0.'+element.qotdId].push({key:element.qotd_0, qotdName:element.qotdName})
-      qotdMap['qotd_1.'+element.qotdId].push({key:element.qotd_1, qotdName:element.qotdName})
-      qotdMap['qotd_2.'+element.qotdId].push({key:element.qotd_2, qotdName:element.qotdName})
-      qotdMap['qotd_3.'+element.qotdId].push({key:element.qotd_3, qotdName:element.qotdName})
-      qotdMap['qotd_4.'+element.qotdId].push({key:element.qotd_4, qotdName:element.qotdName})
-      qotdMap['qotd_5.'+element.qotdId].push({key:element.qotd_5, qotdName:element.qotdName})
-      qotdMap['qotd_6.'+element.qotdId].push({key:element.qotd_6, qotdName:element.qotdName})
+      qotdMap['qotd_0.otd0000'].push({key:element.qotd_0, otdId:element.otdId})
+      qotdMap['qotd_1.otd0000'].push({key:element.qotd_1, otdId:element.otdId})
+      qotdMap['qotd_2.otd0000'].push({key:element.qotd_2, otdId:element.otdId})
+      qotdMap['qotd_3.otd0000'].push({key:element.qotd_3, otdId:element.otdId})
+      qotdMap['qotd_4.otd0000'].push({key:element.qotd_4, otdId:element.otdId})
+      qotdMap['qotd_5.otd0000'].push({key:element.qotd_5, otdId:element.otdId})
+      qotdMap['qotd_6.otd0000'].push({key:element.qotd_6, otdId:element.otdId})
+      qotdMap['qotd_0.'+element.otdId].push({key:element.qotd_0, otdId:element.otdId})
+      qotdMap['qotd_1.'+element.otdId].push({key:element.qotd_1, otdId:element.otdId})
+      qotdMap['qotd_2.'+element.otdId].push({key:element.qotd_2, otdId:element.otdId})
+      qotdMap['qotd_3.'+element.otdId].push({key:element.qotd_3, otdId:element.otdId})
+      qotdMap['qotd_4.'+element.otdId].push({key:element.qotd_4, otdId:element.otdId})
+      qotdMap['qotd_5.'+element.otdId].push({key:element.qotd_5, otdId:element.otdId})
+      qotdMap['qotd_6.'+element.otdId].push({key:element.qotd_6, otdId:element.otdId})
     });
 
     this.state = {
       qotdMap: qotdMap,
       dayOfTheWeek: new Date().getDay(),
+      otdId: 'otd0000',
       qRefresh: false,
     };
 
@@ -91,6 +99,7 @@ class QuickieOfTheDayScreen extends Component {
   renderRow(data) {
     let qMode = 'Standard'
     let quickie = QuickieMap[data.key]
+    let difficultyName = OfTheDayMap[data.otdId].otdName.toUpperCase()
     
     return (
       <LinearGradient 
@@ -98,7 +107,7 @@ class QuickieOfTheDayScreen extends Component {
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >
-        <Text style={OfTheDayRowStyle.qotdType}>{data.qotdName.toUpperCase()}</Text>
+        <Text style={OfTheDayRowStyle.qotdType}>{difficultyName}</Text>
         <View style={OfTheDayRowStyle.divider}/>
         <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
@@ -111,17 +120,24 @@ class QuickieOfTheDayScreen extends Component {
     this.setState(update);
   }
 
+  setDifficultyLevel(otdId) {
+    const update = {}
+    update['otdId'] = otdId
+    this.setState(update);
+  }
+
   render() {
-    const { qotdMap, dayOfTheWeek, qRefresh } = this.state;
+    const { qotdMap, dayOfTheWeek, otdId, qRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        {<OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Quickie' />}
+        <OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Quickie' />
         <FlatList
-          data={qotdMap['qotd_'+dayOfTheWeek+'.All']}
+          data={qotdMap['qotd_'+dayOfTheWeek+'.'+otdId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={qRefresh}
         />
+        <OfTheDayFooter setDifficultyLevel={this.setDifficultyLevel.bind(this)}/>
       </View>
     );
   }

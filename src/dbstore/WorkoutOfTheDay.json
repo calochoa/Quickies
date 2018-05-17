@@ -1,7 +1,6 @@
 [
   {
-    "wotdId": "wotd0001",
-    "wotdName": "Beginner",
+    "otdId": "otd0001",
     "wotd_0": "w1007",
     "wotd_1": "w1001",
     "wotd_2": "w1002",
@@ -12,8 +11,7 @@
     "order": 1
   },
   {
-  	"wotdId": "wotd0002",
-  	"wotdName": "Intermediate",
+  	"otdId": "otd0002",
     "wotd_0": "w2007",
     "wotd_1": "w2001",
     "wotd_2": "w2002",
@@ -24,8 +22,7 @@
     "order": 2
   },
   {
-  	"wotdId": "wotd0003",
-  	"wotdName": "Advanced",
+  	"otdId": "otd0003",
     "wotd_0": "w3001",
     "wotd_1": "w3001",
     "wotd_2": "w3002",
@@ -36,8 +33,7 @@
     "order": 3
   },
   {
-  	"wotdId": "wotd0004",
-  	"wotdName": "Expert",
+  	"otdId": "otd0004",
     "wotd_0": "w4001",
     "wotd_1": "w4001",
     "wotd_2": "w4002",
@@ -48,8 +44,7 @@
     "order": 4
   },
   {
-  	"wotdId": "wotd0005",
-  	"wotdName": "Master",
+  	"otdId": "otd0005",
     "wotd_0": "w5003",
     "wotd_1": "w5001",
     "wotd_2": "w5002",

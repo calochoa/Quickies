@@ -103,7 +103,7 @@ class OfTheDayHeader extends Component {
 
   render() {
     return (
-      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={OfTheDayHeaderStyle.container}>
+      <LinearGradient colors={getGradientColor('OfTheDayHeader')} style={OfTheDayHeaderStyle.container}>
         {this.renderOverlay('dayInfo')}
         <TouchableOpacity 
           style={OfTheDayHeaderStyle.dayInfoContainer}

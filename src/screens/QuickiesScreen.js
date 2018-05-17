@@ -170,7 +170,7 @@ class QuickiesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        {<QuickiesHeader setQLevel={this.setQLevel.bind(this)} showQMode={this.showQMode.bind(this)} />}
+        <QuickiesHeader setQLevel={this.setQLevel.bind(this)} showQMode={this.showQMode.bind(this)} />
         {qModeVisible ? <QuickiesModeHeader setQMode={this.setQMode.bind(this)} qMode={qMode}/> : null}
         <FlatList
           data={qCompleteMap[qLookup]}
