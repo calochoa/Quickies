@@ -1,6 +1,6 @@
 [
   {
-    "wcId": "wc0001",
+    "otdId": "otd0001",
     "wcName": "Beginner",
     "wc_0": "q00008",
     "wc_1": "q00004",
@@ -12,7 +12,7 @@
     "order": 1
   },
   {
-  	"wcId": "wc0002",
+  	"otdId": "otd0002",
   	"wcName": "Intermediate",
     "wc_0": "q01008",
     "wc_1": "q02002",
@@ -24,7 +24,7 @@
     "order": 2
   },
   {
-  	"wcId": "wc0003",
+  	"otdId": "otd0003",
   	"wcName": "Advanced",
     "wc_0": "q02008",
     "wc_1": "q01006",
@@ -36,7 +36,7 @@
     "order": 3
   },
   {
-  	"wcId": "wc0004",
+  	"otdId": "otd0004",
   	"wcName": "Expert",
     "wc_0": "q03008",
     "wc_1": "q02007",
@@ -48,7 +48,7 @@
     "order": 4
   },
   {
-  	"wcId": "wc0005",
+  	"otdId": "otd0005",
   	"wcName": "Master",
     "wc_0": "q04008",
     "wc_1": "q04002",

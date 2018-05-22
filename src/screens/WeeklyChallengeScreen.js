@@ -9,15 +9,22 @@ import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
 import WeeklyChallenge from '../dbstore/WeeklyChallenge.json';
+import OfTheDay from '../dbstore/OfTheDay.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
+import OfTheDayFooter from '../components/OfTheDayFooter';
 
 
 const QuickieMap = {}
 Quickies.map(element => {
   QuickieMap[element.qId] = element;
+})
+
+const OfTheDayMap = {}
+OfTheDay.map(element => {
+  OfTheDayMap[element.otdId] = element;
 })
 
 
@@ -54,10 +61,11 @@ class WeeklyChallengeScreen extends Component {
 
     let filteredData = []
     wcTypes.map(element => {
-      filteredData.push({wcName: element.wcName, quickieId: element['wc_'+dayOfTheWeek]})
+      filteredData.push({otdId: element.otdId, quickieId: element['wc_'+dayOfTheWeek]})
     })
 
     this.state = {
+      otdId: 'otd0000',
       filteredData: filteredData,
     };
 
@@ -67,18 +75,25 @@ class WeeklyChallengeScreen extends Component {
   renderRow(data) {
     let qMode = 'Bananas Mode'
     let quickie = QuickieMap[data.quickieId]
-    
+    let difficultyName = OfTheDayMap[data.otdId].otdName.toUpperCase()
+
     return (
       <LinearGradient 
         colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
         key={quickie.qId}
       >
-        <Text style={OfTheDayRowStyle.wcType}>{data.wcName.toUpperCase()}</Text>
+        <Text style={OfTheDayRowStyle.wcType}>{difficultyName}</Text>
         <View style={OfTheDayRowStyle.divider}/>
         <QuickieRow quickie={quickie} qMode={qMode} navigation={this.props.navigation} />
       </LinearGradient>
     );
+  }
+
+  setDifficultyLevel(otdId) {
+    const update = {}
+    update['otdId'] = otdId
+    this.setState(update);
   }
 
   render() {
@@ -89,6 +104,7 @@ class WeeklyChallengeScreen extends Component {
         <ScrollView>
           {filteredData.map((data) => this.renderRow(data))}
         </ScrollView>
+        <OfTheDayFooter setDifficultyLevel={this.setDifficultyLevel.bind(this)}/>
       </View>
     );
   }
