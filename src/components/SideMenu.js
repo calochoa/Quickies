@@ -4,14 +4,14 @@ import {
   View, 
   Text, 
   TouchableOpacity,
-  Image,
   StyleSheet,
 } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-
+import SideMenuStyle from '../style/SideMenuStyle';
 
 
 class SideMenu extends Component {
+  
   navigateToScreen = (route) => () => {
     if (route === 'Quickies') {
       this.props.navigation.navigate('Quickies', {qBodySplit: 'qbs0000', qLevel: 'All'});
@@ -19,6 +19,8 @@ class SideMenu extends Component {
       this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Favorite'});
     } else if (route === 'CompletedQuickies') {
       this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Completed'});
+    } else if (route === 'Workouts') {
+      this.props.navigation.navigate('Workouts', {wBodySplit: 'wbs0000', wLevel: 'All'});
     } else {
       const navigateAction = NavigationActions.navigate({
         routeName: route
@@ -29,86 +31,78 @@ class SideMenu extends Component {
 
   render () {
     return (
-      <View style={styles.container}>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('Home')}>
-          <Text style={styles.navItemStyle}>
-            Home
-          </Text>
+      <View style={SideMenuStyle.container}>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('Home')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('Quickies')}>
-          <Text style={styles.navItemStyle}>
-            Quickies
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('Quickies')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Quickies</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('QuickieOfTheDay')}>
-          <Text style={styles.navItemStyle}>
-            Quickie of the Day
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('QuickieOfTheDay')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Quickie of the Day</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WorkoutOfTheDay')}>
-          <Text style={styles.navItemStyle}>
-            Workout of the Day
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('WorkoutOfTheDay')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Workout of the Day</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WeeklyChallenge')}>
-          <Text style={styles.navItemStyle}>
-            Weekly Challenge
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('WeeklyChallenge')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Weekly Challenge</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('WorkoutTypes')}>
-          <Text style={styles.navItemStyle}>
-            Workouts
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('Workouts')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Workouts</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('ExerciseTypes')}>
-          <Text style={styles.navItemStyle}>
-            Exercises
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('Exercises')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Exercises</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('FavoriteQuickies')}>
-          <Text style={styles.navItemStyle}>
-            Favorite Quickies
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('FavoriteQuickies')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Favorite Quickies</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('CompletedQuickies')}>
-          <Text style={styles.navItemStyle}>
-            Completed Quickies
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('CompletedQuickies')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Completed Quickies</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('FAQ')}>
-          <Text style={styles.navItemStyle}>
-            Frequently Asked Questions
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('FAQ')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>Frequently Asked Questions</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navSectionStyle} onPress={this.navigateToScreen('MyProfile')}>
-          <Text style={styles.navItemStyle}>
-            My Profile
-          </Text>
+        <TouchableOpacity 
+          style={SideMenuStyle.navSectionStyle} 
+          onPress={this.navigateToScreen('MyProfile')}
+        >
+          <Text style={SideMenuStyle.navItemStyle}>My Profile</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 20,
-    flex: 1,
-  },
-  navItemStyle: {
-    padding: 10,
-    fontSize: 16,    
-    fontFamily: 'Gill Sans',
-  },
-  navSectionStyle: {
-    paddingVertical: 5,
-    backgroundColor: 'white',
-  },
-  sectionHeadingStyle: {
-    paddingVertical: 10,
-    paddingHorizontal: 5,
-  },
-});
 
 SideMenu.propTypes = {
   navigation: PropTypes.object

@@ -30,6 +30,7 @@ OfTheDay.map(element => {
 
 
 class QuickieOfTheDayScreen extends Component {
+  
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -131,13 +132,13 @@ class QuickieOfTheDayScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        <OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Quickie' />
+        <OfTheDayHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Quickie'/>
         <FlatList
           data={qotdMap['qotd_'+dayOfTheWeek+'.'+otdId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={qRefresh}
         />
-        <OfTheDayFooter setDifficultyLevel={this.setDifficultyLevel.bind(this)}/>
+        <OfTheDayFooter setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Quickie' />
       </View>
     );
   }

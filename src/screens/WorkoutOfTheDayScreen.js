@@ -30,6 +30,7 @@ OfTheDay.map(element => {
 
 
 class WorkoutOfTheDayScreen extends Component {
+  
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -125,19 +126,18 @@ class WorkoutOfTheDayScreen extends Component {
     this.setState(update);
   }
 
-
   render() {
     const { wotdMap, dayOfTheWeek, otdId, wRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        <OfTheDayHeader setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Workout' />
+        <OfTheDayHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Workout' />
         <FlatList
           data={wotdMap['wotd_'+dayOfTheWeek+'.'+otdId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={wRefresh}
         />
-        <OfTheDayFooter setDifficultyLevel={this.setDifficultyLevel.bind(this)}/>
+        <OfTheDayFooter setDayOfTheWeek={this.setDayOfTheWeek.bind(this)} type='Workout' />
       </View>
     );
   }

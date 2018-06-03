@@ -8,20 +8,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Workouts from '../dbstore/Workouts.json';
 import Quickies from '../dbstore/Quickies.json';
-import WorkoutTypes from '../dbstore/WorkoutTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
 
 
-const WorkoutTypesMap = new Map();
-WorkoutTypes.map(element => {
-  WorkoutTypesMap.set(element.wtId, element.wtName);
-})
-
-
 class WorkoutScreen extends Component {
+  
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -30,7 +24,7 @@ class WorkoutScreen extends Component {
       let wtId = ''
       Workouts.map(element => {
         if (element.wId === params.workoutId) {
-          workoutName = WorkoutTypesMap.get(element.wtId) + ' ' + params.workoutName
+          workoutName = params.workoutName
           if (workoutName.length > 20) {
             workoutName = workoutName.replace('Workout', 'WO')
           }

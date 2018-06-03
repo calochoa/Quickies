@@ -7,7 +7,6 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import QuickiesHeader from '../components/QuickiesHeader';
@@ -18,13 +17,8 @@ import QuickieRowStyle from '../style/QuickieRowStyle';
 import { quickieLookupHeaderMap } from '../misc/QuickieLookupHeader';
 
 
-const QuickieTypesMap = new Map();
-QuickieTypes.map(element => {
-  QuickieTypesMap.set(element.qtName, element.qtId);
-})
-
-
 class QuickiesScreen extends Component {
+
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
@@ -97,7 +91,6 @@ class QuickiesScreen extends Component {
       qBodySplit: params.qBodySplit,
       qLevel: params.qLevel,
       qMode: qMode,
-      quickieType: params.quickieType,
       qbs: params.qbs,
       qModeVisible: false,
       qRefresh: false,
@@ -166,18 +159,18 @@ class QuickiesScreen extends Component {
   }
 
   render() {
-    const { qLookup, qCompleteMap, qBodySplit, qLevel, qMode, quickieType, qbs, qModeVisible, qRefresh } = this.state;
+    const { qLookup, qCompleteMap, qMode, qModeVisible, qRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
         <QuickiesHeader setQLevel={this.setQLevel.bind(this)} showQMode={this.showQMode.bind(this)} />
-        {qModeVisible ? <QuickiesModeHeader setQMode={this.setQMode.bind(this)} qMode={qMode}/> : null}
+        {qModeVisible ? <QuickiesModeHeader setQMode={this.setQMode.bind(this)} qMode={qMode} /> : null}
         <FlatList
           data={qCompleteMap[qLookup]}
           renderItem={({item}) => this.renderRow(item.quickie)}
           extraData={qRefresh}
         />
-        <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)}/>
+        <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)} />
       </View>
     );
   }

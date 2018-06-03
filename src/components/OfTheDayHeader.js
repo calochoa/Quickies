@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity, 
   Text, 
-  View, 
+  View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
+import OfTheDay from '../dbstore/OfTheDay.json';
 import OfTheDayHeaderStyle from '../style/OfTheDayHeaderStyle';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
-import QuickieOfTheDayInfo from '../dbstore/QuickieOfTheDayInfo.json';
+import OfTheDayLevels from '../dbstore/OfTheDayLevels.json';
 
 
 class OfTheDayHeader extends Component {
@@ -30,25 +31,50 @@ class OfTheDayHeader extends Component {
   constructor(props) {
     super(props);
 
-    let qotdInfo = []
-    this.sortOrder(QuickieOfTheDayInfo).map(element => {
-      qotdInfo.push(element.day.toUpperCase() + ' - ' + element.description);
+    let otdLevelInfo = []
+    this.sortOrder(OfTheDayLevels).map(element => {
+      let description = element.otdLevelDescription
+      if (this.props.type == 'Workout') {
+        description = description.replace('quickies', 'workouts')
+      } 
+      otdLevelInfo.push(element.otdLevelName + ' - ' + description);
     });
 
-    var dayOfTheWeek = new Date().getDay();
+
+    let ofTheDayLevels = OfTheDay.sort((a,b) => {
+      if (a.order < b.order) {
+        return -1;
+      }
+      if (a.order > b.order) {
+        return 1;
+      }
+      return 0;
+    });
 
     this.state = {
-      'Sun': dayOfTheWeek == 0,
-      'Mon': dayOfTheWeek == 1,
-      'Tue': dayOfTheWeek == 2,
-      'Wed': dayOfTheWeek == 3,
-      'Thu': dayOfTheWeek == 4,
-      'Fri': dayOfTheWeek == 5,
-      'Sat': dayOfTheWeek == 6,
-      setDayOfTheWeek: this.props.setDayOfTheWeek,
-      qotdInfo: qotdInfo,
+      otd0000: true,
+      otd0001: false,
+      otd0002: false,
+      otd0003: false,
+      otd0004: false,
+      otd0005: false,
+      ofTheDayLevels: ofTheDayLevels,
+      setDifficultyLevel: this.props.setDifficultyLevel,
+      otdLevelInfo: otdLevelInfo,
       type: this.props.type,
     };
+  }
+
+  setHighlighted(otdId) {
+    const update = {}
+    update['otd0000'] = false
+    update['otd0001'] = false
+    update['otd0002'] = false
+    update['otd0003'] = false
+    update['otd0004'] = false
+    update['otd0005'] = false
+    update[otdId] = true
+    this.setState(update);
   }
 
   setModalVisible(id, visible) {
@@ -66,59 +92,43 @@ class OfTheDayHeader extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(id, false);}}
       >
-        <Text style={OverlayStyle.header}>{this.state.type} of the Day{'\n'}Breakdown</Text>
+        <Text style={OverlayStyle.header}>{this.state.type} Levels</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{this.state.qotdInfo.join('\n\n')}</Text>
+        <Text style={OverlayStyle.text}>{this.state.otdLevelInfo.join('\n\n')}</Text>
       </Overlay>
     )
   }
 
-  setHighlighted(day) {
-    const update = {}
-    update['Mon'] = false
-    update['Tue'] = false
-    update['Wed'] = false
-    update['Thu'] = false
-    update['Fri'] = false
-    update['Sat'] = false
-    update['Sun'] = false
-    update[day] = true
-    this.setState(update);
-  }
-
-  renderDayOfTheWeek(day, dotw) {
-    let qDayStyle = this.state[day] ? 
-      OfTheDayHeaderStyle.selectedDayText : OfTheDayHeaderStyle.dayText;
+  renderOfTheDayLevel(ofTheDayLevel) {
+    let otdId = ofTheDayLevel.otdId
+    let ofTheDayStyle = this.state[otdId] ? OfTheDayHeaderStyle.selectedLevelText 
+      : OfTheDayHeaderStyle.levelText;
 
     return (
       <TouchableOpacity 
-        style={OfTheDayHeaderStyle.dayContainer}
-        key={day}
-        onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
+        style={OfTheDayHeaderStyle.levelContainer}
+        key={otdId}
+        onPress={() => { this.state.setDifficultyLevel(otdId); this.setHighlighted(otdId); }}
       >
-        <Text style={qDayStyle}>{day}</Text>
+        <Text style={ofTheDayStyle}>{ofTheDayLevel.otdAbbr.toUpperCase()}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
+    const { ofTheDayLevels } = this.state;
+
     return (
       <LinearGradient colors={getGradientColor('OfTheDayHeader')} style={OfTheDayHeaderStyle.container}>
-        {this.renderOverlay('dayInfo')}
+        {this.renderOverlay('levelInfo')}
         <TouchableOpacity 
-          style={OfTheDayHeaderStyle.dayInfoContainer}
-          onPress={() => {this.setModalVisible('dayInfo', true);}}
+          style={OfTheDayHeaderStyle.levelInfoContainer}
+          onPress={() => {this.setModalVisible('levelInfo', true);}}
         >
           <InfoIconSmall />
-          <Text style={OfTheDayHeaderStyle.dayText}> Days:</Text>
+          <Text style={OfTheDayHeaderStyle.levelText}> Levels:</Text>
         </TouchableOpacity>
-        {this.renderDayOfTheWeek('Mon', 1)}
-        {this.renderDayOfTheWeek('Tue', 2)}
-        {this.renderDayOfTheWeek('Wed', 3)}
-        {this.renderDayOfTheWeek('Thu', 4)}
-        {this.renderDayOfTheWeek('Fri', 5)}
-        {this.renderDayOfTheWeek('Sat', 6)}
-        {this.renderDayOfTheWeek('Sun', 0)}
+        {ofTheDayLevels.map((ofTheDayLevel) => this.renderOfTheDayLevel(ofTheDayLevel))}
       </LinearGradient>
     );
   }

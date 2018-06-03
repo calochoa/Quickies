@@ -55,22 +55,22 @@ class QuickiesHeader extends Component {
     };
   }
 
-  setModalVisible(qlId, visible) {
+  setModalVisible(id, visible) {
     const update = {}
-    update[qlId] = visible
+    update[id] = visible
     this.setState(update);
   }
 
-  renderOverlay(qlId, qMode) {
+  renderOverlay(id) {
     return (
       <Overlay 
-        visible={this.state[qlId]}
+        visible={this.state[id]}
         closeOnTouchOutside={true}
         containerStyle={OverlayStyle.container}
         childrenWrapperStyle={OverlayStyle.wrapper}
-        onClose={() => {this.setModalVisible(qlId, false);}}
+        onClose={() => {this.setModalVisible(id, false);}}
       >
-        <Text style={OverlayStyle.header}>{qMode} Quickie Levels</Text>
+        <Text style={OverlayStyle.header}>Quickie Levels</Text>
         <View style={OverlayStyle.divider}/>
         <Text style={OverlayStyle.text}>{this.state.qLevelInfo.join('\n\n')}</Text>
       </Overlay>
@@ -118,7 +118,7 @@ class QuickiesHeader extends Component {
 
     return (
       <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderStyle.container}>
-        {this.renderOverlay('levelInfo', 'Standard')}
+        {this.renderOverlay('levelInfo')}
         <TouchableOpacity 
           style={QuickiesHeaderStyle.levelInfoContainer}
           onPress={() => {this.setModalVisible('levelInfo', true);}}

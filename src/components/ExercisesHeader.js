@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import OfTheDayFooterStyle from '../style/OfTheDayFooterStyle';
+import OfTheDayHeaderStyle from '../style/OfTheDayHeaderStyle';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 import OfTheDayInfo from '../dbstore/OfTheDayInfo.json';
 
 
-class OfTheDayFooter extends Component {
+class ExercisesHeader extends Component {
 
   sortOrder(data) {
     return data.sort((a,b) => {
@@ -87,30 +87,30 @@ class OfTheDayFooter extends Component {
   }
 
   renderDayOfTheWeek(day, dotw) {
-    let dayStyle = this.state[day] ? 
-      OfTheDayFooterStyle.selectedDayText : OfTheDayFooterStyle.dayText;
+    let qDayStyle = this.state[day] ? 
+      OfTheDayHeaderStyle.selectedDayText : OfTheDayHeaderStyle.dayText;
 
     return (
       <TouchableOpacity 
-        style={OfTheDayFooterStyle.dayContainer}
+        style={OfTheDayHeaderStyle.dayContainer}
         key={day}
         onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
       >
-        <Text style={dayStyle}>{day}</Text>
+        <Text style={qDayStyle}>{day}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
     return (
-      <LinearGradient colors={getGradientColor('OfTheDayFooter')} style={OfTheDayFooterStyle.container}>
+      <LinearGradient colors={getGradientColor('OfTheDayHeader')} style={OfTheDayHeaderStyle.container}>
         {this.renderOverlay('dayInfo')}
         <TouchableOpacity 
-          style={OfTheDayFooterStyle.dayInfoContainer}
+          style={OfTheDayHeaderStyle.dayInfoContainer}
           onPress={() => {this.setModalVisible('dayInfo', true);}}
         >
           <InfoIconSmall />
-          <Text style={OfTheDayFooterStyle.dayText}> Days:</Text>
+          <Text style={OfTheDayHeaderStyle.dayText}> Days:</Text>
         </TouchableOpacity>
         {this.renderDayOfTheWeek('Mon', 1)}
         {this.renderDayOfTheWeek('Tue', 2)}
@@ -125,4 +125,4 @@ class OfTheDayFooter extends Component {
 }
 
 
-export default OfTheDayFooter;
+export default ExercisesHeader;

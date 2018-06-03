@@ -20,10 +20,8 @@ import QuickiesScreen from '../screens/QuickiesScreen';
 import MultipleModesQuickiesScreen from '../screens/MultipleModesQuickiesScreen';
 import QuickieScreen from '../screens/QuickieScreen';
 import QuickieOfTheDayScreen from '../screens/QuickieOfTheDayScreen';
-import ExerciseTypesScreen from '../screens/ExerciseTypesScreen';
 import ExercisesScreen from '../screens/ExercisesScreen';
 import ExerciseScreen from '../screens/ExerciseScreen';
-import WorkoutTypesScreen from '../screens/WorkoutTypesScreen';
 import WorkoutsScreen from '../screens/WorkoutsScreen';
 import WorkoutScreen from '../screens/WorkoutScreen';
 import WorkoutOfTheDayScreen from '../screens/WorkoutOfTheDayScreen';
@@ -65,17 +63,11 @@ const MainStack = StackNavigator(
     QuickieOfTheDay: {
       screen: QuickieOfTheDayScreen,
     },
-    ExerciseTypes: {
-      screen: ExerciseTypesScreen,
-    },
     Exercises: {
       screen: ExercisesScreen,
     },
     Exercise: {
       screen: ExerciseScreen,
-    },
-    WorkoutTypes: {
-      screen: WorkoutTypesScreen,
     },
     Workouts: {
       screen: WorkoutsScreen,
@@ -146,11 +138,8 @@ const RootStack = DrawerNavigator(
     WeeklyChallenge: {
       screen: WeeklyChallengeScreen,
     },
-    WorkoutTypes: {
-      screen: WorkoutTypesScreen,
-    },
-    ExerciseTypes: {
-      screen: ExerciseTypesScreen,
+    Exercises: {
+      screen: ExercisesScreen,
     },
     FAQ: {
       screen: FaqScreen,

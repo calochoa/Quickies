@@ -97,7 +97,7 @@ class ExerciseScreen extends Component {
         >
           <View style={ExerciseStyle.infoContainer}>
             <Text style={ExerciseStyle.infoTitle}>Exercise Type: </Text>
-            {exercise.eTypes.map((exerciseType) => this._displayExerciseType(exerciseType))}
+            {this._displayExerciseType(exercise.eType)}
           </View>
           <View style={ExerciseStyle.infoContainer}>
             <Text style={ExerciseStyle.infoTitle}>Description: </Text>

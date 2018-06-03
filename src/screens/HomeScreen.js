@@ -14,6 +14,7 @@ import MainRowStyle from '../style/MainRowStyle';
 
 
 class HomeScreen extends React.Component {
+  
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
@@ -63,8 +64,8 @@ class HomeScreen extends React.Component {
         {this.renderRow({title: 'Quickie of the Day', screen: 'QuickieOfTheDay'})}
         {this.renderRow({title: 'Workout of the Day', screen: 'WorkoutOfTheDay'})}
         {this.renderRow({title: 'Weekly Challenge', screen: 'WeeklyChallenge'})}
-        {this.renderRow({title: 'Workouts', screen: 'WorkoutTypes'})}
-        {this.renderRow({title: 'Exercises', screen: 'ExerciseTypes'})}
+        {this.renderRow({title: 'Workouts', screen: 'Workouts', extra: {wBodySplit: 'wbs0000', wLevel: 'All'}})}
+        {this.renderRow({title: 'Exercises', screen: 'Exercises'})}
         {this.renderRow(
           {title: 'Favorite Quickies', screen: 'MultipleModesQuickies', extra: {quickieType: 'Favorite'}}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />

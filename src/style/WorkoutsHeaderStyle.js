@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const OfTheDayHeaderStyle = StyleSheet.create({
+const WorkoutsHeaderStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 5,
@@ -31,4 +31,4 @@ const OfTheDayHeaderStyle = StyleSheet.create({
 });
 
 
-export default OfTheDayHeaderStyle;
+export default WorkoutsHeaderStyle;

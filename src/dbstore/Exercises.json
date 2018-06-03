@@ -3,644 +3,828 @@
   	"eId": "e000001",
   	"eName": "front lever swings",
   	"vId": "v000001",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000002",
   	"eName": "L sit pull-ups",
   	"vId": "v000002",
-  	"eTypes": ["et0005", "et0001", "et0003"],
+  	"eType": "et0000",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000003",
   	"eName": "shoot-ups",
   	"vId": "v000003",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000004",
   	"eName": "Spiderman push-ups",
   	"vId": "v000004",
-  	"eTypes": ["et0004", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000005",
   	"eName": "clapping push-ups",
   	"vId": "v000005",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000006",
   	"eName": "jumping chin-ups",
   	"vId": "v000006",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000007",
   	"eName": "up down scissors",
   	"vId": "v000007",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000008",
   	"eName": "chest-ups",
   	"vId": "v000008",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000009",
   	"eName": "hanging knee raises",
   	"vId": "v000009",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   }, 
   {
   	"eId": "e000010",
   	"eName": "sit-ups",
   	"vId": "v000010",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000011",
   	"eName": "pistol squats",
   	"vId": "v000011",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000012",
   	"eName": "hanging oblique raises",
   	"vId": "v000012",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000013",
   	"eName": "high knees",
   	"vId": "v000013",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000014",
   	"eName": "push-ups",
   	"vId": "v000014",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000015",
   	"eName": "bicycle crunches",
   	"vId": "v000015",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000016",
   	"eName": "side-to-side hops",
   	"vId": "v000016",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000017",
   	"eName": "full-body crunches",
   	"vId": "v000017",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000018",
   	"eName": "jumping pull-ups",
   	"vId": "v000018",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000019",
   	"eName": "handstand push-ups",
   	"vId": "v000019",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   }, 
   {
   	"eId": "e000020",
   	"eName": "single arm push-ups",
   	"vId": "v000020",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000021",
   	"eName": "side crunches",
   	"vId": "v000021",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000022",
   	"eName": "hanging hurdles",
   	"vId": "v000022",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000023",
   	"eName": "commando pull-ups",
   	"vId": "v000023",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000024",
   	"eName": "lunges",
   	"vId": "v000024",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000025",
   	"eName": "calf raises",
   	"vId": "v000025",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000026",
   	"eName": "hanging up down scissors",
   	"vId": "v000026",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000027",
   	"eName": "jumping lunges",
   	"vId": "v000027",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000028",
   	"eName": "leg raises",
   	"vId": "v000028",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000029",
   	"eName": "incline push-ups",
   	"vId": "v000029",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   }, 
   {
   	"eId": "e000030",
   	"eName": "burpee pull-ups",
   	"vId": "v000030",
-  	"eTypes": ["et0005", "et0004"],
+  	"eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000031",
   	"eName": "dips",
   	"vId": "v000031",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000032",
   	"eName": "seated dips",
   	"vId": "v000032",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000033",
   	"eName": "four square hops",
   	"vId": "v000033",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000034",
   	"eName": "clapping pull-ups",
   	"vId": "v000034",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000035",
   	"eName": "box squats",
   	"vId": "v000035",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000036",
   	"eName": "heiden hops",
   	"vId": "v000036",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000037",
   	"eName": "inverted rows",
   	"vId": "v000037",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000038",
   	"eName": "hanging leg raises",
   	"vId": "v000038",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000039",
   	"eName": "burpees",
   	"vId": "v000039",
-  	"eTypes": ["et0004"],
+  	"eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   }, 
   {
   	"eId": "e000040",
   	"eName": "jumping jacks",
   	"vId": "v000040",
-  	"eTypes": ["et0004"],
+  	"eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000041",
   	"eName": "pull-ups",
   	"vId": "v000041",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000042",
   	"eName": "behind the neck pull-ups",
   	"vId": "v000042",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000043",
   	"eName": "crunches",
   	"vId": "v000043",
-  	"eTypes": ["et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000044",
   	"eName": "atomic tricep blasters",
   	"vId": "v000044",
-  	"eTypes": ["et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000045",
   	"eName": "forward backward hops",
   	"vId": "v000045",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000046",
   	"eName": "squat jumps",
   	"vId": "v000046",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000047",
   	"eName": "mountain climbers",
   	"vId": "v000047",
-  	"eTypes": ["et0004"],
+  	"eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000048",
   	"eName": "hanging leg rotations",
   	"vId": "v000048",
-  	"eTypes": ["et0005", "et0001"],
+  	"eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000049",
   	"eName": "muscle-ups",
   	"vId": "v000049",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   }, 
   {
   	"eId": "e000050",
   	"eName": "side-to-side pull-ups",
   	"vId": "v000050",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
   	"eId": "e000051",
   	"eName": "knee strikes",
   	"vId": "v000051",
-  	"eTypes": ["et0002"],
+  	"eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
   	"description": "N/A"
   },
   {
   	"eId": "e000052",
   	"eName": "chin-ups",
   	"vId": "v000052",
-  	"eTypes": ["et0005", "et0003"],
+  	"eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": true,
   	"description": "N/A"
   },
   {
     "eId": "e000053",
     "eName": "rolling sit-ups",
     "vId": "v000053",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000054",
     "eName": "half wipers",
     "vId": "v000054",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000055",
     "eName": "crunch kicks",
     "vId": "v000055",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000056",
     "eName": "criss cross scissors",
     "vId": "v000056",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000057",
     "eName": "open close scissors",
     "vId": "v000057",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000058",
     "eName": "calf jumps",
     "vId": "v000058",
-    "eTypes": ["et0002"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000059",
     "eName": "wipers",
     "vId": "v000059",
-    "eTypes": ["et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000060",
     "eName": "hanging criss cross scissors",
     "vId": "v000060",
-    "eTypes": ["et0005", "et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
+  	"description": "N/A"
   },
   {
     "eId": "e000061",
     "eName": "hanging open close scissors",
     "vId": "v000061",
-    "eTypes": ["et0005", "et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
+  	"description": "N/A"
   },
   {
     "eId": "e000062",
     "eName": "tuck jumps",
     "vId": "v000062",
-    "eTypes": ["et0002"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000063",
     "eName": "burpee tuck jumps",
     "vId": "v000063",
-    "eTypes": ["et0004"],
-    "description": "N/A"
+    "eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   }, 
   {
     "eId": "e000064",
     "eName": "burpee muscle-ups",
     "vId": "v000064",
-    "eTypes": ["et0005", "et0004"],
-    "description": "N/A"
+    "eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": true,
+  	"description": "N/A"
   },
   {
     "eId": "e000065",
     "eName": "hanging shoot-ups",
     "vId": "v000065",
-    "eTypes": ["et0005", "et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
+  	"description": "N/A"
   },
   {
     "eId": "e000066",
     "eName": "hanging wipers",
     "vId": "v000066",
-    "eTypes": ["et0005", "et0001"],
-    "description": "N/A"
+    "eType": "et0001",
+  	"isStretch": false,
+  	"usesBar": true,
+  	"description": "N/A"
   },
   {
     "eId": "e000067",
     "eName": "decline push-ups",
     "vId": "v000067",
-    "eTypes": ["et0003"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e000068",
     "eName": "plank jacks",
     "vId": "v000068",
-    "eTypes": ["et0004"],
-    "description": "N/A"
+    "eType": "et0004",
+  	"isStretch": false,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100001",
     "eName": "small arm circles",
     "vId": "v100001",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100002",
     "eName": "reverse small arm circles",
     "vId": "v100002",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100003",
     "eName": "large arm circles",
     "vId": "v100003",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100004",
     "eName": "reverse large arm circles",
     "vId": "v100004",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100005",
     "eName": "lateral arm raises",
     "vId": "v100005",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100006",
     "eName": "front arm raises",
     "vId": "v100006",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100007",
     "eName": "lateral rotator cuffs",
     "vId": "v100007",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100008",
     "eName": "front rotator cuffs",
     "vId": "v100008",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100009",
     "eName": "low arm criss crosses",
     "vId": "v100009",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100010",
     "eName": "arm criss crosses",
     "vId": "v100010",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100011",
     "eName": "high arm criss crosses",
     "vId": "v100011",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100012",
     "eName": "running arm swings",
     "vId": "v100012",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100013",
     "eName": "neck up-downs",
     "vId": "v100013",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100014",
     "eName": "neck side-to-sides",
     "vId": "v100014",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100015",
     "eName": "neck leans",
     "vId": "v100015",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100016",
     "eName": "neck rotations",
     "vId": "v100016",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0003",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100017",
     "eName": "heel-to-glutes",
     "vId": "v100017",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100018",
     "eName": "knee hugs",
     "vId": "v100018",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100019",
     "eName": "ankle hugs",
     "vId": "v100019",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100020",
     "eName": "toe touches",
     "vId": "v100020",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100021",
     "eName": "lateral leg swings",
     "vId": "v100021",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100022",
     "eName": "front leg swings",
     "vId": "v100022",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100023",
     "eName": "high hurdles",
     "vId": "v100023",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   },
   {
     "eId": "e100024",
     "eName": "reverse high hurdles",
     "vId": "v100024",
-    "eTypes": ["et0006"],
-    "description": "N/A"
+    "eType": "et0002",
+  	"isStretch": true,
+  	"usesBar": false,
+  	"description": "N/A"
   }
 ]

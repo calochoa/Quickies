@@ -8,16 +8,20 @@ const OfTheDayFooterStyle = StyleSheet.create({
     padding: 5,
     justifyContent: 'center', 
   },
-  difficultyContainer: {
-    flex: 1,
+  dayInfoContainer: {
+    flex: 3,
+    flexDirection: 'row',
   },
-  difficultyText: {
+  dayContainer: {
+    flex: 2,
+  },
+  dayText: {
     color: '#fff',
     fontSize: 16,
     fontFamily: 'Gill Sans',
     textAlign: 'center',
   },
-  selectedDifficultyText: {
+  selectedDayText: {
     color: '#ffca28',
     fontSize: 16,
     fontFamily: 'Gill Sans',

@@ -1,0 +1,32 @@
+[
+  {
+  	"wbsId": "wbs0000",
+  	"wbsName": "All",
+    "wbsDescription": "One stop shop for all the workouts.",
+    "order": 0
+  },
+  {
+  	"wbsId": "wbs0001",
+  	"wbsName": "Core",
+    "wbsDescription": "These workouts are intended to target your core and get you closer to attaining that 6 pack or toned tummy.",
+    "order": 2
+  },
+  {
+  	"wbsId": "wbs0002",
+  	"wbsName": "Lower Body",
+    "wbsDescription": "Perform these workouts to focus on strengthening your lower body.",
+    "order": 1
+  },
+  {
+  	"wbsId": "wbs0003",
+  	"wbsName": "Upper Body",
+    "wbsDescription": "Try these workouts if you want to improve your upper body.",
+    "order": 3
+  },
+  {
+  	"wbsId": "wbs0004",
+  	"wbsName": "Total Body",
+    "wbsDescription": "Total body workouts are perfect for getting a complete workout and attaining an overall muscle balance.",
+    "order": 4
+  }
+]

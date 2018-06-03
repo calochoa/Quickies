@@ -14,6 +14,8 @@ import ForwardIcon from '../components/ForwardIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
 import MainRowStyle from '../style/MainRowStyle';
 import ExercisesRowStyle from '../style/ExercisesRowStyle';
+import ExercisesHeader from '../components/ExercisesHeader';
+import ExercisesFooter from '../components/ExercisesFooter';
 
 
 const ExerciseTypesMap = new Map();
@@ -27,7 +29,8 @@ class ExercisesScreen extends Component {
     const { params } = navigation.state;
 
     return {
-      title: params ? params.exerciseType + ' Exercises' : 'Exercises',
+      //title: params ? params.exerciseType + ' Exercises' : 'Exercises',
+      title: 'Exercises',
       headerBackTitle: null,
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('DrawerToggle')} >
@@ -42,16 +45,17 @@ class ExercisesScreen extends Component {
     const { params } = this.props.navigation.state;
 
     let filteredData = []
-    let exerciseTypeId = ExerciseTypesMap.get(params.exerciseType)
+    //let exerciseTypeId = ExerciseTypesMap.get(params.exerciseType)
     Exercises.map(element => {
-      element.eTypes.map(eType => {
-        if (eType === exerciseTypeId) {
-          filteredData.push(element);
-        }
-      })
+      /*
+      if (element.eType === exerciseTypeId) {
+        filteredData.push(element);
+      }
       if (params.exerciseType === 'All') {
         filteredData.push(element);
       }
+      */
+      filteredData.push(element);
     });
 
     filteredData = filteredData.sort((a,b) => {
@@ -99,9 +103,11 @@ class ExercisesScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
+        {/*<ExercisesHeader />*/}
         <ScrollView>
           {filteredData.map((exercise) => this.renderRow(exercise))}
         </ScrollView>
+        {/*<ExercisesFooter />*/}
       </View>
     );
   }

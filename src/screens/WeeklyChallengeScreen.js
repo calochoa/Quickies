@@ -14,7 +14,6 @@ import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
-import OfTheDayFooter from '../components/OfTheDayFooter';
 
 
 const QuickieMap = {}
@@ -104,7 +103,6 @@ class WeeklyChallengeScreen extends Component {
         <ScrollView>
           {filteredData.map((data) => this.renderRow(data))}
         </ScrollView>
-        <OfTheDayFooter setDifficultyLevel={this.setDifficultyLevel.bind(this)}/>
       </View>
     );
   }
