@@ -1,27 +1,27 @@
 [
   {
   	"otdLevelName": "Level 1",
-    "otdLevelDescription": "Try these beginner level quickies if you are new to exercising or need to ease back into it.",
+    "otdLevelDescription": "Try these BEGINNER level quickies if you are new to exercising or need to ease back into it.",
     "order": 1
   },
   {
   	"otdLevelName": "Level 2",
-    "otdLevelDescription": "Perform these intermediate quickies with solid technique before moving on to higher levels.",
+    "otdLevelDescription": "Perform these INTERMEDIATE quickies with solid technique before moving on to higher levels.",
     "order": 2
   },
   {
   	"otdLevelName": "Level 3",
-    "otdLevelDescription": "Some of these advanced quickies may be harder than they appear.",
+    "otdLevelDescription": "Some of these ADVANCED quickies may be harder than they appear.",
     "order": 3
   },
   {
   	"otdLevelName": "Level 4",
-    "otdLevelDescription": "These quickies are definitely challenging and are considered expert level.",
+    "otdLevelDescription": "These quickies are definitely challenging and are considered EXPERT level.",
     "order": 4
   },
   {
     "otdLevelName": "Level 5",
-    "otdLevelDescription": "Attempt these quickies if you are a master of calisthenics and enjoy an extremely tough challenge.",
+    "otdLevelDescription": "Attempt these quickies if you are a MASTER of calisthenics and enjoy an extremely tough challenge.",
     "order": 5
   },
 ]

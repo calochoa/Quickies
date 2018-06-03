@@ -37,7 +37,7 @@ class OfTheDayHeader extends Component {
       if (this.props.type == 'Workout') {
         description = description.replace('quickies', 'workouts')
       } 
-      otdLevelInfo.push(element.otdLevelName + ' - ' + description);
+      otdLevelInfo.push(element.otdLevelName.toUpperCase() + ' - ' + description);
     });
 
 
