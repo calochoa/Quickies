@@ -3,6 +3,7 @@ import {
   TouchableOpacity, 
   Text, 
   View, 
+  Image, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -11,6 +12,7 @@ import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
 import OfTheDayInfo from '../dbstore/OfTheDayInfo.json';
+import { dayImagePathMap } from '../misc/DayImagePaths';
 
 
 class OfTheDayFooter extends Component {
@@ -89,6 +91,8 @@ class OfTheDayFooter extends Component {
   renderDayOfTheWeek(day, dotw) {
     let dayStyle = this.state[day] ? 
       OfTheDayFooterStyle.selectedDayText : OfTheDayFooterStyle.dayText;
+    let imageSrc = this.state[day] ? dayImagePathMap.get(day + ' Selected') 
+      : dayImagePathMap.get(day);
 
     return (
       <TouchableOpacity 
@@ -96,7 +100,7 @@ class OfTheDayFooter extends Component {
         key={day}
         onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
       >
-        <Text style={dayStyle}>{day}</Text>
+        <Image source={imageSrc}/>
       </TouchableOpacity>
     );
   }
@@ -105,13 +109,6 @@ class OfTheDayFooter extends Component {
     return (
       <LinearGradient colors={getGradientColor('OfTheDayFooter')} style={OfTheDayFooterStyle.container}>
         {this.renderOverlay('dayInfo')}
-        <TouchableOpacity 
-          style={OfTheDayFooterStyle.dayInfoContainer}
-          onPress={() => {this.setModalVisible('dayInfo', true);}}
-        >
-          <InfoIconSmall />
-          <Text style={OfTheDayFooterStyle.dayText}> Days:</Text>
-        </TouchableOpacity>
         {this.renderDayOfTheWeek('Mon', 1)}
         {this.renderDayOfTheWeek('Tue', 2)}
         {this.renderDayOfTheWeek('Wed', 3)}
@@ -119,6 +116,12 @@ class OfTheDayFooter extends Component {
         {this.renderDayOfTheWeek('Fri', 5)}
         {this.renderDayOfTheWeek('Sat', 6)}
         {this.renderDayOfTheWeek('Sun', 0)}
+        <TouchableOpacity 
+          style={OfTheDayFooterStyle.dayInfoContainer}
+          onPress={() => {this.setModalVisible('dayInfo', true);}}
+        >
+          <InfoIconSmall />
+        </TouchableOpacity>
       </LinearGradient>
     );
   }
