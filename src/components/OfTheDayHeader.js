@@ -110,7 +110,7 @@ class OfTheDayHeader extends Component {
         key={otdId}
         onPress={() => { this.state.setDifficultyLevel(otdId); this.setHighlighted(otdId); }}
       >
-        <Text style={ofTheDayStyle}>{ofTheDayLevel.otdAbbr.toUpperCase()}</Text>
+        <Text style={ofTheDayStyle}>{ofTheDayLevel.otdAbbr}</Text>
       </TouchableOpacity>
     );
   }

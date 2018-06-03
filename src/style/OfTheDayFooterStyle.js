@@ -13,12 +13,14 @@ const OfTheDayFooterStyle = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center', 
+    paddingTop: 7,
+    paddingBottom: 7,
   },
   dayContainer: {
     flex: 3,
     alignItems: 'center', 
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
   dayText: {
     color: '#fff',
