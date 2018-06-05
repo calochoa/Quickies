@@ -91,24 +91,6 @@ class OfTheDayFooter extends Component {
     this.setState(update);
   }
 
-  renderDayOfTheWeek(day, dotw, dayType) {
-    let dayStyle = this.state[day] ? 
-      OfTheDayFooterStyle.selectedDayText : OfTheDayFooterStyle.dayText;
-    let imageSrc = this.state[day] ? dayImagePathMap.get(day + ' Selected') 
-      : dayImagePathMap.get(day);
-
-    return (
-      <TouchableOpacity 
-        style={OfTheDayFooterStyle.dayContainer}
-        key={day}
-        onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
-      >
-        <Image source={imageSrc}/>
-        <Text style={dayStyle}>{dayType}</Text>
-      </TouchableOpacity>
-    );
-  }
-
   renderOfTheDayData(otdData) {
     let day = otdData.day
     let dayStyle = this.state[day] ? 
@@ -135,13 +117,6 @@ class OfTheDayFooter extends Component {
       <LinearGradient colors={getGradientColor('OfTheDayFooter')} style={OfTheDayFooterStyle.container}>
         {this.renderOverlay('dayInfo')}
         {otdDataArr.map((otdData) => this.renderOfTheDayData(otdData))}
-        {/*this.renderDayOfTheWeek('Mon', 1, 'Cardio')}
-        {this.renderDayOfTheWeek('Tue', 2, 'Upper')}
-        {this.renderDayOfTheWeek('Wed', 3, 'Lower')}
-        {this.renderDayOfTheWeek('Thu', 4, 'Core')}
-        {this.renderDayOfTheWeek('Fri', 5, 'Total')}
-        {this.renderDayOfTheWeek('Sat', 6, 'Cardio')}
-        {this.renderDayOfTheWeek('Sun', 0, 'Bar')*/}
         <TouchableOpacity 
           style={OfTheDayFooterStyle.dayInfoContainer}
           onPress={() => {this.setModalVisible('dayInfo', true);}}

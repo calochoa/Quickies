@@ -9,7 +9,7 @@ const OfTheDayFooterStyle = StyleSheet.create({
     justifyContent: 'center', 
   },
   dayInfoContainer: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center', 
     justifyContent: 'center', 
