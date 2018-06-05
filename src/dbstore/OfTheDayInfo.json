@@ -2,42 +2,56 @@
   {
   	"otd": "otd_1",
   	"day": "Monday",
+    "dotw": 1,
+    "otdType": "Cardio",
     "description": "Kicking it off with some CARDIO",
     "order": 1
   },
   {
   	"otd": "otd_2",
   	"day": "Tuesday",
+    "dotw": 2,
+    "otdType": "Upper",
     "description": "Let's strengthen that UPPER BODY",
     "order": 2
   },
   {
   	"otd": "otd_3",
   	"day": "Wednesday",
+    "dotw": 3,
+    "otdType": "Lower",
     "description": "LOWER BODY on that hump day",
     "order": 3
   },
   {
   	"otd": "otd_4",
   	"day": "Thursday",
+    "dotw": 4,
+    "otdType": "Core",
     "description": "Can't forget about our CORE",
     "order": 4
   },
   {
   	"otd": "otd_5",
   	"day": "Friday",
+    "dotw": 5,
+    "otdType": "Total",
     "description": "Time to hit that TOTAL BODY",
     "order": 5
   },
   {
   	"otd": "otd_6",
   	"day": "Saturday",
+    "dotw": 6,
+    "otdType": "Cardio",
     "description": "Can't get enough of that CARDIO",
     "order": 6
   },
   {
   	"otd": "otd_0",
   	"day": "Sunday",
+    "dotw": 0,
+    "otdType": "Bar",
     "description": "Focusing on our BAR strength",
     "order": 7
   }

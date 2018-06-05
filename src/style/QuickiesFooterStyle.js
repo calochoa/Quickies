@@ -11,6 +11,7 @@ const QuickiesFooterStyle = StyleSheet.create({
     flex: 1,
     alignItems: 'center', 
     justifyContent: 'flex-end',
+    paddingTop: 2,
   },
   bodySplitText: {
     color: '#fff',

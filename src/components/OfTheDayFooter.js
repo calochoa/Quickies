@@ -33,22 +33,25 @@ class OfTheDayFooter extends Component {
     super(props);
 
     let otdInfo = []
+    let otdDataArr = []
     this.sortOrder(OfTheDayInfo).map(element => {
       otdInfo.push(element.day.toUpperCase() + ' - ' + element.description);
+      otdDataArr.push(element);
     });
 
     var dayOfTheWeek = new Date().getDay();
 
     this.state = {
-      'Sun': dayOfTheWeek == 0,
-      'Mon': dayOfTheWeek == 1,
-      'Tue': dayOfTheWeek == 2,
-      'Wed': dayOfTheWeek == 3,
-      'Thu': dayOfTheWeek == 4,
-      'Fri': dayOfTheWeek == 5,
-      'Sat': dayOfTheWeek == 6,
+      'Sunday': dayOfTheWeek == 0,
+      'Monday': dayOfTheWeek == 1,
+      'Tuesday': dayOfTheWeek == 2,
+      'Wednesday': dayOfTheWeek == 3,
+      'Thursday': dayOfTheWeek == 4,
+      'Friday': dayOfTheWeek == 5,
+      'Saturday': dayOfTheWeek == 6,
       setDayOfTheWeek: this.props.setDayOfTheWeek,
       otdInfo: otdInfo,
+      otdDataArr: otdDataArr,
       type: this.props.type,
     };
   }
@@ -77,18 +80,18 @@ class OfTheDayFooter extends Component {
 
   setHighlighted(day) {
     const update = {}
-    update['Mon'] = false
-    update['Tue'] = false
-    update['Wed'] = false
-    update['Thu'] = false
-    update['Fri'] = false
-    update['Sat'] = false
-    update['Sun'] = false
+    update['Monday'] = false
+    update['Tuesday'] = false
+    update['Wednesday'] = false
+    update['Thursday'] = false
+    update['Friday'] = false
+    update['Saturday'] = false
+    update['Sunday'] = false
     update[day] = true
     this.setState(update);
   }
 
-  renderDayOfTheWeek(day, dotw) {
+  renderDayOfTheWeek(day, dotw, dayType) {
     let dayStyle = this.state[day] ? 
       OfTheDayFooterStyle.selectedDayText : OfTheDayFooterStyle.dayText;
     let imageSrc = this.state[day] ? dayImagePathMap.get(day + ' Selected') 
@@ -101,21 +104,44 @@ class OfTheDayFooter extends Component {
         onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
       >
         <Image source={imageSrc}/>
+        <Text style={dayStyle}>{dayType}</Text>
+      </TouchableOpacity>
+    );
+  }
+
+  renderOfTheDayData(otdData) {
+    let day = otdData.day
+    let dayStyle = this.state[day] ? 
+      OfTheDayFooterStyle.selectedDayText : OfTheDayFooterStyle.dayText;
+    let imageSrc = this.state[day] ? dayImagePathMap.get(day + ' Selected') 
+      : dayImagePathMap.get(day);
+
+    return (
+      <TouchableOpacity 
+        style={OfTheDayFooterStyle.dayContainer}
+        key={day}
+        onPress={() => { this.state.setDayOfTheWeek(otdData.dotw); this.setHighlighted(day); }}
+      >
+        <Image source={imageSrc}/>
+        <Text style={dayStyle}>{otdData.otdType}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
+    const { otdDataArr } = this.state;
+
     return (
       <LinearGradient colors={getGradientColor('OfTheDayFooter')} style={OfTheDayFooterStyle.container}>
         {this.renderOverlay('dayInfo')}
-        {this.renderDayOfTheWeek('Mon', 1)}
-        {this.renderDayOfTheWeek('Tue', 2)}
-        {this.renderDayOfTheWeek('Wed', 3)}
-        {this.renderDayOfTheWeek('Thu', 4)}
-        {this.renderDayOfTheWeek('Fri', 5)}
-        {this.renderDayOfTheWeek('Sat', 6)}
-        {this.renderDayOfTheWeek('Sun', 0)}
+        {otdDataArr.map((otdData) => this.renderOfTheDayData(otdData))}
+        {/*this.renderDayOfTheWeek('Mon', 1, 'Cardio')}
+        {this.renderDayOfTheWeek('Tue', 2, 'Upper')}
+        {this.renderDayOfTheWeek('Wed', 3, 'Lower')}
+        {this.renderDayOfTheWeek('Thu', 4, 'Core')}
+        {this.renderDayOfTheWeek('Fri', 5, 'Total')}
+        {this.renderDayOfTheWeek('Sat', 6, 'Cardio')}
+        {this.renderDayOfTheWeek('Sun', 0, 'Bar')*/}
         <TouchableOpacity 
           style={OfTheDayFooterStyle.dayInfoContainer}
           onPress={() => {this.setModalVisible('dayInfo', true);}}
