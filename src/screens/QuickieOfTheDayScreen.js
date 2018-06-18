@@ -28,6 +28,9 @@ OfTheDay.map(element => {
   OfTheDayMap[element.otdId] = element;
 })
 
+var currentWeekNumber = require('current-week-number');
+var weekType = currentWeekNumber() % 2;
+
 
 class QuickieOfTheDayScreen extends Component {
   
@@ -61,30 +64,51 @@ class QuickieOfTheDayScreen extends Component {
     super(props);
 
     let qotdMap = {
-      'qotd_0.otd0000':[], 'qotd_0.otd0001':[], 'qotd_0.otd0002':[], 'qotd_0.otd0003':[], 'qotd_0.otd0004':[], 'qotd_0.otd0005':[], 
-      'qotd_1.otd0000':[], 'qotd_1.otd0001':[], 'qotd_1.otd0002':[], 'qotd_1.otd0003':[], 'qotd_1.otd0004':[], 'qotd_1.otd0005':[], 
-      'qotd_2.otd0000':[], 'qotd_2.otd0001':[], 'qotd_2.otd0002':[], 'qotd_2.otd0003':[], 'qotd_2.otd0004':[], 'qotd_2.otd0005':[], 
-      'qotd_3.otd0000':[], 'qotd_3.otd0001':[], 'qotd_3.otd0002':[], 'qotd_3.otd0003':[], 'qotd_3.otd0004':[], 'qotd_3.otd0005':[], 
-      'qotd_4.otd0000':[], 'qotd_4.otd0001':[], 'qotd_4.otd0002':[], 'qotd_4.otd0003':[], 'qotd_4.otd0004':[], 'qotd_4.otd0005':[], 
-      'qotd_5.otd0000':[], 'qotd_5.otd0001':[], 'qotd_5.otd0002':[], 'qotd_5.otd0003':[], 'qotd_5.otd0004':[], 'qotd_5.otd0005':[], 
-      'qotd_6.otd0000':[], 'qotd_6.otd0001':[], 'qotd_6.otd0002':[], 'qotd_6.otd0003':[], 'qotd_6.otd0004':[], 'qotd_6.otd0005':[], 
+      'qotd_0_0.otd0000':[], 'qotd_0_0.otd0001':[], 'qotd_0_0.otd0002':[], 'qotd_0_0.otd0003':[], 'qotd_0_0.otd0004':[], 'qotd_0_0.otd0005':[], 
+      'qotd_1_0.otd0000':[], 'qotd_1_0.otd0001':[], 'qotd_1_0.otd0002':[], 'qotd_1_0.otd0003':[], 'qotd_1_0.otd0004':[], 'qotd_1_0.otd0005':[], 
+      'qotd_2_0.otd0000':[], 'qotd_2_0.otd0001':[], 'qotd_2_0.otd0002':[], 'qotd_2_0.otd0003':[], 'qotd_2_0.otd0004':[], 'qotd_2_0.otd0005':[], 
+      'qotd_3_0.otd0000':[], 'qotd_3_0.otd0001':[], 'qotd_3_0.otd0002':[], 'qotd_3_0.otd0003':[], 'qotd_3_0.otd0004':[], 'qotd_3_0.otd0005':[], 
+      'qotd_4_0.otd0000':[], 'qotd_4_0.otd0001':[], 'qotd_4_0.otd0002':[], 'qotd_4_0.otd0003':[], 'qotd_4_0.otd0004':[], 'qotd_4_0.otd0005':[], 
+      'qotd_5_0.otd0000':[], 'qotd_5_0.otd0001':[], 'qotd_5_0.otd0002':[], 'qotd_5_0.otd0003':[], 'qotd_5_0.otd0004':[], 'qotd_5_0.otd0005':[], 
+      'qotd_6_0.otd0000':[], 'qotd_6_0.otd0001':[], 'qotd_6_0.otd0002':[], 'qotd_6_0.otd0003':[], 'qotd_6_0.otd0004':[], 'qotd_6_0.otd0005':[], 
+      'qotd_0_1.otd0000':[], 'qotd_0_1.otd0001':[], 'qotd_0_1.otd0002':[], 'qotd_0_1.otd0003':[], 'qotd_0_1.otd0004':[], 'qotd_0_1.otd0005':[], 
+      'qotd_1_1.otd0000':[], 'qotd_1_1.otd0001':[], 'qotd_1_1.otd0002':[], 'qotd_1_1.otd0003':[], 'qotd_1_1.otd0004':[], 'qotd_1_1.otd0005':[], 
+      'qotd_2_1.otd0000':[], 'qotd_2_1.otd0001':[], 'qotd_2_1.otd0002':[], 'qotd_2_1.otd0003':[], 'qotd_2_1.otd0004':[], 'qotd_2_1.otd0005':[], 
+      'qotd_3_1.otd0000':[], 'qotd_3_1.otd0001':[], 'qotd_3_1.otd0002':[], 'qotd_3_1.otd0003':[], 'qotd_3_1.otd0004':[], 'qotd_3_1.otd0005':[], 
+      'qotd_4_1.otd0000':[], 'qotd_4_1.otd0001':[], 'qotd_4_1.otd0002':[], 'qotd_4_1.otd0003':[], 'qotd_4_1.otd0004':[], 'qotd_4_1.otd0005':[], 
+      'qotd_5_1.otd0000':[], 'qotd_5_1.otd0001':[], 'qotd_5_1.otd0002':[], 'qotd_5_1.otd0003':[], 'qotd_5_1.otd0004':[], 'qotd_5_1.otd0005':[], 
+      'qotd_6_1.otd0000':[], 'qotd_6_1.otd0001':[], 'qotd_6_1.otd0002':[], 'qotd_6_1.otd0003':[], 'qotd_6_1.otd0004':[], 'qotd_6_1.otd0005':[], 
     }
 
     this.sortOrder(QuickieOfTheDay).map(element => {
-      qotdMap['qotd_0.otd0000'].push({key:element.qotd_0, otdId:element.otdId})
-      qotdMap['qotd_1.otd0000'].push({key:element.qotd_1, otdId:element.otdId})
-      qotdMap['qotd_2.otd0000'].push({key:element.qotd_2, otdId:element.otdId})
-      qotdMap['qotd_3.otd0000'].push({key:element.qotd_3, otdId:element.otdId})
-      qotdMap['qotd_4.otd0000'].push({key:element.qotd_4, otdId:element.otdId})
-      qotdMap['qotd_5.otd0000'].push({key:element.qotd_5, otdId:element.otdId})
-      qotdMap['qotd_6.otd0000'].push({key:element.qotd_6, otdId:element.otdId})
-      qotdMap['qotd_0.'+element.otdId].push({key:element.qotd_0, otdId:element.otdId})
-      qotdMap['qotd_1.'+element.otdId].push({key:element.qotd_1, otdId:element.otdId})
-      qotdMap['qotd_2.'+element.otdId].push({key:element.qotd_2, otdId:element.otdId})
-      qotdMap['qotd_3.'+element.otdId].push({key:element.qotd_3, otdId:element.otdId})
-      qotdMap['qotd_4.'+element.otdId].push({key:element.qotd_4, otdId:element.otdId})
-      qotdMap['qotd_5.'+element.otdId].push({key:element.qotd_5, otdId:element.otdId})
-      qotdMap['qotd_6.'+element.otdId].push({key:element.qotd_6, otdId:element.otdId})
+      qotdMap['qotd_0_0.otd0000'].push({key:element.qotd_0_0, otdId:element.otdId})
+      qotdMap['qotd_1_0.otd0000'].push({key:element.qotd_1_0, otdId:element.otdId})
+      qotdMap['qotd_2_0.otd0000'].push({key:element.qotd_2_0, otdId:element.otdId})
+      qotdMap['qotd_3_0.otd0000'].push({key:element.qotd_3_0, otdId:element.otdId})
+      qotdMap['qotd_4_0.otd0000'].push({key:element.qotd_4_0, otdId:element.otdId})
+      qotdMap['qotd_5_0.otd0000'].push({key:element.qotd_5_0, otdId:element.otdId})
+      qotdMap['qotd_6_0.otd0000'].push({key:element.qotd_6_0, otdId:element.otdId})
+      qotdMap['qotd_0_0.'+element.otdId].push({key:element.qotd_0_0, otdId:element.otdId})
+      qotdMap['qotd_1_0.'+element.otdId].push({key:element.qotd_1_0, otdId:element.otdId})
+      qotdMap['qotd_2_0.'+element.otdId].push({key:element.qotd_2_0, otdId:element.otdId})
+      qotdMap['qotd_3_0.'+element.otdId].push({key:element.qotd_3_0, otdId:element.otdId})
+      qotdMap['qotd_4_0.'+element.otdId].push({key:element.qotd_4_0, otdId:element.otdId})
+      qotdMap['qotd_5_0.'+element.otdId].push({key:element.qotd_5_0, otdId:element.otdId})
+      qotdMap['qotd_6_0.'+element.otdId].push({key:element.qotd_6_0, otdId:element.otdId})
+      qotdMap['qotd_0_1.otd0000'].push({key:element.qotd_0_1, otdId:element.otdId})
+      qotdMap['qotd_1_1.otd0000'].push({key:element.qotd_1_1, otdId:element.otdId})
+      qotdMap['qotd_2_1.otd0000'].push({key:element.qotd_2_1, otdId:element.otdId})
+      qotdMap['qotd_3_1.otd0000'].push({key:element.qotd_3_1, otdId:element.otdId})
+      qotdMap['qotd_4_1.otd0000'].push({key:element.qotd_4_1, otdId:element.otdId})
+      qotdMap['qotd_5_1.otd0000'].push({key:element.qotd_5_1, otdId:element.otdId})
+      qotdMap['qotd_6_1.otd0000'].push({key:element.qotd_6_1, otdId:element.otdId})
+      qotdMap['qotd_0_1.'+element.otdId].push({key:element.qotd_0_1, otdId:element.otdId})
+      qotdMap['qotd_1_1.'+element.otdId].push({key:element.qotd_1_1, otdId:element.otdId})
+      qotdMap['qotd_2_1.'+element.otdId].push({key:element.qotd_2_1, otdId:element.otdId})
+      qotdMap['qotd_3_1.'+element.otdId].push({key:element.qotd_3_1, otdId:element.otdId})
+      qotdMap['qotd_4_1.'+element.otdId].push({key:element.qotd_4_1, otdId:element.otdId})
+      qotdMap['qotd_5_1.'+element.otdId].push({key:element.qotd_5_1, otdId:element.otdId})
+      qotdMap['qotd_6_1.'+element.otdId].push({key:element.qotd_6_1, otdId:element.otdId})
     });
 
     this.state = {
@@ -134,7 +158,7 @@ class QuickieOfTheDayScreen extends Component {
       <View style={MainContainerStyle.container}>
         <OfTheDayHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Quickie'/>
         <FlatList
-          data={qotdMap['qotd_'+dayOfTheWeek+'.'+otdId]}
+          data={qotdMap['qotd_'+dayOfTheWeek+'_'+weekType+'.'+otdId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={qRefresh}
         />
