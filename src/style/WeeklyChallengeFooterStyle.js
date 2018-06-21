@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const WeekFooterStyle = StyleSheet.create({
+const WeeklyChallengeFooterStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 5,
@@ -31,4 +31,4 @@ const WeekFooterStyle = StyleSheet.create({
 });
 
 
-export default WeekFooterStyle;
+export default WeeklyChallengeFooterStyle;

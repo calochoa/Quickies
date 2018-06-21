@@ -1,7 +1,6 @@
 [
   {
-    "wcId": "otd0001",
-    "wcName": "Beginner",
+    "wclId": "wcl0001",
     "wcMode": "Beast Mode",
     "wc_0": "q00004",
     "wc_1": "q00007",
@@ -20,8 +19,7 @@
     "order": 1
   },
   {
-  	"wcId": "otd0002",
-  	"wcName": "Intermediate",
+  	"wclId": "wcl0002",
     "wcMode": "Beast Mode",
     "wc_0": "q02002",
     "wc_1": "q01017",
@@ -40,8 +38,7 @@
     "order": 2
   },
   {
-  	"wcId": "otd0003",
-  	"wcName": "Advanced",
+  	"wclId": "wcl0003",
     "wcMode": "Bananas Mode",
     "wc_0": "q02016",
     "wc_1": "q01016",
@@ -60,8 +57,7 @@
     "order": 3
   },
   {
-  	"wcId": "otd0004",
-  	"wcName": "Expert",
+  	"wclId": "wcl0004",
     "wcMode": "Bananas Mode",
     "wc_0": "q02007",
     "wc_1": "q01007",
@@ -80,8 +76,7 @@
     "order": 4
   },
   {
-  	"wcId": "otd0005",
-  	"wcName": "Master",
+  	"wclId": "wcl0005",
     "wcMode": "Bananas Mode",
     "wc_0": "q04002",
     "wc_1": "q04012",

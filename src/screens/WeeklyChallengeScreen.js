@@ -9,13 +9,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Quickies from '../dbstore/Quickies.json';
 import WeeklyChallenge from '../dbstore/WeeklyChallenge.json';
-import OfTheDay from '../dbstore/OfTheDay.json';
+import WeeklyChallengeLevels from '../dbstore/WeeklyChallengeLevels.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
-import WeekHeader from '../components/WeekHeader';
-import WeekFooter from '../components/WeekFooter';
+import WeeklyChallengeHeader from '../components/WeeklyChallengeHeader';
+import WeeklyChallengeFooter from '../components/WeeklyChallengeFooter';
 
 
 const QuickieMap = {}
@@ -23,9 +23,9 @@ Quickies.map(element => {
   QuickieMap[element.qId] = element;
 })
 
-const OfTheDayMap = {}
-OfTheDay.map(element => {
-  OfTheDayMap[element.otdId] = element;
+const WclMap = {}
+WeeklyChallengeLevels.map(element => {
+  WclMap[element.wclId] = element;
 })
 
 
@@ -73,39 +73,39 @@ class WeeklyChallengeScreen extends Component {
     let wcMap = {};
     for (i = 0; i < maxTypes; i++) {
       for (j = 0; j <= maxDifficulty; j++) {
-        wcMap['wc_'+i+'.otd000'+j] = [];
+        wcMap['wc_'+i+'.wcl000'+j] = [];
       }
     }
 
     this.sortOrder(WeeklyChallenge).map(element => {
-      wcMap['wc_0.otd0000'].push({key:element.wc_0, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_1.otd0000'].push({key:element.wc_1, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_2.otd0000'].push({key:element.wc_2, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_3.otd0000'].push({key:element.wc_3, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_4.otd0000'].push({key:element.wc_4, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_5.otd0000'].push({key:element.wc_5, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_6.otd0000'].push({key:element.wc_6, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_7.otd0000'].push({key:element.wc_7, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_8.otd0000'].push({key:element.wc_8, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_9.otd0000'].push({key:element.wc_9, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_10.otd0000'].push({key:element.wc_10, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_11.otd0000'].push({key:element.wc_11, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_12.otd0000'].push({key:element.wc_12, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_13.otd0000'].push({key:element.wc_13, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_0.'+element.wcId].push({key:element.wc_0, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_1.'+element.wcId].push({key:element.wc_1, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_2.'+element.wcId].push({key:element.wc_2, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_3.'+element.wcId].push({key:element.wc_3, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_4.'+element.wcId].push({key:element.wc_4, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_5.'+element.wcId].push({key:element.wc_5, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_6.'+element.wcId].push({key:element.wc_6, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_7.'+element.wcId].push({key:element.wc_7, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_8.'+element.wcId].push({key:element.wc_8, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_9.'+element.wcId].push({key:element.wc_9, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_10.'+element.wcId].push({key:element.wc_10, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_11.'+element.wcId].push({key:element.wc_11, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_12.'+element.wcId].push({key:element.wc_12, wcId:element.wcId, wcMode:element.wcMode})
-      wcMap['wc_13.'+element.wcId].push({key:element.wc_13, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_0.wcl0000'].push({key:element.wc_0, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_1.wcl0000'].push({key:element.wc_1, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_2.wcl0000'].push({key:element.wc_2, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_3.wcl0000'].push({key:element.wc_3, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_4.wcl0000'].push({key:element.wc_4, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_5.wcl0000'].push({key:element.wc_5, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_6.wcl0000'].push({key:element.wc_6, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_7.wcl0000'].push({key:element.wc_7, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_8.wcl0000'].push({key:element.wc_8, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_9.wcl0000'].push({key:element.wc_9, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_10.wcl0000'].push({key:element.wc_10, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_11.wcl0000'].push({key:element.wc_11, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_12.wcl0000'].push({key:element.wc_12, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_13.wcl0000'].push({key:element.wc_13, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_0.'+element.wclId].push({key:element.wc_0, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_1.'+element.wclId].push({key:element.wc_1, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_2.'+element.wclId].push({key:element.wc_2, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_3.'+element.wclId].push({key:element.wc_3, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_4.'+element.wclId].push({key:element.wc_4, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_5.'+element.wclId].push({key:element.wc_5, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_6.'+element.wclId].push({key:element.wc_6, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_7.'+element.wclId].push({key:element.wc_7, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_8.'+element.wclId].push({key:element.wc_8, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_9.'+element.wclId].push({key:element.wc_9, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_10.'+element.wclId].push({key:element.wc_10, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_11.'+element.wclId].push({key:element.wc_11, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_12.'+element.wclId].push({key:element.wc_12, wclId:element.wclId, wcMode:element.wcMode})
+      wcMap['wc_13.'+element.wclId].push({key:element.wc_13, wclId:element.wclId, wcMode:element.wcMode})
     });
 
     let currentWeekNumber = require('current-week-number');
@@ -119,7 +119,7 @@ class WeeklyChallengeScreen extends Component {
       currentWeekType: currentWeekType,
       previousWeekType: previousWeekType,
       nextWeekType: nextWeekType,
-      wcId: 'otd0000',
+      wclId: 'wcl0000',
       qRefresh: false,
     };
 
@@ -129,13 +129,13 @@ class WeeklyChallengeScreen extends Component {
   renderRow(data) {
     let qMode = data.wcMode
     let quickie = QuickieMap[data.key]
-    let difficultyName = OfTheDayMap[data.wcId].otdName.toUpperCase()
+    let difficultyName = WclMap[data.wclId].wclName.toUpperCase()
 
     return (
       <LinearGradient 
         colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
-        key={quickie.qId+'.'+data.wcId}
+        key={quickie.qId+'.'+data.wclId}
       >
         <Text style={OfTheDayRowStyle.wcType}>{difficultyName}</Text>
         <View style={OfTheDayRowStyle.divider}/>
@@ -150,24 +150,24 @@ class WeeklyChallengeScreen extends Component {
     this.setState(update);
   }
 
-  setDifficultyLevel(wcId) {
+  setDifficultyLevel(wclId) {
     const update = {}
-    update['wcId'] = wcId
+    update['wclId'] = wclId
     this.setState(update);
   }
 
   render() {
-    const { wcMap, weekType, currentWeekType, previousWeekType, nextWeekType, wcId, qRefresh } = this.state;
+    const { wcMap, weekType, currentWeekType, previousWeekType, nextWeekType, wclId, qRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        <WeekHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Quickie'/>
+        <WeeklyChallengeHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} />
         <FlatList
-          data={wcMap['wc_'+weekType+'.'+wcId]}
+          data={wcMap['wc_'+weekType+'.'+wclId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={qRefresh}
         />
-        <WeekFooter 
+        <WeeklyChallengeFooter 
           setWeekType={this.setWeekType.bind(this)} 
           currentWeekType={currentWeekType} 
           previousWeekType={previousWeekType} 

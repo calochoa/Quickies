@@ -1,0 +1,46 @@
+[
+  {
+    "wclId": "wcl0000",
+    "wclName": "All",
+    "wclAbbr": "All",
+    "order": 0
+  },
+  {
+    "wclId": "wcl0001",
+    "wclName": "Level 1",
+    "wclAbbr": "1",
+    "wclDescription": "Try these BEGINNER level weekly challenges if you are new to exercising or need to ease back into it.",
+    "order": 1
+  },
+  {
+  	"wclId": "wcl0002",
+  	"wclName": "Level 2",
+    "wclAbbr": "2",
+    "wclDescription": "Perform these INTERMEDIATE weekly challenges with solid technique before moving on to higher levels.",
+    "order": 2
+  },
+  {
+  	"wclId": "wcl0003",
+  	"wclName": "Level 3",
+    "wclAbbr": "3",
+  	"wcLevelName": "Level 3",
+    "wclDescription": "Be sure to pace yourself while doing these ADVANCED weekly challenges; they are harder than they appear.",
+    "order": 3
+  },
+  {
+  	"wclId": "wcl0004",
+  	"wclName": "Level 4",
+    "wclAbbr": "4",
+  	"wcLevelName": "Level 4",
+    "wclDescription": "These weekly challenges are considered EXPERT level and require tremendous fitness and stamina.",
+    "order": 4
+  },
+  {
+  	"wclId": "wcl0005",
+  	"wclName": "Level 5",
+    "wclAbbr": "5",
+    "wcLevelName": "Level 5",
+    "wclDescription": "Attempt these weekly challenges with extreme caution!  If you can complete these, then you are, without a doubt, a MASTER of calisthenics.",
+    "order": 5
+  },
+]

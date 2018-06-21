@@ -6,12 +6,12 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import WeekFooterStyle from '../style/WeekFooterStyle';
+import WeeklyChallengeFooterStyle from '../style/WeeklyChallengeFooterStyle';
 import WeekDataInfo from '../dbstore/WeekDataInfo.json';
 import { weekImagePathMap } from '../misc/WeekImagePaths';
 
 
-class WeekFooter extends Component {
+class WeeklyChallengeFooter extends Component {
 
   sortOrder(data) {
     return data.sort((a,b) => {
@@ -57,7 +57,7 @@ class WeekFooter extends Component {
   renderWeekData(weekData) {
     let week = weekData.week
     let weekStyle = this.state[week] ? 
-      WeekFooterStyle.selectedWeekText : WeekFooterStyle.weekText;
+      WeeklyChallengeFooterStyle.selectedWeekText : WeeklyChallengeFooterStyle.weekText;
     let imageSrc = this.state[week] ? weekImagePathMap.get(week + ' Selected') 
       : weekImagePathMap.get(week);
     let weekType = week == 'Previous' ? this.state.previousWeekType : 
@@ -65,7 +65,7 @@ class WeekFooter extends Component {
 
     return (
       <TouchableOpacity 
-        style={WeekFooterStyle.weekContainer}
+        style={WeeklyChallengeFooterStyle.weekContainer}
         key={week}
         onPress={() => { this.state.setWeekType(weekType); this.setHighlighted(week); }}
       >
@@ -79,7 +79,7 @@ class WeekFooter extends Component {
     const { weekDataArr } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('WeekFooter')} style={WeekFooterStyle.container}>
+      <LinearGradient colors={getGradientColor('WeekFooter')} style={WeeklyChallengeFooterStyle.container}>
         {weekDataArr.map((weekData) => this.renderWeekData(weekData))}
       </LinearGradient>
     );
@@ -87,4 +87,4 @@ class WeekFooter extends Component {
 }
 
 
-export default WeekFooter;
+export default WeeklyChallengeFooter;
