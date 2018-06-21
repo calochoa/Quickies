@@ -76,6 +76,13 @@ class WeeklyChallengeScreen extends Component {
       'wc_4.otd0000':[], 'wc_4.otd0001':[], 'wc_4.otd0002':[], 'wc_4.otd0003':[], 'wc_4.otd0004':[], 'wc_4.otd0005':[], 
       'wc_5.otd0000':[], 'wc_5.otd0001':[], 'wc_5.otd0002':[], 'wc_5.otd0003':[], 'wc_5.otd0004':[], 'wc_5.otd0005':[], 
       'wc_6.otd0000':[], 'wc_6.otd0001':[], 'wc_6.otd0002':[], 'wc_6.otd0003':[], 'wc_6.otd0004':[], 'wc_6.otd0005':[], 
+      'wc_7.otd0000':[], 'wc_7.otd0001':[], 'wc_7.otd0002':[], 'wc_7.otd0003':[], 'wc_7.otd0004':[], 'wc_7.otd0005':[], 
+      'wc_8.otd0000':[], 'wc_8.otd0001':[], 'wc_8.otd0002':[], 'wc_8.otd0003':[], 'wc_8.otd0004':[], 'wc_8.otd0005':[], 
+      'wc_9.otd0000':[], 'wc_9.otd0001':[], 'wc_9.otd0002':[], 'wc_9.otd0003':[], 'wc_9.otd0004':[], 'wc_9.otd0005':[], 
+      'wc_10.otd0000':[], 'wc_10.otd0001':[], 'wc_10.otd0002':[], 'wc_10.otd0003':[], 'wc_10.otd0004':[], 'wc_10.otd0005':[], 
+      'wc_11.otd0000':[], 'wc_11.otd0001':[], 'wc_11.otd0002':[], 'wc_11.otd0003':[], 'wc_11.otd0004':[], 'wc_11.otd0005':[], 
+      'wc_12.otd0000':[], 'wc_12.otd0001':[], 'wc_12.otd0002':[], 'wc_12.otd0003':[], 'wc_12.otd0004':[], 'wc_12.otd0005':[], 
+      'wc_13.otd0000':[], 'wc_13.otd0001':[], 'wc_13.otd0002':[], 'wc_13.otd0003':[], 'wc_13.otd0004':[], 'wc_13.otd0005':[], 
     }
 
     this.sortOrder(WeeklyChallenge).map(element => {
@@ -86,6 +93,13 @@ class WeeklyChallengeScreen extends Component {
       wcMap['wc_4.otd0000'].push({key:element.wc_4, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_5.otd0000'].push({key:element.wc_5, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_6.otd0000'].push({key:element.wc_6, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_7.otd0000'].push({key:element.wc_7, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_8.otd0000'].push({key:element.wc_8, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_9.otd0000'].push({key:element.wc_9, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_10.otd0000'].push({key:element.wc_10, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_11.otd0000'].push({key:element.wc_11, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_12.otd0000'].push({key:element.wc_12, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_13.otd0000'].push({key:element.wc_13, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_0.'+element.wcId].push({key:element.wc_0, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_1.'+element.wcId].push({key:element.wc_1, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_2.'+element.wcId].push({key:element.wc_2, wcId:element.wcId, wcMode:element.wcMode})
@@ -93,9 +107,16 @@ class WeeklyChallengeScreen extends Component {
       wcMap['wc_4.'+element.wcId].push({key:element.wc_4, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_5.'+element.wcId].push({key:element.wc_5, wcId:element.wcId, wcMode:element.wcMode})
       wcMap['wc_6.'+element.wcId].push({key:element.wc_6, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_7.'+element.wcId].push({key:element.wc_7, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_8.'+element.wcId].push({key:element.wc_8, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_9.'+element.wcId].push({key:element.wc_9, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_10.'+element.wcId].push({key:element.wc_10, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_11.'+element.wcId].push({key:element.wc_11, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_12.'+element.wcId].push({key:element.wc_12, wcId:element.wcId, wcMode:element.wcMode})
+      wcMap['wc_13.'+element.wcId].push({key:element.wc_13, wcId:element.wcId, wcMode:element.wcMode})
     });
 
-    let maxTypes = 7;
+    let maxTypes = 14;
     let currentWeekNumber = require('current-week-number');
     let currentWeekType = currentWeekNumber() % maxTypes;
     let prevWeekType = this.getPrevWeekType(currentWeekType, maxTypes);
@@ -123,7 +144,7 @@ class WeeklyChallengeScreen extends Component {
       <LinearGradient 
         colors={getGradientColor(qMode)} 
         style={OfTheDayRowStyle.container} 
-        key={quickie.qId}
+        key={quickie.qId+'.'+data.wcId}
       >
         <Text style={OfTheDayRowStyle.wcType}>{difficultyName}</Text>
         <View style={OfTheDayRowStyle.divider}/>
