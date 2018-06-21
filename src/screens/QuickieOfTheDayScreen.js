@@ -63,21 +63,16 @@ class QuickieOfTheDayScreen extends Component {
   constructor(props) {
     super(props);
 
-    let qotdMap = {
-      'qotd_0_0.otd0000':[], 'qotd_0_0.otd0001':[], 'qotd_0_0.otd0002':[], 'qotd_0_0.otd0003':[], 'qotd_0_0.otd0004':[], 'qotd_0_0.otd0005':[], 
-      'qotd_1_0.otd0000':[], 'qotd_1_0.otd0001':[], 'qotd_1_0.otd0002':[], 'qotd_1_0.otd0003':[], 'qotd_1_0.otd0004':[], 'qotd_1_0.otd0005':[], 
-      'qotd_2_0.otd0000':[], 'qotd_2_0.otd0001':[], 'qotd_2_0.otd0002':[], 'qotd_2_0.otd0003':[], 'qotd_2_0.otd0004':[], 'qotd_2_0.otd0005':[], 
-      'qotd_3_0.otd0000':[], 'qotd_3_0.otd0001':[], 'qotd_3_0.otd0002':[], 'qotd_3_0.otd0003':[], 'qotd_3_0.otd0004':[], 'qotd_3_0.otd0005':[], 
-      'qotd_4_0.otd0000':[], 'qotd_4_0.otd0001':[], 'qotd_4_0.otd0002':[], 'qotd_4_0.otd0003':[], 'qotd_4_0.otd0004':[], 'qotd_4_0.otd0005':[], 
-      'qotd_5_0.otd0000':[], 'qotd_5_0.otd0001':[], 'qotd_5_0.otd0002':[], 'qotd_5_0.otd0003':[], 'qotd_5_0.otd0004':[], 'qotd_5_0.otd0005':[], 
-      'qotd_6_0.otd0000':[], 'qotd_6_0.otd0001':[], 'qotd_6_0.otd0002':[], 'qotd_6_0.otd0003':[], 'qotd_6_0.otd0004':[], 'qotd_6_0.otd0005':[], 
-      'qotd_0_1.otd0000':[], 'qotd_0_1.otd0001':[], 'qotd_0_1.otd0002':[], 'qotd_0_1.otd0003':[], 'qotd_0_1.otd0004':[], 'qotd_0_1.otd0005':[], 
-      'qotd_1_1.otd0000':[], 'qotd_1_1.otd0001':[], 'qotd_1_1.otd0002':[], 'qotd_1_1.otd0003':[], 'qotd_1_1.otd0004':[], 'qotd_1_1.otd0005':[], 
-      'qotd_2_1.otd0000':[], 'qotd_2_1.otd0001':[], 'qotd_2_1.otd0002':[], 'qotd_2_1.otd0003':[], 'qotd_2_1.otd0004':[], 'qotd_2_1.otd0005':[], 
-      'qotd_3_1.otd0000':[], 'qotd_3_1.otd0001':[], 'qotd_3_1.otd0002':[], 'qotd_3_1.otd0003':[], 'qotd_3_1.otd0004':[], 'qotd_3_1.otd0005':[], 
-      'qotd_4_1.otd0000':[], 'qotd_4_1.otd0001':[], 'qotd_4_1.otd0002':[], 'qotd_4_1.otd0003':[], 'qotd_4_1.otd0004':[], 'qotd_4_1.otd0005':[], 
-      'qotd_5_1.otd0000':[], 'qotd_5_1.otd0001':[], 'qotd_5_1.otd0002':[], 'qotd_5_1.otd0003':[], 'qotd_5_1.otd0004':[], 'qotd_5_1.otd0005':[], 
-      'qotd_6_1.otd0000':[], 'qotd_6_1.otd0001':[], 'qotd_6_1.otd0002':[], 'qotd_6_1.otd0003':[], 'qotd_6_1.otd0004':[], 'qotd_6_1.otd0005':[], 
+    let maxDays = 7;
+    let maxWeeks = 2;
+    let maxDifficulty = 5;
+    let qotdMap = {};
+    for (i = 0; i < maxDays; i++) {
+      for (j = 0; j < maxWeeks; j++) {
+        for (k = 0; k <= maxDifficulty; k++) {
+          qotdMap['qotd_'+i+'_'+j+'.otd000'+k] = [];
+        }
+      }
     }
 
     this.sortOrder(QuickieOfTheDay).map(element => {

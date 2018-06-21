@@ -68,21 +68,13 @@ class WeeklyChallengeScreen extends Component {
   constructor(props) {
     super(props);
 
-    let wcMap = {
-      'wc_0.otd0000':[], 'wc_0.otd0001':[], 'wc_0.otd0002':[], 'wc_0.otd0003':[], 'wc_0.otd0004':[], 'wc_0.otd0005':[], 
-      'wc_1.otd0000':[], 'wc_1.otd0001':[], 'wc_1.otd0002':[], 'wc_1.otd0003':[], 'wc_1.otd0004':[], 'wc_1.otd0005':[], 
-      'wc_2.otd0000':[], 'wc_2.otd0001':[], 'wc_2.otd0002':[], 'wc_2.otd0003':[], 'wc_2.otd0004':[], 'wc_2.otd0005':[], 
-      'wc_3.otd0000':[], 'wc_3.otd0001':[], 'wc_3.otd0002':[], 'wc_3.otd0003':[], 'wc_3.otd0004':[], 'wc_3.otd0005':[], 
-      'wc_4.otd0000':[], 'wc_4.otd0001':[], 'wc_4.otd0002':[], 'wc_4.otd0003':[], 'wc_4.otd0004':[], 'wc_4.otd0005':[], 
-      'wc_5.otd0000':[], 'wc_5.otd0001':[], 'wc_5.otd0002':[], 'wc_5.otd0003':[], 'wc_5.otd0004':[], 'wc_5.otd0005':[], 
-      'wc_6.otd0000':[], 'wc_6.otd0001':[], 'wc_6.otd0002':[], 'wc_6.otd0003':[], 'wc_6.otd0004':[], 'wc_6.otd0005':[], 
-      'wc_7.otd0000':[], 'wc_7.otd0001':[], 'wc_7.otd0002':[], 'wc_7.otd0003':[], 'wc_7.otd0004':[], 'wc_7.otd0005':[], 
-      'wc_8.otd0000':[], 'wc_8.otd0001':[], 'wc_8.otd0002':[], 'wc_8.otd0003':[], 'wc_8.otd0004':[], 'wc_8.otd0005':[], 
-      'wc_9.otd0000':[], 'wc_9.otd0001':[], 'wc_9.otd0002':[], 'wc_9.otd0003':[], 'wc_9.otd0004':[], 'wc_9.otd0005':[], 
-      'wc_10.otd0000':[], 'wc_10.otd0001':[], 'wc_10.otd0002':[], 'wc_10.otd0003':[], 'wc_10.otd0004':[], 'wc_10.otd0005':[], 
-      'wc_11.otd0000':[], 'wc_11.otd0001':[], 'wc_11.otd0002':[], 'wc_11.otd0003':[], 'wc_11.otd0004':[], 'wc_11.otd0005':[], 
-      'wc_12.otd0000':[], 'wc_12.otd0001':[], 'wc_12.otd0002':[], 'wc_12.otd0003':[], 'wc_12.otd0004':[], 'wc_12.otd0005':[], 
-      'wc_13.otd0000':[], 'wc_13.otd0001':[], 'wc_13.otd0002':[], 'wc_13.otd0003':[], 'wc_13.otd0004':[], 'wc_13.otd0005':[], 
+    let maxTypes = 14;
+    let maxDifficulty = 5;
+    let wcMap = {};
+    for (i = 0; i < maxTypes; i++) {
+      for (j = 0; j <= maxDifficulty; j++) {
+        wcMap['wc_'+i+'.otd000'+j] = [];
+      }
     }
 
     this.sortOrder(WeeklyChallenge).map(element => {
@@ -116,7 +108,6 @@ class WeeklyChallengeScreen extends Component {
       wcMap['wc_13.'+element.wcId].push({key:element.wc_13, wcId:element.wcId, wcMode:element.wcMode})
     });
 
-    let maxTypes = 14;
     let currentWeekNumber = require('current-week-number');
     let currentWeekType = currentWeekNumber() % maxTypes;
     let prevWeekType = this.getPrevWeekType(currentWeekType, maxTypes);

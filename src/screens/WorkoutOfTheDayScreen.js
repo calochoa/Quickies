@@ -60,14 +60,13 @@ class WorkoutOfTheDayScreen extends Component {
   constructor(props) {
     super(props);
 
-    let wotdMap = {
-      'wotd_0.otd0000':[], 'wotd_0.otd0001':[], 'wotd_0.otd0002':[], 'wotd_0.otd0003':[], 'wotd_0.otd0004':[], 'wotd_0.otd0005':[], 
-      'wotd_1.otd0000':[], 'wotd_1.otd0001':[], 'wotd_1.otd0002':[], 'wotd_1.otd0003':[], 'wotd_1.otd0004':[], 'wotd_1.otd0005':[], 
-      'wotd_2.otd0000':[], 'wotd_2.otd0001':[], 'wotd_2.otd0002':[], 'wotd_2.otd0003':[], 'wotd_2.otd0004':[], 'wotd_2.otd0005':[], 
-      'wotd_3.otd0000':[], 'wotd_3.otd0001':[], 'wotd_3.otd0002':[], 'wotd_3.otd0003':[], 'wotd_3.otd0004':[], 'wotd_3.otd0005':[], 
-      'wotd_4.otd0000':[], 'wotd_4.otd0001':[], 'wotd_4.otd0002':[], 'wotd_4.otd0003':[], 'wotd_4.otd0004':[], 'wotd_4.otd0005':[], 
-      'wotd_5.otd0000':[], 'wotd_5.otd0001':[], 'wotd_5.otd0002':[], 'wotd_5.otd0003':[], 'wotd_5.otd0004':[], 'wotd_5.otd0005':[], 
-      'wotd_6.otd0000':[], 'wotd_6.otd0001':[], 'wotd_6.otd0002':[], 'wotd_6.otd0003':[], 'wotd_6.otd0004':[], 'wotd_6.otd0005':[], 
+    let maxDays = 7;
+    let maxDifficulty = 5;
+    let wotdMap = {};
+    for (i = 0; i < maxDays; i++) {
+      for (j = 0; j <= maxDifficulty; j++) {
+        wotdMap['wotd_'+i+'.otd000'+j] = [];
+      }
     }
 
     this.sortOrder(WorkoutOfTheDay).map(element => {
