@@ -1,7 +1,8 @@
 [
   {
-    "otdId": "otd0001",
+    "wcId": "otd0001",
     "wcName": "Beginner",
+    "wcMode": "Beast Mode",
     "wc_0": "q00008",
     "wc_1": "q00004",
     "wc_2": "q00007",
@@ -12,8 +13,9 @@
     "order": 1
   },
   {
-  	"otdId": "otd0002",
+  	"wcId": "otd0002",
   	"wcName": "Intermediate",
+    "wcMode": "Beast Mode",
     "wc_0": "q01008",
     "wc_1": "q02002",
     "wc_2": "q03003",
@@ -24,8 +26,9 @@
     "order": 2
   },
   {
-  	"otdId": "otd0003",
+  	"wcId": "otd0003",
   	"wcName": "Advanced",
+    "wcMode": "Bananas Mode",
     "wc_0": "q02008",
     "wc_1": "q01006",
     "wc_2": "q01007",
@@ -36,8 +39,9 @@
     "order": 3
   },
   {
-  	"otdId": "otd0004",
+  	"wcId": "otd0004",
   	"wcName": "Expert",
+    "wcMode": "Bananas Mode",
     "wc_0": "q03008",
     "wc_1": "q02007",
     "wc_2": "q03007",
@@ -48,8 +52,9 @@
     "order": 4
   },
   {
-  	"otdId": "otd0005",
+  	"wcId": "otd0005",
   	"wcName": "Master",
+    "wcMode": "Bananas Mode",
     "wc_0": "q04008",
     "wc_1": "q04002",
     "wc_2": "q04004",
