@@ -14,7 +14,7 @@ import Overlay from 'react-native-modal-overlay';
 import OfTheDayLevels from '../dbstore/OfTheDayLevels.json';
 
 
-class OfTheWeekHeader extends Component {
+class WeekHeader extends Component {
 
   sortOrder(data) {
     return data.sort((a,b) => {
@@ -119,7 +119,7 @@ class OfTheWeekHeader extends Component {
     const { ofTheDayLevels } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('OfTheWeekHeader')} style={OfTheDayHeaderStyle.container}>
+      <LinearGradient colors={getGradientColor('WeekHeader')} style={OfTheDayHeaderStyle.container}>
         {this.renderOverlay('levelInfo')}
         <TouchableOpacity 
           style={OfTheDayHeaderStyle.levelInfoContainer}
@@ -135,4 +135,4 @@ class OfTheWeekHeader extends Component {
 }
 
 
-export default OfTheWeekHeader;
+export default WeekHeader;

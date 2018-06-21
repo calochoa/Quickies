@@ -14,8 +14,8 @@ import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import MainContainerStyle from '../style/MainContainerStyle';
 import OfTheDayRowStyle from '../style/OfTheDayRowStyle';
-import OfTheWeekHeader from '../components/OfTheWeekHeader';
-import OfTheWeekFooter from '../components/OfTheWeekFooter';
+import WeekHeader from '../components/WeekHeader';
+import WeekFooter from '../components/WeekFooter';
 
 
 const QuickieMap = {}
@@ -57,7 +57,7 @@ class WeeklyChallengeScreen extends Component {
     });
   }
 
-  getPrevWeekType(currentWeekType, maxTypes) {
+  getPreviousWeekType(currentWeekType, maxTypes) {
     return (currentWeekType == 0 ? maxTypes - 1 : currentWeekType - 1);
   }
 
@@ -110,14 +110,14 @@ class WeeklyChallengeScreen extends Component {
 
     let currentWeekNumber = require('current-week-number');
     let currentWeekType = currentWeekNumber() % maxTypes;
-    let prevWeekType = this.getPrevWeekType(currentWeekType, maxTypes);
+    let previousWeekType = this.getPreviousWeekType(currentWeekType, maxTypes);
     let nextWeekType = this.getNextWeekType(currentWeekType, maxTypes);
 
     this.state = {
       wcMap: wcMap,
       weekType: currentWeekType,
       currentWeekType: currentWeekType,
-      prevWeekType: prevWeekType,
+      previousWeekType: previousWeekType,
       nextWeekType: nextWeekType,
       wcId: 'otd0000',
       qRefresh: false,
@@ -157,17 +157,22 @@ class WeeklyChallengeScreen extends Component {
   }
 
   render() {
-    const { wcMap, currentWeekType, prevWeekType, nextWeekType, wcId, qRefresh } = this.state;
+    const { wcMap, weekType, currentWeekType, previousWeekType, nextWeekType, wcId, qRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
-        <OfTheWeekHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Quickie'/>
+        <WeekHeader setDifficultyLevel={this.setDifficultyLevel.bind(this)} type='Quickie'/>
         <FlatList
-          data={wcMap['wc_'+currentWeekType+'.'+wcId]}
+          data={wcMap['wc_'+weekType+'.'+wcId]}
           renderItem={({item}) => this.renderRow(item)}
           extraData={qRefresh}
         />
-        <OfTheWeekFooter setWeekType={this.setWeekType.bind(this)} type='Quickie' />
+        <WeekFooter 
+          setWeekType={this.setWeekType.bind(this)} 
+          currentWeekType={currentWeekType} 
+          previousWeekType={previousWeekType} 
+          nextWeekType={nextWeekType} 
+        />
       </View>
     );
   }

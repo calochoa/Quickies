@@ -23,9 +23,9 @@ export const getGradientColor = (type)=> {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   } else if  (type === 'OfTheDayFooter') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
-  } else if  (type === 'OfTheWeekHeader') {
+  } else if  (type === 'WeekHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
-  } else if  (type === 'OfTheWeekFooter') {
+  } else if  (type === 'WeekFooter') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   } else if  (type === 'WorkoutsHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
