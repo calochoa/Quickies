@@ -62,15 +62,14 @@ class QuickiesScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let qCompleteMap = {
-      'qbs0000.All':[], 'qbs0001.All':[], 'qbs0002.All':[], 'qbs0003.All':[], 'qbs0004.All':[],
-      'qbs0000.0':[], 'qbs0001.0':[], 'qbs0002.0':[], 'qbs0003.0':[], 'qbs0004.0':[],
-      'qbs0000.1':[], 'qbs0001.1':[], 'qbs0002.1':[], 'qbs0003.1':[], 'qbs0004.1':[],
-      'qbs0000.2':[], 'qbs0001.2':[], 'qbs0002.2':[], 'qbs0003.2':[], 'qbs0004.2':[],
-      'qbs0000.3':[], 'qbs0001.3':[], 'qbs0002.3':[], 'qbs0003.3':[], 'qbs0004.3':[],
-      'qbs0000.4':[], 'qbs0001.4':[], 'qbs0002.4':[], 'qbs0003.4':[], 'qbs0004.4':[],
-      'qbs0000.5':[], 'qbs0001.5':[], 'qbs0002.5':[], 'qbs0003.5':[], 'qbs0004.5':[],
-      'qbs0000.6':[], 'qbs0001.6':[], 'qbs0002.6':[], 'qbs0003.6':[], 'qbs0004.6':[],
+    let maxBodySplits = 5;
+    let maxDifficulty = 6;
+    let qCompleteMap = {};
+    for (i = 0; i < maxBodySplits; i++) {
+      for (j = -1; j <= maxDifficulty; j++) {
+        let difficulty = (j == -1 ? 'All' : j);
+        qCompleteMap['qbs000'+i+'.'+difficulty] = [];
+      }
     }
 
     this.sortDiffAlpha(Quickies).map(element => {

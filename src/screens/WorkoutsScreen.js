@@ -60,13 +60,14 @@ class WorkoutsScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let wCompleteMap = {
-      'wbs0000.All':[], 'wbs0001.All':[], 'wbs0002.All':[], 'wbs0003.All':[], 'wbs0004.All':[],
-      'wbs0000.1':[], 'wbs0001.1':[], 'wbs0002.1':[], 'wbs0003.1':[], 'wbs0004.1':[],
-      'wbs0000.2':[], 'wbs0001.2':[], 'wbs0002.2':[], 'wbs0003.2':[], 'wbs0004.2':[],
-      'wbs0000.3':[], 'wbs0001.3':[], 'wbs0002.3':[], 'wbs0003.3':[], 'wbs0004.3':[],
-      'wbs0000.4':[], 'wbs0001.4':[], 'wbs0002.4':[], 'wbs0003.4':[], 'wbs0004.4':[],
-      'wbs0000.5':[], 'wbs0001.5':[], 'wbs0002.5':[], 'wbs0003.5':[], 'wbs0004.5':[],
+    let maxBodySplits = 5;
+    let maxDifficulty = 5;
+    let wCompleteMap = {};
+    for (i = 0; i < maxBodySplits; i++) {
+      for (j = 0; j <= maxDifficulty; j++) {
+        let difficulty = (j == 0 ? 'All' : j);
+        wCompleteMap['wbs000'+i+'.'+difficulty] = [];
+      }
     }
 
     this.sortDiffAlpha(Workouts).map(element => {
