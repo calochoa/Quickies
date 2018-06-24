@@ -95,7 +95,6 @@ class ExercisesScreen extends Component {
       eCompleteMap: eCompleteMap,
       bodySplit: params.bodySplit,
       eType: params.eType,
-      bs: params.bs,
       eRefresh: false,
     };
   }
@@ -143,7 +142,7 @@ class ExercisesScreen extends Component {
   }
 
   render() {
-    const { eLookup, eCompleteMap, bodySplit, eType, bs, eRefresh } = this.state;
+    const { eLookup, eCompleteMap, bodySplit, eType, eRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>

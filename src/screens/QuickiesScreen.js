@@ -94,7 +94,6 @@ class QuickiesScreen extends Component {
       bodySplit: params.bodySplit,
       qLevel: params.qLevel,
       qMode: qMode,
-      bs: params.bs,
       qModeVisible: false,
       qRefresh: false,
     };

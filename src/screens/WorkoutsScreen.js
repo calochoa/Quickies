@@ -93,7 +93,6 @@ class WorkoutsScreen extends Component {
       wCompleteMap: wCompleteMap,
       bodySplit: params.bodySplit,
       wLevel: params.wLevel,
-      bs: params.bs,
       wRefresh: false,
     };
   }
@@ -141,7 +140,7 @@ class WorkoutsScreen extends Component {
   }
 
   render() {
-    const { wLookup, wCompleteMap, bodySplit, wLevel, bs, wRefresh } = this.state;
+    const { wLookup, wCompleteMap, bodySplit, wLevel, wRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
