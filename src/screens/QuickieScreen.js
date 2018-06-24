@@ -12,7 +12,6 @@ import Video from 'react-native-video';
 import Quickies from '../dbstore/Quickies.json';
 import QuickieTypes from '../dbstore/QuickieTypes.json';
 import Exercises from '../dbstore/Exercises.json';
-import ExerciseTypes from '../dbstore/ExerciseTypes.json';
 import Videos from '../dbstore/Videos.json';
 import QuickieModes from '../dbstore/QuickieModes.json';
 import { vPathMap } from '../misc/ExerciseVideoPaths';
@@ -32,10 +31,6 @@ QuickieTypes.map(element => {
 const ExerciseMap = {};
 Exercises.map(element => {
   ExerciseMap[element.eId] = element;
-})
-const ExerciseTypesMap = new Map();
-ExerciseTypes.map(element => {
-  ExerciseTypesMap.set(element.etId, element.etName);
 })
 const VideosMap = new Map();
 Videos.map(element => {

@@ -6,21 +6,30 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
+import BodySplits from '../dbstore/BodySplits.json';
+import WorkoutLevels from '../dbstore/WorkoutLevels.json';
 import Workouts from '../dbstore/Workouts.json';
 import MenuIcon from '../components/MenuIcon';
 import WorkoutRow from '../components/WorkoutRow';
 import WorkoutsHeader from '../components/WorkoutsHeader';
-import WorkoutsFooter from '../components/WorkoutsFooter';
+import BodySplitsFooter from '../components/BodySplitsFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
 import { workoutLookupHeaderMap } from '../misc/WorkoutLookupHeader';
+
+
+let numBodySplits = 0;
+BodySplits.map(element => { numBodySplits++; })
+
+let numWorkoutsLevels = 0;
+WorkoutLevels.map(element => { numWorkoutsLevels++; })
 
 
 class WorkoutsScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    let wLookup = params.wBodySplit + '.' + params.wLevel
+    let wLookup = params.bodySplit + '.' + params.wLevel
     let title = navigation.state.params.title;
     if (typeof(navigation.state.params)==='undefined' 
       || typeof(navigation.state.params.title) === 'undefined') {
@@ -60,33 +69,31 @@ class WorkoutsScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let maxBodySplits = 5;
-    let maxDifficulty = 5;
     let wCompleteMap = {};
-    for (i = 0; i < maxBodySplits; i++) {
-      for (j = 0; j <= maxDifficulty; j++) {
+    for (i = 0; i < numBodySplits; i++) {
+      for (j = 0; j <= numWorkoutsLevels; j++) {
         let difficulty = (j == 0 ? 'All' : j);
-        wCompleteMap['wbs000'+i+'.'+difficulty] = [];
+        wCompleteMap['bs000'+i+'.'+difficulty] = [];
       }
     }
 
     this.sortDiffAlpha(Workouts).map(element => {
       // compile all body split quickies
-      wCompleteMap['wbs0000.All'].push({key:element.wId, workout:element});
-      wCompleteMap[element.wbsId+'.All'].push({key:element.wId, workout:element})
+      wCompleteMap['bs0000.All'].push({key:element.wId, workout:element});
+      wCompleteMap[element.bsId+'.All'].push({key:element.wId, workout:element})
       // compile all level quickies
-      wCompleteMap['wbs0000.'+element.wDifficulty].push({key:element.wId, workout:element})
-      wCompleteMap[element.wbsId+'.'+element.wDifficulty].push({key:element.wId, workout:element})
+      wCompleteMap['bs0000.'+element.wDifficulty].push({key:element.wId, workout:element})
+      wCompleteMap[element.bsId+'.'+element.wDifficulty].push({key:element.wId, workout:element})
     });
 
-    let wLookup = params.wBodySplit + '.' + params.wLevel
+    let wLookup = params.bodySplit + '.' + params.wLevel
 
     this.state = {
       wLookup: wLookup,
       wCompleteMap: wCompleteMap,
-      wBodySplit: params.wBodySplit,
+      bodySplit: params.bodySplit,
       wLevel: params.wLevel,
-      wbs: params.wbs,
+      bs: params.bs,
       wRefresh: false,
     };
   }
@@ -103,12 +110,12 @@ class WorkoutsScreen extends Component {
     );
   }
 
-  setWBodySplit(wBodySplit) {
+  setBodySplit(bodySplit) {
     const update = {}
-    update['wBodySplit'] = wBodySplit
+    update['bodySplit'] = bodySplit
     this.setState(update);
     
-    let wLookupVal = wBodySplit + '.' + this.state.wLevel
+    let wLookupVal = bodySplit + '.' + this.state.wLevel
     const update2 = {}
     update2['wLookup'] = wLookupVal
     this.setState(update2);
@@ -121,7 +128,7 @@ class WorkoutsScreen extends Component {
     update['wLevel'] = wLevel
     this.setState(update);
 
-    let wLookupVal = this.state.wBodySplit + '.' + wLevel
+    let wLookupVal = this.state.bodySplit + '.' + wLevel
     const update2 = {}
     update2['wLookup'] = wLookupVal
     this.setState(update2);
@@ -134,7 +141,7 @@ class WorkoutsScreen extends Component {
   }
 
   render() {
-    const { wLookup, wCompleteMap, wBodySplit, wLevel, wbs, wRefresh } = this.state;
+    const { wLookup, wCompleteMap, bodySplit, wLevel, bs, wRefresh } = this.state;
 
     return (
       <View style={MainContainerStyle.container}>
@@ -144,7 +151,7 @@ class WorkoutsScreen extends Component {
           renderItem={({item}) => this.renderRow(item.workout)}
           extraData={wRefresh}
         />
-        <WorkoutsFooter setWBodySplit={this.setWBodySplit.bind(this)}/>
+        <BodySplitsFooter setBodySplit={this.setBodySplit.bind(this)}/>
       </View>
     );
   }

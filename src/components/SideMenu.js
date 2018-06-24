@@ -14,13 +14,15 @@ class SideMenu extends Component {
   
   navigateToScreen = (route) => () => {
     if (route === 'Quickies') {
-      this.props.navigation.navigate('Quickies', {qBodySplit: 'qbs0000', qLevel: 'All'});
+      this.props.navigation.navigate('Quickies', {bodySplit: 'bs0000', qLevel: 'All'});
     } else if (route === 'FavoriteQuickies') {
       this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Favorite'});
     } else if (route === 'CompletedQuickies') {
       this.props.navigation.navigate('MultipleModesQuickies', {quickieType: 'Completed'});
     } else if (route === 'Workouts') {
-      this.props.navigation.navigate('Workouts', {wBodySplit: 'wbs0000', wLevel: 'All'});
+      this.props.navigation.navigate('Workouts', {bodySplit: 'bs0000', wLevel: 'All'});
+    } else if (route === 'Exercises') {
+      this.props.navigation.navigate('Exercises', {bodySplit: 'bs0000', eType: 'et0000'});
     } else {
       const navigateAction = NavigationActions.navigate({
         routeName: route

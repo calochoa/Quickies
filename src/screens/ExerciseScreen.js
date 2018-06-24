@@ -7,7 +7,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Video from 'react-native-video';
-import ExerciseTypes from '../dbstore/ExerciseTypes.json';
+import BodySplits from '../dbstore/BodySplits.json';
 import Exercises from '../dbstore/Exercises.json';
 import Videos from '../dbstore/Videos.json';
 import { vPathMap } from '../misc/ExerciseVideoPaths';
@@ -20,9 +20,9 @@ const ExerciseMap = {};
 Exercises.map(element => {
   ExerciseMap[element.eId] = element;
 })
-const ExerciseTypesMap = new Map();
-ExerciseTypes.map(element => {
-  ExerciseTypesMap.set(element.etId, element.etName);
+const BodySplitsMap = new Map();
+BodySplits.map(element => {
+  BodySplitsMap.set(element.etId, element.etName);
 })
 const VideosMap = new Map();
 Videos.map(element => {
@@ -63,7 +63,7 @@ class ExerciseScreen extends Component {
   }
 
   _displayExerciseType(exerciseType) {
-    return (this._displayListData(ExerciseTypesMap.get(exerciseType)));
+    return (this._displayListData(BodySplitsMap.get(exerciseType)));
   }
 
   render() {

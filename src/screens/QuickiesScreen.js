@@ -6,15 +6,20 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
+import BodySplits from '../dbstore/BodySplits.json';
 import Quickies from '../dbstore/Quickies.json';
 import MenuIcon from '../components/MenuIcon';
 import QuickieRow from '../components/QuickieRow';
 import QuickiesHeader from '../components/QuickiesHeader';
 import QuickiesModeHeader from '../components/QuickiesModeHeader';
-import QuickiesFooter from '../components/QuickiesFooter';
+import BodySplitsFooter from '../components/BodySplitsFooter';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieRowStyle from '../style/QuickieRowStyle';
 import { quickieLookupHeaderMap } from '../misc/QuickieLookupHeader';
+
+
+let numBodySplits = 0;
+BodySplits.map(element => { numBodySplits++; })
 
 
 class QuickiesScreen extends Component {
@@ -22,7 +27,7 @@ class QuickiesScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     const { params } = navigation.state;
 
-    let qLookup = params.qBodySplit + '.' + params.qLevel
+    let qLookup = params.bodySplit + '.' + params.qLevel
     let title = navigation.state.params.title;
     if (typeof(navigation.state.params)==='undefined' 
       || typeof(navigation.state.params.title) === 'undefined') {
@@ -62,35 +67,34 @@ class QuickiesScreen extends Component {
     super(props);
     const { params } = this.props.navigation.state;
 
-    let maxBodySplits = 5;
     let maxDifficulty = 6;
     let qCompleteMap = {};
-    for (i = 0; i < maxBodySplits; i++) {
+    for (i = 0; i < numBodySplits; i++) {
       for (j = -1; j <= maxDifficulty; j++) {
         let difficulty = (j == -1 ? 'All' : j);
-        qCompleteMap['qbs000'+i+'.'+difficulty] = [];
+        qCompleteMap['bs000'+i+'.'+difficulty] = [];
       }
     }
 
     this.sortDiffAlpha(Quickies).map(element => {
       // compile all body split quickies
-      qCompleteMap['qbs0000.All'].push({key:element.qId, quickie:element});
-      qCompleteMap[element.qbsId+'.All'].push({key:element.qId, quickie:element})
+      qCompleteMap['bs0000.All'].push({key:element.qId, quickie:element});
+      qCompleteMap[element.bsId+'.All'].push({key:element.qId, quickie:element})
       // compile all level quickies
-      qCompleteMap['qbs0000.'+element.qDifficulty].push({key:element.qId, quickie:element})
-      qCompleteMap[element.qbsId+'.'+element.qDifficulty].push({key:element.qId, quickie:element})
+      qCompleteMap['bs0000.'+element.qDifficulty].push({key:element.qId, quickie:element})
+      qCompleteMap[element.bsId+'.'+element.qDifficulty].push({key:element.qId, quickie:element})
     });
 
     let qMode = (typeof params.qMode != 'undefined') ? params.qMode : 'Standard';
-    let qLookup = params.qBodySplit + '.' + params.qLevel
+    let qLookup = params.bodySplit + '.' + params.qLevel
 
     this.state = {
       qLookup: qLookup,
       qCompleteMap: qCompleteMap,
-      qBodySplit: params.qBodySplit,
+      bodySplit: params.bodySplit,
       qLevel: params.qLevel,
       qMode: qMode,
-      qbs: params.qbs,
+      bs: params.bs,
       qModeVisible: false,
       qRefresh: false,
     };
@@ -110,12 +114,12 @@ class QuickiesScreen extends Component {
     );
   }
 
-  setQBodySplit(qBodySplit) {
+  setBodySplit(bodySplit) {
     const update = {}
-    update['qBodySplit'] = qBodySplit
+    update['bodySplit'] = bodySplit
     this.setState(update);
     
-    let qLookupVal = qBodySplit + '.' + this.state.qLevel
+    let qLookupVal = bodySplit + '.' + this.state.qLevel
     const update2 = {}
     update2['qLookup'] = qLookupVal
     this.setState(update2);
@@ -128,7 +132,7 @@ class QuickiesScreen extends Component {
     update['qLevel'] = qLevel
     this.setState(update);
 
-    let qLookupVal = this.state.qBodySplit + '.' + qLevel
+    let qLookupVal = this.state.bodySplit + '.' + qLevel
     const update2 = {}
     update2['qLookup'] = qLookupVal
     this.setState(update2);
@@ -169,7 +173,7 @@ class QuickiesScreen extends Component {
           renderItem={({item}) => this.renderRow(item.quickie)}
           extraData={qRefresh}
         />
-        <QuickiesFooter setQBodySplit={this.setQBodySplit.bind(this)} />
+        <BodySplitsFooter setBodySplit={this.setBodySplit.bind(this)} />
       </View>
     );
   }

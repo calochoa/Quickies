@@ -1,0 +1,27 @@
+[
+  {
+    "ebsId": "ebs0000",
+    "ebsName": "All",
+    "order": 1
+  },
+  {
+  	"ebsId": "ebs0001",
+  	"ebsName": "Core",
+    "order": 3
+  },
+  {
+  	"ebsId": "ebs0002",
+  	"ebsName": "Lower Body",
+    "order": 4
+  },
+  {
+  	"ebsId": "ebs0003",
+  	"ebsName": "Upper Body",
+    "order": 5
+  },
+  {
+  	"ebsId": "ebs0004",
+  	"ebsName": "Total Body",
+    "order": 6
+  },
+]

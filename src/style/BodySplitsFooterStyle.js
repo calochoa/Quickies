@@ -2,15 +2,16 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 
-const WorkoutsFooterStyle = StyleSheet.create({
+const BodySplitsFooterStyle = StyleSheet.create({
   container: {
     padding: 5,
     flexDirection: 'row',
   },
-  wBodySplitContainer: {
+  bodySplitContainer: {
     flex: 1,
     alignItems: 'center', 
     justifyContent: 'flex-end',
+    paddingTop: 2,
   },
   bodySplitText: {
     color: '#fff',
@@ -27,4 +28,4 @@ const WorkoutsFooterStyle = StyleSheet.create({
 });
 
 
-export default WorkoutsFooterStyle;
+export default BodySplitsFooterStyle;

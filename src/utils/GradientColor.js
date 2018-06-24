@@ -17,7 +17,7 @@ export const getGradientColor = (type)=> {
     gradientColor = ['#2C3E50', '#3C7080', '#4CA1AF'];
   } else if  (type === 'QuickiesHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
-  } else if  (type === 'QuickiesFooter') {
+  } else if  (type === 'BodySplitsFooter') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   } else if  (type === 'OfTheDayHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
@@ -29,7 +29,7 @@ export const getGradientColor = (type)=> {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   } else if  (type === 'WorkoutsHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
-  } else if  (type === 'WorkoutsFooter') {
+  } else if  (type === 'ExercisesHeader') {
     gradientColor = ['#2C3E50', '#2C3E50', '#2C3E50'];
   } else if  (type === 'default2') {
 		gradientColor = ['#02111D', '#037BB5', '#02111D'];

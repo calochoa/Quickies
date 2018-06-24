@@ -1,0 +1,32 @@
+[
+  {
+  	"bsId": "bs0000",
+  	"bsName": "All",
+    "bsDescription": "One stop shop for all the quickies.",
+    "order": 0
+  },
+  {
+  	"bsId": "bs0001",
+  	"bsName": "Core",
+    "bsDescription": "These quickies are intended to target your core and get you closer to attaining that 6 pack or toned tummy.",
+    "order": 2
+  },
+  {
+  	"bsId": "bs0002",
+  	"bsName": "Lower Body",
+    "bsDescription": "Perform these quickies to focus on strengthening your lower body.",
+    "order": 1
+  },
+  {
+  	"bsId": "bs0003",
+  	"bsName": "Upper Body",
+    "bsDescription": "Try these quickies if you want to improve your upper body.",
+    "order": 3
+  },
+  {
+  	"bsId": "bs0004",
+  	"bsName": "Total Body",
+    "bsDescription": "Total body quickies are perfect for getting a complete workout and attaining an overall muscle balance.",
+    "order": 4
+  }
+]
