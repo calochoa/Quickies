@@ -44,43 +44,43 @@
   {
   	"qlId": "Standard 0",
   	"qlName": "Level 0",
-    "qlDescription": "It's important to perform dynamic stretches before exercising to get the blood flowing and to loosen up those muscles.",
+    "qlDescription": "It's important to perform dynamic STRETCHES before exercising to get the blood flowing and to loosen up those muscles.",
     "order": 8
   },
   {
   	"qlId": "Standard 1",
   	"qlName": "Level 1",
-    "qlDescription": "Try these beginner level quickies if you are just starting to work out or need to ease back into it.",
+    "qlDescription": "Try these BEGINNER level quickies if you are just starting to work out or need to ease back into it.",
     "order": 9
   },
   {
   	"qlId": "Standard 2",
   	"qlName": "Level 2",
-    "qlDescription": "Perform these quickies with solid technique before moving on to higher levels.",
+    "qlDescription": "Perform these INTERMEDIATE quickies with solid technique before moving on to higher levels.",
     "order": 10
   },
   {
   	"qlId": "Standard 3",
   	"qlName": "Level 3",
-    "qlDescription": "Some of these quickies may be harder than they appear.",
+    "qlDescription": "Some of these ADVANCED quickies may be harder than they appear.",
     "order": 11
   },
   {
   	"qlId": "Standard 4",
   	"qlName": "Level 4",
-    "qlDescription": "These quickies are definitely challenging especially when performed in a workout.",
+    "qlDescription": "These quickies are definitely challenging especially when performed in a workout and are considered EXPERT level.",
     "order": 12
   },
   {
     "qlId": "Standard 5",
     "qlName": "Level 5",
-    "qlDescription": "Attempt these power quickies if you enjoy high reps combined with plyometric exercises a.k.a. an extremely tough challenge.",
+    "qlDescription": "Attempt these quickies if you are a MASTER of calisthenics and enjoy an extremely tough challenge.",
     "order": 13
   },
   {
     "qlId": "Standard 6",
     "qlName": "Level 6",
-    "qlDescription": "Give these ultimate quickies a whirl, if you're a master of calisthenics.",
+    "qlDescription": "If you're a calisthenics GURU, give these quickies a whirl.",
     "order": 14
   },
   {

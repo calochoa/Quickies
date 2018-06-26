@@ -6,11 +6,13 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
-import OfTheDayHeaderStyle from '../style/OfTheDayHeaderStyle';
+import QuickiesHeaderStyle from '../style/QuickiesHeaderStyle';
+import DropDownArrow from '../components/DropDownArrow';
+import DropDownArrowUD from '../components/DropDownArrowUD';
 import InfoIconSmall from '../components/InfoIconSmall';
 import OverlayStyle from '../style/OverlayStyle';
 import Overlay from 'react-native-modal-overlay';
-import OfTheDayInfo from '../dbstore/OfTheDayInfo.json';
+import ExerciseLevels from '../dbstore/ExerciseLevels.json';
 
 
 class ExercisesHeader extends Component {
@@ -30,24 +32,24 @@ class ExercisesHeader extends Component {
   constructor(props) {
     super(props);
 
-    let otdInfo = []
-    this.sortOrder(OfTheDayInfo).map(element => {
-      otdInfo.push(element.day.toUpperCase() + ' - ' + element.description);
+    let eLevelInfo = []
+    this.sortOrder(ExerciseLevels).map(element => {
+      eLevelInfo.push(element.elName + ' - ' + element.elDescription);
     });
 
-    var dayOfTheWeek = new Date().getDay();
-
     this.state = {
-      'Sun': dayOfTheWeek == 0,
-      'Mon': dayOfTheWeek == 1,
-      'Tue': dayOfTheWeek == 2,
-      'Wed': dayOfTheWeek == 3,
-      'Thu': dayOfTheWeek == 4,
-      'Fri': dayOfTheWeek == 5,
-      'Sat': dayOfTheWeek == 6,
-      setDayOfTheWeek: this.props.setDayOfTheWeek,
-      otdInfo: otdInfo,
-      type: this.props.type,
+      All: true,
+      '0': false,
+      '1': false,
+      '2': false,
+      '3': false,
+      '4': false,
+      '5': false,
+      '6': false,
+      setELevel: this.props.setELevel,
+      eLevelInfo: eLevelInfo,
+      showEType: this.props.showEType,
+      eTypeVisible: this.props.eTypeVisible,
     };
   }
 
@@ -66,59 +68,76 @@ class ExercisesHeader extends Component {
         childrenWrapperStyle={OverlayStyle.wrapper}
         onClose={() => {this.setModalVisible(id, false);}}
       >
-        <Text style={OverlayStyle.header}>{this.state.type} of the Day{'\n'}Breakdown</Text>
+        <Text style={OverlayStyle.header}>Exercise Levels</Text>
         <View style={OverlayStyle.divider}/>
-        <Text style={OverlayStyle.text}>{this.state.otdInfo.join('\n\n')}</Text>
+        <Text style={OverlayStyle.text}>{this.state.eLevelInfo.join('\n\n')}</Text>
       </Overlay>
     )
   }
 
-  setHighlighted(day) {
+  setHighlighted(qLevel) {
     const update = {}
-    update['Mon'] = false
-    update['Tue'] = false
-    update['Wed'] = false
-    update['Thu'] = false
-    update['Fri'] = false
-    update['Sat'] = false
-    update['Sun'] = false
-    update[day] = true
+    update['All'] = false
+    update['0'] = false
+    update['1'] = false
+    update['2'] = false
+    update['3'] = false
+    update['4'] = false
+    update['5'] = false
+    update['6'] = false
+    update[qLevel] = true
     this.setState(update);
   }
 
-  renderDayOfTheWeek(day, dotw) {
-    let qDayStyle = this.state[day] ? 
-      OfTheDayHeaderStyle.selectedDayText : OfTheDayHeaderStyle.dayText;
+  renderQuickieLevel(qLevel) {
+    let qLevelStyle = this.state[qLevel] ? 
+      QuickiesHeaderStyle.selectedLevelText : QuickiesHeaderStyle.levelText;
 
     return (
       <TouchableOpacity 
-        style={OfTheDayHeaderStyle.dayContainer}
-        key={day}
-        onPress={() => { this.state.setDayOfTheWeek(dotw); this.setHighlighted(day); }}
+        style={QuickiesHeaderStyle.levelContainer}
+        key={qLevel}
+        onPress={() => { this.state.setELevel(qLevel); this.setHighlighted(qLevel); }}
       >
-        <Text style={qDayStyle}>{day}</Text>
+        <Text style={qLevelStyle}>{qLevel}</Text>
       </TouchableOpacity>
     );
   }
 
+  showEType(visible) {
+    const update = {}
+    update['eTypeVisible'] = visible
+    this.setState(update);
+    this.state.showEType(visible);
+  }
+
   render() {
+    const { eTypeVisible } = this.state;
+
     return (
-      <LinearGradient colors={getGradientColor('OfTheDayHeader')} style={OfTheDayHeaderStyle.container}>
-        {this.renderOverlay('dayInfo')}
+      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderStyle.container}>
+        {this.renderOverlay('levelInfo')}
         <TouchableOpacity 
-          style={OfTheDayHeaderStyle.dayInfoContainer}
-          onPress={() => {this.setModalVisible('dayInfo', true);}}
+          style={QuickiesHeaderStyle.levelInfoContainer}
+          onPress={() => {this.setModalVisible('levelInfo', true);}}
         >
           <InfoIconSmall />
-          <Text style={OfTheDayHeaderStyle.dayText}> Days:</Text>
+          <Text style={QuickiesHeaderStyle.levelText}> Levels:</Text>
         </TouchableOpacity>
-        {this.renderDayOfTheWeek('Mon', 1)}
-        {this.renderDayOfTheWeek('Tue', 2)}
-        {this.renderDayOfTheWeek('Wed', 3)}
-        {this.renderDayOfTheWeek('Thu', 4)}
-        {this.renderDayOfTheWeek('Fri', 5)}
-        {this.renderDayOfTheWeek('Sat', 6)}
-        {this.renderDayOfTheWeek('Sun', 0)}
+        {this.renderQuickieLevel('All')}
+        {this.renderQuickieLevel('0')}
+        {this.renderQuickieLevel('1')}
+        {this.renderQuickieLevel('2')}
+        {this.renderQuickieLevel('3')}
+        {this.renderQuickieLevel('4')}
+        {this.renderQuickieLevel('5')}
+        {this.renderQuickieLevel('6')}
+        <TouchableOpacity 
+          style={QuickiesHeaderStyle.modeContainer}
+          onPress={() => {this.showEType(!eTypeVisible);}}
+        >
+          {eTypeVisible ? <DropDownArrowUD /> : <DropDownArrow />}
+        </TouchableOpacity>
       </LinearGradient>
     );
   }

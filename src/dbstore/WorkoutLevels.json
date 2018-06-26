@@ -2,26 +2,26 @@
   {
   	"wlId": "wl1",
   	"wlName": "Level 1",
-    "wlDescription": "Try these beginner level workouts if you are new to exercising or need to ease back into it."
+    "wlDescription": "Try these BEGINNER level workouts if you are new to exercising or need to ease back into it."
   },
   {
   	"wlId": "wl2",
   	"wlName": "Level 2",
-    "wlDescription": "Perform these intermediate workouts with solid technique before moving on to higher levels."
+    "wlDescription": "Perform these INTERMEDIATE workouts with solid technique before moving on to higher levels."
   },
   {
   	"wlId": "wl3",
   	"wlName": "Level 3",
-    "wlDescription": "Some of these advanced workouts may be harder than they appear."
+    "wlDescription": "Some of these ADVANCED workouts may be harder than they appear."
   },
   {
   	"wlId": "wl4",
   	"wlName": "Level 4",
-    "wlDescription": "These workouts are definitely challenging and are considered expert level."
+    "wlDescription": "These workouts are definitely challenging and are considered EXPERT level."
   },
   {
     "wlId": "wl5",
     "wlName": "Level 5",
-    "wlDescription": "Attempt these workouts if you are a master of calisthenics and enjoy an extremely tough challenge."
+    "wlDescription": "Attempt these workouts if you are a MASTER of calisthenics and enjoy an extremely tough challenge."
   },
 ]

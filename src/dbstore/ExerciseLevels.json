@@ -1,0 +1,44 @@
+[
+  {
+  	"elId": "el0",
+  	"elName": "Level 0",
+  	"elHeader": "0",
+    "elDescription": "Don't forget to STRETCH and loosen up those muscles before doing any quickies."
+  },
+  {
+  	"elId": "el1",
+  	"elName": "Level 1",
+  	"elHeader": "1",
+    "elDescription": "Try these BEGINNER level exercises if you are new to fitness or need to ease back into it."
+  },
+  {
+  	"elId": "el2",
+  	"elName": "Level 2",
+  	"elHeader": "2",
+    "elDescription": "Perform these INTERMEDIATE exercises with solid technique before moving on to higher levels."
+  },
+  {
+  	"elId": "el3",
+  	"elName": "Level 3",
+  	"elHeader": "3",
+    "elDescription": "Some of these ADVANCED exercises may be harder than they appear."
+  },
+  {
+  	"elId": "el4",
+  	"elName": "Level 4",
+  	"elHeader": "4",
+    "elDescription": "These exercises are definitely challenging and are considered EXPERT level."
+  },
+  {
+    "elId": "el5",
+    "elName": "Level 5",
+  	"elHeader": "5",
+    "elDescription": "Attempt these exercises if you are a MASTER of calisthenics and enjoy a challenge."
+  },
+  {
+    "elId": "el6",
+    "elName": "Level 6",
+  	"elHeader": "6",
+    "elDescription": "If you're a calisthenics GURU, give these exercises a whirl."
+  }
+]

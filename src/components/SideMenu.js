@@ -22,7 +22,7 @@ class SideMenu extends Component {
     } else if (route === 'Workouts') {
       this.props.navigation.navigate('Workouts', {bodySplit: 'bs0000', wLevel: 'All'});
     } else if (route === 'Exercises') {
-      this.props.navigation.navigate('Exercises', {bodySplit: 'bs0000', eType: 'et0000'});
+      this.props.navigation.navigate('Exercises', {bodySplit: 'bs0000', eType: 'et0000', eLevel: 'All'});
     } else {
       const navigateAction = NavigationActions.navigate({
         routeName: route

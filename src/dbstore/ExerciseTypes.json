@@ -3,18 +3,12 @@
   	"etId": "et0000",
   	"etName": "All",
     "etDescription": "These exercises require you to use your entire bodyweight.",
-    "order": 7
+    "order": 1
   },
   {
-    "etId": "et0001",
-    "etName": "Stretches",
-    "etDescription": "Don't forget to loosen up before you exercise.",
-    "order": 2
-  },
-  {
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"etName": "Bar",
     "etDescription": "These exercises require you to use your entire bodyweight.",
-    "order": 7
+    "order": 2
   }
 ]

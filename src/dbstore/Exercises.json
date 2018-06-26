@@ -2,22 +2,25 @@
   {
   	"eId": "e000001",
   	"eName": "front lever swings",
+  	"eLevel": 6,
   	"vId": "v000001",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000002",
   	"eName": "L sit pull-ups",
+  	"eLevel": 5,
   	"vId": "v000002",
   	"bsId": "bs0000",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000003",
   	"eName": "shoot-ups",
+  	"eLevel": 2,
   	"vId": "v000003",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -26,6 +29,7 @@
   {
   	"eId": "e000004",
   	"eName": "Spiderman push-ups",
+  	"eLevel": 4,
   	"vId": "v000004",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -34,6 +38,7 @@
   {
   	"eId": "e000005",
   	"eName": "clapping push-ups",
+  	"eLevel": 5,
   	"vId": "v000005",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -42,14 +47,16 @@
   {
   	"eId": "e000006",
   	"eName": "jumping chin-ups",
+  	"eLevel": 3,
   	"vId": "v000006",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000007",
   	"eName": "up down scissors",
+  	"eLevel": 1,
   	"vId": "v000007",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -58,6 +65,7 @@
   {
   	"eId": "e000008",
   	"eName": "chest-ups",
+  	"eLevel": 3,
   	"vId": "v000008",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -66,14 +74,16 @@
   {
   	"eId": "e000009",
   	"eName": "hanging knee raises",
+  	"eLevel": 3,
   	"vId": "v000009",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   }, 
   {
   	"eId": "e000010",
   	"eName": "sit-ups",
+  	"eLevel": 3,
   	"vId": "v000010",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -82,6 +92,7 @@
   {
   	"eId": "e000011",
   	"eName": "pistol squats",
+  	"eLevel": 5,
   	"vId": "v000011",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -90,14 +101,16 @@
   {
   	"eId": "e000012",
   	"eName": "hanging oblique raises",
+  	"eLevel": 3,
   	"vId": "v000012",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000013",
   	"eName": "high knees",
+  	"eLevel": 1,
   	"vId": "v000013",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -106,6 +119,7 @@
   {
   	"eId": "e000014",
   	"eName": "push-ups",
+  	"eLevel": 3,
   	"vId": "v000014",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -114,6 +128,7 @@
   {
   	"eId": "e000015",
   	"eName": "bicycle crunches",
+  	"eLevel": 2,
   	"vId": "v000015",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -122,6 +137,7 @@
   {
   	"eId": "e000016",
   	"eName": "side-to-side hops",
+  	"eLevel": 1,
   	"vId": "v000016",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -130,6 +146,7 @@
   {
   	"eId": "e000017",
   	"eName": "full-body crunches",
+  	"eLevel": 3,
   	"vId": "v000017",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -138,14 +155,16 @@
   {
   	"eId": "e000018",
   	"eName": "jumping pull-ups",
+  	"eLevel": 3,
   	"vId": "v000018",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000019",
   	"eName": "handstand push-ups",
+  	"eLevel": 6,
   	"vId": "v000019",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -154,6 +173,7 @@
   {
   	"eId": "e000020",
   	"eName": "single arm push-ups",
+  	"eLevel": 6,
   	"vId": "v000020",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -162,6 +182,7 @@
   {
   	"eId": "e000021",
   	"eName": "side crunches",
+  	"eLevel": 1,
   	"vId": "v000021",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -170,22 +191,25 @@
   {
   	"eId": "e000022",
   	"eName": "hanging hurdles",
+  	"eLevel": 3,
   	"vId": "v000022",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000023",
   	"eName": "commando pull-ups",
+  	"eLevel": 4,
   	"vId": "v000023",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000024",
   	"eName": "lunges",
+  	"eLevel": 2,
   	"vId": "v000024",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -194,6 +218,7 @@
   {
   	"eId": "e000025",
   	"eName": "calf raises",
+  	"eLevel": 1,
   	"vId": "v000025",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -202,14 +227,16 @@
   {
   	"eId": "e000026",
   	"eName": "hanging up down scissors",
+  	"eLevel": 4,
   	"vId": "v000026",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000027",
   	"eName": "jumping lunges",
+  	"eLevel": 4,
   	"vId": "v000027",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -218,6 +245,7 @@
   {
   	"eId": "e000028",
   	"eName": "leg raises",
+  	"eLevel": 2,
   	"vId": "v000028",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -226,6 +254,7 @@
   {
   	"eId": "e000029",
   	"eName": "incline push-ups",
+  	"eLevel": 1,
   	"vId": "v000029",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -234,22 +263,25 @@
   {
   	"eId": "e000030",
   	"eName": "burpee pull-ups",
+  	"eLevel": 5,
   	"vId": "v000030",
   	"bsId": "bs0004",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000031",
   	"eName": "dips",
+  	"eLevel": 4,
   	"vId": "v000031",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000032",
   	"eName": "seated dips",
+  	"eLevel": 3,
   	"vId": "v000032",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -258,6 +290,7 @@
   {
   	"eId": "e000033",
   	"eName": "four square hops",
+  	"eLevel": 1,
   	"vId": "v000033",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -266,14 +299,16 @@
   {
   	"eId": "e000034",
   	"eName": "clapping pull-ups",
+  	"eLevel": 6,
   	"vId": "v000034",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000035",
   	"eName": "box squats",
+  	"eLevel": 2,
   	"vId": "v000035",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -282,6 +317,7 @@
   {
   	"eId": "e000036",
   	"eName": "heiden hops",
+  	"eLevel": 2,
   	"vId": "v000036",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -290,22 +326,25 @@
   {
   	"eId": "e000037",
   	"eName": "inverted rows",
+  	"eLevel": 3,
   	"vId": "v000037",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000038",
   	"eName": "hanging leg raises",
+  	"eLevel": 4,
   	"vId": "v000038",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000039",
   	"eName": "burpees",
+  	"eLevel": 4,
   	"vId": "v000039",
   	"bsId": "bs0004",
   	"etId": "et0000",
@@ -314,6 +353,7 @@
   {
   	"eId": "e000040",
   	"eName": "jumping jacks",
+  	"eLevel": 1,
   	"vId": "v000040",
   	"bsId": "bs0004",
   	"etId": "et0000",
@@ -322,22 +362,25 @@
   {
   	"eId": "e000041",
   	"eName": "pull-ups",
+  	"eLevel": 4,
   	"vId": "v000041",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000042",
   	"eName": "behind the neck pull-ups",
+  	"eLevel": 4,
   	"vId": "v000042",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000043",
   	"eName": "crunches",
+  	"eLevel": 1,
   	"vId": "v000043",
   	"bsId": "bs0001",
   	"etId": "et0000",
@@ -346,6 +389,7 @@
   {
   	"eId": "e000044",
   	"eName": "atomic tricep blasters",
+  	"eLevel": 5,
   	"vId": "v000044",
   	"bsId": "bs0003",
   	"etId": "et0000",
@@ -354,6 +398,7 @@
   {
   	"eId": "e000045",
   	"eName": "forward backward hops",
+  	"eLevel": 1,
   	"vId": "v000045",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -362,6 +407,7 @@
   {
   	"eId": "e000046",
   	"eName": "squat jumps",
+  	"eLevel": 3,
   	"vId": "v000046",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -370,6 +416,7 @@
   {
   	"eId": "e000047",
   	"eName": "mountain climbers",
+  	"eLevel": 2,
   	"vId": "v000047",
   	"bsId": "bs0004",
   	"etId": "et0000",
@@ -378,30 +425,34 @@
   {
   	"eId": "e000048",
   	"eName": "hanging leg rotations",
+  	"eLevel": 4,
   	"vId": "v000048",
   	"bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000049",
   	"eName": "muscle-ups",
+  	"eLevel": 6,
   	"vId": "v000049",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   }, 
   {
   	"eId": "e000050",
   	"eName": "side-to-side pull-ups",
+  	"eLevel": 5,
   	"vId": "v000050",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
   	"eId": "e000051",
   	"eName": "knee strikes",
+  	"eLevel": 1,
   	"vId": "v000051",
   	"bsId": "bs0002",
   	"etId": "et0000",
@@ -410,15 +461,17 @@
   {
   	"eId": "e000052",
   	"eName": "chin-ups",
+  	"eLevel": 4,
   	"vId": "v000052",
   	"bsId": "bs0003",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000053",
     "eName": "rolling sit-ups",
-    "vId": "v000053",
+  	"eLevel": 1,
+  	"vId": "v000053",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -426,7 +479,8 @@
   {
     "eId": "e000054",
     "eName": "half wipers",
-    "vId": "v000054",
+  	"eLevel": 3,
+  	"vId": "v000054",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -434,7 +488,8 @@
   {
     "eId": "e000055",
     "eName": "crunch kicks",
-    "vId": "v000055",
+  	"eLevel": 1,
+  	"vId": "v000055",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -442,7 +497,8 @@
   {
     "eId": "e000056",
     "eName": "criss cross scissors",
-    "vId": "v000056",
+  	"eLevel": 1,
+  	"vId": "v000056",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -450,7 +506,8 @@
   {
     "eId": "e000057",
     "eName": "open close scissors",
-    "vId": "v000057",
+  	"eLevel": 1,
+  	"vId": "v000057",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -458,7 +515,8 @@
   {
     "eId": "e000058",
     "eName": "calf jumps",
-    "vId": "v000058",
+  	"eLevel": 1,
+  	"vId": "v000058",
     "bsId": "bs0002",
   	"etId": "et0000",
   	"description": "N/A"
@@ -466,7 +524,8 @@
   {
     "eId": "e000059",
     "eName": "wipers",
-    "vId": "v000059",
+  	"eLevel": 4,
+  	"vId": "v000059",
     "bsId": "bs0001",
   	"etId": "et0000",
   	"description": "N/A"
@@ -474,23 +533,26 @@
   {
     "eId": "e000060",
     "eName": "hanging criss cross scissors",
-    "vId": "v000060",
+  	"eLevel": 4,
+  	"vId": "v000060",
     "bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000061",
     "eName": "hanging open close scissors",
-    "vId": "v000061",
+  	"eLevel": 4,
+  	"vId": "v000061",
     "bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000062",
     "eName": "tuck jumps",
-    "vId": "v000062",
+  	"eLevel": 4,
+  	"vId": "v000062",
     "bsId": "bs0002",
   	"etId": "et0000",
   	"description": "N/A"
@@ -498,7 +560,8 @@
   {
     "eId": "e000063",
     "eName": "burpee tuck jumps",
-    "vId": "v000063",
+  	"eLevel": 5,
+  	"vId": "v000063",
     "bsId": "bs0004",
   	"etId": "et0000",
   	"description": "N/A"
@@ -506,31 +569,35 @@
   {
     "eId": "e000064",
     "eName": "burpee muscle-ups",
-    "vId": "v000064",
+  	"eLevel": 6,
+  	"vId": "v000064",
     "bsId": "bs0004",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000065",
     "eName": "hanging shoot-ups",
-    "vId": "v000065",
+  	"eLevel": 6,
+  	"vId": "v000065",
     "bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000066",
     "eName": "hanging wipers",
-    "vId": "v000066",
+  	"eLevel": 6,
+  	"vId": "v000066",
     "bsId": "bs0001",
-  	"etId": "et0002",
+  	"etId": "et0001",
   	"description": "N/A"
   },
   {
     "eId": "e000067",
     "eName": "decline push-ups",
-    "vId": "v000067",
+  	"eLevel": 3,
+  	"vId": "v000067",
     "bsId": "bs0003",
   	"etId": "et0000",
   	"description": "N/A"
@@ -538,7 +605,8 @@
   {
     "eId": "e000068",
     "eName": "plank jacks",
-    "vId": "v000068",
+  	"eLevel": 2,
+  	"vId": "v000068",
     "bsId": "bs0004",
   	"etId": "et0000",
   	"description": "N/A"
@@ -546,193 +614,217 @@
   {
     "eId": "e100001",
     "eName": "small arm circles",
-    "vId": "v100001",
+  	"eLevel": 0,
+  	"vId": "v100001",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100002",
     "eName": "reverse small arm circles",
-    "vId": "v100002",
+  	"eLevel": 0,
+  	"vId": "v100002",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100003",
     "eName": "large arm circles",
-    "vId": "v100003",
+  	"eLevel": 0,
+  	"vId": "v100003",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100004",
     "eName": "reverse large arm circles",
-    "vId": "v100004",
+  	"eLevel": 0,
+  	"vId": "v100004",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100005",
     "eName": "lateral arm raises",
-    "vId": "v100005",
+  	"eLevel": 0,
+  	"vId": "v100005",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100006",
     "eName": "front arm raises",
-    "vId": "v100006",
+  	"eLevel": 0,
+  	"vId": "v100006",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100007",
     "eName": "lateral rotator cuffs",
-    "vId": "v100007",
+  	"eLevel": 0,
+  	"vId": "v100007",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100008",
     "eName": "front rotator cuffs",
-    "vId": "v100008",
+  	"eLevel": 0,
+  	"vId": "v100008",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100009",
     "eName": "low arm criss crosses",
-    "vId": "v100009",
+  	"eLevel": 0,
+  	"vId": "v100009",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100010",
     "eName": "arm criss crosses",
-    "vId": "v100010",
+  	"eLevel": 0,
+  	"vId": "v100010",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100011",
     "eName": "high arm criss crosses",
-    "vId": "v100011",
+  	"eLevel": 0,
+  	"vId": "v100011",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100012",
     "eName": "running arm swings",
-    "vId": "v100012",
+  	"eLevel": 0,
+  	"vId": "v100012",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100013",
     "eName": "neck up-downs",
-    "vId": "v100013",
+  	"eLevel": 0,
+  	"vId": "v100013",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100014",
     "eName": "neck side-to-sides",
-    "vId": "v100014",
+  	"eLevel": 0,
+  	"vId": "v100014",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100015",
     "eName": "neck leans",
-    "vId": "v100015",
+  	"eLevel": 0,
+  	"vId": "v100015",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100016",
     "eName": "neck rotations",
-    "vId": "v100016",
+  	"eLevel": 0,
+  	"vId": "v100016",
     "bsId": "bs0003",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100017",
     "eName": "heel-to-glutes",
-    "vId": "v100017",
+  	"eLevel": 0,
+  	"vId": "v100017",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100018",
     "eName": "knee hugs",
-    "vId": "v100018",
+  	"eLevel": 0,
+  	"vId": "v100018",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100019",
     "eName": "ankle hugs",
-    "vId": "v100019",
+  	"eLevel": 0,
+  	"vId": "v100019",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100020",
     "eName": "toe touches",
-    "vId": "v100020",
+  	"eLevel": 0,
+  	"vId": "v100020",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100021",
     "eName": "lateral leg swings",
-    "vId": "v100021",
+  	"eLevel": 0,
+  	"vId": "v100021",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100022",
     "eName": "front leg swings",
-    "vId": "v100022",
+  	"eLevel": 0,
+  	"vId": "v100022",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100023",
     "eName": "high hurdles",
-    "vId": "v100023",
+  	"eLevel": 0,
+  	"vId": "v100023",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   },
   {
     "eId": "e100024",
     "eName": "reverse high hurdles",
-    "vId": "v100024",
+  	"eLevel": 0,
+  	"vId": "v100024",
     "bsId": "bs0002",
-  	"etId": "et0001",
+  	"etId": "et0000",
   	"description": "N/A"
   }
 ]

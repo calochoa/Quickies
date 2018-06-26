@@ -144,13 +144,13 @@ class WorkoutsScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        <WorkoutsHeader setWLevel={this.setWLevel.bind(this)}/>
+        <WorkoutsHeader setWLevel={this.setWLevel.bind(this)} />
         <FlatList
           data={wCompleteMap[wLookup]}
           renderItem={({item}) => this.renderRow(item.workout)}
           extraData={wRefresh}
         />
-        <BodySplitsFooter setBodySplit={this.setBodySplit.bind(this)}/>
+        <BodySplitsFooter setBodySplit={this.setBodySplit.bind(this)} />
       </View>
     );
   }

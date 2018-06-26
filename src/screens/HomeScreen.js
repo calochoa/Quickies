@@ -65,7 +65,9 @@ class HomeScreen extends React.Component {
         {this.renderRow({title: 'Workout of the Day', screen: 'WorkoutOfTheDay'})}
         {this.renderRow({title: 'Weekly Challenge', screen: 'WeeklyChallenge'})}
         {this.renderRow({title: 'Workouts', screen: 'Workouts', extra: {bodySplit: 'bs0000', wLevel: 'All'}})}
-        {this.renderRow({title: 'Exercises', screen: 'Exercises', extra: {bodySplit: 'bs0000', eType: 'et0000'}})}
+        {this.renderRow(
+          {title: 'Exercises', screen: 'Exercises', extra: {bodySplit: 'bs0000', eType: 'et0000', eLevel: 'All'}}
+        )}
         {this.renderRow(
           {title: 'Favorite Quickies', screen: 'MultipleModesQuickies', extra: {quickieType: 'Favorite'}}, 
           <Image source={require('../images/icons8-star-26-gold.png')} />
