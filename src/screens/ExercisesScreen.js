@@ -198,7 +198,9 @@ class ExercisesScreen extends Component {
     return (
       <View style={MainContainerStyle.container}>
         <ExercisesHeader setELevel={this.setELevel.bind(this)} showEType={this.showEType.bind(this)} />
-        {/*eTypeVisible ? <ExerciseTypesHeader setEType={this.setEType.bind(this)} eType={eType} /> : null*/}
+        {/* TODO: Add in 2nd release..
+        eTypeVisible ? <ExerciseTypesHeader setEType={this.setEType.bind(this)} eType={eType} /> : null
+        */}
         <FlatList
           data={eCompleteMap[eLookup]}
           renderItem={({item}) => this.renderRow(item.exercise)}

@@ -132,12 +132,14 @@ class ExercisesHeader extends Component {
         {this.renderQuickieLevel('4')}
         {this.renderQuickieLevel('5')}
         {this.renderQuickieLevel('6')}
+        {/* TODO: add in 2nd release..
         <TouchableOpacity 
           style={QuickiesHeaderStyle.modeContainer}
           onPress={() => {this.showEType(!eTypeVisible);}}
         >
           {eTypeVisible ? <DropDownArrowUD /> : <DropDownArrow />}
         </TouchableOpacity>
+        */}
       </LinearGradient>
     );
   }

@@ -146,14 +146,14 @@ class QuickieRow extends Component {
         {this.renderOverlay(quickie.qName, quickie.qDifficulty, qMode)}
         <View style={QuickieRowStyle.titleContainer}>
           <View style={{flex: 1, marginLeft: 5, flexDirection: 'row',}}>
-            {this.getMedalImg()}
+            {this.getFavoriteImg(quickie, qMode)}
+            {/* TODO: Add in 2nd release.. this.getMedalImg()*/}
           </View>
           <View style={QuickieRowStyle.nameContainer}>
             <Text style={QuickieRowStyle.name}>{quickie.qName}</Text>
             {this.getQuickieModeText(qMode)}
           </View>
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginRight: 5,}}>
-            {this.getFavoriteImg(quickie, qMode)}
             {this.getCompletedImg(quickie, qMode)}
           </View>
         </View>
