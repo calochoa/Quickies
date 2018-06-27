@@ -3,6 +3,7 @@ import {
   TouchableOpacity,
   View, 
   Text, 
+  ScrollView, 
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
@@ -22,7 +23,7 @@ Exercises.map(element => {
 })
 const BodySplitsMap = new Map();
 BodySplits.map(element => {
-  BodySplitsMap.set(element.etId, element.etName);
+  BodySplitsMap.set(element.bsId, element.bsName);
 })
 const VideosMap = new Map();
 Videos.map(element => {
@@ -59,10 +60,10 @@ class ExerciseScreen extends Component {
   }
 
   _displayListData(data) {
-    return (<Text style={ExerciseStyle.info} key={data}>- {data}</Text>);
+    return (<Text style={ExerciseStyle.info} key={data}>{data}</Text>);
   }
 
-  _displayExerciseType(exerciseType) {
+  _displayBodySplit(exerciseType) {
     return (this._displayListData(BodySplitsMap.get(exerciseType)));
   }
 
@@ -71,39 +72,39 @@ class ExerciseScreen extends Component {
 
     return (
       <View style={MainContainerStyle.container}>
-        <Video source={vLink}                      // Can be a URL or a local file. 
-           ref={(ref) => { this.player = ref }}    // Store reference 
-           rate={1.0}                              // 0 is paused, 1 is normal. 
-           volume={0}                              // 0 is muted, 1 is normal. 
-           muted={true}                            // Mutes the audio entirely. 
-           paused={false}                          // Pauses playback entirely. 
-           repeat={true}                           // Repeat forever. 
-           playInBackground={false}                // Audio continues to play when app entering background. 
-           playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown. 
-           ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual. 
-           progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms) 
-           onLoadStart={this.loadStart}            // Callback when video starts to load 
-           onLoad={this.setDuration}               // Callback when video loads 
-           onProgress={this.setTime}               // Callback every ~250ms with currentTime 
-           onEnd={this.onEnd}                      // Callback when playback finishes 
-           onError={this.videoError}               // Callback when video cannot be loaded 
-           onBuffer={this.onBuffer}                // Callback when remote video is buffering 
-           onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata 
-           style={ExerciseStyle.video} 
-        />
-        <LinearGradient 
-          colors={getGradientColor('default')}
-          style={ExerciseStyle.detailsContainer}
-        >
-          <View style={ExerciseStyle.infoContainer}>
-            <Text style={ExerciseStyle.infoTitle}>Exercise Type: </Text>
-            {this._displayExerciseType(exercise.eType)}
-          </View>
-          <View style={ExerciseStyle.infoContainer}>
-            <Text style={ExerciseStyle.infoTitle}>Description: </Text>
-            <Text style={ExerciseStyle.info}>{exercise.description}</Text>
-          </View>
-        </LinearGradient>
+        <ScrollView>
+          <Video source={vLink}                      // Can be a URL or a local file. 
+             ref={(ref) => { this.player = ref }}    // Store reference 
+             rate={1.0}                              // 0 is paused, 1 is normal. 
+             volume={0}                              // 0 is muted, 1 is normal. 
+             muted={true}                            // Mutes the audio entirely. 
+             paused={false}                          // Pauses playback entirely. 
+             repeat={true}                           // Repeat forever. 
+             playInBackground={false}                // Audio continues to play when app entering background. 
+             playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown. 
+             ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual. 
+             progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms) 
+             onLoadStart={this.loadStart}            // Callback when video starts to load 
+             onLoad={this.setDuration}               // Callback when video loads 
+             onProgress={this.setTime}               // Callback every ~250ms with currentTime 
+             onEnd={this.onEnd}                      // Callback when playback finishes 
+             onError={this.videoError}               // Callback when video cannot be loaded 
+             onBuffer={this.onBuffer}                // Callback when remote video is buffering 
+             onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata 
+             style={ExerciseStyle.video} 
+          />
+          <LinearGradient 
+            colors={getGradientColor('default')}
+            style={ExerciseStyle.detailsContainer}
+          >
+            <View style={ExerciseStyle.infoContainer}>
+              <Text style={ExerciseStyle.infoTitle}>Body Split: {this._displayBodySplit(exercise.bsId)}</Text>
+              <Text style={ExerciseStyle.infoTitle}>Exercise Level: {exercise.eLevel}</Text>
+              <Text style={ExerciseStyle.infoTitle}>Tips: </Text>
+              {exercise.tips.map(tip=>{return(<Text key={tip} style={ExerciseStyle.info}>- {tip}</Text>)})}
+            </View>
+          </LinearGradient>
+        </ScrollView>
       </View>
     );
   }

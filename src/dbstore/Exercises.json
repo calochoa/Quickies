@@ -6,7 +6,7 @@
   	"vId": "v000001",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000002",
@@ -15,7 +15,7 @@
   	"vId": "v000002",
   	"bsId": "bs0000",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000003",
@@ -24,7 +24,7 @@
   	"vId": "v000003",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000004",
@@ -33,7 +33,7 @@
   	"vId": "v000004",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000005",
@@ -42,7 +42,7 @@
   	"vId": "v000005",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000006",
@@ -51,7 +51,7 @@
   	"vId": "v000006",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000007",
@@ -60,7 +60,7 @@
   	"vId": "v000007",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000008",
@@ -69,7 +69,7 @@
   	"vId": "v000008",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000009",
@@ -78,7 +78,7 @@
   	"vId": "v000009",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
   	"eId": "e000010",
@@ -87,7 +87,7 @@
   	"vId": "v000010",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000011",
@@ -96,7 +96,7 @@
   	"vId": "v000011",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000012",
@@ -105,7 +105,7 @@
   	"vId": "v000012",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000013",
@@ -114,7 +114,7 @@
   	"vId": "v000013",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000014",
@@ -123,7 +123,7 @@
   	"vId": "v000014",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000015",
@@ -132,7 +132,7 @@
   	"vId": "v000015",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000016",
@@ -141,7 +141,7 @@
   	"vId": "v000016",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000017",
@@ -150,7 +150,7 @@
   	"vId": "v000017",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000018",
@@ -159,7 +159,7 @@
   	"vId": "v000018",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000019",
@@ -168,7 +168,7 @@
   	"vId": "v000019",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
   	"eId": "e000020",
@@ -177,7 +177,7 @@
   	"vId": "v000020",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000021",
@@ -186,7 +186,7 @@
   	"vId": "v000021",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000022",
@@ -195,7 +195,7 @@
   	"vId": "v000022",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000023",
@@ -204,7 +204,7 @@
   	"vId": "v000023",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000024",
@@ -213,7 +213,7 @@
   	"vId": "v000024",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000025",
@@ -222,7 +222,7 @@
   	"vId": "v000025",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000026",
@@ -231,7 +231,7 @@
   	"vId": "v000026",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000027",
@@ -240,7 +240,7 @@
   	"vId": "v000027",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000028",
@@ -249,7 +249,7 @@
   	"vId": "v000028",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000029",
@@ -258,7 +258,7 @@
   	"vId": "v000029",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
   	"eId": "e000030",
@@ -267,7 +267,7 @@
   	"vId": "v000030",
   	"bsId": "bs0004",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A", "banana", "purple", "awesome!", "we want more", "you rock!"]
   },
   {
   	"eId": "e000031",
@@ -276,7 +276,7 @@
   	"vId": "v000031",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000032",
@@ -285,7 +285,7 @@
   	"vId": "v000032",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000033",
@@ -294,7 +294,7 @@
   	"vId": "v000033",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000034",
@@ -303,7 +303,7 @@
   	"vId": "v000034",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000035",
@@ -312,7 +312,7 @@
   	"vId": "v000035",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000036",
@@ -321,7 +321,7 @@
   	"vId": "v000036",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000037",
@@ -330,7 +330,7 @@
   	"vId": "v000037",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000038",
@@ -339,7 +339,7 @@
   	"vId": "v000038",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000039",
@@ -348,7 +348,7 @@
   	"vId": "v000039",
   	"bsId": "bs0004",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
   	"eId": "e000040",
@@ -357,7 +357,7 @@
   	"vId": "v000040",
   	"bsId": "bs0004",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000041",
@@ -366,7 +366,7 @@
   	"vId": "v000041",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000042",
@@ -375,7 +375,7 @@
   	"vId": "v000042",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000043",
@@ -384,7 +384,7 @@
   	"vId": "v000043",
   	"bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000044",
@@ -393,7 +393,7 @@
   	"vId": "v000044",
   	"bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000045",
@@ -402,7 +402,7 @@
   	"vId": "v000045",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000046",
@@ -411,7 +411,7 @@
   	"vId": "v000046",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000047",
@@ -420,7 +420,7 @@
   	"vId": "v000047",
   	"bsId": "bs0004",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000048",
@@ -429,7 +429,7 @@
   	"vId": "v000048",
   	"bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000049",
@@ -438,7 +438,7 @@
   	"vId": "v000049",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
   	"eId": "e000050",
@@ -447,7 +447,7 @@
   	"vId": "v000050",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000051",
@@ -456,7 +456,7 @@
   	"vId": "v000051",
   	"bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
   	"eId": "e000052",
@@ -465,7 +465,7 @@
   	"vId": "v000052",
   	"bsId": "bs0003",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000053",
@@ -474,7 +474,7 @@
   	"vId": "v000053",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000054",
@@ -483,7 +483,7 @@
   	"vId": "v000054",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000055",
@@ -492,7 +492,7 @@
   	"vId": "v000055",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000056",
@@ -501,7 +501,7 @@
   	"vId": "v000056",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000057",
@@ -510,7 +510,7 @@
   	"vId": "v000057",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000058",
@@ -519,7 +519,7 @@
   	"vId": "v000058",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000059",
@@ -528,7 +528,7 @@
   	"vId": "v000059",
     "bsId": "bs0001",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000060",
@@ -537,7 +537,7 @@
   	"vId": "v000060",
     "bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000061",
@@ -546,7 +546,7 @@
   	"vId": "v000061",
     "bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000062",
@@ -555,7 +555,7 @@
   	"vId": "v000062",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000063",
@@ -564,7 +564,7 @@
   	"vId": "v000063",
     "bsId": "bs0004",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }, 
   {
     "eId": "e000064",
@@ -573,7 +573,7 @@
   	"vId": "v000064",
     "bsId": "bs0004",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000065",
@@ -582,7 +582,7 @@
   	"vId": "v000065",
     "bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000066",
@@ -591,7 +591,7 @@
   	"vId": "v000066",
     "bsId": "bs0001",
   	"etId": "et0001",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000067",
@@ -600,7 +600,7 @@
   	"vId": "v000067",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e000068",
@@ -609,7 +609,7 @@
   	"vId": "v000068",
     "bsId": "bs0004",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100001",
@@ -618,7 +618,7 @@
   	"vId": "v100001",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100002",
@@ -627,7 +627,7 @@
   	"vId": "v100002",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100003",
@@ -636,7 +636,7 @@
   	"vId": "v100003",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100004",
@@ -645,7 +645,7 @@
   	"vId": "v100004",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100005",
@@ -654,7 +654,7 @@
   	"vId": "v100005",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100006",
@@ -663,7 +663,7 @@
   	"vId": "v100006",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100007",
@@ -672,7 +672,7 @@
   	"vId": "v100007",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100008",
@@ -681,7 +681,7 @@
   	"vId": "v100008",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100009",
@@ -690,7 +690,7 @@
   	"vId": "v100009",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100010",
@@ -699,7 +699,7 @@
   	"vId": "v100010",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100011",
@@ -708,7 +708,7 @@
   	"vId": "v100011",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100012",
@@ -717,7 +717,7 @@
   	"vId": "v100012",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100013",
@@ -726,7 +726,7 @@
   	"vId": "v100013",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100014",
@@ -735,7 +735,7 @@
   	"vId": "v100014",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100015",
@@ -744,7 +744,7 @@
   	"vId": "v100015",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100016",
@@ -753,7 +753,7 @@
   	"vId": "v100016",
     "bsId": "bs0003",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100017",
@@ -762,7 +762,7 @@
   	"vId": "v100017",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100018",
@@ -771,7 +771,7 @@
   	"vId": "v100018",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100019",
@@ -780,7 +780,7 @@
   	"vId": "v100019",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100020",
@@ -789,7 +789,7 @@
   	"vId": "v100020",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100021",
@@ -798,7 +798,7 @@
   	"vId": "v100021",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100022",
@@ -807,7 +807,7 @@
   	"vId": "v100022",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100023",
@@ -816,7 +816,7 @@
   	"vId": "v100023",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   },
   {
     "eId": "e100024",
@@ -825,6 +825,6 @@
   	"vId": "v100024",
     "bsId": "bs0002",
   	"etId": "et0000",
-  	"description": "N/A"
+  	"tips": ["stretch first", "proper form!", "N/A"]
   }
 ]
