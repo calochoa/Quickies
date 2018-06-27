@@ -114,7 +114,7 @@ class ExerciseTypesHeader extends Component {
     const { qModes } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderModeStyle.container}>
+      <LinearGradient colors={getGradientColor('ExercisesHeader')} style={QuickiesHeaderModeStyle.container}>
         {this.renderOverlay('modeInfo')}
         {qModes.map((qMode) => this.renderQuickieMode(qMode))}
         <TouchableOpacity 

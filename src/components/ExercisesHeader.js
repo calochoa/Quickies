@@ -115,7 +115,7 @@ class ExercisesHeader extends Component {
     const { eTypeVisible } = this.state;
 
     return (
-      <LinearGradient colors={getGradientColor('QuickiesHeader')} style={QuickiesHeaderStyle.container}>
+      <LinearGradient colors={getGradientColor('ExercisesHeader')} style={QuickiesHeaderStyle.container}>
         {this.renderOverlay('levelInfo')}
         <TouchableOpacity 
           style={QuickiesHeaderStyle.levelInfoContainer}

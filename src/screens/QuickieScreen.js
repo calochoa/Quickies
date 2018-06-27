@@ -10,7 +10,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import {getGradientColor} from '../utils/GradientColor';
 import Video from 'react-native-video';
 import Quickies from '../dbstore/Quickies.json';
-import QuickieTypes from '../dbstore/QuickieTypes.json';
 import Exercises from '../dbstore/Exercises.json';
 import Videos from '../dbstore/Videos.json';
 import QuickieModes from '../dbstore/QuickieModes.json';
@@ -18,15 +17,12 @@ import { vPathMap } from '../misc/ExerciseVideoPaths';
 import MenuIcon from '../components/MenuIcon';
 import MainContainerStyle from '../style/MainContainerStyle';
 import QuickieStyle from '../style/QuickieStyle';
+import SmallForwardIcon from '../components/SmallForwardIcon';
 
 
 const QuickieMap = {}
 Quickies.map(element => {
   QuickieMap[element.qId] = element;
-})
-const QuickieTypesMap = new Map();
-QuickieTypes.map(element => {
-  QuickieTypesMap.set(element.qtId, element.qtName);
 })
 const ExerciseMap = {};
 Exercises.map(element => {
@@ -92,8 +88,6 @@ class QuickieScreen extends Component {
         {this._getRepExerciseRow(qvFactor, quickie.reps2, quickie.eId2)}
         {this._getRepExerciseRow(qvFactor, quickie.reps3, quickie.eId3)}
         {this._getRepExerciseRow(qvFactor, quickie.reps4, quickie.eId4)}
-        <Text style={QuickieStyle.infoTitle2}>Quickie Type: </Text>
-        <Text style={QuickieStyle.info}>{QuickieTypesMap.get(quickie.qtId)}</Text>
       </View>
     );
   }
@@ -133,25 +127,60 @@ class QuickieScreen extends Component {
     )
   }
 
+  _displayExeriseText(vLink, eId) {
+    return (
+      <TouchableOpacity 
+        style={QuickieStyle.row}
+        onPress={() => {
+          this.props.navigation.navigate('Exercise', {
+            exerciseId: eId,
+            exerciseName: ExerciseMap[eId].eName,
+          });
+        }}
+      >
+        <View style={QuickieStyle.exerciseTextContainer}>
+          <Text style={QuickieStyle.exerciseText}>{ExerciseMap[eId].eName}</Text>
+          <View style={QuickieStyle.smallForwardIconContainer}>
+            <SmallForwardIcon />
+          </View>
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
   render() {
     const { quickie, vLink1, vLink2, vLink3, vLink4, qMode } = this.state;
     let qvFactor = (typeof qMode != 'undefined') ? qvFactorMap.get(qMode) : 1
 
     return (
       <View style={MainContainerStyle.container}>
-        <View style={QuickieStyle.videosContainer}>
-          {this._displayExerVid(vLink1, quickie.eId1)}
-          {this._displayExerVid(vLink2, quickie.eId2)}
+      <ScrollView>
+        <View>
+          <View style={QuickieStyle.videosContainer}>
+            {this._displayExerVid(vLink1, quickie.eId1)}
+            {this._displayExerVid(vLink2, quickie.eId2)}
+          </View>
+          <View style={QuickieStyle.exercisesTextRowContainer}>
+            {this._displayExeriseText(vLink1, quickie.eId1)}
+            {this._displayExeriseText(vLink2, quickie.eId2)}
+          </View>
         </View>
-        <View style={QuickieStyle.videosContainer}>
-          {this._displayExerVid(vLink3, quickie.eId3)}
-          {this._displayExerVid(vLink4, quickie.eId4)}
+        <View>
+          <View style={QuickieStyle.videosContainer}>
+            {this._displayExerVid(vLink3, quickie.eId3)}
+            {this._displayExerVid(vLink4, quickie.eId4)}
+          </View>
+          <View style={QuickieStyle.exercisesTextRowContainer}>
+            {this._displayExeriseText(vLink3, quickie.eId3)}
+            {this._displayExeriseText(vLink4, quickie.eId4)}
+          </View>
         </View>
-        <ScrollView style={QuickieStyle.detailsContainer}>
-          <LinearGradient colors={getGradientColor(qMode)}>
-            {this._displayRepsExer(quickie, qvFactor)}
-          </LinearGradient>
-        </ScrollView>
+        <View style={QuickieStyle.detailsContainer}>
+-          <LinearGradient colors={getGradientColor(qMode)}>
+-            {this._displayRepsExer(quickie, qvFactor)}
+-          </LinearGradient>
+-        </View>
+      </ScrollView>
       </View>
     );
   }
